@@ -1,4 +1,5 @@
-* {margin: 0; padding: 0;}    
+* {margin: 0; padding: 0; font-family:calibri !important}    
+
 .original {
     background-color: #f6b519;
 }
@@ -106,6 +107,10 @@ text-align: center;
     margin-top:  5%;
     margin-bottom: 5%;
 }
+.mb-tb-3per {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
 .mb-15 {
     margin:15px;
 }
@@ -210,7 +215,7 @@ img.shake-mob:hover {
       .img-over-img2 {
         position:absolute;
         top: 20px;
-        right:5%;
+        right:2%;
     
       }  
 }
@@ -278,3 +283,11 @@ i.fa.fa-quote-left {
     color: #999;
 }
 
+
+
+@media screen and (max-width: 768px) {
+
+#content-desktop {display: none;}
+#content-mobile {display: block;}
+
+}
