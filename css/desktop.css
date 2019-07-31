@@ -1,0 +1,36 @@
+/* Laptop mode */
+
+@media screen and (max-width: 1024px) and (min-width:769px) {
+   
+    /* White menubar */
+    .submenu-txt {
+    background-color: white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px;
+    width: 150px;
+    padding: 12% 15px;
+   
+    }
+}
+
+/* Large screen  */
+@media screen and (min-width: 1025px) {
+
+.submenu-txt {
+    background-color: white;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin: 15px;
+    width: 200px;
+    padding: 12% 15px;   
+    }
+}
