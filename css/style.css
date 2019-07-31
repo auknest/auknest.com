@@ -120,8 +120,18 @@ text-align: center;
 .m-auto {
     margin: auto;
 }
+.mb-0 {
+    margin:0px
+}
+.pd-0 {
+    padding:0px;
+}
 .pd-2 {
     padding: 2%;
+}
+.pd-lr-0 {
+    padding-left:0px !important;
+    padding-right: 0px !important;
 }
 
 .btn-enquiry {
@@ -253,6 +263,20 @@ img.shake-mob:hover {
       float: none;
       display: block;
       text-align: left;
+    }
+    .submenu-txt {
+        background-color: white;
+        display: inline-block;
+        font-size: 10px !important;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        /* padding:15px; */
+        margin: 15px;
+       width: 150px !important;
+       padding: 12% 15px;
+       
     }
   }
 /* testimonials css */

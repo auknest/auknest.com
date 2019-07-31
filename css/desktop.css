@@ -1,3 +1,12 @@
+/* common css*/
+
+.blue-header {
+    
+    background-color: #00517e;
+    padding: 2% !important;
+    margin: auto;
+    text-align: center;
+}
 /* Laptop mode */
 
 @media screen and (max-width: 1024px) and (min-width:769px) {
@@ -32,5 +41,10 @@
     margin: 15px;
     width: 200px;
     padding: 12% 15px;   
+    }
+}
+@media screen and (min-width: 769px) {
+    .center-desktop {
+        text-align: center;
     }
 }

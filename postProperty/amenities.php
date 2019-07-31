@@ -9,8 +9,9 @@
                     <label class="txtbox-property-heading back-color-blue white-font ">AMENITIES/FEATURES</label>
                 </div>
         </center>
-        <!-- Types og property -->
+        <!-- Option for bathroom, balcony common area -->
         <div class="row ">
+        
         </div>
     </div>
 </div>
