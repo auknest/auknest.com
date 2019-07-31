@@ -8,20 +8,20 @@
     padding:10px 0px 10px 0px;
       }
 .txtbox-property-heading {
-  padding: 1%;  
+  padding-top: 15px; 
   font-size: 20px;
   text-align: center;
   margin: auto;
   border-radius: 5px;
   height:60px;
-  width:250px;
+  width:225px;
   font-weight: bold;
 }
 .btn-property {
   font-size: 20px;
   border-radius: 5px;
   height:60px;
-  width:250px;
+  width:225px;
   font-weight: bold;
   
 }
