@@ -1,5 +1,5 @@
 * {margin: 0; padding: 0; font-family:calibri !important}    
-
+/* BAckground Colors */
 .original {
     background-color: #f6b519;
 }
@@ -12,8 +12,22 @@
 .back-color-white {
     background-color: white;
 }
+/* Width */
+.w-40per {
+width:40%;
+}
+.w-70per {
+    width:70%;
+    }
+/* Font Colors */
+.bold-font {
+    font-weight: bold;
+}
 .white-font {
     color:white;
+}
+.blue-font{
+    color: #00517e;
 }
 .red-font {
     color:red;
@@ -60,7 +74,7 @@ html, body {
 }
 .main_img {
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
 }
 .yellow_bird {
     height: 65px;
@@ -99,6 +113,8 @@ text-align: center;
 .width-eighty {
     width:80%;
 }
+/* Margins */
+
 .mb-tb-10 {
     margin-top:  10px;
     margin-bottom: 10px;
@@ -123,17 +139,30 @@ text-align: center;
 .mb-0 {
     margin:0px
 }
+.mb-l-20px {
+    margin-left: 5%;
+    }
+/* Padding */
 .pd-0 {
     padding:0px;
 }
 .pd-2 {
     padding: 2%;
 }
+.pd-5per {
+    padding:5%;
+}
+.pd-l-20px {
+    padding-left: 40px;
+}
+.pd-l-7per {
+    padding-left: 7%;
+}
 .pd-lr-0 {
     padding-left:0px !important;
     padding-right: 0px !important;
 }
-
+/* Buttons */
 .btn-enquiry {
 background-color: #f6b519;
 padding: 12px 40px;
@@ -146,6 +175,7 @@ padding: 12px 40px;
     color: white;
     
     }
+/* Text */
 .txt-view-more {
     font-size: 16px; 
     font-weight: bolder;
@@ -154,13 +184,19 @@ padding: 12px 40px;
 .txt-white {
     color: white;
 }
+/* Border */
+.black-border {
+    border:1px solid black;
+}
+.white {
+    border: 2px solid white;
+    }
+
 .org-white-block {
    height: 100%;
    background-color: white;
 }
-.white {
-border: 2px solid white;
-}
+
 .hr-white-line {
     border: 1px solid white;
 }

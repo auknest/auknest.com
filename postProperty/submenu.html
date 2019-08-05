@@ -16,31 +16,59 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
         <!-- <script src="../js/jquery.js"></script> -->
-    
+        
+<style>
+.active {
+background-color: #f6b519; 
+}
+</style>
+        
+        
 </head>
 <body>
- 
-
+       
             <div class ="row blue-header">
                 <div class=" col-md-1 col-lg-1" ></div>
-                    <div class="col-sm-2 col-md-2 col-lg-2">          
-                    <a class= "submenu-txt active" href="#">I AM</a>
+                    <div class="col-sm-2 col-md-2 col-lg-2 ">          
+                    <a id="Iam" class= "submenu-txt" href="./pg_who_I.php">I AM</a>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 ">
+                    <a id="loc" class= "submenu-txt" href="./pg_location.php">LOCATION</a>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 ">
+                    <a id="property" class= "submenu-txt" href="./pg_property.php">PROPERTY DETAILS</a>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 ">
+                    <a id="amenities" class= "submenu-txt" href="./pg_amenities.php">AMINITIES / FEATURES</a>
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-2">
-                    <a class= "submenu-txt" href="#">LOCATION</a>
-                    </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2">
-                    <a class= "submenu-txt" href="#">PROPERTY DETAILS</a>
-                    </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2">
-                    <a class= "submenu-txt" href="#">AMINITIES / FEATURES</a>
-                    </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2">
-                    <a class= "submenu-txt" href="#">GALLERY</a>
+                    <a id="gallery" class= "submenu-txt" href="./pg_gallery.php">GALLERY</a>
                     </div>
                 <div class=" col-md-1 col-lg-1"></div>
             </div>
     
+            <script>
+                    var url = window.location.href;
 
+                    switch(url) {
+                        case 'http://localhost/auknest.com/auknest.com/postProperty/pg_who_I.php':
+                        document.getElementById("Iam").classList.add('active'); 
+                        break;
+                        case 'http://localhost/auknest.com/auknest.com/postProperty/pg_location.php':
+                        document.getElementById("loc").classList.add('active'); 
+                        break;
+                        case 'http://localhost/auknest.com/auknest.com/postProperty/pg_property.php':
+                        document.getElementById("property").classList.add('active'); 
+                        break;
+                        case 'http://localhost/auknest.com/auknest.com/postProperty/pg_amenities.php':
+                        document.getElementById("amenities").classList.add('active'); 
+                        break;
+                        case 'http://localhost/auknest.com/auknest.com/postProperty/pg_gallery.php':
+                        document.getElementById("gallery").classList.add('active'); 
+                        break;
+                    }
+                   
+            </script>
+    
 </body>
  

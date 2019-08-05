@@ -8,20 +8,29 @@
     padding:10px 0px 10px 0px;
       }
 .txtbox-property-heading {
-  padding: 1%;  
+  padding-top:15px; 
   font-size: 20px;
   text-align: center;
   margin: auto;
   border-radius: 5px;
   height:60px;
-  width:250px;
+  width:225px;
   font-weight: bold;
+}
+.yellow-search-btn {
+  font-size:18px;
+  color:white; 
+  border-radius:10px;
+  background-color:#f6b519;
+  padding:2%;
+  height:50px; 
+  width:150px
 }
 .btn-property {
   font-size: 20px;
   border-radius: 5px;
   height:60px;
-  width:250px;
+  width:225px;
   font-weight: bold;
   
 }
@@ -41,4 +50,3 @@
 .b {
   display:none;
 }
-

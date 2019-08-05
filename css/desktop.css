@@ -9,7 +9,7 @@
 }
 /* Laptop mode */
 
-@media screen and (max-width: 1024px) and (min-width:769px) {
+@media screen and (max-width: 1023px) and (min-width:769px) {
    
     /* White menubar */
     .submenu-txt {
@@ -25,10 +25,14 @@
     padding: 12% 15px;
    
     }
+    .upload-sec {
+        padding:30%;
+    }
+   
 }
 
 /* Large screen  */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
 
 .submenu-txt {
     background-color: white;
@@ -42,7 +46,16 @@
     width: 200px;
     padding: 12% 15px;   
     }
+    .upload-sec {
+        padding:30%;
+    }
+    .select-pg {
+        padding:12%;
+        border:white 2px solid;
+        border-radius: 5px;
+    }
 }
+
 @media screen and (min-width: 769px) {
     .center-desktop {
         text-align: center;

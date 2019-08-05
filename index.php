@@ -1,7 +1,56 @@
 <?php include 'menu.html';?>
 <!-- Main img -->
 <div class="main_img">
-    <img class="main_img" src="./img/photo.png" style="width: 100%">
+    <img class="main_img" src="./img/photo.jpg" style="width: 100%">
+    <div class="row">
+        <!-- Yellow button -->
+        <div class="col-sm-3 col-md-3 col-lg-3">
+
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 center" style="display:flex">
+        <center><button class="yellow-search-btn"><b>PG</b></button></center>
+        <center><button class="yellow-search-btn"><b>FLAT</b></button></center>
+        <center><button class="yellow-search-btn"><b>PROPERTY</b></button></center>
+
+        </div>
+        <div class="col-sm-3 col-md-3 col-lg-3">
+
+        </div>
+    </div>
+        <!-- Search setion -->
+        <div class="row">
+        <div class="col-sm-1 col-md-2 col-lg-2">
+
+        </div>
+        <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
+            <div class="row">
+                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                    <option selected>Type Of PG</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10">
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                    <option selected>Budget</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    </select>
+                </div>
+               
+                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-2 col-lg-2">
+
+        </div>
+        </div>
+    
 </div>
 <!-- Yellow button -->
 <div>

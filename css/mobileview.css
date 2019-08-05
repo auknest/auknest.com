@@ -21,13 +21,14 @@ color: black;
 }
 
 .previous {
-background-color: #f1f1f1;
-color: black;
+background-color: #f6b519;
+color: white;
 }
 
 .next {
-background-color: #4CAF50;
+background-color: #f6b519;
 color: white;
+float:right;
 }
 
 .round {
@@ -37,5 +38,10 @@ border-radius: 50%;
     padding-bottom: 3%;
     padding-left: 0px;
     padding-right: 0px;
+}
+.upload-sec {
+ width:100%;
+ text-align: center;
+ padding: 5px;
 }
 }

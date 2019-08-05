@@ -1,1 +1,9 @@
 /* Tablet mode css */
+@media screen and (max-width: 1023px) and (min-width:769px) {
+    .select-pg {
+        padding:2%;
+        border:white 2px solid;
+        border-radius: 5px;
+    }
+
+}

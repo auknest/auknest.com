@@ -5,7 +5,7 @@
 <br>
 <div class="b">
 <a href="#" class="previous round">&#8249;</a>
-<a href="#" class="next round">&#8250;</a>
+<a href="./pg_location.php" class="next round">&#8250;</a>
 </div>
 <div class="row" >
     <!-- Box outline -->
