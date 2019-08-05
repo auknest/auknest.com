@@ -28,11 +28,16 @@ color: white;
 .next {
 background-color: #f6b519;
 color: white;
+<<<<<<< HEAD
 float:right;
+=======
+float: right; 
+>>>>>>> origin
 }
 
 .round {
 border-radius: 50%;
+margin: 0px 10px;
 }
 .loc-city{
     padding-bottom: 3%;
