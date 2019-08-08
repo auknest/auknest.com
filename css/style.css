@@ -141,7 +141,10 @@ text-align: center;
 }
 .mb-l-20px {
     margin-left: 5%;
-    }
+}
+.ma-0-5per{
+    margin:0.5%;
+}
 /* Padding */
 .pd-0 {
     padding:0px;
@@ -301,7 +304,7 @@ img.shake-mob:hover {
       text-align: left;
     }
     .submenu-txt {
-        background-color: white;
+        /* background-color: white; */
         display: inline-block;
         font-size: 10px !important;
         font-weight: bold;
@@ -310,8 +313,8 @@ img.shake-mob:hover {
         text-decoration: none;
         /* padding:15px; */
         margin: 15px;
-       width: 150px !important;
-       padding: 12% 15px;
+       /* width: 150px !important; */
+       /* padding: 12% 15px; */
        
     }
   }
