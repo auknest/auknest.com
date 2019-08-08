@@ -2,15 +2,16 @@
 <!-- Main img -->
 <div class="main_img">
     <img class="main_img" src="./img/photo.jpg" style="width: 100%">
-    <div class="row">
-        <!-- Yellow button -->
+</div>
+<div class="row" style="position:absolute; top:70%">  
+    <div class="row" > 
         <div class="col-sm-3 col-md-3 col-lg-3">
 
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 center" style="display:flex">
-        <center><button class="yellow-search-btn"><b>PG</b></button></center>
-        <center><button class="yellow-search-btn"><b>FLAT</b></button></center>
-        <center><button class="yellow-search-btn"><b>PROPERTY</b></button></center>
+            <center><button class="yellow-search-btn"><b>PG</b></button></center>
+            <center><button class="yellow-search-btn"><b>FLAT</b></button></center>
+            <center><button class="yellow-search-btn"><b>PROPERTY</b></button></center>
 
         </div>
         <div class="col-sm-3 col-md-3 col-lg-3">
@@ -18,43 +19,64 @@
         </div>
     </div>
         <!-- Search setion -->
-        <div class="row">
-        <div class="col-sm-1 col-md-2 col-lg-2">
+        <div class="row" >
+            <div class="col-sm-1 col-md-2 col-lg-2">
 
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
-            <div class="row">
-                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                    <select class="browser-default custom-select select-pg back-color-blue white-font" >
-                    <option selected>Type Of PG</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    </select>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10">
-                </div>
-                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                    <select class="browser-default custom-select select-pg back-color-blue white-font" >
-                    <option selected>Budget</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    </select>
-                </div>
-               
-                <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
+                <div class="row">
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Type Of PG</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue">
+                        <!-- <div id="custom-search-input">
+                            <div class="input-group">
+                            <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
+                            <input type="hidden" name="lat">
+                            <input type="hidden" name="long">
+                            </div>
+                        </div>
+                            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg96FAwQbNkb27GHxpGZUIljiOnf78hwc&libraries=places"></script>
+                            <script>
+                            google.maps.event.addDomListener(window, 'load', initialize);
+                            function initialize() {
+                            var input = document.getElementById('autocomplete_search');
+                            var autocomplete = new google.maps.places.Autocomplete(input);
+                            autocomplete.addListener('place_changed', function () {
+                            var place = autocomplete.getPlace();
+                            // place variable will have all the information you are looking for.
+                            $('#lat').val(place.geometry['location'].lat());
+                            $('#long').val(place.geometry['location'].lng());
+                            });
+                            }
+                            </script> -->
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Budget</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        </select>
+                    </div>
+                
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-1 col-md-2 col-lg-2">
+            <div class="col-sm-1 col-md-2 col-lg-2">
 
-        </div>
+            </div>
         </div>
     
 </div>
-<!-- Yellow button -->
-<div>
-</div>
+
+
+
 <!-- Why section -->
 <div class="why">
       <center> <img  src="./img/yellow bird.png"> </center>
