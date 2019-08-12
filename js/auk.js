@@ -41,3 +41,18 @@ function activeMenu(event) {
   var id1= id+1;
   document.getElementById(id1).innerHTML = txt;
 }
+// Login Pages Script
+$(document).ready(function(){
+  $('.palceholder').click(function() {
+    $(this).siblings('input').focus();
+  });
+  $('.form-control').focus(function() {
+      $(this).siblings('.palceholder').hide();
+  });
+  $('.form-control').blur(function() {
+      var $this = $(this);
+      if ($this.val().length == 0)
+      $(this).siblings('.palceholder').show();
+  });
+  $('.form-control').blur();
+});

@@ -50,3 +50,26 @@
 .b {
   display:none;
 }
+
+/* login page styles */
+
+.form-group{
+    position: relative;
+}
+.palceholder{
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  color: #B1B1B1;
+  display: none;
+}
+label{
+  font-weight: normal;
+  color: #B1B1B1;
+} 
+.star{
+  color: red
+}
+.pointer{
+  cursor: pointer;
+}

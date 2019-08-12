@@ -3,6 +3,9 @@
 .center-desktop {
 padding-left: 18%!important;
 }
+.cntr-desk-list{
+  padding-left: 10% !important;
+}
 .a {
     display:none;
    }
@@ -44,5 +47,8 @@ margin: 0px 10px;
  width:100%;
  text-align: center;
  padding: 5px;
+}
+.email-link{
+  font-size:12px !important;
 }
 }
