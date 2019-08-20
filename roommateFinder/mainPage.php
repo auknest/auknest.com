@@ -159,10 +159,10 @@
             <img class="img-responsive" src="../img/properties button.png">
         </div>
         <div class="col-md-8 col-lg-8 mb-t-5per ">
-            <img class="img-responsive center" src="../img/post vacancy button.png">
+            <a href="./postVacancy.php"><img style="margin:auto" class="img-responsive center" src="../img/post vacancy button.png"></a>
         </div>
-        <div class="col-md-2 col-lg-2 mb-t-5per center">
-            <img class="img-responsive" src="../img/AUKNEST ORIGINAL button.png">
+        <div class="col-md-2 col-lg-2 mb-t-5per">
+            <img  class="img-responsive" src="../img/AUKNEST ORIGINAL button.png">
         </div>
     </div>
 <div class="row">

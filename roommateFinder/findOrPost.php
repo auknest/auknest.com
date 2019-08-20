@@ -10,8 +10,8 @@
         <!-- Finder or Post -->
         <div class="row center">  
             <div class="col-sm-12 col-md-12 col-lg-12 center mb-15 ">
-                <button class="btn-property back-color-yellow">ROOMMATE</button>
-                <button class="btn-property back-color-yellow">POST VACANCY</button>
+                <a href ="./mainPage.php"><button class="btn-property back-color-yellow">ROOMMATE</button></a>
+                <a href="postVacancy.php"><button class="btn-property back-color-yellow">POST VACANCY</button></a>
             </div>   
         </div>  
     </div> <!--box close-->
