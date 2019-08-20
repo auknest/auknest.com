@@ -1,4 +1,4 @@
-* {margin: 0; padding: 0; }    
+/* * {margin: 0; padding: 0; }     */
 /* BAckground Colors */
 .original {
     background-color: #f6b519;
@@ -24,9 +24,16 @@ width:40%;
 }
 .w-70per {
     width:70%;
-    }
+}
+.w-80per {
+    width:80%;
+}
 .w-100per {
     width: 100%;
+}
+/* height */
+.height-40 {
+    height:40px!important;
 }
 /* Font Colors */
 .bold-font {
@@ -122,10 +129,6 @@ html, body {
 .features {
    text-align: center;
 }
-.center {
-text-align: center;
-}
-
 .width-eighty {
     width:80%;
 }
@@ -142,6 +145,9 @@ text-align: center;
 .mb-tb-3per {
     margin-top: 3%;
     margin-bottom: 3%;
+  }
+  .mb-t-5per {
+    margin-top: 5%;
   }
 .mb-15 {
     margin:15px;
@@ -161,6 +167,11 @@ text-align: center;
 .ma-0-5per{
     margin:0.5%;
 }
+.mb-tb-5px{
+    margin-top:  5px;
+    margin-bottom: 5px; 
+}
+
 /* Padding */
 .pd-0 {
     padding:0px !important;
@@ -180,9 +191,16 @@ text-align: center;
 .pd-l-7per {
     padding-left: 7%;
 }
+.pd-l-2per{
+    padding-left: 2%
+}
 .pd-lr-0 {
     padding-left:0px !important;
     padding-right: 0px !important;
+}
+/* Fonts*/
+.font-14 {
+    font-size:14px;
 }
 /* Buttons */
 .btn-enquiry {
@@ -198,6 +216,12 @@ padding: 12px 40px;
     
     }
 /* Text */
+.center {
+    text-align: center;
+    }
+.justify1 {
+    text-align: justify;
+}
 .txt-view-more {
     font-size: 16px; 
     font-weight: bolder;

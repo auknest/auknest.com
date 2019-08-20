@@ -48,6 +48,11 @@ margin: 0px 10px;
  text-align: center;
  padding: 5px;
 }
+.upload-sec1 {
+  width:100%;
+  text-align: center;
+  padding: 5px;
+ }
 .email-link{
   font-size:12px !important;
 }
