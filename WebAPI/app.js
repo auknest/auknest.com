@@ -17,6 +17,8 @@ var express = require('express');
 var getstud1 = require('./routes/getstud');
 var protype = require('./routes/postapi/post_property_type');
 var propertytype = require('./routes/postapi/post_pro_type');
+var pro_pg_who_I = require('./routes/postapi/post_pg_who_I');//To Insert the property owner type info
+
 
 
 // view engine setup
@@ -36,6 +38,7 @@ app.use('/users', usersRouter);
 app.use('/getstud', getstud1);
 app.use('/post_property_type', protype);
 app.use('/post_pro_type', propertytype); // To insert the property type into database
+app.use('/post_pg_who_I', pro_pg_who_I); // To insert the property Owner type into database
 
 
 
@@ -44,6 +47,13 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+//Handel the cross browser issue. 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

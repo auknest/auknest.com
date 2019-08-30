@@ -12,13 +12,13 @@ router.use(function(req, res, next) {
 router.post('/',(req, res) => {
 
     var values =req.body;
-    console.log("In Property type API...", values);
+    console.log("In Property Who I API...", values);
 
     try {
             var sql ='INSERT INTO property SET ?';
             con.query(sql, values, function (error, results, fields) {
                 if (error) {
-                    console.log("Failed to insert the Property type")
+                    console.log("Failed to insert the Person type")
                 }
                 else {
                      console.log("Data inserted into table property sucessfully...");
