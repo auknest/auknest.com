@@ -43,46 +43,89 @@
                 </div>
             </div>
             <!-- common area -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            <div class=""> <span class="blue-font bold-font">Common Area</span>
+            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-5">
+            <div class=""> <span class="blue-font bold-font">Water Supply</span>
                     <br>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" name="area" value="arearadioyes" checked>Yes
+                    <div class="black-border row ">
+                    <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 radio-inline font-16 bold black pd-l-30px">
+                        <input type="radio" name="wsupply" value="" checked>Corporation
                     </label>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="area" value="arearadiono">No
+                    <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
+                        <input type="radio" name="wsupply" value="">Borewell
                     </label>
+                    <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
+                        <input type="radio" name="wsupply" value="">Both
+                    </label>
+                    </div>
             </div>
             </div>
         </div>
         <br>
         <!-- Option for parking -->
         <div class="row ">
-            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+            <div class="col-xs-12 col-sm-10 col-md-11 col-lg-11">
                 <div> <span class="blue-font bold-font">Parking</span>
                     <br>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 black-border" style="margin-right:10px">
+                            <label class="radio-inline font-16 bold black pd-l-30px">
+                                <input type="radio" name="parkingType" value="" checked>Covered
+                            </label>
+                            <label class="radio-inline font-16 bold black ">
+                                <input type="radio" name="parkingType" value="" >Open
+                            </label>
+                        </div>
+                        <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8 black-border">
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <label class="radio-inline font-16 bold black ">
+                                <input type="radio" name="parking" value="parkingradiobike" checked>Bike
+                            </label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+                            <label class="radio-inline font-16 bold black">
+                                <input type="radio" name="parking" value="parkingradiocar">Car
+                            </label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
+                            <label class="radio-inline font-16 bold black">
+                                <input type="radio" name="parking" value="parkingradiobikecar">Bike / Car both
+                            </label>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
+                            <label class="radio-inline font-16 bold black">
+                                <input type="radio" name="parking" value="parkingradionone">None
+                            </label>
+                            </div>
+                        </div>
+                    </div>  
+                 </div>
+            </div>
+        </div>
+         <br>
+         <!-- Option For Furnish Details -->
+         <div class="row ">
+            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+                <div> <span class="blue-font bold-font">Furnish Details</span>
+                    <br>
                     <div class="row black-border">
-                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input type="radio" name="parking" value="parkingradiobike" checked>Bike
+                            <input type="radio" name="furnish" value="" checked>Fully Furnished
                         </label>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradiocar">Car
+                            <input type="radio" name="furnish" value="">Semi Furnished
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradiobikecar">Bike / Car both
-                        </label>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
-                        <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradionone">None
+                            <input type="radio" name="parking" value="parkingradiobikecar">Un Furnished
                         </label>
                         </div>
                     </div>  
@@ -90,10 +133,10 @@
             </div>
         </div>
          <br>
-        <!-- Option for avialable pg -->
+        <!-- Option for avialable Aminities in flat -->
         <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-11 col-lg-9">
-        <div> <span class="blue-font bold-font">Available PG Amenities (Had to tick the available amenities in the PG) </span><br></div>
+        <div> <span class="blue-font bold-font">Available Amenities (Had to tick the available amenities in the Flats) </span><br></div>
        
             <!-- First row -->
             <div class="row black-border">
@@ -153,7 +196,7 @@
              <!-- Third row -->
              <div class="row black-border">
              <label class="col-md-4 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">Gas(Cooking Allowed)
+                <input type="checkbox" value="">Modular Kitchen
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Cooler

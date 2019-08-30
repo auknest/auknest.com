@@ -19,37 +19,37 @@
         <!-- Option for bathroom, balcony common area -->
         <div class="row">
             <!-- Attach bathroom -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
+                    <div class="radio-inline black-border w-40per center">
                         <input type="radio" name="bathroom" value="bathradioyes" checked>Yes
                     </div>
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
+                    <div class="radio-inline black-border w-40per center">
                         <input type="radio" name="bathroom" value="bathradiono">No
                     </div>
                 </div>
             </div>
             <!-- Attach Balcony -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
+                    <label class="radio-inline black-border w-40per center">
                         <input type="radio" name="balcony" value="balconyradioyes" checked>Yes
                     </label>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
+                    <label class="radio-inline black-border w-40per center ">
                         <input type="radio" name="balcony" value="balconyadiono">No
                     </label>
                 </div>
             </div>
             <!-- common area -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div class=""> <span class="blue-font bold-font">Common Area</span>
                     <br>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
+                    <label class="radio-inline black-border w-40per center ">
                         <input type="radio" name="area" value="arearadioyes" checked>Yes
                     </label>
-                    <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
+                    <label class="radio-inline black-border w-40per center">
                         <input type="radio" name="area" value="arearadiono">No
                     </label>
             </div>
@@ -58,30 +58,30 @@
         <br>
         <!-- Option for parking -->
         <div class="row ">
-            <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                 <div> <span class="blue-font bold-font">Parking</span>
                     <br>
                     <div class="row black-border">
-                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <label class="radio-inline font-16 bold black ">
+                        <div class="col-xs-12 col-sm-12 col-md-3 ">
+                        <label class="radio-inline ">
                             <input type="radio" name="parking" value="parkingradiobike" checked>Bike
                         </label>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
-                        <label class="radio-inline font-16 bold black">
+                        <div class="col-xs-12 col-sm-12 col-md-3 ">
+                        <label class="radio-inline">
                             <input type="radio" name="parking" value="parkingradiocar">Car
                         </label>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-                        <label class="radio-inline font-16 bold black">
+                        <div class="col-xs-12 col-sm-12 col-md-3 ">
+                        <label class="radio-inline">
                             <input type="radio" name="parking" value="parkingradiobikecar">Bike / Car both
                         </label>
                         </div>
 
-                        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
-                        <label class="radio-inline font-16 bold black">
+                        <div class="col-xs-12 col-sm-12 col-md-3 ">
+                        <label class="radio-inline">
                             <input type="radio" name="parking" value="parkingradionone">None
                         </label>
                         </div>
@@ -92,106 +92,101 @@
          <br>
         <!-- Option for avialable pg -->
         <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-9">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
         <div> <span class="blue-font bold-font">Available PG Amenities (Had to tick the available amenities in the PG) </span><br></div>
        
             <!-- First row -->
             <div class="row black-border">
                 
                 
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">TV
-                </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline" style="padding-left:30px;">
                 <input type="checkbox" value="">DTH
                 </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Sofa
-                </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Geizer
-                </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Bed
-                </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Locker
-                </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Wifi
-                </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Center Table
                 </label>
-                
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Bed
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Room cleaning
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Gas
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Shoerack
+                </label>
                
             </div>
             <br>
             <!-- Second row -->
             <div class="row black-border">
                
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">AC
+                <label class="checkbox-inline" style="padding-left:30px;">
+                <input type="checkbox" value="">Locker
                 </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Drinking water
+                </label>
+                
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Cooler
+                </label>
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Freeze
                 </label>
-                <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Drinking Water
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Geizer
                 </label>
-                <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Room Cleaning
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Sofa
                 </label>
-                <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Washing Machine
-                </label>
-                
-                
                 
             </div>
             <br>
              <!-- Third row -->
              <div class="row black-border">
-             <label class="col-md-4 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">Gas(Cooking Allowed)
+             <label class="checkbox-inline" style="padding-left:30px;">
+                <input type="checkbox" value="">AC
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Cooler
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Washing Machine
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Shoerack
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Wifi
                 </label>
-                <!-- <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Room Cleaning
-                </label> -->
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">TV
+                </label>
             </div>
         </div>
         </div>
         <br>
         <!-- Option for general amenities -->
         <div class="row ">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
         <div> <span class="blue-font bold-font">General & Safety Amenities (Had to tick the available amenities) </span>
         <br>
             <!-- First row -->
             <div class="row black-border">
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
+                <label class="checkbox-inline" style="padding-left:30px;">
                 <input type="checkbox" value="">Lift
                 </label>
-                <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Cctv
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Power Backup
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
+                <input type="checkbox" value="">Security guard
+                </label>
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Caretakes
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="checkbox-inline">
                 <input type="checkbox" value="">Water supply 
-                </label>
-                <label class="col-md-3 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Security guard
                 </label>     
             </div>
         </div>
@@ -202,18 +197,18 @@
         <div class="row ">
             <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <div> <span class="blue-font bold-font">PG Rules</span></div>
-                    <div class="row black-border font-16 bold black">
+                    <div class="row black-border">
                         <span style="padding-left:15px;">Guardian Stay  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="" checked>Yes
+                        <label class="radio-inline">
+                        <input type="radio" name="balcony" value="balconyradioyes" checked>Yes
                         </label>
-                        <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="">No
+                        <label class="radio-inline">
+                        <input type="radio" name="balcony" value="balconyadiono">No
                         </label>
                 
                      </div>
                 </div>
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 font-16 bold black"><br>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5"><br>
             <input type="text" style="float:left">
             </div>
         </div>
