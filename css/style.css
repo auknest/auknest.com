@@ -15,6 +15,9 @@
 .back-color-black {
     background-color: #000000 !important;
 }
+.black{
+    color:#000000;
+}
 /* Width */
 .w-20per{
     width: 20%;
@@ -198,9 +201,15 @@ html, body {
     padding-left:0px !important;
     padding-right: 0px !important;
 }
+.pd-l-30px{
+    padding-left:30px;
+}
 /* Fonts*/
 .font-14 {
     font-size:14px;
+}
+.font-16{
+    font-size:16px;
 }
 /* Buttons */
 .btn-enquiry {
@@ -233,6 +242,7 @@ padding: 12px 40px;
 /* Border */
 .black-border {
     border:1px solid black;
+    padding:5px !important;
 }
 .white {
     border: 2px solid white;
