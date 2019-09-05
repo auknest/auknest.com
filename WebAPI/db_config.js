@@ -8,7 +8,7 @@ var con = mysql.createConnection({
 
   host:'localhost',
   user:'root',
-  passeord:"",
+  password:"",
   database:"e",
 });
 con.connect(function(err) {

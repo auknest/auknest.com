@@ -224,14 +224,8 @@
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Cctv
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Power Backup
-                </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Caretakes
-                </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Water supply 
+                <label class="col-md-5 col-lg-4 checkbox-inline font-16 bold black">
+                <input type="checkbox" value="">Power Backup (For Common Area)
                 </label>
                 <label class="col-md-3 col-lg-2 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Security guard
@@ -241,25 +235,6 @@
         </div>
         </div>
         <br>
-        <!-- PG Rules -->
-        <div class="row ">
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                <div> <span class="blue-font bold-font">PG Rules</span></div>
-                    <div class="row black-border font-16 bold black">
-                        <span style="padding-left:15px;">Guardian Stay  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="" checked>Yes
-                        </label>
-                        <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="">No
-                        </label>
-                
-                     </div>
-                </div>
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 font-16 bold black"><br>
-            <input type="text" style="float:left">
-            </div>
-        </div>
         
     </form>
     </div>
