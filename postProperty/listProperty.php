@@ -1,5 +1,10 @@
 
-<?php include 'propertymenubar.html'?>
+<?php include 'propertymenubar.php'?>
+<?php
+echo session_id();
+$_SESSION['pro_id']= uniqid();
+ ?>
+ 
 <div class="row" >
     <!-- Box outline -->
     <div class="box-outline mb-tb-5per">
@@ -35,13 +40,18 @@
 
 </div>
 <script>
+  
+
+
   $(document).ready(function() {
    $('#ajax_pro_type').click(function(e){ 
 
     e.preventDefault();
     var type= $("input:radio[id=pro_type]:checked").val();
-    var serverData = {"pro_type" : type};
-
+    var serverData = {"pro_type" : type,
+                      "pro_id"   : "<?php echo $_SESSION['pro_id']?>"};
+    
+    
     $.ajax({
                 type: "POST",
                 url: 'http://localhost:3000/post_pro_type',						   
@@ -53,11 +63,11 @@
                   console.log('process complete');
                 },
                 success: function(res) {
-                  if(type=="pg") {
+                  // if(type=="pg") {
                     window.location.href = "pg_who_I.php";
 
                     // document.myform.action ="./pg_who_I.php";
-                  }
+                  // }
                   console.log('Property type Sucessfully inserted ...');
                },
                 error: function() {
@@ -65,7 +75,10 @@
                 },
             });
             
+            sessionStorage.setItem("pro_id", "<?php echo $_SESSION['pro_id']?>");
+            sessionStorage.setItem("pro_type", type);    
     });
+   
   }); //Ready function close
-
+  
 </script>

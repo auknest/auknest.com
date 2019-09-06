@@ -1,4 +1,7 @@
-
+<?php
+session_start();    
+echo session_id();
+?>
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

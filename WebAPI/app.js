@@ -18,6 +18,7 @@ var getstud1 = require('./routes/getstud');
 var protype = require('./routes/postapi/post_property_type');
 var propertytype = require('./routes/postapi/post_pro_type');
 var pro_pg_who_I = require('./routes/postapi/post_pg_who_I');//To Insert the property owner type info
+var pro_loc = require('./routes/postapi/post_pro_location');//To insert the location details 
 
 
 
@@ -39,7 +40,7 @@ app.use('/getstud', getstud1);
 app.use('/post_property_type', protype);
 app.use('/post_pro_type', propertytype); // To insert the property type into database
 app.use('/post_pg_who_I', pro_pg_who_I); // To insert the property Owner type into database
-
+app.use('/post_pro_location', pro_loc); //To insert the loaction details
 
 
 // catch 404 and forward to error handler

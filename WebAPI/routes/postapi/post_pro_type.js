@@ -16,6 +16,7 @@ router.post('/',(req, res) => {
 
     try {
             var sql ='INSERT INTO property SET ?';
+            console.log(sql);
             con.query(sql, values, function (error, results, fields) {
                 if (error) {
                     console.log("Failed to insert the Property type")

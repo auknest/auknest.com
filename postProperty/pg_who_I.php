@@ -1,6 +1,7 @@
-<?php include 'propertymenubar.html'?>
+<?php include 'propertymenubar.php'?>
 <div class="a">
 <?php include 'submenu.html'?>
+
 </div>
 <br>
 <div class="b">
@@ -19,13 +20,13 @@
         <!-- Types og property -->
         <div class="row center-desktop">
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="pg-owner"><span class="select-txt">Owner</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="owner"><span class="select-txt">Owner</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="pg-agent"><span class="select-txt">Agent / Broker</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="agent"><span class="select-txt">Agent / Broker</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="pg-builder"><span class="select-txt">Builder</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="builder"><span class="select-txt">Builder</span>
             </div>
         </div>
       
@@ -42,11 +43,18 @@
 </div>
 
 <script>
+
     $(document).ready(function () {
       $('#ajax_who').click( function(e){
         e.preventDefault();
          var pro_person = $("input:radio[id=pro_person]:checked").val();
-         var serverData = {"pro_person" : pro_person};
+         var serverData = {"pro_person" : pro_person,
+                           "pro_id"   : sessionStorage.getItem("pro_id"),
+                           "pro_type" : sessionStorage.getItem("pro_type")
+                            };
+          console.log(serverData);
+          sessionStorage.setItem("pro_person", pro_person);    
+
 
          $.ajax ({
           type: "POST",
@@ -61,12 +69,13 @@
                 success: function(res) {      
                   console.log('Property person type Sucessfully inserted ...');
         
-                    // window.location.href = "pg_who_I.php";
+                     window.location.href = "pg_location.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');
                 },
          });
+
 
       });
 
