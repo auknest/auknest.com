@@ -10,6 +10,7 @@ router.use(function(req, res, next) {
   });
 
 router.post('/', function(req, res) {
+    console.log("amenities...........", req.body);
     var table, values;
    
     var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
@@ -32,6 +33,8 @@ router.post('/', function(req, res) {
         "parking":req.body.parking,
         "furnish":req.body.furnish,
         "flat_amenities":req.body.flat_amenities,
+        "gen_amenities":req.body.gen_amenities,
+
      };
     }
     var sql = "UPDATE "+table+" SET ? "+cond;
