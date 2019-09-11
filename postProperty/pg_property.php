@@ -24,13 +24,13 @@
                         <br>
                         <div class="black-border row">
                             <div class="radio-inline font-16 bold pd-l-30px col-md-4 col-lg-4">
-                                <input type="radio" name="pgAvailable" value="boys" checked>Boys
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="boys">Boys
                             </div>
                             <div class="radio-inline font-16 bold col-md-4 col-lg-4">
-                                <input type="radio" name="pgAvailable" value="girls">Girls
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="girls">Girls
                             </div>
                             <div class="radio-inline font-16 bold col-md-3 col-lg-3">
-                                <input type="radio" name="pgAvailable" value="both">Both
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="both">Both
                             </div>
                         </div>
                     </div>
@@ -44,22 +44,22 @@
                     <!-- First row -->
                     <div class="black-border row">
                         <label class="radio-inline col-lg-2 font-16 bold black" style="padding-left:30px; padding-right:0px">
-                        <input type="radio" name="roomType" value="">Room system
+                        <input type="radio" id="roomType" name="roomType" value="">Room system
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" name="roomType" value="">1 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK PG
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" name="roomType" value="">2 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="2 BHK">2 BHK PG
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" name="roomType" value="">3 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="3 BHK">3 BHK PG
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" name="roomType" value="">4 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="4 BHK">4 BHK PG
                         </label>
                         <label class="radio-inline blue-font font-16 bold col-lg-1">
-                        <input type="radio" name="roomType" value="">Others
+                        <input type="radio" id="roomType" name="roomType" value="others">Others
                         </label>     
                     </div>
             </div>
@@ -71,10 +71,10 @@
                     <div class=""> <span class="blue-font bold-font">PG Available for</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px font-16 bold black col-lg-5">
-                                <input type="radio" name="pgFor" value="stud" checked>Student
+                                <input type="radio" id="pgFor" name="pgFor" value="stud" checked>Student
                             </div>
                             <div class="radio-inline col-lg-6 font-16 bold black">
-                                <input type="radio" name="pgFor" value="prof">Working Professional
+                                <input type="radio" id="pgFor" name="pgFor" value="prof">Working Professional
                             </div>
                         </div>
              </div>
@@ -87,31 +87,31 @@
                     <!-- First row -->
                     <div class="black-border row">
                         <label class="radio-inline col-lg-1 font-16 bold black" style="padding-left:30px;">
-                        <input type="radio" name="floorNo" value="">1
+                        <input type="radio" id="floorNo" name="floorNo" value="1">1
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">2
+                        <input type="radio" id="floorNo" name="floorNo" value="2">2
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">3
+                        <input type="radio" id="floorNo" name="floorNo" value="3">3
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">4
+                        <input type="radio" id="floorNo" name="floorNo" value="4">4
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">5
+                        <input type="radio" id="floorNo" name="floorNo" value="5">5
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">6
+                        <input type="radio" id="floorNo" name="floorNo" value="6">6
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">7
+                        <input type="radio" id="floorNo" name="floorNo" value="7">7
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="floorNo" value="">8
+                        <input type="radio" id="floorNo" name="floorNo" value="8">8
                         </label>
                         <label class="radio-inline blue-font col-lg-1 font-16 bold ">
-                        <input type="radio" name="floorNo" value="">Others
+                        <input type="radio" id="floorNo" name="floorNo" value="others">Others
                         </label>     
                     </div>
             </div>
@@ -124,31 +124,31 @@
                     <!-- First row -->
                     <div class="black-border row">
                         <label class="radio-inline col-lg-1 font-16 bold black" style="padding-left:30px;">
-                        <input type="radio" name="totalFloor" value="">1
+                        <input type="radio" id="totalFloor" name="totalFloor" value="1">1
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">2
+                        <input type="radio" id="totalFloor" name="totalFloor" value="2">2
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">3
+                        <input type="radio" id="totalFloor" name="totalFloor" value="3">3
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">4
+                        <input type="radio" id="totalFloor" name="totalFloor" value="4">4
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">5
+                        <input type="radio" id="totalFloor" name="totalFloor" value="5">5
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">6
+                        <input type="radio" id="totalFloor" name="totalFloor" value="6">6
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">7
+                        <input type="radio" id="totalFloor" name="totalFloor" value="7">7
                         </label>
                         <label class="radio-inline col-lg-1 font-16 bold black">
-                        <input type="radio" name="totalFloor" value="">8
+                        <input type="radio" id="totalFloor" name="totalFloor" value="8">8
                         </label>
                         <label class="radio-inline blue-font col-lg-1 font-16 bold ">
-                        <input type="radio" name="totalFloor" value="">Others
+                        <input type="radio" id="totalFloor" name="totalFloor" value="others">Others
                         </label>     
                     </div>
             </div>
@@ -158,16 +158,16 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class=""> <span class="blue-font bold-font">Total Rooms</span></div>
-              <input type="number" >
+              <input id="total_rooms" type="number" >
             </div>
             <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5">
             <div class=""> <span class="blue-font bold-font">Gate Closing Time</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px  col-lg-5 font-16 bold black">
-                                <input type="radio" name="closeTime" value="" >Open 24 Hours
+                                <input type="radio" id="gate_time" name="closeTime" value="24hr" >Open 24 Hours
                             </div>
                             <div class="radio-inline col-lg-4 font-16 bold black">
-                                <input type="radio" name="closeTime" value="">Specific Time
+                                <input type="radio" id="gate_time" name="closeTime" value="specificTime">Specific Time
                             </div>
                         </div>
             </div>
@@ -181,12 +181,12 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <div class=""> <span class="blue-font bold-font">Available From</span></div>
-                    <input type="Date">
+                    <input id="avl_frm" type="Date">
             </div>
             <!-- Expected rent -->
             <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <div class=""> <span class="blue-font bold-font">Expected rent</span></div>
-                    <input type="number">
+                    <input id="exp_rent" type="number">
             </div>
 
             <!-- Food include -->
@@ -194,10 +194,10 @@
                 <div class=""> <span class="blue-font bold-font">Food include</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                <input type="radio" name="food" value="yes" checked>Yes
+                                <input type="radio" id="food" name="food" value="yes" checked>Yes
                             </div>
                             <div class="radio-inline font-16 bold black col-lg-5">
-                                <input type="radio" name="food" value="no">No
+                                <input type="radio" id="food" name="food" value="no">No
                             </div>
                         </div>
             </div>
@@ -207,7 +207,7 @@
         <div class="row">
             <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class=""> <span class="blue-font bold-font">Security amount</span></div>
-                        <input type="number" placeholder="In Rupees">
+                        <input type="number" id="sec_amt" placeholder="In Rupees">
             </div>
         </div>
         <br>
@@ -215,14 +215,60 @@
         <div class="row">
             <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class=""> <span class="blue-font bold-font">Property Description</span></div>
-                    <textarea rows="4" placeholder="Property Description" style="width:100%"></textarea>
+                    <textarea rows="4" id="descr" placeholder="Property Description" style="width:100%"></textarea>
             </div>
         </div>
     </form>
   </div>
   <div class="width-eighty m-auto">
         <center>
-          <button class="btn-property back-color-yellow red-font">Save & Continue</button>
+          <button id="ajax-pg-pro" class="btn-property back-color-yellow red-font">Save & Continue</button>
         </center>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#ajax-pg-pro').click(function(e) {
+            e.preventDefault();
+            // console.log(".......available pg", +pg_avl);
+
+            var serverData ={"pg_for": $("input:radio[id=pgAvailable]:checked").val(),
+                             "pro_id": sessionStorage.getItem("pro_id"),
+                             "pro_type" : sessionStorage.getItem("pro_type"),
+                             "pg_room_type":$("input:radio[id=roomType]:checked").val(),
+                             "pg_available":$("input:radio[id=pgFor]:checked").val(),
+                             "floor_no":$("input:radio[id=floorNo]:checked").val(),
+                             "total_floor":$("input:radio[id=totalFloor]:checked").val(),
+                             "total_room":$('#total_rooms').val(),
+                             "get_close-time":$('#gate_time').val(),
+                             "avl_frm":$('#avl_frm').val(),
+                             "expected_rent":$('#exp_rent').val(),
+                             "food_included":$("input:radio[id=food]:checked").val(),
+                             "security_amt":$('#sec_amt').val(),
+                             "descr":$('#descr').val(),
+
+                                };
+                console.log(serverData);
+            
+            $.ajax ({
+                type:"POST",
+                url:"http://localhost:3000/post_pg_property",
+                data:serverData,
+                cache: false,
+                timeout: 5000,
+                complete: function() {
+                  //called when complete
+                  console.log('process complete');
+                },
+                success: function(res) {      
+                  console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                     window.location.href = "pg_amenities.php";
+               },
+                error: function() {
+                  console.log('Error In AJAX...');
+                },
+            });
+        });
+
+    });
+</script>

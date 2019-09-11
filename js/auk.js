@@ -16,17 +16,28 @@ function activeMenu(event) {
     var id = event.target.id;
     x = document.getElementById(id);
     var txt = "";
-  
     if ('files' in x) {
         if (x.files.length == " ") {
         txt = "Select one or more files.";
         } else {
+
         for (var i = 0; i < x.files.length; i++) {
             txt += "<br><strong>" + (i+1) + ". file</strong><br>";
             var file = x.files[i];
+            console.log("...............files", file);
             if ('name' in file) {
             txt += "name: " + file.name + "<br>";
             }
+            $.ajax ({
+              url: "http://localhost:3000/upload?type=pro",
+              type: 'POST',
+              data: file,
+              success: function(response) {console.log("sucess.....................");},
+              contentType: false,
+              processData: false,
+              cache: false
+      
+          });
         }
     }
   } 

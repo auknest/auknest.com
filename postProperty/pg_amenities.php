@@ -23,10 +23,10 @@
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="bathroom" value="bathradioyes" checked>Yes
+                        <input type="radio" id="bathroom" name="bathroom" value="yes" checked>Yes
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="bathroom" value="bathradiono">No
+                        <input type="radio" id="bathroom" name="bathroom" value="no">No
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="balcony" value="balconyradioyes" checked>Yes
+                        <input type="radio" id="bal" name="balcony" value="yes" checked>Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" name="balcony" value="balconyadiono">No
+                        <input type="radio" id="bal" name="balcony" value="no">No
                     </label>
                 </div>
             </div>
@@ -47,10 +47,10 @@
             <div class=""> <span class="blue-font bold-font">Common Area</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" name="area" value="arearadioyes" checked>Yes
+                        <input type="radio" id="area" name="area" value="yes" checked>Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="area" value="arearadiono">No
+                        <input type="radio" id="area" name="area" value="no">No
                     </label>
             </div>
             </div>
@@ -64,25 +64,25 @@
                     <div class="row black-border">
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input type="radio" name="parking" value="parkingradiobike" checked>Bike
+                            <input id="park" type="radio" name="parking" value="bike" checked>Bike
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradiocar">Car
+                            <input id="park" type="radio" name="parking" value="car">Car
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradiobikecar">Bike / Car both
+                            <input id="park" type="radio" name="parking" value="bikecar">Bike / Car both
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradionone">None
+                            <input id="park" type="radio" name="parking" value="none">None
                         </label>
                         </div>
                     </div>  
@@ -205,10 +205,10 @@
                     <div class="row black-border font-16 bold black">
                         <span style="padding-left:15px;">Guardian Stay  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="" checked>Yes
+                        <input type="radio" id="rule" name="guardian" value="yes" checked>Yes
                         </label>
                         <label class="radio-inline font-16 bold black">
-                        <input type="radio" name="guardian" value="">No
+                        <input type="radio" id="rule" name="guardian" value="no">No
                         </label>
                 
                      </div>
@@ -222,7 +222,47 @@
     </div>
     <div class="width-eighty m-auto">
         <center>
-          <button class="btn-property back-color-yellow red-font">Save & Continue</button>
+          <button id="ajax-pg-ame" class="btn-property back-color-yellow red-font">Save & Continue</button>
         </center>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#ajax-pg-ame').click(function(e) {
+            e.preventDefault();
+            console.log(".......available pg");
+
+            var serverData ={"att_bath": $("input:radio[id=bathroom]:checked").val(),
+                             "pro_id": sessionStorage.getItem("pro_id"),
+                             "pro_type" : sessionStorage.getItem("pro_type"),
+                             "att_bal":$("input:radio[id=bal]:checked").val(),
+                             "com_area":$("input:radio[id=area]:checked").val(),
+                             "parking":$("input:radio[id=park]:checked").val(),
+                             "pg_amenities":$("input:radio[id=totalFloor]:checked").val(),
+                             "gen_amenities":$('#total_rooms').val(),
+                             "pg_rules":$('#rule').val(),
+                                };
+                console.log(serverData);
+            
+            $.ajax ({
+                type:"POST",
+                url:"http://localhost:3000/post_pg_gallery",
+                data:serverData,
+                cache: false,
+                timeout: 5000,
+                complete: function() {
+                  //called when complete
+                  console.log('process complete');
+                },
+                success: function(res) {      
+                  console.log('Property pg amenities details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                     window.location.href = "pg_amenities.php";
+               },
+                error: function() {
+                  console.log('Error In AJAX...');
+                },
+            });
+        });
+
+    });
+</script>

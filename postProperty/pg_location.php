@@ -86,9 +86,10 @@ echo $_SESSION['pro_person'];
                   console.log('process complete');
                 },
                 success: function(res) {      
-                  console.log('Property person type Sucessfully inserted ...');
-        
-                     window.location.href = "pg_location.php";
+                  console.log('Property loaction Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    if(sessionStorage.getItem("pro_type") == 'pg') {
+                     window.location.href = "pg_property.php";
+                    }
                },
                 error: function() {
                   console.log('Error In AJAX...');
