@@ -97,10 +97,10 @@
 
                     <div class="black-border row">
                                         <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                            <input type="radio" id="nonVeg" name="food" value="yes" checked>Yes
+                                            <input type="radio" id="nonVeg" name="food" value="Yes" checked>Yes
                                         </div>
                                         <div class="radio-inline font-16 bold black col-lg-5">
-                                            <input type="radio" id="nonVeg" name="food" value="no">No
+                                            <input type="radio" id="nonVeg" name="food" value="No">No
                                         </div>
                     </div>
                 </div>
@@ -219,10 +219,10 @@
                     <div> <span class="blue-font bold-font">Rent & Security amount Negotiable</span></div>
                         <div class="black-border row">
                                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                                <input type="radio" id="amt_nogotiable" name="amount" value="yes" checked>Yes
+                                                <input type="radio" id="amt_nogotiable" name="amount" value="Yes" checked>Yes
                                             </div>
                                             <div class="radio-inline font-16 bold black col-lg-5">
-                                                <input type="radio" id="amt_nogotiable" name="amount" value="no">No
+                                                <input type="radio" id="amt_nogotiable" name="amount" value="No">No
                                             </div>
                         </div>      
                 </div>    
@@ -270,9 +270,8 @@
                              "avl_frm":$('#avl_frm').val(),
                              "amt_nogotiable":$('#amt_nogotiable').val(),
                              "maintainance":$('#maintainance').val(),
-                             "descr":$('#descr').val(),
-
-                                };
+                             "descr":$('#descr').val()
+                            };
                 console.log(serverData);
             
             $.ajax ({
