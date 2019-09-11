@@ -31,6 +31,7 @@ router.post('/', function(req, res) {
         "att_bal":req.body.att_bal,
         "com_area":req.body.com_area,
         "parking":req.body.parking,
+        "parking_type":req.body.park_type,
         "furnish":req.body.furnish,
         "flat_amenities":req.body.flat_amenities,
         "gen_amenities":req.body.gen_amenities,

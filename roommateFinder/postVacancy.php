@@ -36,10 +36,10 @@
     </div>
 </form>
 <?php
-   echo "<pre>"; 
-   print_r($_FILES['up_img']['name']); 
-   print(count($_FILES['up_img']['name']));
-   echo "</pre>"; 
+//    echo "<pre>"; 
+//    print_r($_FILES['up_img']['name']); 
+//    print(count($_FILES['up_img']['name']));
+//    echo "</pre>"; 
    ?> 
 <script>
 function validateForm() {

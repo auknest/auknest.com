@@ -77,29 +77,38 @@
 
 <!-- Login Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none;" id="login">
+
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8 pd-5per" style="background: rgba(255,255,255,0.8);height:300px;">
-        <form name="loginForm">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="row">
+        <button type="button" onclick="closeform()" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>   
+    </div>
+    <form name="loginForm">
+       
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
             <div class="form-group name-group">
                 <div class="palceholder">
                     <label for="name">USERNAME / EMAIL</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black" id="name" required>
+                <input type="text" class="form-control back-color-black white-font" id="name" required>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
             <div class="form-group email-group">
                 <div class="palceholder">
                     <label for="password">PASSWORD</label>
                     <span class="star">*</span>
                 </div>
-                <input type="password" class="form-control back-color-black bold" id="password" required>
+                <input type="password" class="form-control back-color-black bold white-font" id="password" required>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <span class="bold" style="float:right"><a onclick="showSignup()">NEW USER LOGIN</a></span>
+            </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <span class="bold"><a>FORGET PASSWORD?</a></span>
             </div>
@@ -113,16 +122,22 @@
 </div>
 <!-- Sign Up Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none;" id="signup">
+
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8 pd-5per" style="background: rgba(255,255,255,0.8);height:300px;">
-        <form name="signupForm">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+        <div class="row">
+            <button  onclick="closeform()" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>   
+        </div>   
+    <form class="signupForm" action="javascript:otpsuccess()" class="pd-5per"> 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group name-group">
                 <div class="palceholder">
                     <label for="name">NAME</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black" id="name" required>
+                <input type="text" class="form-control back-color-black white-font" id="name" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -131,7 +146,7 @@
                     <label for="phone">PHONE</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black bold" id="phone" required>
+                <input type="text" class="form-control back-color-black bold white-font" id="phone" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -140,7 +155,7 @@
                     <label for="email">EMAIL</label>
                     <span class="star">*</span>
                 </div>
-                <input type="email" class="form-control back-color-black" id="email" required>
+                <input type="email" class="form-control back-color-black white-font" id="email" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -149,14 +164,14 @@
                     <label for="password">PASSWORD</label>
                     <span class="star">*</span>
                 </div>
-                <input type="password" class="form-control back-color-black bold" id="password" required>
+                <input type="password" class="form-control back-color-black bold white-font" id="password" required>
             </div>
         </div>
         <div class="row center">
             <span class="bold">By clicking below, you agree to <a class="pointer">Terms & Conditions</a></span>
         </div><br>
         <div class="row center " >
-            <button type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
+            <button id="signup" name="Submit" value="Submit"  type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
         </div>
       </form>
     </div>
@@ -164,20 +179,26 @@
 </div>
 
 <!-- OTP Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none;" id="signup">
+<div class="row w-100per"style="position:absolute; top:300px; display:none;" id="otp">
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8 pd-5per" style="background: rgba(255,255,255,0.8);height:300px;">
-        <form name="signupForm">
+    <div class="col-sm-8 col-md-8 col-lg-8 " style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="row">
+                    <button  onclick="closeform()" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>   
+                </div>      
+    <form name="signupForm">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
+               
                 <div class="form-group">
                     <div class="palceholder">
                         <label for="otp">OTP</label>
                     </div>
-                    <input type="text" class="form-control back-color-black" id="otp" required>
+                    <input type="text" class="form-control back-color-black white-font" id="otp" required>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
                 <div class="form-group">
                     <button type="submit" class="btn w-100per back-color-blue white-font bold">VERIFY</button>
                 </div>

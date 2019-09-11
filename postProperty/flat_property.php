@@ -255,7 +255,7 @@
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);
 
-            var serverData ={"flat_for": $("input:radio[id=flatAvailable]:checked").val(),
+            var serverData ={"flat_type": $("input:radio[id=flatAvailable]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
                              "pro_type" : sessionStorage.getItem("pro_type"),
                              "flat_room_type":$("input:radio[id=roomType]:checked").val(),
@@ -287,7 +287,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                     window.location.href = "pg_amenities.php";
+                     window.location.href = "flat_aminities.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');

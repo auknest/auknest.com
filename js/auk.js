@@ -66,4 +66,31 @@ $(document).ready(function(){
       $(this).siblings('.palceholder').show();
   });
   $('.form-control').blur();
+  //Signup page redirection to otp page
+  $('#signupForm').on("submit",function(){
+    console.log("..............");
+      // $('#otp').show();
+  });
+
 });
+
+//Login btn redirection to login page.
+function showLogin() {
+  $('#login').show();
+}
+//Signup page redirection to otp page.
+function showSignup() {
+  $('#login').hide();
+  $('#signup').show();
+}
+//Close The signup logi window
+function closeform() {
+  $('#login').hide();
+ $('#signup').hide(); 
+  $('#otp').hide();
+}
+
+function otpsuccess() {
+  $('#signup').hide();
+  $("#otp").show();
+}

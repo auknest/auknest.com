@@ -291,7 +291,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg amenities details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                    //  window.location.href = "pg_amenities.php";
+                     window.location.href = "pg_gallery.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');

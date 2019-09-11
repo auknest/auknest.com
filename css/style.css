@@ -43,7 +43,7 @@ width:40%;
     font-weight: bold;
 }
 .white-font {
-    color:white;
+    color:white !important;
 }
 .blue-font{
     color: #00517e;

@@ -90,6 +90,9 @@ echo $_SESSION['pro_person'];
                     if(sessionStorage.getItem("pro_type") == 'pg') {
                      window.location.href = "pg_property.php";
                     }
+                    if(sessionStorage.getItem("pro_type") == 'flat') {
+                     window.location.href = "flat_property.php";
+                    }
                },
                 error: function() {
                   console.log('Error In AJAX...');
