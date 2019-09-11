@@ -120,7 +120,7 @@
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Wifi
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="col-md-2 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Center Table
                 </label>
                 
@@ -152,7 +152,7 @@
             <br>
              <!-- Third row -->
              <div class="row black-border">
-             <label class="col-md-4 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
+             <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
                 <input type="checkbox" value="">Gas(Cooking Allowed)
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
@@ -170,7 +170,7 @@
         <br>
         <!-- Option for general amenities -->
         <div class="row ">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11">
         <div> <span class="blue-font bold-font">General & Safety Amenities (Had to tick the available amenities) </span>
         <br>
             <!-- First row -->

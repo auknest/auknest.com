@@ -163,7 +163,7 @@
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Wifi
                 </label>
-                <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="col-md-2 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Center Table
                 </label>
                 
@@ -224,10 +224,10 @@
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Cctv
                 </label>
-                <label class="col-md-5 col-lg-4 checkbox-inline font-16 bold black">
+                <label class="col-md-5 col-lg-5 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Power Backup (For Common Area)
                 </label>
-                <label class="col-md-3 col-lg-2 checkbox-inline font-16 bold black">
+                <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Security guard
                 </label>     
             </div>
