@@ -23,10 +23,10 @@
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="bathroom" value="bathradioyes" checked>Yes
+                        <input type="radio" id="bathroom" name="bathroom" value="bathradioyes" checked>Yes
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="bathroom" value="bathradiono">No
+                        <input type="radio" id="bathroom" name="bathroom" value="bathradiono">No
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" name="balcony" value="balconyradioyes" checked>Yes
+                        <input type="radio" id="bal" name="balcony" value="balconyradioyes" checked>Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" name="balcony" value="balconyadiono">No
+                        <input type="radio" id="bal" name="balcony" value="balconyadiono">No
                     </label>
                 </div>
             </div>
@@ -48,13 +48,13 @@
                     <br>
                     <div class="black-border row ">
                     <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 radio-inline font-16 bold black pd-l-30px">
-                        <input type="radio" name="wsupply" value="" checked>Corporation
+                        <input type="radio" id="area" name="wsupply" value="" checked>Corporation
                     </label>
                     <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
-                        <input type="radio" name="wsupply" value="">Borewell
+                        <input type="radio" id="area" name="wsupply" value="">Borewell
                     </label>
                     <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
-                        <input type="radio" name="wsupply" value="">Both
+                        <input type="radio" id="area" name="wsupply" value="">Both
                     </label>
                     </div>
             </div>
@@ -69,34 +69,34 @@
                     <div class="row">
                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 black-border" style="margin-right:10px">
                             <label class="radio-inline font-16 bold black pd-l-30px">
-                                <input type="radio" name="parkingType" value="" checked>Covered
+                                <input type="radio" id="park" name="parkingType" value="" checked>Covered
                             </label>
                             <label class="radio-inline font-16 bold black ">
-                                <input type="radio" name="parkingType" value="" >Open
+                                <input type="radio" id="park" name="parkingType" value="" >Open
                             </label>
                         </div>
                         <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8 black-border">
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                             <label class="radio-inline font-16 bold black ">
-                                <input type="radio" name="parking" value="parkingradiobike" checked>Bike
+                                <input type="radio" id="park" name="parking" value="parkingradiobike" checked>Bike
                             </label>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
                             <label class="radio-inline font-16 bold black">
-                                <input type="radio" name="parking" value="parkingradiocar">Car
+                                <input type="radio" id="park" name="parking" value="parkingradiocar">Car
                             </label>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                             <label class="radio-inline font-16 bold black">
-                                <input type="radio" name="parking" value="parkingradiobikecar">Bike / Car both
+                                <input type="radio" id="park" name="parking" value="parkingradiobikecar">Bike / Car both
                             </label>
                             </div>
 
                             <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
                             <label class="radio-inline font-16 bold black">
-                                <input type="radio" name="parking" value="parkingradionone">None
+                                <input type="radio" id="park" name="parking" value="parkingradionone">None
                             </label>
                             </div>
                         </div>
@@ -113,19 +113,19 @@
                     <div class="row black-border">
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input type="radio" name="furnish" value="" checked>Fully Furnished
+                            <input type="radio" id="furnish" name="furnish" value="" checked>Fully Furnished
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="furnish" value="">Semi Furnished
+                            <input type="radio" id="furnish" name="furnish" value="">Semi Furnished
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" name="parking" value="parkingradiobikecar">Un Furnished
+                            <input type="radio" id="furnish" name="parking" value="parkingradiobikecar">Un Furnished
                         </label>
                         </div>
                     </div>  
@@ -240,7 +240,46 @@
     </div>
     <div class="width-eighty m-auto">
         <center>
-          <button class="btn-property back-color-yellow red-font">Save & Continue</button>
+          <button id ="ajax-flat-ame" class="btn-property back-color-yellow red-font">Save & Continue</button>
         </center>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#ajax-flat-ame').click(function(e) {
+            e.preventDefault();
+            console.log(".......available flat");
+
+            var serverData ={"att_bath": $("input:radio[id=bathroom]:checked").val(),
+                             "pro_id": sessionStorage.getItem("pro_id"),
+                             "pro_type" : sessionStorage.getItem("pro_type"),
+                             "att_bal":$("input:radio[id=bal]:checked").val(),
+                             "com_area":$("input:radio[id=area]:checked").val(),
+                             "parking":$("input:radio[id=park]:checked").val(),
+                             "furnish":$("input:radio[id=furnish]:checked").val(),
+                             "flat_amenities":$("input:radio[id=totalFloor]:checked").val(),
+                                };
+                console.log(serverData);
+            
+            $.ajax ({
+                type:"POST",
+                url:"http://localhost:3000/post_pg_amenities",
+                data:serverData,
+                cache: false,
+                timeout: 5000,
+                complete: function() {
+                  //called when complete
+                  console.log('process complete');
+                },
+                success: function(res) {      
+                  console.log('Property pg amenities details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                     window.location.href = "pg_amenities.php";
+               },
+                error: function() {
+                  console.log('Error In AJAX...');
+                },
+            });
+        });
+
+    });
+</script>

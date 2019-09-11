@@ -10,24 +10,38 @@ router.use(function(req, res, next) {
   });
 
 router.post('/', function(req, res) {
-    var values ={   "att_bath": req.body.att_bath,
-                    "att_bal":req.body.att_bal,
-                    "com_area":req.body.com_area,
-                    "parking":req.body.parking,
-                    "pg_amenities":req.body.pg_amenities,
-                    "gen_amenities":req.body.gen_amenities,
-                    "pg_rules":req.body.pg_rules,
-                 };
+    var table, values;
+   
     var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
-
-    var sql = "UPDATE pgdetails SET ? "+cond;
+    if (req.body.pro_type =="pg") {
+      table = "pgdetails";  
+      values ={   "att_bath": req.body.att_bath,
+      "att_bal":req.body.att_bal,
+      "com_area":req.body.com_area,
+      "parking":req.body.parking,
+      "pg_amenities":req.body.pg_amenities,
+      "gen_amenities":req.body.gen_amenities,
+      "pg_rules":req.body.pg_rules,
+   };
+    }
+    if (req.body.pro_type =="flat") {
+        table = "flatdetails";  
+        values ={   "att_bath": req.body.att_bath,
+        "att_bal":req.body.att_bal,
+        "com_area":req.body.com_area,
+        "parking":req.body.parking,
+        "furnish":req.body.furnish,
+        "flat_amenities":req.body.flat_amenities,
+     };
+    }
+    var sql = "UPDATE "+table+" SET ? "+cond;
     console.log("sql.......", sql);
     con.query(sql, values, function(error, results, fields) {
         if(error) {
-            console.log("Failed to insert the Pg aminities property details", error)
+            console.log("Failed to insert the Pg / flat aminities property details", error)
         }
         else {
-            console.log("Data inserted into table Pg aminities property details api sucessfully...");
+            console.log("Data inserted into table Pg / flat aminities property details api sucessfully...");
              res.end();
        }
         

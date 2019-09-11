@@ -35,7 +35,7 @@
         formData1.append("username", "Groucho");
         console.log("form data.............", formData1);
         $.ajax({
-            url: "http://localhost:3000/upload?type=pro",
+            url: "http://localhost:3000/upload",
             type: 'POST',
             data: formData1,
             success: function(response) {console.log(response);},

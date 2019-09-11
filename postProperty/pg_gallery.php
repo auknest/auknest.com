@@ -86,30 +86,7 @@
         
  </script>
 <script>
-    var formData1;
-
-        $("#profile").on("change", function(formData) {
-               formData1 = new formData();
-                return formData1;
-        });
-
-        // var formData1 = new FormData(formData[0]);    
-        // formData1.append("username", "Groucho");
-        console.log("form data.............", formData1);
-
-    $("#profile").on("change", function() {
-        var val = "Hi";
-        $.ajax ({
-            url: "http://localhost:3000/upload?type=pro",
-            type: 'POST',
-            data: formData1,
-            success: function(response) {console.log("sucess.....................");},
-            contentType: false,
-            processData: false,
-            cache: false
-
-        });
-    });
+   
             // success: function(response) {console.log(response);},
 
 </script>

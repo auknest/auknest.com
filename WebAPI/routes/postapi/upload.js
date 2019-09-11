@@ -10,7 +10,9 @@ router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
- 
+  
+//Need variable to categories images like a.jpg, b.jpg ... are the hall images.
+
 router.post('/', upload.array('profile', 2), function (req, res, next) {
     var parm=req.query;
 

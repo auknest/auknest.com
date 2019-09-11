@@ -10,12 +10,18 @@ router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
- 
-router.post('/', upload.array('avtar1', 2), function (req, res, next) {
+  
+//Need variable to categories images like a.jpg, b.jpg ... are the hall images.
+
+router.post('/', upload.array('profile', 2), function (req, res, next) {
+    var parm=req.query;
+
     console.log("avtar file......", req.body);
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
+    res.end();
   });
+ 
 // router.post('/', function(req, res) {
 
 
