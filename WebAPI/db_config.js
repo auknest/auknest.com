@@ -1,15 +1,15 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  // host: "185.224.138.152",
-  // user: "u344703846_root",
-  // password: "root123",
-  // database: "u344703846_volta",
+  host: "185.224.138.152",
+  user: "u344703846_root",
+  password: "root123",
+  database: "u344703846_volta",
 
-  host:'localhost',
-  user:'root',
-  password:"",
-  database:"e",
+  // host:'localhost',
+  // user:'root',
+  // password:"",
+  // database:"e",
 });
 con.connect(function(err) {
     if (err) throw err;

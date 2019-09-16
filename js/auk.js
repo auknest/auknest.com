@@ -67,9 +67,10 @@ $(document).ready(function(){
   });
   $('.form-control').blur();
   //Signup page redirection to otp page
-  $('#signupForm').on("submit",function(){
+  $('#ajax-sendotp').on("submit",function(){
     console.log("..............");
-      // $('#otp').show();
+    $('#signup').hide();
+      $('#otp').show();
   });
 
 });

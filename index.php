@@ -121,7 +121,7 @@
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
 </div>
 <!-- Sign Up Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none;" id="signup">
+<div class="row w-100per"style="position:absolute; top:300px; display:none" id="signup">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
@@ -171,7 +171,7 @@
             <span class="bold">By clicking below, you agree to <a class="pointer">Terms & Conditions</a></span>
         </div><br>
         <div class="row center " >
-            <button id="signup" name="Submit" value="Submit"  type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
+            <button id="ajax-sendotp" name="Submit" value="submit"  type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
         </div>
       </form>
     </div>
@@ -179,46 +179,46 @@
 </div>
 
 <!-- OTP Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none;" id="otp">
+<div class="row w-100per"style="position:absolute; top:300px; display:none" id="otp">
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8 " style="background: rgba(255,255,255,0.8);height:300px;">
-    <div class="row">
-                    <button  onclick="closeform()" type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>   
-                </div>      
-    <form name="signupForm">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
-               
-                <div class="form-group">
-                    <div class="palceholder">
-                        <label for="otp">OTP</label>
+                        <button  onclick="closeform()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>   
+        </div>      
+        <form action="" method="POST">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
+                
+                    <div class="">
+                        <div class="palceholder">
+                            <label for="otplbl">OTP</label>
+                        </div>
+                        <input type="text" class="form-control back-color-black white-font" id="otptxt" required>
                     </div>
-                    <input type="text" class="form-control back-color-black white-font" id="otp" required>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
+                    <div class="form-group">
+                        <button type="submit" id="ajax-verify" class="btn w-100per back-color-blue white-font bold">VERIFY</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
-                <div class="form-group">
-                    <button type="submit" class="btn w-100per back-color-blue white-font bold">VERIFY</button>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <span class="bold pointer"><a>RESEND OTP</a></span>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <span class="bold pointer"><a>RESEND OTP</a></span>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
+                </div>
             </div>
-        </div>
-        <div class="row center">
-            <span class="bold">OR</a></span>
-        </div><br>
-        <div class="row center " >
-            <label type="text" class="form-control email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
-        </div>
-      </form>
+            <div class="row center">
+                <span class="bold">OR</a></span>
+            </div><br>
+            <div class="row center " >
+                <label type="text" class="form-control email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
+            </div>
+        </form>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
 </div>
@@ -498,7 +498,67 @@ $(document).ready(function(){
       navigationText:["",""],
       autoPlay:true
   });
+
+  $('#ajax-sendotp').click(function(e) {
+    $('#otp').show();
+    e.preventDefault();
+
+    $(".error").html("").hide();
+        $(".success").html("").hide();
+        var mobile_number = $("#phone").val();
+        var input = {
+            "mobile_number" : mobile_number,
+            "action" : "send_otp"
+        };
+        console.log("send otp input....", input);
+		$.ajax({
+			url : './controller.php',
+			type : 'POST',
+			data : input,
+			success : function(response) {
+
+                $(".container").html(response);
+                console.log('Sucess In AJAX...');
+
+            },
+            error: function() {
+                  console.log('Error In AJAX...');
+                }, 
+		});
+  });
+
+  $('#ajax-verify').click(function(e) {
+            e.preventDefault();
+            console.log("within verify otp function.........");
+        	$(".error").html("").hide();
+	
+		var input = {
+			"otp" : $("#otptxt").val(),
+			"action" : "verify_otp"
+        };
+        
+        console.log("mobile number....", input);
+		$.ajax({
+			url : './controller.php',
+			type : 'POST',
+			data : input,
+			success : function(response) {
+            $('#profileinfo').show();
+            $('#loginbtn').hide();
+            $('#signup').hide();
+            $('#otp').hide();
+
+                console.log('Sucess In AJAX...');
+
+            },
+            error: function() {
+                  console.log('Error In AJAX...');
+                }, 
+        });
+    });
 });
+
+
 </script>
 
         

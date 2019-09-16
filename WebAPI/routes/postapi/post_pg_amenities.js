@@ -46,6 +46,7 @@ router.post('/', function(req, res) {
         }
         else {
             console.log("Data inserted into table Pg / flat aminities property details api sucessfully...");
+            con.release();
              res.end();
        }
         

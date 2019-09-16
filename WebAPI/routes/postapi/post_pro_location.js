@@ -30,6 +30,7 @@ router.use(function(req, res, next) {
             }
             else {
                  console.log("Data inserted into table property location api sucessfully...");
+                 con.release();
                   res.end();
             }
         });

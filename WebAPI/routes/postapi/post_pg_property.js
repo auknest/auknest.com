@@ -48,6 +48,7 @@ router.post('/', function(req, res) {
         }
         else {
             console.log("Data inserted into table Pg property details api sucessfully...");
+            con.release();
              res.end();
        }
         

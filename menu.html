@@ -26,7 +26,14 @@
 <div class="yellow_header" >
     <div style="float: right; display:flex;" >
        <p class="mb-15 pd-l-1 txt-white"> Find out <span style="color:blue"> What's new</span> </p>
-        <button class= "mb-7 "style=" width: 200px ;height: 50px;" onclick="showLogin()">SignIn</button>
+        <div id="loginbtn">
+          <button class= "mb-7 "style=" width: 200px ;height: 50px;" onclick="showLogin()">SignIn</button>
+        </div>
+        <div id="profileinfo" style="display:none">
+          <img class="mb-7 pd-l-1" style="border-radius:50%;height:40px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">
+          <p style="float:right" class ="mb-7 pd-l-1" id="profilename"> ABC </p>
+        </div>
+
        <!-- <select class= "mb-7 "style=" width: 200px ;height: 50px;">
         <option>Sign in</option>
          <option>Sign out</option>

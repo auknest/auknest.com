@@ -24,6 +24,8 @@ router.post('/',(req, res) => {
                 else {
                      console.log("Data inserted into table property sucessfully...");
                       res.end();
+                    //   con.release();
+
 
                 }
             });
@@ -33,6 +35,7 @@ router.post('/',(req, res) => {
             console.log("within  catche");
             console.log(Exception);
     } 
+    con.relese();
 res.end();
 });
 module.exports=router;
