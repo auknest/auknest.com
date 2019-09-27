@@ -107,10 +107,10 @@
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <span class="bold" style="float:right"><a onclick="showSignup()">NEW USER LOGIN</a></span>
+                <span class="bold" style="float:right"><a href="#" onclick="showSignup()">NEW USER LOGIN</a></span>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <span class="bold"><a>FORGET PASSWORD?</a></span>
+                <span class="bold"><a href="#" onclick="forgotPass()">FORGET PASSWORD?</a></span>
             </div>
         </div><br>
         <div class="row center " >
@@ -130,14 +130,14 @@
             <span aria-hidden="true">&times;</span>
             </button>   
         </div>   
-    <form class="signupForm" action="javascript:otpsuccess()" class="pd-5per"> 
+    <form class="signupForm" id="signupForm" name="signupForm" action="javascript:otpsuccess()" class="pd-5per"> 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group name-group">
                 <div class="palceholder">
                     <label for="name">NAME</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black white-font" id="name" required>
+                <input type="text" class="form-control back-color-black white-font" id="uname" name="uname" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -146,7 +146,7 @@
                     <label for="phone">PHONE</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black bold white-font" id="phone" required>
+                <input type="text" class="form-control back-color-black bold white-font" id="phone" name="phone" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -155,7 +155,7 @@
                     <label for="email">EMAIL</label>
                     <span class="star">*</span>
                 </div>
-                <input type="email" class="form-control back-color-black white-font" id="email" required>
+                <input type="email" class="form-control back-color-black white-font" id="email" name="email" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -164,17 +164,91 @@
                     <label for="password">PASSWORD</label>
                     <span class="star">*</span>
                 </div>
-                <input type="password" class="form-control back-color-black bold white-font" id="password" required>
+                <input type="password" class="form-control back-color-black bold white-font" id="upassword" name="upassword" required>
             </div>
         </div>
         <div class="row center">
             <span class="bold">By clicking below, you agree to <a class="pointer">Terms & Conditions</a></span>
         </div><br>
         <div class="row center " >
-            <button id="ajax-sendotp" name="Submit" value="submit"  type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
+            <button id="ajax-sendotp" name="Submit" type="submit" class="btn w-20per back-color-blue white-font bold">SIGN UP NOW</button>
         </div>
       </form>
     </div>
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+</div>
+
+<!--Forgot Password Section-->
+<div class="row w-100per"style="position:absolute; display:none; top:300px;" id="forgot">
+
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="row">
+        <button type="button" onclick="closeform()" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>   
+    </div>
+    <form name="forgotPassword" id="forgotPassword" action="" metod="POST">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pd-5per ">
+            <div class="form-group name-group">
+                <div class="palceholder">
+                    <label for="name">Enter your EMAIL</label>
+                    <span class="star">*</span>
+                </div>
+                <input type="email" class="form-control back-color-black white-font" id="femail" name="femail"  required>
+            </div>
+        </div>
+        <div class="row center " >
+            <button type="submit" id="ajax-forgotPass" class="btn w-20per back-color-blue white-font bold">Submit</button>
+        </div>
+      </form> <br>
+      <div class="row center">
+            <label type="text" id="resetPass" class="form-control email-link" style="color:red; display:none;">"RESET PASSWORD LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO RESET YOUR PASSWORD" </label>
+        </div>   
+    </div>
+    
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+</div>
+
+<!--Change Password-->
+
+<div class="row w-100per"style="position:absolute; display:none; top:300px;" id="changePass">
+
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="row">
+        <button type="button" onclick="closeform()" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>   
+    </div>
+    <form name="changePassword" id="changePassword" action="" metod="POST">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per ">
+            <div class="form-group name-group">
+                <!--<div class="palceholder">-->
+                <!--    <label for="name">Enter your EMAIL</label>-->
+                <!--    <span class="star">*</span>-->
+                <!--</div>-->
+                <input type="email" class="form-control back-color-black white-font" id="cpemail" name="cpemail" readonly>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per ">
+            <div class="form-group name-group">
+                <div class="palceholder">
+                    <label for="name">New Password</label>
+                    <span class="star">*</span>
+                </div>
+                <input type="password" class="form-control back-color-black white-font" id="cpassword" name="cpassword" required>
+            </div>
+        </div>
+        <div class="row center " >
+            <button type="submit" id="ajax-changePass" class="btn w-20per back-color-blue white-font bold">Submit</button>
+        </div>
+      </form> <br>
+      <div class="row center">
+            <label type="text" id="passChange" class="form-control email-link" style="color:red; display:none;">"YOUR PASSWORD HAS BEEN CHANGED, PLEASE LOGIN WITH NEW PASSWORD!" </label>
+        </div>   
+    </div>
+    
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
 </div>
 
@@ -187,7 +261,7 @@
                         <span aria-hidden="true">&times;</span>
                         </button>   
         </div>      
-        <form action="" method="POST">
+        <form name="verifyOtpForm" id"verifyOtpForm" action="" method="POST">
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
                 
@@ -195,7 +269,7 @@
                         <div class="palceholder">
                             <label for="otplbl">OTP</label>
                         </div>
-                        <input type="text" class="form-control back-color-black white-font" id="otptxt" required>
+                        <input type="text" class="form-control back-color-black white-font" id="otptxt" name="otptxt" required>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
@@ -216,7 +290,7 @@
                 <span class="bold">OR</a></span>
             </div><br>
             <div class="row center " >
-                <label type="text" class="form-control email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
+                <label type="text" id="verifyMsg" class="form-control email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
             </div>
         </form>
     </div>
@@ -486,8 +560,29 @@
         </div>
     </div>
 </div>
+
 <script>
 $(document).ready(function(){
+    //login Profile 
+    <?php $passkey=$_GET['confirm_code'];?>
+    
+    var passkey= "<?php echo $passkey ?>";
+    // console.log(passkey);
+    if(passkey!='')
+        {
+            $('#profileinfo').show();
+            $('#loginbtn').hide();
+        }
+    //Password Change window
+    <?php $email=$_GET['email'];?>
+    
+    var email= "<?php echo $email ?>";
+    // console.log(email);
+    if(email!='')
+        {
+            $('#changePass').show();
+            $('#cpemail').val(email);
+        }
   $("#testimonial-slider").owlCarousel({
       items:1,
       itemsDesktop:[1000,1],
@@ -498,17 +593,35 @@ $(document).ready(function(){
       navigationText:["",""],
       autoPlay:true
   });
+});
+  // just for the demos, avoids form submit
+  
+    jQuery.validator.setDefaults({
+      debug: true,
+      success: "valid"
+    });
+// SEND OTP 
+var form3 = $( "#signupForm" );
+form3.validate();
+$( "#ajax-sendotp" ).click(function(e) {
+  if(form3.valid()==true){
 
-  $('#ajax-sendotp').click(function(e) {
     $('#otp').show();
+    $('#signup').hide();
     e.preventDefault();
 
     $(".error").html("").hide();
         $(".success").html("").hide();
         var mobile_number = $("#phone").val();
+        var email= $("#email").val();
+        var name= $("#uname").val();
+        var password= $("#upassword").val();
         var input = {
             "mobile_number" : mobile_number,
-            "action" : "send_otp"
+            "action" : "send_otp",
+            "email" : email,
+            "name" : name,
+            "password" :password
         };
         console.log("send otp input....", input);
 		$.ajax({
@@ -523,11 +636,16 @@ $(document).ready(function(){
             },
             error: function() {
                   console.log('Error In AJAX...');
-                }, 
+                },
 		});
-  });
-
-  $('#ajax-verify').click(function(e) {
+    }
+});
+  
+//MOBILE OTP VERIFICATION
+var form2 = $( "#verifyOtpForm" );
+form2.validate();
+$( "#ajax-verify" ).click(function(e) {
+  if(form2.valid()==true){
             e.preventDefault();
             console.log("within verify otp function.........");
         	$(".error").html("").hide();
@@ -555,7 +673,73 @@ $(document).ready(function(){
                   console.log('Error In AJAX...');
                 }, 
         });
-    });
+    }
+});
+
+//   Forgot Password
+
+var form = $( "#forgotPassword" );
+form.validate();
+$( "#ajax-forgotPass" ).click(function(e) {
+  if(form.valid()==true){
+  e.preventDefault();
+            console.log("within Reset Password function.........");
+        	$(".error").html("").hide();
+	
+		var input = {
+			"email" : $("#femail").val()
+        };
+        $.ajax({
+			url : 'https://innolution.in/nest/auknest.com/auknest.com/resetPass.php',
+			type : 'POST',
+			data : input,
+			success : function(response) {
+			    $("#resetPass").show();
+			    $(".container").html(response);
+                console.log("Within Reset Password Success function.........");
+                console.log('Sucess In AJAX...');
+                // $("#forgot").hide();
+
+            },
+            error: function() {
+                  console.log('Error In AJAX...');
+                },
+		});
+    }
+});
+  
+//  CHANGE PASSWORD
+var form1 = $( "#changePassword" );
+form1.validate();
+$( "#ajax-changePass" ).click(function(e) {
+  if(form1.valid()==true){
+
+            e.preventDefault();
+            console.log("within Change Password function.........");
+        	$(".error").html("").hide();
+	
+		var input = {
+			"email" : $("#cpemail").val(),
+			"password":$('#cpassword').val()
+        };
+        $.ajax({
+			url : 'https://innolution.in/nest/auknest.com/auknest.com/changePass.php',
+			type : 'POST',
+			data : input,
+			success : function(response) {
+			    $("#passChange").show();
+			    $(".container").html(response);
+                console.log("Within Change Password Success function.........");
+                console.log('Sucess In AJAX...');
+                // $("#forgot").hide();
+
+            },
+            error: function() {
+                  console.log('Error In AJAX...');
+                },
+		});
+  
+    }
 });
 
 

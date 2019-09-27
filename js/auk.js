@@ -84,13 +84,19 @@ function showSignup() {
   $('#login').hide();
   $('#signup').show();
 }
-//Close The signup logi window
+//Close The signup login otp forgot window
 function closeform() {
   $('#login').hide();
- $('#signup').hide(); 
+  $('#signup').hide();
+  $('#forgot').hide();
   $('#otp').hide();
+  $('#changePass').hide();
 }
-
+function forgotPass(){
+    $('#login').hide();
+   	$("#forgot").show();
+   	
+}
 function otpsuccess() {
   $('#signup').hide();
   $("#otp").show();
