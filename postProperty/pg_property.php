@@ -71,10 +71,10 @@
                     <div class=""> <span class="blue-font bold-font">PG Available for</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px font-16 bold black col-lg-5">
-                                <input type="radio" id="pgFor" name="pgFor" value="stud" checked>Student
+                                <input type="radio" id="pgFor" name="pgFor" value="Student" checked>Student
                             </div>
                             <div class="radio-inline col-lg-6 font-16 bold black">
-                                <input type="radio" id="pgFor" name="pgFor" value="prof">Working Professional
+                                <input type="radio" id="pgFor" name="pgFor" value="Working Professional">Working Professional
                             </div>
                         </div>
              </div>
@@ -194,10 +194,10 @@
                 <div class=""> <span class="blue-font bold-font">Food include</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                <input type="radio" id="food" name="food" value="yes" checked>Yes
+                                <input type="radio" id="food" name="food" value="Yes" checked>Yes
                             </div>
                             <div class="radio-inline font-16 bold black col-lg-5">
-                                <input type="radio" id="food" name="food" value="no">No
+                                <input type="radio" id="food" name="food" value="No">No
                             </div>
                         </div>
             </div>

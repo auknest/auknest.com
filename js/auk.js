@@ -28,16 +28,16 @@ function activeMenu(event) {
             if ('name' in file) {
             txt += "name: " + file.name + "<br>";
             }
-            $.ajax ({
-              url: "http://localhost:3000/upload?type=pro",
-              type: 'POST',
-              data: file,
-              success: function(response) {console.log("sucess.....................");},
-              contentType: false,
-              processData: false,
-              cache: false
+          //   $.ajax ({
+          //     url: "http://localhost:3000/upload?type=pro",
+          //     type: 'POST',
+          //     data: file,
+          //     success: function(response) {console.log("sucess.....................");},
+          //     contentType: false,
+          //     processData: false,
+          //     cache: false
       
-          });
+          // });
         }
     }
   } 

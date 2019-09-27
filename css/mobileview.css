@@ -56,4 +56,11 @@ margin: 0px 10px;
 .email-link{
   font-size:12px !important;
 }
+.popup {
+  width:90%;
+}
+.popupbtn {
+  width:150px;
+  height:50px;
+}
 }

@@ -100,28 +100,28 @@
                 
                 
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">TV
+                <input type="checkbox" id="amn" value="TV">TV
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">DTH
+                <input type="checkbox" id="amn" value="DTH">DTH
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Sofa
+                <input type="checkbox" id="amn" value="Sofa">Sofa
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Geizer
+                <input type="checkbox" id="amn" value="Geizer">Geizer
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Bed
+                <input type="checkbox" id="amn" value="Bed">Bed
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Locker
+                <input type="checkbox" id="amn" value="Locker">Locker
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Wifi
+                <input type="checkbox" id="amn" value="Wifi">Wifi
                 </label>
                 <label class="col-md-2 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Center Table
+                <input type="checkbox" id="amn" value="Center Table">Center Table
                 </label>
                 
                
@@ -131,19 +131,19 @@
             <div class="row black-border">
                
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">AC
+                <input type="checkbox" id="amn" value="AC">AC
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Freeze
+                <input type="checkbox" value="Freeze">Freeze
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Drinking Water
+                <input type="checkbox" id="amn" value="Drinking Water">Drinking Water
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Room Cleaning
+                <input type="checkbox" id="amn" value="Room cleaning">Room Cleaning
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Washing Machine
+                <input type="checkbox" id="amn" value="Washing Machine">Washing Machine
                 </label>
                 
                 
@@ -153,13 +153,13 @@
              <!-- Third row -->
              <div class="row black-border">
              <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">Gas(Cooking Allowed)
+                <input type="checkbox" id="amn" value="Gas(Cooking Allowed)">Gas(Cooking Allowed)
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Cooler
+                <input type="checkbox" id="amn" value="Cooler">Cooler
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Shoerack
+                <input type="checkbox" id="amn" value="Shoerack">Shoerack
                 </label>
                 <!-- <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" value="">Room Cleaning
@@ -176,22 +176,22 @@
             <!-- First row -->
             <div class="row black-border">
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" value="">Lift
+                <input type="checkbox" id="gen" value="Lift">Lift
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Cctv
+                <input type="checkbox" id="gen" value="Cctv">Cctv
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Power Backup
+                <input type="checkbox" id="gen" value="Power Backup">Power Backup
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Caretakes
+                <input type="checkbox" id="gen" value="Caretakes">Caretakes
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Water supply 
+                <input type="checkbox" id="gen" value="Water supply">Water supply 
                 </label>
                 <label class="col-md-3 col-lg-2 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="">Security guard
+                <input type="checkbox" id="gen" value="Security guard">Security guard
                 </label>     
             </div>
         </div>
@@ -231,6 +231,19 @@
         $('#ajax-pg-ame').click(function(e) {
             e.preventDefault();
             console.log(".......available pg");
+            var pg_ame= [];
+            var gen_ame= [];
+
+            console.log(".......available flat");
+            $("input:checkbox[id=amn]:checked").each(function(){
+                pg_ame.push($(this).val());
+                
+                });
+                $("input:checkbox[id=gen]:checked").each(function(){
+                gen_ame.push($(this).val());
+                });
+                pg_ame=pg_ame.toString();
+                gen_ame=gen_ame.toString();
 
             var serverData ={"att_bath": $("input:radio[id=bathroom]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
@@ -238,15 +251,15 @@
                              "att_bal":$("input:radio[id=bal]:checked").val(),
                              "com_area":$("input:radio[id=area]:checked").val(),
                              "parking":$("input:radio[id=park]:checked").val(),
-                             "pg_amenities":$("input:radio[id=totalFloor]:checked").val(),
-                             "gen_amenities":$('#total_rooms').val(),
+                             "pg_amenities":pg_ame,
+                             "gen_amenities":gen_ame,
                              "pg_rules":$('#rule').val(),
                                 };
                 console.log(serverData);
             
             $.ajax ({
                 type:"POST",
-                url:"http://localhost:3000/post_pg_gallery",
+                url:"http://localhost:3000/post_pg_amenities",
                 data:serverData,
                 cache: false,
                 timeout: 5000,
@@ -256,7 +269,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg amenities details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                     window.location.href = "pg_amenities.php";
+                     window.location.href = "pg_gallery.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');

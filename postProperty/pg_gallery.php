@@ -7,11 +7,31 @@
 <a href="./pg_amenities.php#" class="previous round">&#8249;</a>
 <a href="#" class="next round">&#8250;</a>
 </div>
-<script>
-
-</script>
-<form  method="post" enctype="multipart/form-data" id="myform">
-    <div class="row">
+ <!--POPUP WINDOW TO SHOW SUCCESFULL MSG-->
+ <div id="popupwindow" class=" mb-tb-5per popup box-outline" style="display:none;"> 
+        <div class="row">
+            <button type="button" onclick="closegallery()" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>   
+        </div>
+        <p class="blue-font bold center"> CONGRATULATIONS ! "You have successfully posted your Property, 
+        Your Post will be Live in 24 hours after Verification".</p>
+        <br><br>
+        <div class="row center">
+               <a href="#">
+                <div class="col-sm-12 col-md-6 col-lg-6 center">
+                    <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">PREVIEW LISTING <br></p>
+                </div>
+               </a>
+               <a href="listProperty.php">
+                <div class="col-sm-12 col-md-6 col-lg-6 center">
+                    <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">ADD ANOTHER PROPERTY</p>
+                </div>
+               </a>
+        </div>      
+    </div>
+<!-- <form  method="post" enctype="multipart/form-data" id="myform"> -->
+    <div id="gallerywindow" class="row">
     <!-- Box outline -->
         <div class="box-outline mb-tb-5per">
                 <!-- Text amenities heading -->
@@ -23,26 +43,36 @@
                     <div class=" col-sm-1 col-md-1 col-lg-1">
                         <label></label>
                     </div>
-                    <div  class=" col-sm-2 col-md-2 col-lg-2 " >
-                        <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile"  onchange="activeMenu(event);" type="file" style="display:none" name="avatar" ></label>
-                        <p style="font-size:12px" id ="profile1">Select one or more files.</p>
-                    </div>
-                    <div class=" col-sm-2 col-md-2 col-lg-2 ">
-                        <label class="black-border center upload-sec">Upload <br>Hall<input  onchange="activeMenu(event)" name="avatar1"  id ="hall"  type="file" multiple="true" style="display:none" name="avatar" ></label>
-                        <p style="font-size:12px" id ="hall1">Select one or more files.</p>
-                    </div>
-                    <div class=" col-sm-2 col-md-2 col-lg-2 ">
-                        <label class="black-border center   upload-sec">Upload <br>Bedroom<input  onchange="activeMenu(event)"  id ="bedroom" type="file" multiple="true" style="display:none" name="avatar" ></label>
-                        <p style="font-size:12px" id ="bedroom1">Select one or more files.</p>
-                    </div>
-                    <div class=" col-sm-2 col-md-2 col-lg-2 ">
-                        <label class="black-border center upload-sec">Upload <br>Washroom<input  onchange="activeMenu(event)"  id ="washroom" type="file" multiple="true" style="display:none" name="avatar" ></label>
-                        <p style="font-size:12px" id ="washroom1">Select one or more files.</p>
-                    </div>
-                    <div class=" col-sm-2 col-md-2 col-lg-2 ">
-                        <label class="black-border center upload-sec">Upload <br>Balcony<input  onchange="activeMenu(event)"  id ="balcony" type="file" multiple="true" style="display:none" name="avatar" ></label>
-                        <p style="font-size:12px" id ="balcony1">Select one or more files.</p>
-                    </div>
+                    <form id="profile-attachment">
+                        <div  class=" col-sm-2 col-md-2 col-lg-2 " >
+                            <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile"  onchange="activeMenu(event);" type="file" style="display:none" name="avatar" ></label>
+                            <p style="font-size:12px" id ="profile1">Select one or more files.</p>
+                        </div>
+                    </form>
+                    <form id="hall-attachment">
+                        <div class=" col-sm-2 col-md-2 col-lg-2 ">
+                            <label class="black-border center upload-sec">Upload <br>Hall<input id="hall" onchange="activeMenu(event)" name="imgs" type="file" multiple="true" style="display:none" ></label>
+                            <p style="font-size:12px" id ="hall1">Select one or more files.</p>
+                        </div>
+                    </form>
+                    <form id="bedroom-attachment">
+                        <div class=" col-sm-2 col-md-2 col-lg-2 ">
+                            <label class="black-border center   upload-sec">Upload <br>Bedroom<input  onchange="activeMenu(event)"  id ="bedroom" type="file" multiple="true" style="display:none" name="imgs" ></label>
+                            <p style="font-size:12px" id ="bedroom1">Select one or more files.</p>
+                        </div>
+                    </form>
+                    <form id="washroom-attachment">
+                        <div class=" col-sm-2 col-md-2 col-lg-2 ">
+                            <label class="black-border center upload-sec">Upload <br>Washroom<input  onchange="activeMenu(event)"  id ="washroom" type="file" multiple="true" style="display:none" name="imgs" ></label>
+                            <p style="font-size:12px" id ="washroom1">Select one or more files.</p>
+                        </div>
+                    </form>
+                    <form id="balcony-attachment">
+                        <div class=" col-sm-2 col-md-2 col-lg-2 ">
+                            <label class="black-border center upload-sec">Upload <br>Balcony<input  onchange="activeMenu(event)"  id ="balcony" type="file" multiple="true" style="display:none" name="imgs" ></label>
+                            <p style="font-size:12px" id ="balcony1">Select one or more files.</p>
+                        </div>
+                    </form>
                     <div class=" col-sm-1 col-md-1 col-lg-1">
                         <label></label>
                     </div>
@@ -55,35 +85,149 @@
         </div>
             <div class="width-eighty m-auto">
                     <center>
-                    <button class="btn-property back-color-yellow red-font">Save & Continue</button>
+                    <button id="ajax-gal" class="btn-property back-color-yellow red-font">Save & Continue</button>
                     </center>
             </div>
     </div>
- </form>
+ 
+
  
  <script>
+       $('#ajax-gal').click(function(e) {
+    $("#popupwindow").show();
+    $("#gallerywindow").hide();
+});
 
-    //  $('#profile').change(function(){
-        // var fd = new FormData();
-        // var files = $('#profile')[0].files[0];
-        // fd.append('file',files);
+$("#profile").on("change", function() {
+
+    console.log("profile change event.......");
+            $("#profile-attachment").submit();
+        });
+
+        $("#profile-attachment").submit(function(e) {
+            e.preventDefault();
+          var id=sessionStorage.getItem("pro_id");
+          var type=sessionStorage.getItem("pro_type");
+            console.log(".........attachment section", id);
+
+        var formData = new FormData(this);
+        formData.append("pro_id", id);
+        formData.append("pro_type", type);
 
 
-        // var file_data = $('#profile').prop('files')[0];   
-        // var form_data = new FormData();                  
-    //     // form_data.append('file', file_data);
-    //     var form = new FormData(document.getElementById('profile'));
-    // //append files
-    // var file = document.getElementById('upload-image').files[0];
-    // if (file) {   
-    //     form.append('upload-image', file);
-    // }
-    //     console.log("...........data",  +form);
-
-            // e.preventDefault();
-       
-        // });
+        console.log("form data..........", formData);
         
+   var val = "Hi";
+   $.ajax({
+       url: "http://localhost:3000/upload",
+       type: 'POST',
+       data: formData,
+       success: function(response) { console.log("sucess....................."); },
+       contentType: false,
+       processData: false,
+       cache: false
+
+   });
+});
+
+//HAll images upload event.
+$("#hall").on("change", function() {   
+    console.log("hall change event.......");
+    $("#hall-attachment").submit();
+});
+
+//Bedroom images upload event.
+$("#bedroom").on("change", function() {   
+    console.log("Bedroom change event.......");
+    $("#bedroom-attachment").submit();
+});
+
+//Washroom images upload event.
+$("#washroom").on("change", function() {   
+    console.log("WAshroom change event.......");
+    $("#washroom-attachment").submit();
+});
+
+//Balcony images upload event.
+$("#balcony").on("change", function() {   
+    console.log("BAlcony change event.......");
+    $("#balcony-attachment").submit();
+});
+
+$("#hall-attachment").submit(function(e) {
+    e.preventDefault();
+    var id=sessionStorage.getItem("pro_id");
+    var type=sessionStorage.getItem("pro_type");
+
+    console.log("hall attachment ............");
+    var formData = new FormData(this);
+
+    formData.append("pro_id", id);
+    formData.append("pro_type", type);
+    formData.append("img_type", "hall_img");
+
+    ajax_call_API(formData);
+});
+
+$("#bedroom-attachment").submit(function(e) {
+    e.preventDefault();
+    var id=sessionStorage.getItem("pro_id");
+    var type=sessionStorage.getItem("pro_type");
+
+    console.log("hall attachment ............");
+    var formData = new FormData(this);
+
+    formData.append("pro_id", id);
+    formData.append("pro_type", type);
+    formData.append("img_type", "bedroom_img");
+
+    ajax_call_API(formData);
+});
+$("#washroom-attachment").submit(function(e) {
+    e.preventDefault();
+    var id=sessionStorage.getItem("pro_id");
+    var type=sessionStorage.getItem("pro_type");
+
+    console.log("hall attachment ............");
+    var formData = new FormData(this);
+
+    formData.append("pro_id", id);
+    formData.append("pro_type", type);
+    formData.append("img_type", "washroom_img");
+
+
+    ajax_call_API(formData);
+});
+$("#balcony-attachment").submit(function(e) {
+    e.preventDefault();
+    var id=sessionStorage.getItem("pro_id");
+    var type=sessionStorage.getItem("pro_type");
+
+    console.log("hall attachment ............");
+    var formData = new FormData(this);
+
+    formData.append("pro_id", id);
+    formData.append("pro_type", type);
+    formData.append("img_type", "balcony_img");
+
+    ajax_call_API(formData);
+});
+
+function ajax_call_API(formData) {
+    $.ajax({
+            url: "http://localhost:3000/mulupload",
+            type: 'POST',
+            data: formData,
+            success: function(response) { console.log("sucess....................."); },
+            contentType: false,
+            processData: false,
+            cache: false
+        });
+ }
+ function closegallery() {
+     location.href="../index.php";
+ }
+
  </script>
 <script>
    
