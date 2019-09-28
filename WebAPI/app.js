@@ -27,6 +27,7 @@ var pro_pg_details = require('./routes/postapi/post_pg_property');//To insert th
 var pro_pg_amenities = require('./routes/postapi/post_pg_amenities');//To insert the property details 
 var uploadgallery = require('./routes/postapi/upload');//To insert single img the gallery pages 
 var uploadmulgallery = require('./routes/postapi/mulupload'); //To insert multiple image the gallery pages 
+var pgtopgproperty = require('./routes/postapi/pg_pg_property'); //To insert pg to pg proprty details. 
 
 var bodyParser = require('body-parser');
 var multer  = require('multer');
@@ -59,6 +60,8 @@ app.use('/post_pg_property', pro_pg_details); //To insert the property details
 app.use('/post_pg_amenities', pro_pg_amenities); //To insert the property amenities
 app.use('/upload', uploadgallery); //To insert the gallery pages
 app.use('/mulupload', uploadmulgallery); //To insert multiple images the gallery pages
+app.use('/pg_pg_property', pgtopgproperty); //To insert the gallery pages
+
 
 
 // catch 404 and forward to error handler
