@@ -521,6 +521,7 @@
                                         $('#4bhk').hide();
                                     }
                                 });
+        //End of Checkbox change event
 
         $('#ajax-pg-pg-pro').click(function(e) {
             e.preventDefault();
