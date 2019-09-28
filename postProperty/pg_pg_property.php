@@ -297,6 +297,18 @@
             <br>
             <!--Common part in indivisual system-->
             <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                    <div class=""> <span class="blue-font bold-font">Common area</span>
+                            <br>
+                            <!-- <label class="col-xs-10 col-sm-10 col-md-10 col-lg-10 radio-inline center font-16 bold black"> -->
+                                <input type="number" id="com_area" name="area" placeholder="In Sq feet">
+                            <!-- </label> -->
+                            <!-- <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
+                                <input type="radio" id="com_area" name="area" value="no">No
+                            </label> -->
+                    </div>
+                </div>
+                <!-- common area -->
                 <!-- Attach bathroom -->
                 <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                     <div class=""> <span class="blue-font bold-font">Common parking</span> 
@@ -310,18 +322,6 @@
                     </div>
                 </div>
                 <!-- Attach Balcony -->
-                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <div class=""> <span class="blue-font bold-font">Common area</span>
-                        <br>
-                        <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="com_area" name="area" value="yes" checked>Yes
-                        </label>
-                        <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="com_area" name="area" value="no">No
-                        </label>
-                </div>
-                </div>
-                <!-- common area -->
                 <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                 <div class=""> <span class="blue-font bold-font">Common bathroom</span>
                         <br>
@@ -575,6 +575,8 @@
 
                     });
                 });
+                // onerk=onerk.toString();
+                // onebhk=onebhk.toString();
 
             var serverData ={"build_type": $("input:radio[id=build_type]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
