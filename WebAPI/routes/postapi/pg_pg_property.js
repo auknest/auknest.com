@@ -12,9 +12,10 @@ router.use(function(req, res, next) {
 router.post('/', function(req, res) {
 console.log("Into pg to pg property details api.......");
     var table, values;
-    values = {
+    // values = {
       
-    }
+    // }
+    values = req.body;
     var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
     var sql = "UPDATE pgTopgdetails SET ?"+cond;
     try {
