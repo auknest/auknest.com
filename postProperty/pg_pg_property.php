@@ -402,10 +402,10 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">  
                 <div class=""> <span class="blue-font bold-font">Water supply</span></div>
                 <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
-                        <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
+                        <label class="col-md-4 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
                         <input type="checkbox" id="amn" value="TV">Corporation
                         </label>
-                        <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
+                        <label class="col-md-4 col-lg-3 checkbox-inline font-16 bold black">
                         <input type="checkbox" id="amn" value="DTH">Borewell
                         </label> 
                 </div>
@@ -515,6 +515,7 @@
                                         $('#4bhk').hide();
                                     }
                                 });
+        //End of Checkbox change event
 
         $('#ajax-flat-pro').click(function(e) {
             e.preventDefault();
