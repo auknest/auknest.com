@@ -97,19 +97,19 @@
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flooronerk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flatonerk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomonerk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconyonerk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
@@ -117,100 +117,100 @@
                             </div>
 
                             <div class="bold checkbox-inline font-16 black">
-                                <input class="bold" id="roomType1bhk" type="checkbox" name="roomType" value="1 BHK">1 BHK
+                                <input class="bold" id="roomTypeonebhk" type="checkbox" name="roomType" value="1 BHK">1 BHK
                                 
                                 <div id="1bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flooronebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flatonebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomonebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconyonebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black ">
-                                <input class="bold" id="roomType2bhk" type="checkbox" name="roomType" value="2 BHK">2 BHK
+                                <input class="bold" id="roomTypetwobhk" type="checkbox" name="roomType" value="2 BHK">2 BHK
                                 
                                 <div id="2bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="floortwobhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flattwobhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomtwobhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconytwobhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black ">
-                                <input class="bold" id="roomType3bhk" type="checkbox" name="roomType" value="3 BHK">3 BHK
+                                <input class="bold" id="roomTypethreebhk" type="checkbox" name="roomType" value="3 BHK">3 BHK
                                 
                                 <div id="3bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="floorthreebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flatthreebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomthreebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconythreebhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black">
-                                <input class="bold" id="roomType4bhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
+                                <input class="bold" id="roomTypefourbhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
                                 
                                 <div id="4bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="floorfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flatfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="property_age" type="text" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconyfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
@@ -219,44 +219,17 @@
                         </div>
                 </div>
             </div>
-            <br>
-        <!-- <div class="row ">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
-                <div> <span class="blue-font bold-font">Type of flats</span></div>
-                    <div class="black-border row">
-                        <label class="radio-inline font-16 bold black col-lg-2">
-                            <input id="roomType" type="radio" name="roomType" value="1 RK">1 RK
-                       </label>
-                        <label class="radio-inline font-16 bold black col-lg-2">
-                            <input id="roomType" type="radio" name="roomType" value="1 BHK">1 BHK 
-                        </label>
-                        <label class="radio-inline font-16 bold black col-lg-2">
-                            <input id="roomType" type="radio" name="roomType" value="2 BHK">2 BHK 
-                        </label>
-                        <label class="radio-inline font-16 bold black col-lg-2">
-                            <input id="roomType" type="radio" name="roomType" value="3 BHK">3 BHK 
-                        </label>
-                        <label class="radio-inline font-16 bold black col-lg-2">
-                            <input id="roomType" type="radio" name="roomType" value="4 BHK">4 BHK 
-                        </label>
-                         <label class="radio-inline blue-font font-16 bold col-lg-1">
-                            <input id="roomType" type="radio" name="roomType" value="Others">Others
-                        </label>     
-                    </div>
-                
-            </div>
-        </div> -->
-            
+            <br>  
 
         <div class="row">     
             <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                     <div class=""> <span class="blue-font bold-font">Common parking</span> 
                         <br>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="parking" name="parking" value="Yes" checked>Yes
+                            <input type="radio" id="park" name="parking" value="Yes" checked>Yes
                         </div>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="parking" name="parking" value="No">No
+                            <input type="radio" id="park" name="parking" value="No">No
                         </div>
                     </div>
             </div>
@@ -265,10 +238,10 @@
                 <div class=""> <span class="blue-font bold-font">Common bathroom</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="bathroom" name="bathroom" value="Yes" checked>Yes
+                            <input type="radio" id="bath" name="bathroom" value="Yes" checked>Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="bathroom" name="bathroom" value="No">No
+                            <input type="radio" id="bath" name="bathroom" value="No">No
                         </label>
                 </div>
             </div>    
@@ -372,19 +345,19 @@
     </div>
         <div class="width-eighty m-auto">
                 <center>
-                    <button id="ajax-flat-pro" class="btn-property back-color-yellow red-font">Save & Continue</button>
+                    <button id="ajax-build-pro" class="btn-property back-color-yellow red-font">Save & Continue</button>
                 </center>
         </div>
 </div>
 <script>
     $(document).ready(function(){
+
+        var onerk=[], onebhk=[], twobhk=[], threebhk=[], fourbhk=[], water_supply=[];
+        
         //Checkbox change event.
         $('#roomType1rk').on('change', function() {
             console.log("into checked function");
-            var checked = this.checked
-            console.log(checked);
-            // $('#1rk').show();
-
+            var checked = this.checked;
             if(checked){
                 $('#1rk').show();
             }
@@ -394,7 +367,7 @@
         });
         $('#roomType1bhk').on('change', function() {
             console.log("into checked function");
-            var checked = this.checked
+            var checked = this.checked;
             console.log(checked);
             // $('#1rk').show();
 
@@ -407,7 +380,7 @@
         });
         $('#roomType2bhk').on('change', function() {
             console.log("into checked function");
-            var checked = this.checked
+            var checked = this.checked;
             console.log(checked);
             // $('#1rk').show();
 
@@ -420,7 +393,7 @@
         });
         $('#roomType3bhk').on('change', function() {
             console.log("into checked function");
-            var checked = this.checked
+            var checked = this.checked;
             console.log(checked);
             // $('#1rk').show();
 
@@ -433,7 +406,7 @@
         });
         $('#roomType4bhk').on('change', function() {
             console.log("into checked function");
-            var checked = this.checked
+            var checked = this.checked;
             console.log(checked);
             // $('#1rk').show();
 
@@ -444,6 +417,97 @@
                 $('#4bhk').hide();
             }
         });
+        $('#ajax-build-pro').click(function(e) {
+        console.log("Into ajax call ..........");
+        e.preventDefault();
+        $("input:checkbox[id=water]:checked").each(function(){
+                water_supply.push($(this).val());
+                
+                });
+        $("input:checkbox[id=roomType1rk]:checked").each(function(){
+            onerk.push({
+                    floor: $('#flooronerk').val(), 
+                    flat:  $('#flatonerk').val(),
+                    washroom:  $('#washroomonerk').val(),
+                    balcony:  $('#balconyonerk').val()
+
+                    });
+                });
+                $("input:checkbox[id=roomTypeonebhk]:checked").each(function(){
+                    onebhk.push({
+                    floor: $('#flooronebhk').val(), 
+                    flat:  $('#flatonebhk').val(),
+                    washroom:  $('#washroomonebhk').val(),
+                    balcony:  $('#balconyonebhk').val()
+                    });
+                });
+                $("input:checkbox[id=roomTypetwobhk]:checked").each(function(){
+                twobhk.push({
+                    floor: $('#floortwobhk').val(), 
+                    flat:  $('#flattwobhk').val(),
+                    washroom:  $('#washroomtwobhk').val(),
+                    balcony:  $('#balconytwobhk').val()
+
+                    });
+                });
+                $("input:checkbox[id=roomTypethreebhk]:checked").each(function(){
+                threebhk.push({
+                    floor: $('#floorthreebhk').val(), 
+                    flat:  $('#flatthreebhk').val(),
+                    washroom:  $('#washroomthreebhk').val(),
+                    balcony:  $('#balconythreebhk').val()
+
+                    });
+                });
+                $("input:checkbox[id=roomTypefourbhk]:checked").each(function(){
+                fourbhk.push({
+                    floor: $('#floorfourbhk').val(), 
+                    flat:  $('#flatonerk').val(),
+                    washroom:  $('#washroomfourbhk').val(),
+                    balcony:  $('#balconyfourbhk').val()
+
+                    });
+                });
         //End of Checkbox change event
+        
+        var serverData ={
+                            "property_for": "rent",
+                            "pro_id": sessionStorage.getItem("pro_id"),
+                            "pro_type" : sessionStorage.getItem("pro_type"),
+                            "date":"",
+                            "property_age":"",
+                            "floor_no":$("input:radio[id=floorNo]:checked").val(),
+                            "onerk":onerk,
+                            "onebhk":onebhk,
+                            "twobhk":twobhk,
+                            "threebhk":threebhk,
+                            "fourbhk":fourbhk,
+                            "park":$("input:radio[id=park]:checked").val(),
+                            "com_bath":$("input:radio[id=bath]:checked").val(),
+                            "com_kitchen":$("input:radio[id=kitchen]:checked").val(),
+                            "ofc_room":$("input:radio[id=office]:checked").val(),
+                            "care_room":$("input:radio[id=care]:checked").val(),
+                            "store_room":$("input:radio[id=store]:checked").val(),
+                            "power_bakup":$("input:radio[id=power]:checked").val(),
+                            "water_supply":water_supply,     
+                            "gate_security":$("input:radio[id=security]:checked").val(),
+                            "lift":$("input:radio[id=lift]:checked").val()
+                    };
+        console.log(serverData);
+        $.ajax({
+            type:"POST",
+            url:"http://localhost:3000/post_build_property",
+            data:serverData,
+            cache: false,
+            timeout: 5000,
+            success: function(res){
+                console.log('Property pg details Sucessfully inserted ...');
+            },
+            error:function() {
+                console.log('Error In AJAX...');
+            },
+        });
+
+        });
     });
 </script>
