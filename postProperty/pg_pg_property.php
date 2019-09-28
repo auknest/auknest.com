@@ -617,7 +617,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                    //  window.location.href = "flat_aminities.php";
+                     window.location.href = "pg_pg_aminities.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');
