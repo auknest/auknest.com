@@ -26,16 +26,16 @@
                                 
                                 
                                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                                <input type="checkbox" id="amn" value="Light">Light
+                                <input type="checkbox" id="light" value="Light">Light
                                 </label>
                                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                                <input type="checkbox" id="amn" value="Fans">Fan
+                                <input type="checkbox" id="fans" value="Fans">Fan
                                 </label>
                                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                                <input type="checkbox" id="amn" value="Geysers">Geysers
+                                <input type="checkbox" id="gaysers" value="Geysers">Geysers
                                 </label>
                                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                                <input type="checkbox" id="amn" value="DTH">Curtains
+                                <input type="checkbox" id="curtains" value="Curtains">Curtains
                                 </label>
        
                             </div>
@@ -53,10 +53,43 @@
                             
                             <div class="width-eighty m-auto">
                                 <center>
-                                <button id="ajax-gal" class="btn-property back-color-yellow red-font">Save & Continue</button>
+                                <button id="ajax-build-amn" class="btn-property back-color-yellow red-font">Save & Continue</button>
                                 </center>
                             </div>
             </form>
     </div>
 </div>
-            
+<script>
+    $(document).ready(function(){
+        console.log("Into ajax call ..........");
+
+        $('#ajax-build-amn').click(function(e){
+            e.preventDefault();
+            console.log("Into ajax call ..........");
+            var serverData={
+                "pro_id": sessionStorage.getItem("pro_id"),
+                "pro_type" : sessionStorage.getItem("pro_type"),
+                "lights": $("input:checkbox[id=light]:checked").val(),
+                "fans":$("input:checkbox[id=fans]:checked").val(),
+                "geysers":$("input:checkbox[id=gaysers]:checked").val(),
+                "curtains":$("input:checkbox[id=curtains]:checked").val(),
+                "descr":$("#descr").val()
+            };
+            console.log(serverData);
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:3000/post_build_aminities",
+                data:serverData,
+                success: function(res){
+                    console.log("Successfully inserted data into builder details");
+                    windows.href="./pg_gallery.php";
+                },
+                error: function(e){
+                    console.log("Error into AJAX");
+                    console.log(e);
+                }
+            });
+
+        });
+    });
+</script>

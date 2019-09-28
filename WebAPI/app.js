@@ -30,6 +30,7 @@ var uploadmulgallery = require('./routes/postapi/mulupload'); //To insert multip
 var pgtopgproperty = require('./routes/postapi/pg_pg_property'); //To insert pg to pg proprty details. 
 var pgtopgaminities = require('./routes/postapi/post_pg_pg_aminities'); //To insert pg to pg proprty details. 
 var buildproperty = require('./routes/postapi/post_build_property'); //To insert building proprty details. 
+var buildaminities = require('./routes/postapi/post_build_aminities'); //To insert building aminities details. 
 
 
 var bodyParser = require('body-parser');
@@ -65,7 +66,9 @@ app.use('/upload', uploadgallery); //To insert the gallery pages
 app.use('/mulupload', uploadmulgallery); //To insert multiple images the gallery pages
 app.use('/pg_pg_property', pgtopgproperty); //To insert the pg to pg property
 app.use('/post_pg_pg_aminities', pgtopgaminities); //To insert the pg to,pg aminities
-app.use('/post_build_property', buildproperty); //To insert the pg to pg property
+app.use('/post_build_property', buildproperty); //To insert the build property
+app.use('/post_build_aminities', buildaminities); //To insert the building aminities
+
 
 
 // catch 404 and forward to error handler
