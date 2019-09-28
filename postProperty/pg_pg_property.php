@@ -314,10 +314,10 @@
                 <div class=""> <span class="blue-font bold-font">Common area</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="area" name="area" value="yes" checked>Yes
+                            <input type="radio" id="com_area" name="area" value="yes" checked>Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="area" name="area" value="no">No
+                            <input type="radio" id="com_area" name="area" value="no">No
                         </label>
                 </div>
                 </div>
@@ -421,7 +421,7 @@
         //Radio buttion check event
         $('#lease').change(function(){
             var checked = this.checked;
-            if(checked=="1"){
+            if(checked){
                 $('#leasediv').show();
                 $('#sellingdiv').hide();
                 lease.push({
@@ -430,18 +430,18 @@
                     
                     });
             }
-            if(checked=="0"){
+            else{
                 $('#leasediv').hide();
-                lease.push({
-                    leaserent: "", 
-                    leasedeposite: "",
+                // lease.push({
+                //     leaserent: "", 
+                //     leasedeposite: "",
                     
-                    });
+                //     });
             }
         });
         $('#selling').change(function(){
             var checked = this.checked;
-            if(checked=="1"){
+            if(checked){
                 $('#sellingdiv').show();
                 $('#leasediv').hide();
                 selling.push({
@@ -450,7 +450,7 @@
                     ownedeposite:  $('#ownerdeposite').val(),
                 });
             }
-            if(checked=="0"){
+            else{
                 $('#sellingdiv').hide();
             }
         });
@@ -539,7 +539,7 @@
 
                     });
                 });
-                $("input:checkbox[id=roomTypeonebhk]:checked").each(function(){
+                $("input:checkbox[id=roomType1bhk]:checked").each(function(){
                 onebhk.push({
                     floor: $('#flooronebhk').val(), 
                     flat:  $('#flatonebhk').val(),
@@ -548,7 +548,7 @@
 
                     });                 
                 });
-                $("input:checkbox[id=roomTypetwobhk]:checked").each(function(){
+                $("input:checkbox[id=roomType2bhk]:checked").each(function(){
                 twobhk.push({
                     floor: $('#floortwobhk').val(), 
                     flat:  $('#flattwobhk').val(),
@@ -557,7 +557,7 @@
 
                     });
                 });
-                $("input:checkbox[id=roomTypethreebhk]:checked").each(function(){
+                $("input:checkbox[id=roomType3bhk]:checked").each(function(){
                 threebhk.push({
                     floor: $('#floorthreebhk').val(), 
                     flat:  $('#flatthreebhk').val(),
@@ -566,7 +566,7 @@
 
                     });
                 });
-                $("input:checkbox[id=roomTypefourbhk]:checked").each(function(){
+                $("input:checkbox[id=roomType4bhk]:checked").each(function(){
                 fourbhk.push({
                     floor: $('#floorfourbhk').val(), 
                     flat:  $('#flatonerk').val(),
