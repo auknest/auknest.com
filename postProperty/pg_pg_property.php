@@ -546,7 +546,7 @@
                     washroom:  $('#washroomonebhk').val(),
                     balcony:  $('#balconyonebhk').val()
 
-                    });
+                    });                 
                 });
                 $("input:checkbox[id=roomType2bhk]:checked").each(function(){
                 twobhk.push({
