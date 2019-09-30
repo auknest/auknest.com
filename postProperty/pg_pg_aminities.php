@@ -132,7 +132,7 @@
             timeout: 5000,
             success: function(res){
                 console.log('Property pg details Sucessfully inserted ...');
-                windows.href="./pg_gallery.php";
+                window.location.href="./pg_gallery.php";
             },
             error:function(e) {
                 console.log('Error In AJAX...');

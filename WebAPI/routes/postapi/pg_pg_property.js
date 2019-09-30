@@ -13,6 +13,7 @@ router.post('/', function(req, res) {
 console.log("Into pg to pg property details api.......");
 console.log("One rk ",req.body);
     var table, values;
+    console.log("........", req.body);
     // var onerk=req.body.onerk.toString();
     values = {
         "build_type": req.body.build_type,

@@ -416,7 +416,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        var onerk=[], onebhk=[], twobhk=[], threebhk=[], fourbhk=[], lease=[], selling=[];
+        var onerk1=[], onebhk1=[], twobhk1=[], threebhk1=[], fourbhk1=[], lease=[], selling=[];
 
         //Radio buttion check event
         $('#lease').change(function(){
@@ -531,7 +531,7 @@
                 
                 });
             $("input:checkbox[id=roomType1rk]:checked").each(function(){
-                onerk.push({
+                onerk1.push({
                     floor: $('#flooronerk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomonerk').val(),
@@ -540,7 +540,7 @@
                     });
                 });
                 $("input:checkbox[id=roomType1bhk]:checked").each(function(){
-                onebhk.push({
+                onebhk1.push({
                     floor: $('#flooronebhk').val(), 
                     flat:  $('#flatonebhk').val(),
                     washroom:  $('#washroomonebhk').val(),
@@ -549,7 +549,7 @@
                     });                 
                 });
                 $("input:checkbox[id=roomType2bhk]:checked").each(function(){
-                twobhk.push({
+                twobhk1.push({
                     floor: $('#floortwobhk').val(), 
                     flat:  $('#flattwobhk').val(),
                     washroom:  $('#washroomtwobhk').val(),
@@ -558,7 +558,7 @@
                     });
                 });
                 $("input:checkbox[id=roomType3bhk]:checked").each(function(){
-                threebhk.push({
+                threebhk1.push({
                     floor: $('#floorthreebhk').val(), 
                     flat:  $('#flatthreebhk').val(),
                     washroom:  $('#washroomthreebhk').val(),
@@ -567,7 +567,7 @@
                     });
                 });
                 $("input:checkbox[id=roomType4bhk]:checked").each(function(){
-                fourbhk.push({
+                fourbhk1.push({
                     floor: $('#floorfourbhk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomfourbhk').val(),
@@ -577,6 +577,11 @@
                 });
                 // onerk=onerk.toString();
                 // onebhk=onebhk.toString();
+                var onerk=JSON.stringify(onerk1);
+                var onebhk=JSON.stringify(onebhk1);
+                var twobhk=JSON.stringify(twobhk1);
+                var threebhk=JSON.stringify(threebhk1);
+                var fourbhk=JSON.stringify(fourbhk1);
 
             var serverData ={"build_type": $("input:radio[id=build_type]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
@@ -619,7 +624,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                     window.location.href = "pg_pg_aminities.php";
+                    //  window.location.href = "pg_pg_aminities.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');
