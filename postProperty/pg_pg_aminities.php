@@ -18,13 +18,13 @@
             <form>
                 <!-- Option for avialable pg -->
                 <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-9">
+                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
                          <div> <span class="blue-font bold-font">Available Amenities (Had to tick the available amenities ) </span><br></div>
                     
                             <!-- First row -->
                             <div class="row black-border">
                                 
-                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2" style="padding-left:30px;">TV
+                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">TV
                                 <input  style="float:right" type="text" id="tv" value="" maxlength="3" size="3"><br>
                                 </label>
                                 <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">DTH
@@ -33,7 +33,7 @@
                                 <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Sofa
                                 <input style="float:right" type="text" id="sofa" value="" maxlength="3" size="3"><br>
                                 </label>
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Shoe rak
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Shoe rack
                                 <input style="float:right" type="text" id="shoerak" value="" maxlength="3" size="3"><br>
                                 </label>
                                 <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Wifi
@@ -44,7 +44,7 @@
                             <br>
                              <!-- Second row -->
                              <div class="row black-border">
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">Curtains
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Curtains
                                 <input style="float:right" type="text" id="curtains" value="" maxlength="3" size="3"><br>
                                 </label>
                                 <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">CCTV
@@ -56,26 +56,28 @@
                                 
                             </div>
                              <br>
-                                                 <!-- Second row -->
+                            <!-- Third row -->
                             <div class="row black-border">
-                            <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">Curtains
+                                <!-- <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">Curtains
                                 <input style="float:right" type="text" id="amn" value="" maxlength="3" size="3"><br>
-                                </label>
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Center Table
+                                </label> -->
+                                <label class="col-xs-11 col-sm-4 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Center Table
                                 <input style="float:right" type="text" id="centerTable" value="" maxlength="3" size="3"><br>
                                 </label>
-                                <label class="col-xs-11 col-sm-3 col-md-4 col-lg-3 checkbox-inline font-16 bold black pd-2">Buckets and mug
+                                <label class="col-xs-11 col-sm-4 col-md-4 col-lg-4 checkbox-inline font-16 bold black pd-2">Buckets and mug
                                 <input style="float:right" type="text" id="bucket" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-3 col-md-4 col-lg-3 checkbox-inline font-16 bold black pd-2">Single Locker
+                                <input style="float:right" type="text" id="singleLocker" value="" maxlength="3" size="3"><br>
                                 </label>
                                 
                             </div>
                             <br>
+                            <!-- Fourth Row -->
                             <div class="row black-border">
-                                <label class="col-xs-11 col-sm-3 col-md-4 col-lg-4 checkbox-inline font-16 bold black pd-2">Single Locker
-                                <input type="text" id="singleLocker" value="" maxlength="3" size="3"><br>
-                                </label>
-                                <label class="col-xs-11 col-sm-3 col-md-6 col-lg-7 checkbox-inline font-16 bold black pd-2">Bed, mattress and bed sheet
-                                <input type="text" id="bed" value="" maxlength="3" size="3"><br>
+                                
+                                <label class="col-xs-11 col-sm-3 col-md-5 col-lg-5 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Bed, mattress and bed sheet
+                                <input style="float:right" type="text" id="bed" value="" maxlength="3" size="3"><br>
                                 </label>
                             </div>
                             <br>
@@ -103,19 +105,21 @@
         $('#ajax-pg-pg_pro').click(function(e) {
             e.preventDefault();
             var serverData= {
+                "pro_id": sessionStorage.getItem("pro_id"),
+                "pro_type" : sessionStorage.getItem("pro_type"),
                 "TV":$('#tv').val(),
                 "DTH":$('#dth').val(),
                 "Sofa":$('#sofa').val(),
-                "Shoe rak":$('#shoerak').val(),
+                "Shoe_rak":$('#shoerak').val(),
                 "Wifi":$('#wifi').val(),
                 "Curtains":$('#curtains').val(),
                 "CCTV":$('#cctv').val(),
-                "Double Locker":$('#doublelocker').val(),
+                "Double_Locker":$('#doublelocker').val(),
                 "CenterTable":$('#centerTable').val(),
-                "Buckets and mug":$('#bucket').val(),
-                "Single Locker":$('#singleLocker').val(),
-                "Bed, mattress and bedsheet":$('#bed').val(),
-                "descr":$('#descr').val(),
+                "Buckets_and_mug":$('#bucket').val(),
+                "Single_Locker":$('#singleLocker').val(),
+                "Bed_mattress_and_bedsheet":$('#bed').val(),
+                "descr":$('#descr').val()
 
             };
             console.log(serverData);
@@ -128,9 +132,11 @@
             timeout: 5000,
             success: function(res){
                 console.log('Property pg details Sucessfully inserted ...');
+                windows.href="./pg_gallery.php";
             },
-            error:function() {
+            error:function(e) {
                 console.log('Error In AJAX...');
+                console.log(e);
             },
         });
     });
