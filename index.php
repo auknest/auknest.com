@@ -560,11 +560,14 @@
         </div>
     </div>
 </div>
+<?php  $passkey = (!isset($_GET['confirm_code'])) ? $_GET['confirm_code'] : 'empty';?>
+<?php $email=$_GET['email'];?>
+
 
 <script>
 $(document).ready(function(){
     //login Profile 
-    <?php $passkey=$_GET['confirm_code'];?>
+
     
     var passkey= "<?php echo $passkey ?>";
     // console.log(passkey);
@@ -574,7 +577,6 @@ $(document).ready(function(){
             $('#loginbtn').hide();
         }
     //Password Change window
-    <?php $email=$_GET['email'];?>
     
     var email= "<?php echo $email ?>";
     // console.log(email);
