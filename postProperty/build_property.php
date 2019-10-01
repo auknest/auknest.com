@@ -31,11 +31,11 @@
         <div class="row"> 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <span class="blue-font bold-font">Posession Date</span><br>
-                    <input class="bold black" type="date">
+                    <input id="pdate" class="bold black" type="date">
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <span class="blue-font bold-font">Property age</span><br>
-                    <select class="bold black">
+                    <select id="page" class="bold black">
                         <option value="1 Year">1 Year</option>
                         <option value="2 Year">2 Year</option>
                         <option value="3 Year">3 Year</option>
@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="bold checkbox-inline font-16 black">
-                                <input class="bold" id="roomTypeonebhk" type="checkbox" name="roomType" value="1 BHK">1 BHK
+                                <input class="bold" id="roomType1bhk" type="checkbox" name="roomType" value="1 BHK">1 BHK
                                 
                                 <div id="1bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black ">
-                                <input class="bold" id="roomTypetwobhk" type="checkbox" name="roomType" value="2 BHK">2 BHK
+                                <input class="bold" id="roomType2bhk" type="checkbox" name="roomType" value="2 BHK">2 BHK
                                 
                                 <div id="2bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black ">
-                                <input class="bold" id="roomTypethreebhk" type="checkbox" name="roomType" value="3 BHK">3 BHK
+                                <input class="bold" id="roomType3bhk" type="checkbox" name="roomType" value="3 BHK">3 BHK
                                 
                                 <div id="3bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
@@ -192,7 +192,7 @@
                                 </div>
                             </div>
                             <div class="bold checkbox-inline font-16 black">
-                                <input class="bold" id="roomTypefourbhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
+                                <input class="bold" id="roomType4bhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
                                 
                                 <div id="4bhk" style="display:none; width:107%; border:1px solid black">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
@@ -418,96 +418,97 @@
             }
         });
         $('#ajax-build-pro').click(function(e) {
-        console.log("Into ajax call ..........");
-        e.preventDefault();
-        $("input:checkbox[id=water]:checked").each(function(){
-                water_supply.push($(this).val());
-                
-                });
-        $("input:checkbox[id=roomType1rk]:checked").each(function(){
-            onerk.push({
+            console.log("Into ajax call ..........");
+            e.preventDefault();
+            $("input:checkbox[id=water]:checked").each(function(){
+                    water_supply.push($(this).val());
+            });
+            $("input:checkbox[id=roomType1rk]:checked").each(function(){
+                onerk.push({
                     floor: $('#flooronerk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomonerk').val(),
                     balcony:  $('#balconyonerk').val()
-
-                    });
                 });
-                $("input:checkbox[id=roomTypeonebhk]:checked").each(function(){
-                    onebhk.push({
+            });
+            $("input:checkbox[id=roomType1bhk]:checked").each(function(){
+                onebhk.push({
                     floor: $('#flooronebhk').val(), 
                     flat:  $('#flatonebhk').val(),
                     washroom:  $('#washroomonebhk').val(),
                     balcony:  $('#balconyonebhk').val()
-                    });
                 });
-                $("input:checkbox[id=roomTypetwobhk]:checked").each(function(){
+            });
+            $("input:checkbox[id=roomType2bhk]:checked").each(function(){
                 twobhk.push({
                     floor: $('#floortwobhk').val(), 
                     flat:  $('#flattwobhk').val(),
                     washroom:  $('#washroomtwobhk').val(),
                     balcony:  $('#balconytwobhk').val()
-
-                    });
                 });
-                $("input:checkbox[id=roomTypethreebhk]:checked").each(function(){
+            });
+            $("input:checkbox[id=roomType3bhk]:checked").each(function(){
                 threebhk.push({
                     floor: $('#floorthreebhk').val(), 
                     flat:  $('#flatthreebhk').val(),
                     washroom:  $('#washroomthreebhk').val(),
                     balcony:  $('#balconythreebhk').val()
-
-                    });
                 });
-                $("input:checkbox[id=roomTypefourbhk]:checked").each(function(){
+            });
+            $("input:checkbox[id=roomType4bhk]:checked").each(function(){
                 fourbhk.push({
                     floor: $('#floorfourbhk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomfourbhk').val(),
                     balcony:  $('#balconyfourbhk').val()
-
-                    });
                 });
-        //End of Checkbox change event
-        
-        var serverData ={
-                            "property_for": "rent",
-                            "pro_id": sessionStorage.getItem("pro_id"),
-                            "pro_type" : sessionStorage.getItem("pro_type"),
-                            "date":"",
-                            "property_age":"",
-                            "floor_no":$("input:radio[id=floorNo]:checked").val(),
-                            "onerk":onerk,
-                            "onebhk":onebhk,
-                            "twobhk":twobhk,
-                            "threebhk":threebhk,
-                            "fourbhk":fourbhk,
-                            "park":$("input:radio[id=park]:checked").val(),
-                            "com_bath":$("input:radio[id=bath]:checked").val(),
-                            "com_kitchen":$("input:radio[id=kitchen]:checked").val(),
-                            "ofc_room":$("input:radio[id=office]:checked").val(),
-                            "care_room":$("input:radio[id=care]:checked").val(),
-                            "store_room":$("input:radio[id=store]:checked").val(),
-                            "power_bakup":$("input:radio[id=power]:checked").val(),
-                            "water_supply":water_supply,     
-                            "gate_security":$("input:radio[id=security]:checked").val(),
-                            "lift":$("input:radio[id=lift]:checked").val()
-                    };
-        console.log(serverData);
-        $.ajax({
-            type:"POST",
-            url:"http://localhost:3000/post_build_property",
-            data:serverData,
-            cache: false,
-            timeout: 5000,
-            success: function(res){
-                console.log('Property pg details Sucessfully inserted ...');
-                window.location.href = "build_aminities.php";
-            },
-            error:function() {
-                console.log('Error In AJAX...');
-            },
-        });
+            });
+            //End of Checkbox change event
+            onerk= JSON.stringify(onerk);
+            onebhk= JSON.stringify(onebhk);
+            twobhk= JSON.stringify(twobhk);
+            threebhk= JSON.stringify(threebhk);
+            fourbhk= JSON.stringify(fourbhk);
+            water_supply= JSON.stringify(water_supply);
+            
+            var serverData ={
+                                "property_for": "Rent",
+                                "pro_id": sessionStorage.getItem("pro_id"),
+                                "pro_type" : sessionStorage.getItem("pro_type"),
+                                "date": $("#pdate").val(),
+                                "property_age":$("#page").val(),
+                                "floor_no":$("input:radio[id=floorNo]:checked").val(),
+                                "onerk":onerk,
+                                "onebhk":onebhk,
+                                "twobhk":twobhk,
+                                "threebhk":threebhk,
+                                "fourbhk":fourbhk,
+                                "park":$("input:radio[id=park]:checked").val(),
+                                "com_bath":$("input:radio[id=bath]:checked").val(),
+                                "com_kitchen":$("input:radio[id=kitchen]:checked").val(),
+                                "ofc_room":$("input:radio[id=office]:checked").val(),
+                                "care_room":$("input:radio[id=care]:checked").val(),
+                                "store_room":$("input:radio[id=store]:checked").val(),
+                                "power_bakup":$("input:radio[id=power]:checked").val(),
+                                "water_supply":water_supply,     
+                                "gate_security":$("input:radio[id=security]:checked").val(),
+                                "lift":$("input:radio[id=lift]:checked").val()
+                        };
+            console.log(serverData);
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:3000/post_build_property",
+                data:serverData,
+                cache: false,
+                timeout: 5000,
+                success: function(res){
+                    console.log('Property pg details Sucessfully inserted ...');
+                    // window.location.href = "build_aminities.php";
+                },
+                error:function() {
+                    console.log('Error In AJAX...');
+                },
+            });
 
         });
     });
