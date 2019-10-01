@@ -503,7 +503,7 @@
                 timeout: 5000,
                 success: function(res){
                     console.log('Property pg details Sucessfully inserted ...');
-                    // window.location.href = "build_aminities.php";
+                    window.location.href = "build_aminities.php";
                 },
                 error:function() {
                     console.log('Error In AJAX...');

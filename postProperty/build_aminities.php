@@ -18,11 +18,31 @@
             <form>
                 <!-- Option for avialable pg -->
                 <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-9">
-                         <div> <span class="blue-font bold-font">Available Amenities (Had to tick the available amenities ) </span><br></div>
-                    
+                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                         <div> <span class="blue-font bold-font">Available Amenities </span><br></div>
                             <!-- First row -->
                             <div class="row black-border">
+                                
+                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Light
+                                <input  style="float:right" type="text" id="light" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Fan
+                                <input  style="float:right" type="text" id="fans" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Geysers
+                                <input style="float:right" type="text" id="geysers" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Curtains
+                                <input style="float:right" type="text" id="curtains" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <!-- <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Wifi
+                                <input style="float:right" type="text" id="wifi" value="" maxlength="3" size="3"><br>
+                                </label> -->
+       
+                            </div>
+                            <br>
+                            <!-- First row -->
+                            <!-- <div class="row black-border">
                                 
                                 
                                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
@@ -39,7 +59,7 @@
                                 </label>
        
                             </div>
-                            <br>
+                            <br> -->
                         </div>
                 </div>
                              <!-- Property Description -->
@@ -69,10 +89,10 @@
             var serverData={
                 "pro_id": sessionStorage.getItem("pro_id"),
                 "pro_type" : sessionStorage.getItem("pro_type"),
-                "lights": $("input:checkbox[id=light]:checked").val(),
-                "fans":$("input:checkbox[id=fans]:checked").val(),
-                "geysers":$("input:checkbox[id=gaysers]:checked").val(),
-                "curtains":$("input:checkbox[id=curtains]:checked").val(),
+                "lights": $("#light").val(),
+                "fans":$("#fans").val(),
+                "geysers":$("#geysers").val(),
+                "curtains":$("#curtains").val(),
                 "descr":$("#descr").val()
             };
             console.log(serverData);
@@ -82,7 +102,7 @@
                 data:serverData,
                 success: function(res){
                     console.log("Successfully inserted data into builder details");
-                    windows.href="./pg_gallery.php";
+                    window.location.href="./pg_gallery.php";
                 },
                 error: function(e){
                     console.log("Error into AJAX");

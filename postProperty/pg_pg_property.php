@@ -71,7 +71,7 @@
                     <div> <span class="blue-font bold-font">Type of flats</span></div>
                         <!-- First row -->
                         <div class="black-border row">
-                            <div class="checkbox-inline font-16 black">
+                            <div class="bold black checkbox-inline font-16">
                                 <input class="bold" id="roomType1rk" type="checkbox" name="roomType" value="1 RK">1 RK
                                 
                                 <div id="1rk" style="display:none; border:1px solid black; width:107%">
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
 
-                            <div class="checkbox-inline font-16 black">
+                            <div class="bold black checkbox-inline font-16">
                                 <input class="bold" id="roomType1bhk" type="checkbox" name="roomType" value="1 BHK">1 BHK
                                 
                                 <div id="1bhk" style="display:none; border:1px solid black;width:107%">
@@ -122,7 +122,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkbox-inline font-16 black ">
+                            <div class="checkbox-inline font-16 bold black ">
                                 <input class="bold" id="roomType2bhk" type="checkbox" name="roomType" value="2 BHK">2 BHK
                                 
                                 <div id="2bhk" style="display:none; border:1px solid black;width:107%">
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkbox-inline font-16 black ">
+                            <div class="checkbox-inline font-16 bold black ">
                                 <input class="bold" id="roomType3bhk" type="checkbox" name="roomType" value="3 BHK">3 BHK
                                 
                                 <div id="3bhk" style="display:none; border:1px solid black;width:107%">
@@ -172,7 +172,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkbox-inline font-16 black">
+                            <div class="checkbox-inline font-16 bold black">
                                 <input class="bold" id="roomType4bhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
                                 
                                 <div id="4bhk" style="display:none; border:1px solid black;width:107%">
@@ -236,7 +236,7 @@
                 <div class=""> <span class="blue-font bold-font">Property for</span>
                         <br>
                     <div class="row black-border">
-                        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-6 radio-inline font-16 black">
+                        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-6 radio-inline font-16 bold black">
                             <input type="radio" id="lease" name="lease" value="Lease">Lease for PG owner
                                 <div id="leasediv" style="border:1px solid black; display:none">
                                     <div class="pd-2" >
@@ -249,7 +249,7 @@
                                     </div>
                                 </div>        
                         </label>
-                        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 radio-inline font-16 black ">
+                        <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 radio-inline font-16 bold black ">
                             <input type="radio" id="selling" name="lease" value="no">Selling
                             <div id="sellingdiv" style="border:1px solid black; display:none">
                                 <div class="pd-2">
@@ -392,10 +392,10 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">  
                 <div class=""> <span class="blue-font bold-font">Water supply</span></div>
                 <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
-                        <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">
+                        <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
                         <input type="checkbox" id="water_supply" value="Corporation">Corporation
                         </label>
-                        <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
+                        <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black">
                         <input type="checkbox" id="water_supply" value="Borewell">Borewell
                         </label> 
                 </div>

@@ -19,7 +19,7 @@
                 <!-- Option for avialable pg -->
                 <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
-                         <div> <span class="blue-font bold-font">Available Amenities (Had to tick the available amenities ) </span><br></div>
+                         <div> <span class="blue-font bold-font">Available Amenities </span><br></div>
                     
                             <!-- First row -->
                             <div class="row black-border">

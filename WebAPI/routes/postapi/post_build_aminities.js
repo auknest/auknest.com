@@ -12,7 +12,13 @@ router.use(function(req, res, next) {
 router.post('/', function(req, res) {
     console.log("post build amenities...........", req.body);
     var table, values;
-   
+    values={
+        "lights":req.body.lights,
+        "fans":req.body.fans,
+        "geysers":req.body.geysers,
+        "curtains":req.body.curtains,
+        "descr":req.body.descr
+    };
     var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
     
     var sql = "UPDATE buildownerdetails SET ? "+cond;
