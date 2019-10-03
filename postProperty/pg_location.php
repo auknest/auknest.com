@@ -64,6 +64,30 @@ echo $_SESSION['pro_person'];
 </div>
 <script>
     $(document).ready(function(){
+        if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+              "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_type",
+          data:serverData1,
+          success:function(data){
+            console.log("data...", data);
+            $('#dropDownId[value="'+data[0].pro_city+'"]').attr('selected', 'selected'); 
+            // $('input:radio[value="'+data[0].pro_person+'"]').attr('checked',true);       
+
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
         $('#ajax-loc').click(function(e) {
             e.preventDefault();
             var serverData ={"pro_city": $('#dropDownId').val(),

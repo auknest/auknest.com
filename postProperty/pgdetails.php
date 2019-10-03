@@ -34,9 +34,9 @@
                     <!--Image section-->
                     <div class="row">
                         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 center">
-                            <div class="profile_img">
-                            </div>
-                            <!-- <img id="profile_img" src="" class="img-responsive"> -->
+                            <!-- <div class="profile_img img-responsive">
+                            </div> -->
+                            <img class="profile_img img-responsive" src="">
                         </div>
                         <!--details section-->
                         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
@@ -63,7 +63,7 @@
                             </div>   
                             <hr>
                         <div class="row">
-                            <a href="#">
+                            <a href="./listProperty.php?pro_id=5d81cbebe1465">
                                 <div class="col-sm-12 col-md-6 col-lg-6 center">
                                     <p id="ajax-edit" class="w-100per center red-font back-color-yellow pd-5per">Edit <br></p>
                                 </div>
@@ -87,8 +87,8 @@
         $(document).ready(function(){   
         
     $.ajax ({
-        // url: "http://localhost:3000/get_pro_shortdetails?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-        url: "http://localhost:3000/get_pro_shortdetails?pro_id=5d81cbebe1465&pro_type=pg",
+        url: "http://localhost:3000/get_pro_shortdetails?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+        // url: "http://localhost:3000/get_pro_shortdetails?pro_id=5d81cbebe1465",
         type:"GET",
         // data:,
         success: function (data) {
@@ -100,12 +100,8 @@
                     $('#deposite').html(data[0].security_amt);
                     $('#pg_available').html(data[0].pg_available);
                     $('#food_included').html(data[0].food_included);
-                    // var url=data[0].profile_img;
-                    // $('#profile_img').("src",url);
-                    // document.getElementById("profile_img").innerHTML = "<img src=" +url+" >";
-                    // document.getElementById("profile_img").innerHTML = "abc";
-
-                    $('.profile_img').css({'background':"url(../WebAPI/uploads/" + data[0].profile_img + ")"});
+                    // $('.profile_img').css({'background':"url(../WebAPI/uploads/" + data[0].profile_img + ")"});
+                    $('.profile_img').attr("src","../WebAPI/uploads/" + data[0].profile_img + "");
 
                         // alert(data);
                     },
