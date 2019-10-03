@@ -29,7 +29,7 @@
                                 <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Fan
                                 <input  style="float:right" type="text" id="fans" value="" maxlength="3" size="3"><br>
                                 </label>
-                                <label class="col-xs-11 col-sm-3 col-md-2 col-lg-2 checkbox-inline font-16 bold black pd-2">Geysers
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Geysers
                                 <input style="float:right" type="text" id="geysers" value="" maxlength="3" size="3"><br>
                                 </label>
                                 <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Curtains

@@ -21,7 +21,20 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
     console.log("avtar file......", req.body);
    
        try {
-            var sql ='UPDATE pgdetails SET profile_img=? WHERE pro_id=? AND pro_type=?';
+            if(req.body.pro_type =="pg") {
+              table="pgdetails";
+            }
+            if(req.body.pro_type =="flat") {
+              table="flatdetails";
+            }
+            if(req.body.pro_type =="building") {
+              table="buildownerdetails";
+            }
+            if(req.body.pro_type =="pg_to_pg") {
+              table="pgtopgdetails";
+            }
+
+            var sql ='UPDATE ' +table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
             console.log("sql.......", sql);
             var file;
             file=req.file.filename;

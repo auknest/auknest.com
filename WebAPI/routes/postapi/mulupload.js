@@ -33,6 +33,12 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
            if(req.body.pro_type =="flat") {
             table="flatdetails";
           }
+          if(req.body.pro_type =="building") {
+            table="buildownerdetails";
+          }
+          if(req.body.pro_type =="pg_to_pg") {
+            table="pgtopgdetails";
+          }
           
            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {

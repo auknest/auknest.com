@@ -44,15 +44,17 @@
                             <br>
                              <!-- Second row -->
                              <div class="row black-border">
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Curtains
-                                <input style="float:right" type="text" id="curtains" value="" maxlength="3" size="3"><br>
-                                </label>
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">CCTV
-                                <input style="float:right" type="text" id="cctv" value="" maxlength="3" size="3"><br>
-                                </label>
-                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Double Locker
+                                <label class="col-xs-11 col-sm-4 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2"  style="margin-left:10px;">Double Locker
                                 <input style="float:right" type="text" id="doublelocker" value="" maxlength="3" size="3"><br>
                                 </label>
+                                <label class="col-xs-11 col-sm-4 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Single Locker
+                                <input style="float:right" type="text" id="singleLocker" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-4 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">Center Table
+                                <input style="float:right" type="text" id="centerTable" value="" maxlength="3" size="3"><br>
+                                </label>
+                                
+                                
                                 
                             </div>
                              <br>
@@ -61,27 +63,51 @@
                                 <!-- <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black" style="padding-left:30px;">Curtains
                                 <input style="float:right" type="text" id="amn" value="" maxlength="3" size="3"><br>
                                 </label> -->
-                                <label class="col-xs-11 col-sm-4 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Center Table
-                                <input style="float:right" type="text" id="centerTable" value="" maxlength="3" size="3"><br>
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Curtains
+                                <input style="float:right" type="text" id="curtains" value="" maxlength="3" size="3"><br>
+                                </label>
+                                <label class="col-xs-11 col-sm-3 col-md-3 col-lg-3 checkbox-inline font-16 bold black pd-2">CCTV
+                                <input style="float:right" type="text" id="cctv" value="" maxlength="3" size="3"><br>
                                 </label>
                                 <label class="col-xs-11 col-sm-4 col-md-4 col-lg-4 checkbox-inline font-16 bold black pd-2">Buckets and mug
                                 <input style="float:right" type="text" id="bucket" value="" maxlength="3" size="3"><br>
                                 </label>
-                                <label class="col-xs-11 col-sm-3 col-md-4 col-lg-3 checkbox-inline font-16 bold black pd-2">Single Locker
-                                <input style="float:right" type="text" id="singleLocker" value="" maxlength="3" size="3"><br>
-                                </label>
+                                
                                 
                             </div>
                             <br>
                             <!-- Fourth Row -->
                             <div class="row black-border">
                                 
-                                <label class="col-xs-11 col-sm-3 col-md-5 col-lg-5 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Bed, mattress and bed sheet
+                                <label class="col-xs-11 col-sm-6 col-md-5 col-lg-5 checkbox-inline font-16 bold black pd-2" style="margin-left:10px;">Bed, mattress and bed sheet
                                 <input style="float:right" type="text" id="bed" value="" maxlength="3" size="3"><br>
                                 </label>
                             </div>
                             <br>
                         </div>
+                </div>
+
+                <!-- Owner Aminities -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10">
+                        <div> <span class="blue-font bold-font">Owner Amenities </span><br></div>
+                        <!-- First row -->
+                        <div class="row black-border">
+                            <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
+                            <input type="checkbox" id="light" value="Light">Light
+                            </label>
+                            <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                            <input type="checkbox" id="fans" value="Fans">Fan
+                            </label>
+                            <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                            <input type="checkbox" id="gaysers" value="Geysers">Geysers
+                            </label>
+                            <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                            <input type="checkbox" id="curtains" value="Curtains">Curtains
+                            </label>
+                        </div>
+                        <br>
+                    </div>
                 </div>
                              <!-- Property Description -->
                             <div class="row">

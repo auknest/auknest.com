@@ -560,8 +560,8 @@
         </div>
     </div>
 </div>
-<?php  $passkey = (!isset($_GET['confirm_code'])) ? $_GET['confirm_code'] : 'empty';?>
-<?php $email=$_GET['email'];?>
+<?php  $passkey = (isset($_GET['confirm_code'])) ? $_GET['confirm_code'] : '';?>
+<?php $email = (isset($_GET['email'])) ? $_GET['email'] : '';?>
 
 
 <script>
