@@ -44,14 +44,51 @@ $_SESSION['pro_id']= uniqid();
 
 
   $(document).ready(function() {
+    var id;
+    var parm=window.location.search.substring(1);
+    var url_parm = parm ? parm : '';
+    console.log("url parm.....", url_parm);
+    var status= url_parm?1:0;
+    console.log("status.....", status);
+    var pair = url_parm.split("=");
+
+    if(status==1){
+      $.ajax({
+        type:"GET",
+        url: 'http://localhost:3000/get_pro_type',			
+        data:{
+              "pro_id":pair[1],
+              "status":1
+        },
+        success: function (data) {
+                console.log("data...", data);
+                
+                $('input:radio[value="'+data[0].pro_type+'"]').attr('checked',true);
+        },
+        error: function() {
+                  console.log('Error In AJAX...');
+        },
+      });
+    }
+
+ if(status==1)
+ {
+  var id=pair[1];
+  status=1;
+ }
+ else {
+  var id="<?php echo $_SESSION['pro_id']?>";
+  status=0;
+
+ }
+
    $('#ajax_pro_type').click(function(e){ 
 
     e.preventDefault();
-    var type= $("input:radio[id=pro_type]:checked").val();
-    var serverData = {"pro_type" : type,
-                      "pro_id"   : "<?php echo $_SESSION['pro_id']?>"};
-    
-    
+    var serverData = {"pro_type" : $("input:radio[id=pro_type]:checked").val(),
+                      "pro_id"   : id,
+                      "status": status,
+                    };
     $.ajax({
                 type: "POST",
                 url: 'http://localhost:3000/post_pro_type',						   
@@ -63,11 +100,7 @@ $_SESSION['pro_id']= uniqid();
                   console.log('process complete');
                 },
                 success: function(res) {
-                  // if(type=="pg") {
-                    window.location.href = "pg_who_I.php";
-
-                    // document.myform.action ="./pg_who_I.php";
-                  // }
+                  window.location.href = "pg_who_I.php";
                   console.log('Property type Sucessfully inserted ...');
                },
                 error: function() {
@@ -75,8 +108,9 @@ $_SESSION['pro_id']= uniqid();
                 },
             });
             
-            sessionStorage.setItem("pro_id", "<?php echo $_SESSION['pro_id']?>");
-            sessionStorage.setItem("pro_type", type);    
+            sessionStorage.setItem("pro_id", id);
+            sessionStorage.setItem("pro_type", $("input:radio[id=pro_type]:checked").val());
+            sessionStorage.setItem("status", status);
     });
    
   }); //Ready function close

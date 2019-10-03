@@ -16,6 +16,8 @@ var express = require('express');
 
 //Get API
 var getstud1 = require('./routes/getstud');
+var getprotype = require('./routes/getapi/get_pro_type');
+var getwhoI = require('./routes/getapi/get_who_I');
 var getproshortdetails = require('./routes/getapi/get_pro_shortdetails');
 
 //Post api
@@ -53,6 +55,8 @@ app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 //Get API
 app.use('/getstud', getstud1);
+app.use('/get_pro_type', getprotype);
+app.use('/get_who_I', getwhoI);
 app.use('/get_pro_shortdetails', getproshortdetails); //get property short details
 
 //Post API

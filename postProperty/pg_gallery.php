@@ -18,7 +18,7 @@
         Your Post will be Live in 24 hours after Verification".</p>
         <br><br>
         <div class="row center">
-               <a href="#">
+               <a href="./pgdetails.php">
                 <div class="col-sm-12 col-md-6 col-lg-6 center">
                     <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">PREVIEW LISTING <br></p>
                 </div>

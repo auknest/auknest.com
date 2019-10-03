@@ -575,8 +575,7 @@
 
                     });
                 });
-                // onerk=onerk.toString();
-                // onebhk=onebhk.toString();
+            
                 var onerk=JSON.stringify(onerk1);
                 var onebhk=JSON.stringify(onebhk1);
                 var twobhk=JSON.stringify(twobhk1);

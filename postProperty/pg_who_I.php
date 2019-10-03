@@ -45,6 +45,29 @@
 <script>
 
     $(document).ready(function () {
+      
+
+      if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+              "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_type",
+          data:serverData1,
+          success:function(data){
+            console.log("data...", data);
+            $('input:radio[value="'+data[0].pro_person+'"]').attr('checked',true);                
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
       $('#ajax_who').click( function(e){
         e.preventDefault();
          var pro_person = $("input:radio[id=pro_person]:checked").val();
