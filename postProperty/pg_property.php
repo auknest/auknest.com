@@ -44,19 +44,19 @@
                     <!-- First row -->
                     <div class="black-border row">
                         <label class="radio-inline col-lg-2 font-16 bold black" style="padding-left:30px; padding-right:0px">
-                        <input type="radio" id="roomType" name="roomType" value="">Room system
+                        <input type="radio" id="roomType" name="roomType" value="Room system">Room system
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" id="roomType" name="roomType" value="2 BHK">2 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="2 BHK">2 BHK
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" id="roomType" name="roomType" value="3 BHK">3 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="3 BHK">3 BHK
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-                        <input type="radio" id="roomType" name="roomType" value="4 BHK">4 BHK PG
+                        <input type="radio" id="roomType" name="roomType" value="4 BHK">4 BHK
                         </label>
                         <label class="radio-inline blue-font font-16 bold col-lg-1">
                         <input type="radio" id="roomType" name="roomType" value="others">Others

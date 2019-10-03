@@ -48,13 +48,13 @@
                     <br>
                     <div class="black-border row ">
                     <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 radio-inline font-16 bold black pd-l-30px">
-                        <input type="radio" id="area" name="wsupply" value="Corporation" checked>Corporation
+                        <input type="radio" id="water_supply" name="wsupply" value="Corporation" checked>Corporation
                     </label>
                     <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
-                        <input type="radio" id="area" name="wsupply" value="Borewell">Borewell
+                        <input type="radio" id="water_supply" name="wsupply" value="Borewell">Borewell
                     </label>
                     <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
-                        <input type="radio" id="area" name="wsupply" value="Both">Both
+                        <input type="radio" id="water_supply" name="wsupply" value="Both">Both
                     </label>
                     </div>
             </div>
@@ -125,7 +125,7 @@
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <label class="radio-inline font-16 bold black">
-                            <input type="radio" id="furnish" name="parking" value="Un Furnished">Un Furnished
+                            <input type="radio" id="furnish" name="furnish" value="Un Furnished">Un Furnished
                         </label>
                         </div>
                     </div>  
@@ -270,8 +270,8 @@
                              "pro_id": sessionStorage.getItem("pro_id"),
                              "pro_type" : sessionStorage.getItem("pro_type"),
                              "att_bal":$("input:radio[id=bal]:checked").val(),
-                             "com_area":$("input:radio[id=area]:checked").val(),
-                             "parking_type":$("input:radio[id=park_type]:checked").val(),
+                             "water_supply":$("input:radio[id=water_supply]:checked").val(),
+                             "parking_type":$("input:radio[id=parktype]:checked").val(),
                              "parking":$("input:radio[id=park]:checked").val(),
                              "furnish":$("input:radio[id=furnish]:checked").val(),
                              "flat_amenities":flat_ame,

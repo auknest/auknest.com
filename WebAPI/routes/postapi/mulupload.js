@@ -41,6 +41,7 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
           }
           
            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
+           console.log("SQL....",sql);
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
                 if (error) {
                     console.log("Failed to insert the Person type", error)

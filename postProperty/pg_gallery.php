@@ -79,8 +79,10 @@
 
                 </div>
                 <div class="row center">
-                        <label class=" center">Others<input id ="other" onchange="activeMenu(event)" type="file" style="display:none"></label>
+                <form id="other-attachment">
+                        <label class=" center">Others<input id ="other" onchange="activeMenu(event)" type="file" multiple="true" name="imgs" style="display:none"></label>
                         <p style="font-size:12px" id ="other1"></p>
+                </form>
                 </div>
         </div>
             <div class="width-eighty m-auto">
@@ -154,6 +156,13 @@ $("#balcony").on("change", function() {
     $("#balcony-attachment").submit();
 });
 
+// Other images upload event.
+$("#other").on("change", function() {   
+    console.log("Other change event.......");
+    $("#other-attachment").submit();
+});
+
+// Hall section
 $("#hall-attachment").submit(function(e) {
     e.preventDefault();
     var id=sessionStorage.getItem("pro_id");
@@ -209,6 +218,20 @@ $("#balcony-attachment").submit(function(e) {
     formData.append("pro_id", id);
     formData.append("pro_type", type);
     formData.append("img_type", "balcony_img");
+
+    ajax_call_API(formData);
+});
+$("#other-attachment").submit(function(e) {
+    e.preventDefault();
+    var id=sessionStorage.getItem("pro_id");
+    var type=sessionStorage.getItem("pro_type");
+
+    console.log("other attachment ............");
+    var formData = new FormData(this);
+
+    formData.append("pro_id", id);
+    formData.append("pro_type", type);
+    formData.append("img_type", "other_img");
 
     ajax_call_API(formData);
 });

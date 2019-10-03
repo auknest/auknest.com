@@ -581,7 +581,10 @@
                 var twobhk=JSON.stringify(twobhk1);
                 var threebhk=JSON.stringify(threebhk1);
                 var fourbhk=JSON.stringify(fourbhk1);
-                water_supply= JSON.stringify(water_supply);
+                lease=JSON.stringify(lease);
+                selling=JSON.stringify(selling);
+                water_supply= water_supply.toString();
+
 
             var serverData ={"build_type": $("input:radio[id=build_type]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
@@ -624,7 +627,7 @@
                 },
                 success: function(res) {      
                   console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
-                    //  window.location.href = "pg_pg_aminities.php";
+                     window.location.href = "pg_pg_aminities.php";
                },
                 error: function() {
                   console.log('Error In AJAX...');

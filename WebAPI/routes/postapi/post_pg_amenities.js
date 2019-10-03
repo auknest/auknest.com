@@ -29,9 +29,9 @@ router.post('/', function(req, res) {
         table = "flatdetails";  
         values ={   "att_bath": req.body.att_bath,
         "att_bal":req.body.att_bal,
-        "com_area":req.body.com_area,
+        "water_supply":req.body.water_supply,
         "parking":req.body.parking,
-        "parking_type":req.body.park_type,
+        "parking_type":req.body.parking_type,
         "furnish":req.body.furnish,
         "flat_amenities":req.body.flat_amenities,
         "gen_amenities":req.body.gen_amenities,

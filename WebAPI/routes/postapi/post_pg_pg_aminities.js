@@ -25,7 +25,8 @@ router.post('/', function(req, res) {
         "Buckets_and_mug":req.body.Buckets_and_mug,
         "Single_Locker":req.body.Single_Locker,
         "Bed_mattress_and_bedsheet":req.body.Bed_mattress_and_bedsheet,
-        "descr":req.body.descr
+        "descr":req.body.descr,
+        "OwnerAminities":req.body.OwnerAminities
     }
     var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
     var sql = "UPDATE pgtopgdetails SET ? "+cond;

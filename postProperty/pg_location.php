@@ -5,7 +5,7 @@
 <?php
 echo $_SESSION['pro_id'];
 //  $_SESSION['pro_id']=$_POST['pro_id'];
-echo $_SESSION['pro_person'];
+// echo $_SESSION['pro_person'];
 ?>
 </div>
 <br>

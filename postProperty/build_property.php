@@ -458,7 +458,7 @@
             $("input:checkbox[id=roomType4bhk]:checked").each(function(){
                 fourbhk.push({
                     floor: $('#floorfourbhk').val(), 
-                    flat:  $('#flatonerk').val(),
+                    flat:  $('#flatfourbhk').val(),
                     washroom:  $('#washroomfourbhk').val(),
                     balcony:  $('#balconyfourbhk').val()
                 });

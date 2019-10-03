@@ -94,13 +94,13 @@
                         <!-- First row -->
                         <div class="row black-border">
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                            <input type="checkbox" id="light" value="Light">Lights
+                            <input type="checkbox" id="ownerAminities" value="Light">Lights
                             </label>
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                            <input type="checkbox" id="fans" value="Fans">Fans
+                            <input type="checkbox" id="ownerAminities" value="Fans">Fans
                             </label>
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                            <input type="checkbox" id="geysers" value="Geysers">Geysers
+                            <input type="checkbox" id="ownerAminities" value="Geysers">Geysers
                             </label>
                             <!-- <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
                             <input type="checkbox" id="curtains" value="Curtains">Curtains
@@ -130,6 +130,11 @@
     $(document).ready(function(){
         $('#ajax-pg-pg_pro').click(function(e) {
             e.preventDefault();
+            var OwnerAminities=[];
+            $("input:checkbox[id=ownerAminities]:checked").each(function(){
+                OwnerAminities.push($(this).val()); 
+            });
+            OwnerAminities= OwnerAminities.toString();
             var serverData= {
                 "pro_id": sessionStorage.getItem("pro_id"),
                 "pro_type" : sessionStorage.getItem("pro_type"),
@@ -145,7 +150,8 @@
                 "Buckets_and_mug":$('#bucket').val(),
                 "Single_Locker":$('#singleLocker').val(),
                 "Bed_mattress_and_bedsheet":$('#bed').val(),
-                "descr":$('#descr').val()
+                "descr":$('#descr').val(),
+                "OwnerAminities":OwnerAminities
 
             };
             console.log(serverData);
