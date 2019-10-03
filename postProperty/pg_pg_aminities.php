@@ -94,17 +94,17 @@
                         <!-- First row -->
                         <div class="row black-border">
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                            <input type="checkbox" id="light" value="Light">Light
+                            <input type="checkbox" id="light" value="Light">Lights
                             </label>
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                            <input type="checkbox" id="fans" value="Fans">Fan
+                            <input type="checkbox" id="fans" value="Fans">Fans
                             </label>
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
-                            <input type="checkbox" id="gaysers" value="Geysers">Geysers
+                            <input type="checkbox" id="geysers" value="Geysers">Geysers
                             </label>
-                            <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
+                            <!-- <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
                             <input type="checkbox" id="curtains" value="Curtains">Curtains
-                            </label>
+                            </label> -->
                         </div>
                         <br>
                     </div>

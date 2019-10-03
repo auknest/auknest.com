@@ -582,6 +582,7 @@
                 var twobhk=JSON.stringify(twobhk1);
                 var threebhk=JSON.stringify(threebhk1);
                 var fourbhk=JSON.stringify(fourbhk1);
+                water_supply= JSON.stringify(water_supply);
 
             var serverData ={"build_type": $("input:radio[id=build_type]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
