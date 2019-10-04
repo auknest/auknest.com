@@ -20,9 +20,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
 
     console.log("avtar file......", req.body);
     
-   
        try {
-<<<<<<< HEAD
             if(req.body.pro_type =="pg") {
               table="pgdetails";
             }
@@ -39,17 +37,6 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             var sql ='UPDATE ' +table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
             console.log("sql.......", sql);
             var file;
-=======
-         var table;
-              if(req.body.pro_type =="pg") {
-                table="pgdetails";
-              }
-              if(req.body.pro_type =="flat") {
-              table="flatdetails";
-            }
-            var sql ='UPDATE '+table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
-            var file=[];
->>>>>>> 9cc0bcb6ce81ff4a38972fc91d1be733f1c724f2
             file=req.file.filename;
             console.log("single image file..........", file);
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
