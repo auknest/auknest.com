@@ -10,6 +10,7 @@ router.use(function(req, res, next) {
   });
 
 router.post('/', function(req, res) {
+   
     if (req.body.pro_type =="pg") {
         table = "pgdetails";  
         values ={   "att_bath": req.body.att_bath,
@@ -39,8 +40,14 @@ router.post('/', function(req, res) {
        };
       }
     var values =req.body;
-
-    var sql ='INSERT INTO '+table+' SET ?';
+    if(req.body.status==1) {
+            cond=" WHERE pro_id='"+req.body.pro_id+"' ";
+            var sql="UPDATE property SET ?" +cond;
+        }
+        else {
+            var sql ='INSERT INTO '+table+' SET ?';
+     
+        }
     console.log("sql.......", sql);
     con.query(sql, values, function(error, results, fields) {
         if(error) {

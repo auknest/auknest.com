@@ -23,7 +23,7 @@
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bathroom" name="bathroom" value="yes" checked>Yes
+                        <input type="radio" id="bathroom" name="bathroom" value="yes" >Yes
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                         <input type="radio" id="bathroom" name="bathroom" value="no">No
@@ -35,7 +35,7 @@
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bal" name="balcony" value="yes" checked>Yes
+                        <input type="radio" id="bal" name="balcony" value="yes" >Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                         <input type="radio" id="bal" name="balcony" value="no">No
@@ -47,7 +47,7 @@
             <div class=""> <span class="blue-font bold-font">Common Area</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" id="area" name="area" value="yes" checked>Yes
+                        <input type="radio" id="area" name="area" value="yes" >Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                         <input type="radio" id="area" name="area" value="no">No
@@ -64,7 +64,7 @@
                     <div class="row black-border">
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input id="park" type="radio" name="parking" value="bike" checked>Bike
+                            <input id="park" type="radio" name="parking" value="bike" >Bike
                         </label>
                         </div>
 
@@ -205,7 +205,7 @@
                     <div class="row black-border font-16 bold black">
                         <span style="padding-left:15px;">Guardian Stay  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <label class="radio-inline font-16 bold black">
-                        <input type="radio" id="rule" name="guardian" value="yes" checked>Yes
+                        <input type="radio" id="rule" name="guardian" value="yes" >Yes
                         </label>
                         <label class="radio-inline font-16 bold black">
                         <input type="radio" id="rule" name="guardian" value="no">No
@@ -228,6 +228,49 @@
 </div>
 <script>
     $(document).ready(function(){
+        if(sessionStorage.getItem('status')==1)
+      {
+          console.log("Into the property get ajax");
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+            //   "pro_type":sessionStorage.getItem("pro_type"),
+              "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("data.......", data);
+ 
+            $('input:radio[value="'+data[0].att_bath+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].att_bal+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].com_area+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].parking+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].pg_rules+'"]').attr('checked',true);   
+
+            //To check the multiple checkboxes into general aminities
+            var pgAminiArr = data[0].pg_amenities.split(',');
+            for(var i=0; i<pgAminiArr.length;i++) {
+                $('input[type=checkbox][value="'+pgAminiArr[i]+'"]').attr('checked',true);
+
+            }
+
+            //To check the multiple checkboxes into general aminities
+            var genAminiArr = data[0].gen_amenities.split(',');
+            for(var i=0; i<genAminiArr.length;i++) {
+                $('input[type=checkbox][value="'+genAminiArr[i]+'"]').attr('checked',true);
+
+            }
+        },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
         $('#ajax-pg-ame').click(function(e) {
             e.preventDefault();
             console.log(".......available pg");

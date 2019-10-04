@@ -102,6 +102,8 @@
 </div>
 <script>
     $(document).ready(function(){
+   
+
         $('#ajax-pg-pg_pro').click(function(e) {
             e.preventDefault();
             var serverData= {

@@ -19,6 +19,7 @@ var getstud1 = require('./routes/getstud');
 var getprotype = require('./routes/getapi/get_pro_type');
 var getwhoI = require('./routes/getapi/get_who_I');
 var getproshortdetails = require('./routes/getapi/get_pro_shortdetails');
+var getpropgFlatPgtopgdetails= require('./routes/getapi/get_pro_pgFlatPgtopg_details');
 
 //Post api
 var protype = require('./routes/postapi/post_property_type');
@@ -33,7 +34,6 @@ var pgtopgproperty = require('./routes/postapi/pg_pg_property'); //To insert pg 
 var pgtopgaminities = require('./routes/postapi/post_pg_pg_aminities'); //To insert pg to pg proprty details. 
 var buildproperty = require('./routes/postapi/post_build_property'); //To insert building proprty details. 
 var buildaminities = require('./routes/postapi/post_build_aminities'); //To insert building aminities details. 
-
 
 var bodyParser = require('body-parser');
 var multer  = require('multer');
@@ -55,9 +55,11 @@ app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 //Get API
 app.use('/getstud', getstud1);
-app.use('/get_pro_type', getprotype);
+app.use('/get_pro_type', getprotype);//To get the basic property details
 app.use('/get_who_I', getwhoI);
 app.use('/get_pro_shortdetails', getproshortdetails); //get property short details
+app.use('/get_pro_pgFlatPgtopg_details', getpropgFlatPgtopgdetails); //get property short details
+
 
 //Post API
 app.use('/post_property_type', protype);

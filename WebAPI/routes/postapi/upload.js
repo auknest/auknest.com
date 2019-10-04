@@ -19,13 +19,23 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
     // var parm=req.query;
 
     console.log("avtar file......", req.body);
+    
    
        try {
-            var sql ='UPDATE pgdetails SET profile_img=? WHERE pro_id=? AND pro_type=?';
-            console.log("sql.......", sql);
-            var file;
+         var table;
+              if(req.body.pro_type =="pg") {
+                table="pgdetails";
+              }
+              if(req.body.pro_type =="flat") {
+              table="flatdetails";
+            }
+            var sql ='UPDATE '+table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
+            var file=[];
             file=req.file.filename;
-            con.query(sql, [file, req.body.pro_id, req.body.pro_type], function (error, results, fields) {
+            console.log("single image file..........", file);
+            con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
+              console.log("sql.......", sql);
+
                 if (error) {
                     console.log("Failed to insert the Person type", error)
                 }
