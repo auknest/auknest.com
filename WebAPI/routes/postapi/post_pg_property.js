@@ -23,7 +23,7 @@ router.post('/', function(req, res) {
             "floor_no": req.body.floor_no,
             "total_floor": req.body.total_floor,
             "total_room": req.body.total_floor,
-            // "get_close-time": req.body.get_close-time,
+            "get_close_time": req.body.get_close_time,
             "avl_frm": req.body.avl_frm,
             "expected_rent": req.body.expected_rent,
             "food_included": req.body.food_included,

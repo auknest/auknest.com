@@ -248,7 +248,8 @@
             $('input:radio[value="'+data[0].pg_available+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);                
-            $('#total_rooms').val(data[0].total_room);       
+            $('#total_rooms').val(data[0].total_room); 
+            $('input:radio[value="'+data[0].get_close_time+'"]').attr('checked',true);        
             $('#avl_frm').val(data[0].avl_frm); 
             $('#exp_rent').val(data[0].expected_rent); 
             $('input:radio[value="'+data[0].food_included+'"]').attr('checked',true);                
@@ -284,7 +285,7 @@ if(sessionStorage.getItem('status')==1)
                              "floor_no":$("input:radio[id=floorNo]:checked").val(),
                              "total_floor":$("input:radio[id=totalFloor]:checked").val(),
                              "total_room":$('#total_rooms').val(),
-                             "get_close-time":$('#gate_time').val(),
+                             "get_close_time":$("input:radio[id=gate_time]:checked").val(),
                              "avl_frm":$('#avl_frm').val(),
                              "expected_rent":$('#exp_rent').val(),
                              "food_included":$("input:radio[id=food]:checked").val(),
