@@ -23,10 +23,10 @@
               <input type="radio" id ="pro_person" name="pro_person" value="owner"><span class="select-txt">Owner</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="agent"><span class="select-txt">Agent / Broker</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="agent" disabled><span class="select-txt" >Agent / Broker</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="builder"><span class="select-txt">Builder</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="builder" disabled><span class="select-txt"  >Builder</span>
             </div>
         </div>
       
