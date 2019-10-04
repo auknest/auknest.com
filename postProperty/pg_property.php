@@ -263,12 +263,21 @@
         });
       }
 
-        $('#ajax-pg-pro').click(function(e) {
+if(sessionStorage.getItem('status')==1)
+ {
+  var id=sessionStorage.getItem("pro_id");
+  status=1;
+ }
+ else {
+  var id=sessionStorage.getItem("pro_id");
+  status=0;
+
+ }      $('#ajax-pg-pro').click(function(e) {
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);
 
             var serverData ={"pg_for": $("input:radio[id=pgAvailable]:checked").val(),
-                             "pro_id": sessionStorage.getItem("pro_id"),
+                             "pro_id": id,
                              "pro_type" : sessionStorage.getItem("pro_type"),
                              "pg_room_type":$("input:radio[id=roomType]:checked").val(),
                              "pg_available":$("input:radio[id=pgFor]:checked").val(),
@@ -281,6 +290,7 @@
                              "food_included":$("input:radio[id=food]:checked").val(),
                              "security_amt":$('#sec_amt').val(),
                              "descr":$('#descr').val(),
+                             "status":status
 
                                 };
                 console.log(serverData);

@@ -10,16 +10,33 @@ router.use(function(req, res, next) {
   });
 
 router.post('/', function(req, res) {
+
    
     if (req.body.pro_type =="pg") {
         table = "pgdetails";  
-        values ={   "att_bath": req.body.att_bath,
-        "att_bal":req.body.att_bal,
-        "com_area":req.body.com_area,
-        "parking":req.body.parking,
-        "pg_amenities":req.body.pg_amenities,
-        "gen_amenities":req.body.gen_amenities,
-        "pg_rules":req.body.pg_rules,
+        values ={  
+            "pg_for": req.body.pg_for,
+            "pro_id": req.body.pro_id,
+            "pro_type": req.body.pro_type,
+            "pg_room_type": req.body.pg_room_type,
+            "pg_available": req.body.pg_available,
+            "floor_no": req.body.floor_no,
+            "total_floor": req.body.total_floor,
+            "total_room": req.body.total_floor,
+            // "get_close-time": req.body.get_close-time,
+            "avl_frm": req.body.avl_frm,
+            "expected_rent": req.body.expected_rent,
+            "food_included": req.body.food_included,
+            "security_amt": req.body.security_amt,
+            "descr": req.body.descr
+            
+        //     "att_bath": req.body.att_bath,
+        // "att_bal":req.body.att_bal,
+        // "com_area":req.body.com_area,
+        // "parking":req.body.parking,
+        // "pg_amenities":req.body.pg_amenities,
+        // "gen_amenities":req.body.gen_amenities,
+        // "pg_rules":req.body.pg_rules,
      };
       }
       if (req.body.pro_type =="flat") {
@@ -39,16 +56,19 @@ router.post('/', function(req, res) {
           "descr":req.body.descr,
        };
       }
-    var values =req.body;
+    // var values =req.body;
+    console.log("'''''''''status.......", req.body.status);
     if(req.body.status==1) {
             cond=" WHERE pro_id='"+req.body.pro_id+"' ";
-            var sql="UPDATE property SET ?" +cond;
+            var sql="UPDATE "+table+" SET ?" +cond;
         }
         else {
             var sql ='INSERT INTO '+table+' SET ?';
      
         }
     console.log("sql.......", sql);
+    console.log("values.........", values );
+
     con.query(sql, values, function(error, results, fields) {
         if(error) {
             console.log("Failed to insert the Pg property details", error)

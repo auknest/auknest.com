@@ -95,6 +95,31 @@
 
  
  <script>
+$(document).ready(function () {
+
+   if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("success data...", data);
+            // $('input:radio[value="'+data[0].pro_person+'"]').attr('checked',true);                
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
+
        $('#ajax-gal').click(function(e) {
     $("#popupwindow").show();
     $("#gallerywindow").hide();
@@ -250,7 +275,7 @@ function ajax_call_API(formData) {
  function closegallery() {
      location.href="../index.php";
  }
-
+});
  </script>
 <script>
    

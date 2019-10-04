@@ -36,8 +36,12 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
 
             var sql ='UPDATE ' +table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
             console.log("sql.......", sql);
-            var file;
-            file=req.file.filename;
+            var file=[];
+            var filebase= req.file.filename;
+            var filekey=req.file.originalname;
+            file={
+                  [filekey]:filebase
+                };
             console.log("single image file..........", file);
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
               console.log("sql.......", sql);
