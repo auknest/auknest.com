@@ -47,11 +47,7 @@
                         <input type="radio" id="roomType" name="roomType" value="Room system">Room system
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
-<<<<<<< HEAD
                         <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK
-=======
-                        <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK 
->>>>>>> 9cc0bcb6ce81ff4a38972fc91d1be733f1c724f2
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
                         <input type="radio" id="roomType" name="roomType" value="2 BHK">2 BHK
