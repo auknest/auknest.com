@@ -251,6 +251,41 @@
 </div>
 <script>
     $(document).ready(function(){
+        if(sessionStorage.getItem('status')==1)
+      {
+          console.log("Into the property get ajax");
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+            //   "pro_type":sessionStorage.getItem("pro_type"),
+            //   "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("data...", data);
+            $('input:radio[value="'+data[0].pg_for+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].pg_room_type+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].pg_available+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);                
+            $('#total_rooms').val(data[0].total_room);       
+            $('#avl_frm').val(data[0].avl_frm); 
+            $('#exp_rent').val(data[0].expected_rent); 
+            $('input:radio[value="'+data[0].food_included+'"]').attr('checked',true);                
+            $('#sec_amt').val(data[0].security_amt); 
+            $('#descr').val(data[0].descr); 
+  
+        },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+      
         $('#ajax-flat-pro').click(function(e) {
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);

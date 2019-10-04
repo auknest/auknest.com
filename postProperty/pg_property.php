@@ -47,7 +47,11 @@
                         <input type="radio" id="roomType" name="roomType" value="Room system">Room system
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
+<<<<<<< HEAD
                         <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK
+=======
+                        <input type="radio" id="roomType" name="roomType" value="1 BHK">1 BHK 
+>>>>>>> 9cc0bcb6ce81ff4a38972fc91d1be733f1c724f2
                         </label>
                         <label class="radio-inline font-16 bold black col-lg-2">
                         <input type="radio" id="roomType" name="roomType" value="2 BHK">2 BHK
@@ -71,7 +75,7 @@
                     <div class=""> <span class="blue-font bold-font">PG Available for</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px font-16 bold black col-lg-5">
-                                <input type="radio" id="pgFor" name="pgFor" value="Student" checked>Student
+                                <input type="radio" id="pgFor" name="pgFor" value="Student">Student
                             </div>
                             <div class="radio-inline col-lg-6 font-16 bold black">
                                 <input type="radio" id="pgFor" name="pgFor" value="Working Professional">Working Professional
@@ -194,7 +198,7 @@
                 <div class=""> <span class="blue-font bold-font">Food include</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                <input type="radio" id="food" name="food" value="Yes" checked>Yes
+                                <input type="radio" id="food" name="food" value="Yes">Yes
                             </div>
                             <div class="radio-inline font-16 bold black col-lg-5">
                                 <input type="radio" id="food" name="food" value="No">No
@@ -228,6 +232,41 @@
 </div>
 <script>
     $(document).ready(function(){
+        if(sessionStorage.getItem('status')==1)
+      {
+          console.log("Into the property get ajax");
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+            //   "pro_type":sessionStorage.getItem("pro_type"),
+              "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("data...", data);
+            $('input:radio[value="'+data[0].pg_for+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].pg_room_type+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].pg_available+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);                
+            $('#total_rooms').val(data[0].total_room);       
+            $('#avl_frm').val(data[0].avl_frm); 
+            $('#exp_rent').val(data[0].expected_rent); 
+            $('input:radio[value="'+data[0].food_included+'"]').attr('checked',true);                
+            $('#sec_amt').val(data[0].security_amt); 
+            $('#descr').val(data[0].descr); 
+  
+        },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
         $('#ajax-pg-pro').click(function(e) {
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);

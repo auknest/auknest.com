@@ -63,7 +63,7 @@
                             </div>   
                             <hr>
                         <div class="row">
-                            <a href="./listProperty.php?pro_id=5d81cbebe1465">
+                            <a>
                                 <div class="col-sm-12 col-md-6 col-lg-6 center">
                                     <p id="ajax-edit" class="w-100per center red-font back-color-yellow pd-5per">Edit <br></p>
                                 </div>
@@ -85,12 +85,15 @@
 
     // $('#ajax-edit').click(function(e) {
         $(document).ready(function(){   
-        
+        console.log(sessionStorage.getItem("pro_id"));
+    
     $.ajax ({
         url: "http://localhost:3000/get_pro_shortdetails?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-        // url: "http://localhost:3000/get_pro_shortdetails?pro_id=5d81cbebe1465",
         type:"GET",
-        // data:,
+        data: {
+            // "pro_id": sessionStorage.getItem("pro_id"),
+            // "pro_type": sessionStorage.getItem("pro_type")
+        },
         success: function (data) {
                 console.log(data);
                     $('#pro_type').html(data[0].pro_type);
@@ -110,5 +113,9 @@
                 },
 
     });
+    $('#ajax-edit').click(function(e) {
+            e.preventDefault();
+                     window.location.href = "./listProperty.php?pro_id="+sessionStorage.getItem("pro_id");
+                });
 });
     </script>

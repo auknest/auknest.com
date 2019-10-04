@@ -78,8 +78,9 @@ echo $_SESSION['pro_id'];
           success:function(data){
             console.log("data...", data);
             $('#dropDownId[value="'+data[0].pro_city+'"]').attr('selected', 'selected'); 
-            // $('input:radio[value="'+data[0].pro_person+'"]').attr('checked',true);       
-
+            $('#pro_loc').val(data[0].pro_locality);       
+            $('#address').val(data[0].pro_address); 
+            $('#pro_name').val(data[0].pro_name); 
           },
           error:function(){
             console.log('Error In AJAX...');

@@ -13,8 +13,15 @@ router.get('/', (req,res) =>{
     console.log("Into get pg short details api");
     console.log(req.param('pro_id'));
     var cond= "WHERE pro_id='"+req.param('pro_id')+"' AND pro_type='"+req.param('pro_type')+"'";
+    var table;
+    if(req.param('pro_type') =="pg") {
+      table="pgdetails";
+    }
+    if(req.param('pro_type') =="flat") {
+    table="flatdetails";
+  }
 
-    var sql ="SELECT * FROM pgdetails "+cond;
+    var sql ="SELECT * FROM "+table+" "+cond;
     console.log(sql);
 
     con.query(sql, (error, result) =>{
