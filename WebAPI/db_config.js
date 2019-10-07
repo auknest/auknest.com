@@ -6,11 +6,13 @@ var con = mysql.createConnection({
     // user: "u344703846_root",
     // password: "root123",
     // database: "u344703846_volta",
+
   // Localhost Credentials
     // host:'localhost',
     // user:'root',
     // password:"",
     // database:"e",
+    
   // Hostripples Server Credentials
     host:"india5.ownmyserver.com",// Host name
     user:"innoluti_root", // Mysql username
@@ -18,8 +20,9 @@ var con = mysql.createConnection({
     database:"innoluti_testing", // Database name
 });
 con.connect(function(err) {
-    if (err) throw err;
-    else {
+    if (err){
+      console.log("Error in connnect",err);
+    }else {
       console.log("Connected to database .........!");
     }
   });
@@ -30,17 +33,14 @@ con.connect(function(err) {
   //   console.log('Close the database connection.');
   // });
   con.on('error', function(err) {
+    console.log("On db error");
     console.log(err.code);
+    console.log(err);
  if(err.code=='PROTOCOL_CONNECTION_LOST') {
-  console.log(err.code);
+  console.log("inside recon");
+  con.destroy();
   // con.end();
 
-  con.connect(function(err) {
-    if (err) throw err;
-    else {
-      console.log("Connected to database .........!");
-    }
-  });
  }
   });
  

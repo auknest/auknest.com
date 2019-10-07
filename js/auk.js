@@ -12,10 +12,12 @@ function myFunction()
 
 //PG gallary page (display the name of uploaded images) 
 function activeMenu(event) {
+  console.log("event.......", event);
     var x =" ";   
     var id = event.target.id;
     x = document.getElementById(id);
     var txt = "";
+  
     if ('files' in x) {
         if (x.files.length == " ") {
         txt = "Select one or more files.";

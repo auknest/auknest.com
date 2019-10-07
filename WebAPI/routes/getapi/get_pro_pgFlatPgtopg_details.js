@@ -32,13 +32,16 @@ router.get('/', (req,res) =>{
     var cond= "WHERE pro_id='"+req.param('pro_id')+"'";
     var sql="SELECT * FROM "+table+" "+cond;
     console.log(sql);
+    
+
     con.query(sql, (error, result) =>{
         
         if (error) throw error;
+        console.log(result[0].profile_img.toString());
+        result[0].profile_img=JSON.parse(result[0].profile_img.toString());
+        console.log("profile image...........", result[0].profile_img);
 
         res.send(result);
     });
- 
-
-});
+ });
 module.exports = router; 

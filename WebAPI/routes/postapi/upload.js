@@ -42,6 +42,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             file={
                   [filekey]:filebase
                 };
+            file=JSON.stringify(file);
             console.log("single image file..........", file);
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
               console.log("sql.......", sql);

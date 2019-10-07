@@ -26,7 +26,9 @@ router.get('/', (req,res) =>{
 
     con.query(sql, (error, result) =>{
         if (error) throw error;
-        result[0].profile_img=result[0].profile_img.toString();
+        // result[0].profile_img=result[0].profile_img.toString();
+        result[0].profile_img=JSON.parse(result[0].profile_img);
+
         console.log("result profile...........", result);
 
         res.send(result);
