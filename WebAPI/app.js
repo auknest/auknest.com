@@ -4,6 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session')
+
+
+
+var passport = require("passport");
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -12,7 +18,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 app.use(express.json());
 
-var express = require('express');
+//var express = require('express');
 
 //Get API
 var getstud1 = require('./routes/getstud');
@@ -48,9 +54,84 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//Session intialize
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Add stratergy to passport you can add multiple startegies
+var passStartegies = require("./passport_init/stratergies.js");
+passStartegies.local();
+//passStartegies.fb();
+
+passport.serializeUser(function(user, done) {
+  //user ===> {"id":"1", "username":"Test","password":"sk34567","age":"23"}
+  console.log("hello serial",user);
+//save id in session to be used in deserialized
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  //id is fetched from session saved from serialized 
+  //db query using unique id
+  //con.query(sql, (error, result) =>{
+        
+    //     if (!error){
+    //         if(result.length>0){
+                //result[0] ==> {"id":"1", "username":"Test","password":"sk34567","age":"23"}
+    //             done(null,result[0]);
+    //         }else{
+    //             done(null,false,);
+    //         }            
+    //     }else{
+    //         done(error,false);
+    //     }
+    // });    
+  console.log("hello deserial",id);
+  //db query to fetch frm id 
+  done(null, {"get":"alldata"});
+});
 
 app.use(express.json());
 
+
+//Login-> passport stratagies-> get login form data->
+app.post('/login', passport.authenticate('local', { successRedirect: '/abc', failureRedirect: 'http://localhost/auknest.com/auknest.com/', failureFlash: false }));
+
+app.get("/abc",isValidate, function(req, res, next){
+  
+  console.log("Fetching user data");
+  console.log(req.user);
+  console.log("Is user authenticated ",req.isAuthenticated())
+  res.json({"hey":"welcome"});
+});
+
+
+
+app.get("/logout", function(req, res){
+     req.logout();
+     res.json({"user":"logged out"});
+});
+
+function isValidate(req, res, next){
+  if(req.isAuthenticated()){
+    console.log("authentication middleware");
+    return next();
+  }
+  //change to any url to be redirect when use is not logged in
+  return res.redirect('http://localhost/auknest.com/auknest.com/');
+}
+
+app.get("/efg", function(req, res, next){
+  console.log(req);
+  res.json({"hey":"not logged in"});
+});
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 //Get API

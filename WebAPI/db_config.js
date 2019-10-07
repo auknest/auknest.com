@@ -12,8 +12,9 @@ var con = mysql.createConnection({
   database:"e",
 });
 con.connect(function(err) {
-    if (err) throw err;
-    else {
+    if (err){
+      console.log("Error in connnect",err);
+    }else {
       console.log("Connected to database .........!");
     }
   });
@@ -24,18 +25,15 @@ con.connect(function(err) {
   //   console.log('Close the database connection.');
   // });
   con.on('error', function(err) {
+    console.log("On db error");
     console.log(err.code);
-//  if(err.code=='PROTOCOL_CONNECTION_LOST') {
-//   console.log(err.code);
-//   // con.end();
+    console.log(err);
+ if(err.code=='PROTOCOL_CONNECTION_LOST') {
+  console.log("inside recon");
+  con.destroy();
+  // con.end();
 
-//   con.connect(function(err) {
-//     if (err) throw err;
-//     else {
-//       console.log("Connected to database .........!");
-//     }
-//   });
-//  }
+ }
   });
  
 

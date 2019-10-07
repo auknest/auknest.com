@@ -85,15 +85,15 @@
         <span aria-hidden="true">&times;</span>
         </button>   
     </div>
-    <form name="loginForm">
+    <form name="loginForm" action="http://localhost:3000/login" method="POST">
        
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
             <div class="form-group name-group">
                 <div class="palceholder">
-                    <label for="name">USERNAME / EMAIL</label>
+                    <label for="name">EMAIL</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black white-font" id="name" required>
+                <input type="text" class="form-control back-color-black white-font" id="email" name="email" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
@@ -102,7 +102,7 @@
                     <label for="password">PASSWORD</label>
                     <span class="star">*</span>
                 </div>
-                <input type="password" class="form-control back-color-black bold white-font" id="password" required>
+                <input type="password" class="form-control back-color-black bold white-font" id="password" name="pass" required>
             </div>
         </div>
         <div class="row">

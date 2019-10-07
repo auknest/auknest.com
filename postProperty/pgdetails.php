@@ -104,7 +104,9 @@
                     $('#pg_available').html(data[0].pg_available);
                     $('#food_included').html(data[0].food_included);
                     // $('.profile_img').css({'background':"url(../WebAPI/uploads/" + data[0].profile_img + ")"});
-                    $('.profile_img').attr("src","../WebAPI/uploads/" + data[0].profile_img + "");
+                    var key=Object.keys(data[0].profile_img);
+                    console.log("img....", data[0].profile_img[key]);
+                    $('.profile_img').attr("src","../WebAPI/uploads/" + data[0].profile_img[key]+ "");
 
                         // alert(data);
                     },

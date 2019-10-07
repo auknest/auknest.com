@@ -45,10 +45,53 @@
                     </div>
                     <form id="profile-attachment">
                         <div  class=" col-sm-2 col-md-2 col-lg-2 " >
-                            <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile"  onchange="activeMenu(event);" type="file" style="display:none" name="avatar" ></label>
+                            <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile" type="file" style="display:none" name="avatar" ></label>
                             <p style="font-size:12px" id ="profile1">Select one or more files.</p>
-                        </div>
+                        <!-- </div> -->
                     </form>
+                        <p id="profile_name" >
+                        <div class="form-group has-error has-feedback pro" style="display:none">
+                            <input type="text" class="form-control" id="exampleInput1" readonly>
+                            <!-- <button class=glyphicon id="profile_remove" >X</button> -->
+                            <span class="glyphicon glyphicon-remove form-control-feedback" id="profile_remove" style="pointer-events: auto !important;
+"></span>
+                        </div>
+                        <br>
+                        </p>
+                        </div>
+                    <script>
+                    
+                        $("#profile").on("change", function() {
+                            $('.pro').show();
+                            var a=$('#profile').val();
+                            var profilename=  document.getElementById('profile');
+                            // btoa(profilename);	
+                          
+                            $('#exampleInput1').val(profilename.files[0].name);
+                        });
+                        
+                        $('.form-control-feedback').click(function(e) {
+                            var serverData1= {
+                                "profile_img": profilename.files[0].name
+                            };
+                            $.ajax({
+                                type:"DELETE",
+                                url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+                                data:serverData1,
+                                success:function(data){
+                                console.log("success data...", data);
+                                $('#exampleInput1').val("");
+                                $('.pro').hide();
+                            },
+                                error:function(){
+                                console.log('Error In AJAX...');
+
+                                 }
+                            });
+                            
+                        });
+
+                    </script>
                     <form id="hall-attachment">
                         <div class=" col-sm-2 col-md-2 col-lg-2 ">
                             <label class="black-border center upload-sec">Upload <br>Hall<input id="hall" onchange="activeMenu(event)" name="imgs" type="file" multiple="true" style="display:none" ></label>
@@ -110,7 +153,25 @@ $(document).ready(function () {
           data:serverData1,
           success:function(data){
             console.log("success data...", data);
-            // $('input:radio[value="'+data[0].pro_person+'"]').attr('checked',true);                
+            var key=Object.keys(data[0].profile_img);
+            console.log("profile image........." ,key);
+            var event= {target:{id:'profile'}, files:[{name:key[0]}]};
+            activeMenu(event);
+
+            // var file= {files:[{name:key[0]}]};
+
+
+
+
+            //   //  var target=[];
+            // var txt="";
+            // txt += "<br><strong>" + (1) + ". file</strong><br>";
+            // console.log("...............files", file);
+            // if ('name' in file) {
+            //     console.log("...............name");
+
+            // txt += "name: " + file.name + "<br>";
+            // }        
           },
           error:function(){
             console.log('Error In AJAX...');
