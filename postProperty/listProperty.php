@@ -1,7 +1,7 @@
 
 <?php include 'propertymenubar.php'?>
 <?php
-echo session_id();
+// echo session_id();
 $_SESSION['pro_id']= uniqid();
  ?>
  

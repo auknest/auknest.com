@@ -22,7 +22,7 @@
                     <div class=""> <span class="blue-font bold-font">Property For</span>
                             <br>
                             <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                                <input type="radio" id="rent" name="rent" value="Rent" checked>Rent
+                                <input type="radio" id="rent" name="rent" value="Rent" >Rent
                             </label>
                     </div>
             </div>
@@ -226,7 +226,7 @@
                     <div class=""> <span class="blue-font bold-font">Common parking</span> 
                         <br>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="park" name="parking" value="Yes" checked>Yes
+                            <input type="radio" id="park" name="parking" value="Yes" >Yes
                         </div>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                             <input type="radio" id="park" name="parking" value="No">No
@@ -238,7 +238,7 @@
                 <div class=""> <span class="blue-font bold-font">Common bathroom</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="bath" name="bathroom" value="Yes" checked>Yes
+                            <input type="radio" id="bath" name="bathroom" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                             <input type="radio" id="bath" name="bathroom" value="No">No
@@ -250,7 +250,7 @@
                 <div class=""> <span class="blue-font bold-font">Common kitchen</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="kitchen" name="kitchen" value="Yes" checked>Yes
+                            <input type="radio" id="kitchen" name="kitchen" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="kitchen" name="kitchen" value="No">No
@@ -263,7 +263,7 @@
                 <div class=""> <span class="blue-font bold-font">Office room</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="office" name="office" value="Yes" checked>Yes
+                            <input type="radio" id="office" name="office" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="office" name="office" value="No">No
@@ -274,7 +274,7 @@
                 <div class=""> <span class="blue-font bold-font">Caretaker room</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="care" name="care" value="Yes" checked>Yes
+                            <input type="radio" id="care" name="care" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="care" name="care" value="No">No
@@ -285,7 +285,7 @@
                 <div class=""> <span class="blue-font bold-font">Store room </span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="store" name="store" value="Yes" checked>Yes
+                            <input type="radio" id="store" name="store" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="store" name="store" value="No">No
@@ -298,7 +298,7 @@
                 <div class=""> <span class="blue-font bold-font">Power Backup</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="power" name="power" value="Yes" checked>Yes
+                            <input type="radio" id="power" name="power" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="power" name="power" value="No">No
@@ -309,7 +309,7 @@
                 <div class=""> <span class="blue-font bold-font">Gated Security</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="security" name="security" value="Yes" checked>Yes
+                            <input type="radio" id="security" name="security" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="security" name="security" value="No">No
@@ -320,7 +320,7 @@
                 <div class=""> <span class="blue-font bold-font">Lift</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="lift" name="lift" value="Yes" checked>Yes
+                            <input type="radio" id="lift" name="lift" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="lift" name="lift" value="No">No

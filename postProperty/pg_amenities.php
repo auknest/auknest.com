@@ -134,7 +134,7 @@
                 <input type="checkbox" id="amn" value="AC">AC
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" value="Freeze">Freeze
+                <input type="checkbox" id="amn" value="Freeze">Freeze
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" id="amn" value="Drinking Water">Drinking Water

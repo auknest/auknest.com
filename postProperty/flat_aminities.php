@@ -23,7 +23,7 @@
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bathroom" name="bathroom" value="Yes" checked>Yes
+                        <input type="radio" id="bathroom" name="bathroom" value="Yes" >Yes
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                         <input type="radio" id="bathroom" name="bathroom" value="No">No
@@ -35,7 +35,7 @@
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bal" name="balcony" value="Yes" checked>Yes
+                        <input type="radio" id="bal" name="balcony" value="Yes" >Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                         <input type="radio" id="bal" name="balcony" value="No">No
@@ -48,7 +48,7 @@
                     <br>
                     <div class="black-border row ">
                     <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 radio-inline font-16 bold black pd-l-30px">
-                        <input type="radio" id="water_supply" name="wsupply" value="Corporation" checked>Corporation
+                        <input type="radio" id="water_supply" name="wsupply" value="Corporation" >Corporation
                     </label>
                     <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 bold black">
                         <input type="radio" id="water_supply" name="wsupply" value="Borewell">Borewell
@@ -69,7 +69,7 @@
                     <div class="row">
                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 black-border" style="margin-right:10px">
                             <label class="radio-inline font-16 bold black pd-l-30px">
-                                <input type="radio" id="parktype" name="parkingType" value="Covered" checked>Covered
+                                <input type="radio" id="parktype" name="parkingType" value="Covered" >Covered
                             </label>
                             <label class="radio-inline font-16 bold black ">
                                 <input type="radio" id="parktype" name="parkingType" value="Open" >Open
@@ -78,7 +78,7 @@
                         <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8 black-border">
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                             <label class="radio-inline font-16 bold black ">
-                                <input type="radio" id="park" name="parking" value="Bike" checked>Bike
+                                <input type="radio" id="park" name="parking" value="Bike" >Bike
                             </label>
                             </div>
 
@@ -113,7 +113,7 @@
                     <div class="row black-border">
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input type="radio" id="furnish" name="furnish" value="Fully Furnished" checked>Fully Furnished
+                            <input type="radio" id="furnish" name="furnish" value="Fully Furnished" >Fully Furnished
                         </label>
                         </div>
 
@@ -246,6 +246,49 @@
 </div>
 <script>
     $(document).ready(function(){
+
+        if(sessionStorage.getItem('status')==1)
+      {
+          console.log("Into the property get ajax");
+        var serverData1= {
+            "status":1
+          };
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("data.......", data);
+                            
+            $('input:radio[value="'+data[0].att_bal+'"]').attr('checked',true);
+            $('input:radio[value="'+data[0].att_bath+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].water_supply+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].parking_type+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].parking+'"]').attr('checked',true);
+            $('input:radio[value="'+data[0].furnish+'"]').attr('checked',true);    
+
+            //To check the multiple checkboxes into general aminities
+            var flatAminiArr = data[0].flat_amenities.split(',');
+            for(var i=0; i<flatAminiArr.length;i++) {
+                $('input[type=checkbox][value="'+flatAminiArr[i]+'"]').attr('checked',true);
+
+            }
+
+            //To check the multiple checkboxes into general aminities
+            var genAminiArr = data[0].gen_amenities.split(',');
+            for(var i=0; i<genAminiArr.length;i++) {
+                $('input[type=checkbox][value="'+genAminiArr[i]+'"]').attr('checked',true);
+
+            }
+        },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+        
         $('#ajax-flat-ame').click(function(e) {
             e.preventDefault();
             var flat_ame= [];

@@ -3,7 +3,7 @@
 <div class="a">
 <?php include 'submenu.html'?>
 <?php
-echo $_SESSION['pro_id'];
+// echo $_SESSION['pro_id'];
 //  $_SESSION['pro_id']=$_POST['pro_id'];
 // echo $_SESSION['pro_person'];
 ?>
