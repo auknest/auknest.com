@@ -1,6 +1,6 @@
 <?php
 session_start();    
-echo session_id();
+// echo session_id();
 ?>
 <!DOCTYPE html>
 <head>
@@ -133,7 +133,7 @@ echo session_id();
                                 <a class= "a-txt" href="#about">ABOUT US</a>
                                 <a class= "a-txt" href="#contact">WHY US?</a>
                                 <a class= "a-txt" href="#about">HELP</a>
-                                <a class= "a-txt" href="#about">ROOMMATE FINDER</a>
+                                <a class= "a-txt" href="../roommateFinder/findOrPost.php">ROOMMATE FINDER</a>
                                 <a href="#about"><img class="img-over-img1" src ="../img/button 170 by 70.png"/></a>
                                 <a href="#about"><img class="img-over-img2" src ="../img/button yellow 170by 70.png"/></a>
                                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">

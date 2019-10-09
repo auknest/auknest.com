@@ -24,7 +24,7 @@
                             <br>
                             <div class="black-border row">
                                 <div class="radio-inline font-16 bold pd-l-30px col-xs-12 col-sm-5 col-md-3 col-lg-3" style="padding-right:0px">
-                                    <input type="radio" id="flatAvailable" name="pgAvailable" value="Residential Apartment" checked>Residential Apartment
+                                    <input type="radio" id="flatAvailable" name="pgAvailable" value="Residential Apartment">Residential Apartment
                                 </div>
                                 <div class="radio-inline font-16 bold col-xs-12 col-sm-5 col-md-3 col-lg-3" style="padding-right:0px">
                                     <input type="radio" id="flatAvailable" name="pgAvailable" value="Muiltipal Apartment">Muiltipal Apartment
@@ -75,7 +75,7 @@
                         <div class=""> <span class="blue-font bold-font">Preferred Tanants</span></div>
                             <div class="black-border row">
                                 <div class="radio-inline pd-l-30px col-xs-12 col-sm-2 col-md-2 col-lg-2 font-16 bold black ">
-                                    <input id="flatFor" type="radio" name="pgFor" value="Family" checked>Family
+                                    <input id="flatFor" type="radio" name="pgFor" value="Family">Family
                                 </div>
                                 <div class="radio-inline col-xs-12 col-sm-3 col-md-3 col-lg-3 font-16 bold black">
                                     <input id="flatFor" type="radio" name="pgFor" value="Bachelor boys">Bachelor boys
@@ -97,7 +97,7 @@
 
                     <div class="black-border row">
                                         <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                            <input type="radio" id="nonVeg" name="food" value="Yes" checked>Yes
+                                            <input type="radio" id="nonVeg" name="food" value="Yes" >Yes
                                         </div>
                                         <div class="radio-inline font-16 bold black col-lg-5">
                                             <input type="radio" id="nonVeg" name="food" value="No">No
@@ -219,7 +219,7 @@
                     <div> <span class="blue-font bold-font">Rent & Security amount Negotiable</span></div>
                         <div class="black-border row">
                                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                                <input type="radio" id="amt_nogotiable" name="amount" value="Yes" checked>Yes
+                                                <input type="radio" id="amt_nogotiable" name="amount" value="Yes" >Yes
                                             </div>
                                             <div class="radio-inline font-16 bold black col-lg-5">
                                                 <input type="radio" id="amt_nogotiable" name="amount" value="No">No
@@ -257,7 +257,7 @@
         var serverData1= {
             //   "pro_id": sessionStorage.getItem("pro_id"),
             //   "pro_type":sessionStorage.getItem("pro_type"),
-            //   "status":1
+              "status":1
           };
 
         $.ajax({
@@ -266,16 +266,19 @@
           data:serverData1,
           success:function(data){
             console.log("data...", data);
-            $('input:radio[value="'+data[0].pg_for+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].pg_room_type+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].pg_available+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].flat_type+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].flat_room_type+'"]').attr('checked',true);                
+            $('input:radio[value="'+data[0].flat_for+'"]').attr('checked',true);
+            $('input:radio[value="'+data[0].non_veg_allowed+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);                
-            $('#total_rooms').val(data[0].total_room);       
+            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);
+            $('#property_age').val(data[0].property_age); 
+            $('#area').val(data[0].area);
+            $('#exp_rent').val(data[0].expected_rent);
+            $('#sec_amt').val(data[0].security_amt);                   
             $('#avl_frm').val(data[0].avl_frm); 
-            $('#exp_rent').val(data[0].expected_rent); 
             $('input:radio[value="'+data[0].food_included+'"]').attr('checked',true);                
-            $('#sec_amt').val(data[0].security_amt); 
+            $('#maintainance').val(data[0].maintainance);
             $('#descr').val(data[0].descr); 
   
         },
@@ -286,6 +289,13 @@
         });
       }
       
+    if(sessionStorage.getItem('status')==1){
+        var id=sessionStorage.getItem("pro_id");
+        status=1;
+    }else {
+        var id=sessionStorage.getItem("pro_id");
+        status=0;
+    }
         $('#ajax-flat-pro').click(function(e) {
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);
@@ -303,9 +313,10 @@
                              "expected_rent":$('#exp_rent').val(),
                              "security_amt":$('#sec_amt').val(),
                              "avl_frm":$('#avl_frm').val(),
-                             "amt_nogotiable":$('#amt_nogotiable').val(),
+                             "amt_nogotiable":$("input:radio[id=amt_nogotiable]:checked").val(),
                              "maintainance":$('#maintainance').val(),
-                             "descr":$('#descr').val()
+                             "descr":$('#descr').val(),
+                             "status":status
                             };
                 console.log(serverData);
             
