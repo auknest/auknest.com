@@ -26,6 +26,8 @@ var getprotype = require('./routes/getapi/get_pro_type');
 var getwhoI = require('./routes/getapi/get_who_I');
 var getproshortdetails = require('./routes/getapi/get_pro_shortdetails');
 var getpropgFlatPgtopgdetails= require('./routes/getapi/get_pro_pgFlatPgtopg_details');
+var getroomate = require('./routes/getapi/get_roomfinder');
+
 
 //Post api
 var protype = require('./routes/postapi/post_property_type');
@@ -40,6 +42,10 @@ var pgtopgproperty = require('./routes/postapi/pg_pg_property'); //To insert pg 
 var pgtopgaminities = require('./routes/postapi/post_pg_pg_aminities'); //To insert pg to pg proprty details. 
 var buildproperty = require('./routes/postapi/post_build_property'); //To insert building proprty details. 
 var buildaminities = require('./routes/postapi/post_build_aminities'); //To insert building aminities details. 
+var roomate = require('./routes/postapi/post_roomate_api'); //To insert building aminities details. 
+
+//Delete api
+var deleteimg = require('./routes/deleteapi/delete_gallery_img');
 
 var bodyParser = require('body-parser');
 var multer  = require('multer');
@@ -140,6 +146,7 @@ app.use('/get_pro_type', getprotype);//To get the basic property details
 app.use('/get_who_I', getwhoI);
 app.use('/get_pro_shortdetails', getproshortdetails); //get property short details
 app.use('/get_pro_pgFlatPgtopg_details', getpropgFlatPgtopgdetails); //get property short details
+app.use('/get_roomfinder', getroomate);
 
 
 //Post API
@@ -155,7 +162,11 @@ app.use('/pg_pg_property', pgtopgproperty); //To insert the pg to pg property
 app.use('/post_pg_pg_aminities', pgtopgaminities); //To insert the pg to,pg aminities
 app.use('/post_build_property', buildproperty); //To insert the build property
 app.use('/post_build_aminities', buildaminities); //To insert the building aminities
+app.use('/post_roomate_api', roomate); //To insert the roomate details
 
+
+//delete api
+app.use('/delete_gallery_img', deleteimg); //To insert the building aminities
 
 
 // catch 404 and forward to error handler

@@ -13,10 +13,14 @@ router.use(function(req, res, next) {
   console.log(".....................start......");
 //Need variable to categories images like a.jpg, b.jpg ... are the hall images.
 router.post('/', upload.array('imgs', 50), function (req, res, next) {
-     
+  console.log("files.............", req);
+
        try {
+        console.log("files.............", req.files.length);
+
          var table;
          var file=[];
+         console.log("file.............", req.files.length);
 
            for(var i=0; i<req.files.length;i++)
            {
@@ -38,6 +42,9 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
           }
           if(req.body.pro_type =="pg_to_pg") {
             table="pgtopgdetails";
+          }
+          if(req.body.pro_type =="roomate") {
+            table="roomate";
           }
           
            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';

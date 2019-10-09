@@ -33,9 +33,10 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             if(req.body.pro_type =="pg_to_pg") {
               table="pgtopgdetails";
             }
-
+           
             var sql ='UPDATE ' +table+' SET profile_img=? WHERE pro_id=? AND pro_type=?';
             console.log("sql.......", sql);
+            console.log("file.........",req.file);
             var file=[];
             var filebase= req.file.filename;
             var filekey=req.file.originalname;

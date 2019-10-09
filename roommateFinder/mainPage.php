@@ -181,11 +181,15 @@
                             <input type="text" placeholder="Sahil">
                         </div>
                         <div >
-                            <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        
+                        <div id="description" class="font-14 justify1">
+                        
+                        </div>
+                            <!-- <p id="description" class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
                         </div>
                         <div class="width-eighty m-auto">
                             <center>
-                                <button class="btn-property back-color-yellow height-40">comment</button>
+                                <button id="ajax-comentdetails" class="btn-property back-color-yellow height-40">comment</button>
                             </center>
                         </div>
                     </div>
@@ -419,4 +423,40 @@
         }
     });
    
+
+    $(document).ready(function () {
+        $.ajax({
+            type:"GET",
+            url: 'http://localhost:3000/get_roomfinder',						   
+            data:"",
+            success:function(res) {
+                // window.location.href = "./mainPage.php";
+                console.log(res);
+                console.log(res.length);
+                var i, j;
+                for(i=0; i<res.length; i++){
+                    console.log("Within for.........");
+                    console.log("description.........", res[i].r_descr);
+
+                    $('#description').html(res[i].r_descr); 
+
+
+                }
+
+                console.log('Property type Sucessfully inserted ...');
+            },
+            error:function() {
+                    console.log('Error In AJAX...');
+                    },
+
+        });
+
+        $('#ajax-comentdetails').click(function(e){
+            // window.location.href = "./commentDetail.php?u_id="+u_id+"&id="+id;
+            window.location.href = "./commentDetail.php?u_id=1&id=1";
+           
+        })
+
+        
+    });
 </script>

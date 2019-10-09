@@ -68,16 +68,20 @@
                             // btoa(profilename);	
                           
                             $('#exampleInput1').val(profilename.files[0].name);
+                            
                         });
                         
                         $('.form-control-feedback').click(function(e) {
-                            var serverData1= {
-                                "profile_img": profilename.files[0].name
-                            };
+                            var profilename=  document.getElementById('profile');
+
+                            // var serverData1= {
+                            //     "profile_img": 
+                            // };
+                            console.log("////////", serverData1);
                             $.ajax({
                                 type:"DELETE",
                                 url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-                                data:serverData1,
+                                data:"",
                                 success:function(data){
                                 console.log("success data...", data);
                                 $('#exampleInput1').val("");
