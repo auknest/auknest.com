@@ -264,16 +264,17 @@
         });
       }
 
-if(sessionStorage.getItem('status')==1)
- {
-  var id=sessionStorage.getItem("pro_id");
-  status=1;
- }
- else {
-  var id=sessionStorage.getItem("pro_id");
-  status=0;
+    if(sessionStorage.getItem('status')==1)
+    {
+    var id=sessionStorage.getItem("pro_id");
+    status=1;
+    }
+    else {
+    var id=sessionStorage.getItem("pro_id");
+    status=0;
 
- }      $('#ajax-pg-pro').click(function(e) {
+    }      
+    $('#ajax-pg-pro').click(function(e) {
             e.preventDefault();
             // console.log(".......available pg", +pg_avl);
 

@@ -24,7 +24,7 @@
                     <div> <span class="blue-font bold-font">Building Type</span></div>
                         <div class="black-border row">
                                             <div class="radio-inline pd-l-30px  font-16 bold black col-lg-5">
-                                                <input type="radio" id="build_type" name="build_type" value="Individual Building" checked>Individual Building
+                                                <input type="radio" id="build_type" name="build_type" value="Individual Building" >Individual Building
                                             </div>
                                             <div class="radio-inline font-16 bold black col-lg-5">
                                                 <input type="radio" id="build_type" name="build_type" value="Flat System">Flat System
@@ -209,7 +209,7 @@
                 <div class=""> <span class="blue-font bold-font">Gated Security</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="gate" name="" value="Yes" checked>Yes
+                            <input type="radio" id="gate" name="" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="gate" name="" value="No">No
@@ -220,7 +220,7 @@
                 <div class=""> <span class="blue-font bold-font">Lift</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="lift" name="" value="yes" checked>Yes
+                            <input type="radio" id="lift" name="" value="yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="lift" name="balcny" value="No">No
@@ -314,7 +314,7 @@
                     <div class=""> <span class="blue-font bold-font">Common parking</span> 
                         <br>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="park" name="park" value="Yes" checked>Yes
+                            <input type="radio" id="park" name="park" value="Yes" >Yes
                         </div>
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                             <input type="radio" id="park" name="park" value="No">No
@@ -326,7 +326,7 @@
                 <div class=""> <span class="blue-font bold-font">Common bathroom</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="bath" name="bath" value="Yes" checked>Yes
+                            <input type="radio" id="bath" name="bath" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
                             <input type="radio" id="bath" name="bath" value="No">No
@@ -337,7 +337,7 @@
                 <div class=""> <span class="blue-font bold-font">Common kitchen</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="com_kitchen" name="kitchen" value="Yes" checked>Yes
+                            <input type="radio" id="com_kitchen" name="kitchen" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="com_kitchen" name="kitchen" value="No">No
@@ -348,7 +348,7 @@
                 <div class=""> <span class="blue-font bold-font">Office room</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="ofc_room" name="ofc" value="Yes" checked>Yes
+                            <input type="radio" id="ofc_room" name="ofc" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="ofc_room" name="ofc" value="No">No
@@ -359,7 +359,7 @@
                 <div class=""> <span class="blue-font bold-font">Caretaker room</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="care_room" name="caretaker" value="Yes" checked>Yes
+                            <input type="radio" id="care_room" name="caretaker" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="care_room" name="caretaker" value="No">No
@@ -370,7 +370,7 @@
                 <div class=""> <span class="blue-font bold-font">Store room </span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="store_room" name="store" value="Yes" checked>Yes
+                            <input type="radio" id="store_room" name="store" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="store_room" name="store" value="No">No
@@ -381,7 +381,7 @@
                 <div class=""> <span class="blue-font bold-font">Power Backup</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="backup" name="backup" value="yes" checked>Yes
+                            <input type="radio" id="backup" name="backup" value="yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
                             <input type="radio" id="backup" name="backup" value="no">No
@@ -389,16 +389,27 @@
                 </div>
                 </div>
                 <br>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">  
-                <div class=""> <span class="blue-font bold-font">Water supply</span></div>
-                <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
+                <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">  
+                    <div class=""> <span class="blue-font bold-font">Water supply</span></div>
+                    <div class="black-border row">
+                        <label class="radio-inline col-md-4 col-lg-4 font-16 bold black" style="padding-left:30px;">
+                            <input type="radio" name="water" id="water" value="Corporation">Corporation
+                        </label>
+                        <label class="radio-inline col-md-4 col-lg-4 font-16 bold black">
+                        <input type="radio" name="water" id="water" value="Borewell">Borewell
+                        </label>
+                        <label class="radio-inline col-md-3 col-lg-3 font-16 bold black">
+                            <input type="radio" name="water" id="water" value="Both">Both
+                        </label>     
+                    </div>
+                <!-- <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
                         <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
                         <input type="checkbox" id="water_supply" value="Corporation">Corporation
                         </label>
                         <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black">
                         <input type="checkbox" id="water_supply" value="Borewell">Borewell
                         </label> 
-                </div>
+                </div> -->
                 </div>
             </div>
 
@@ -408,6 +419,7 @@
             </div>
         </form>
     </div>
+    </div>
     <div class="width-eighty m-auto">
             <center>
             <button id="ajax-pg-pg-pro" class="btn-property back-color-yellow red-font">Save & Continue</button>
@@ -416,7 +428,163 @@
 </div>
 <script>
     $(document).ready(function(){
-        var onerk1=[], onebhk1=[], twobhk1=[], threebhk1=[], fourbhk1=[], lease=[], selling=[];
+
+        //For Calling Get API
+        if(sessionStorage.getItem('status')==1){
+            console.log("Into the property get ajax");
+            var serverData1= {
+                                "status":1
+            };
+
+            $.ajax({
+            type:"GET",
+            url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+            data:serverData1,
+            success:function(data){
+                console.log("data...", data);
+                $('input:radio[id=build_type][value="'+data[0].build_type+'"]').attr('checked',true);            
+                $('input:radio[id=floorNo][value="'+data[0].floor_no+'"]').attr('checked',true);
+                $('input:radio[id=gate][value="'+data[0].gate_security+'"]').attr('checked',true); 
+                $('input:radio[id=lift][value="'+data[0].lift+'"]').attr('checked',true); 
+                $('#pg_capacity').val(data[0].pg_capacity);
+                $('#stay_no').val(data[0].stay_no);
+                $('#rent_per_person').val(data[0].rent_per_person);
+                $('#deposite').val(data[0].deposite);    
+                $('#com_area').val(data[0].com_area);                          
+                $('input:radio[id=park][value="'+data[0].park+'"]').attr('checked',true);                
+                $('input:radio[id=bath][value="'+data[0].com_bath+'"]').attr('checked',true);
+                $('input:radio[id=com_kitchen][value="'+data[0].com_kitchen+'"]').attr('checked',true);
+                $('input:radio[id=ofc_room][value="'+data[0].ofc_room+'"]').attr('checked',true);
+                $('input:radio[id=care_room][value="'+data[0].care_room+'"]').attr('checked',true);
+                $('input:radio[id=store_room][value="'+data[0].store_room+'"]').attr('checked',true);
+                $('input:radio[id=backup][value="'+data[0].power_bakup+'"]').attr('checked',true); 
+                $('input:radio[id=water][value="'+data[0].water_supply+'"]').attr('checked',true);
+                //ONERK
+                if(data[0].onerk!=null){
+                    $('input[id=roomType1rk]').attr('checked',true);
+                    $("input:checkbox[id=roomType1rk]:checked").each(function(){
+                        var one = JSON.parse(data[0].onerk);
+                        console.log("ONE....",one);
+                        $('#1rk').show();
+                        $('#flooronerk').val(one.floor); 
+                        $('#flatonerk').val(one.flat);
+                        $('#washroomonerk').val(one.washroom);
+                        $('#balconyonerk').val(one.balcony);
+                    });
+                }else{
+                    $('input[id=roomType1rk]').attr('checked',false);
+                }
+                //ONEBHK
+                if(data[0].onebhk!=null){
+                    $('input[id=roomType1bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType1bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].onebhk);
+                        // console.log("ONE....",one);
+                        $('#1bhk').show();
+                        $('#flooronebhk').val(one.floor); 
+                        $('#flatonebhk').val(one.flat);
+                        $('#washroomonebhk').val(one.washroom);
+                        $('#balconyonebhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType1bhk]').attr('checked',false);
+                }
+                //TWOBHK
+                if(data[0].twobhk!=null){
+                    $('input[id=roomType2bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType2bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].twobhk);
+                        // console.log("ONE....",one);
+                        $('#2bhk').show();
+                        $('#floortwobhk').val(one.floor); 
+                        $('#flattwobhk').val(one.flat);
+                        $('#washroomtwobhk').val(one.washroom);
+                        $('#balconytwobhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType2bhk]').attr('checked',false);
+                }
+                //THREEBHK
+                if(data[0].threebhk!=null){
+                    $('input[id=roomType3bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType3bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].threebhk);
+                        // console.log("ONE....",one);
+                        $('#3bhk').show();
+                        $('#floorthreebhk').val(one.floor); 
+                        $('#flatthreebhk').val(one.flat);
+                        $('#washroomthreebhk').val(one.washroom);
+                        $('#balconythreebhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType3bhk]').attr('checked',false);
+                }
+                //FOURBHK
+                if(data[0].fourbhk!=null){
+                    $('input[id=roomType4bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType4bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].fourbhk);
+                        // console.log("ONE....",one);
+                        $('#4bhk').show();
+                        $('#floorfourbhk').val(one.floor); 
+                        $('#flatfourbhk').val(one.flat);
+                        $('#washroomfourbhk').val(one.washroom);
+                        $('#balconyfourbhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType4bhk]').attr('checked',false);
+                }
+                //LEASE
+                if(data[0].lease!=null){
+                    $('input[id=lease]').attr('checked',true);
+                    $("input:radio[id=lease]:checked").each(function(){
+                        var lease1 = JSON.parse(data[0].lease);
+                        // console.log("ONE....",lease1);
+                        $('#leasediv').show();
+                        $('#leaserent').val(lease1.leaserent); 
+                        $('#leasedeposite').val(lease1.leasedeposite);
+                    });
+
+                }else{
+                    $('input[id=lease]').attr('checked',false);
+                    //SELLING
+                    if(data[0].selling!=null){
+                        $('input[id=selling]').attr('checked',true);
+                        $("input:radio[id=selling]:checked").each(function(){
+                            var selling1 = JSON.parse(data[0].selling);
+                            // console.log("ONE....",selling1);
+                            $('#sellingdiv').show();
+                            $('#totalamount').val(selling1.totalamt);
+                            $('#ownerent').val(selling1.ownerent); 
+                            $('#ownerdeposite').val(selling1.ownedeposite);
+                        });
+                    }else{
+                        $('input[id=selling]').attr('checked',false);
+                    }
+                }
+                
+
+            },
+            error:function(){
+                console.log('Error In AJAX...');
+
+            }
+            });
+        }
+
+        if(sessionStorage.getItem('status')==1){
+            var id=sessionStorage.getItem("pro_id");
+            status=1;
+        }else {
+            var id=sessionStorage.getItem("pro_id");
+            status=0;
+        } 
+        //End Of Get API
+        var onerk, onebhk, twobhk, threebhk, fourbhk, lease, selling;
 
         //Radio buttion check event
         $('#lease').change(function(){
@@ -424,19 +592,10 @@
             if(checked){
                 $('#leasediv').show();
                 $('#sellingdiv').hide();
-                lease.push({
-                    leaserent: $('#leaserent').val(), 
-                    leasedeposite:  $('#leasedeposite').val(),
-                    
-                    });
+                
             }
             else{
                 $('#leasediv').hide();
-                // lease.push({
-                //     leaserent: "", 
-                //     leasedeposite: "",
-                    
-                //     });
             }
         });
         $('#selling').change(function(){
@@ -444,11 +603,7 @@
             if(checked){
                 $('#sellingdiv').show();
                 $('#leasediv').hide();
-                selling.push({
-                    totalamt: $('#totalamt').val(), 
-                    ownerent:  $('#ownerent').val(),
-                    ownedeposite:  $('#ownerdeposite').val(),
-                });
+               
             }
             else{
                 $('#sellingdiv').hide();
@@ -525,65 +680,78 @@
 
         $('#ajax-pg-pg-pro').click(function(e) {
             e.preventDefault();
-        var water_supply=[];
-            $("input:checkbox[id=water_supply]:checked").each(function(){
-                water_supply.push($(this).val());
+        // var water_supply=[];
+            // $("input:checkbox[id=water_supply]:checked").each(function(){
+            //     water_supply.push($(this).val());
                 
-                });
+            //     });
+            $("input:radio[id=lease]:checked").each(function(){
+                lease={
+                    leaserent: $('#leaserent').val(), 
+                    leasedeposite:  $('#leasedeposite').val(),
+                }
+            });
+            $("input:radio[id=selling]:checked").each(function(){
+                selling={
+                    totalamt: $('#totalamount').val(), 
+                    ownerent:  $('#ownerent').val(),
+                    ownedeposite:  $('#ownerdeposite').val(),
+                }
+            });
             $("input:checkbox[id=roomType1rk]:checked").each(function(){
-                onerk1.push({
+                onerk={
                     floor: $('#flooronerk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomonerk').val(),
                     balcony:  $('#balconyonerk').val()
 
-                    });
+                    };
                 });
                 $("input:checkbox[id=roomType1bhk]:checked").each(function(){
-                onebhk1.push({
+                onebhk={
                     floor: $('#flooronebhk').val(), 
                     flat:  $('#flatonebhk').val(),
                     washroom:  $('#washroomonebhk').val(),
                     balcony:  $('#balconyonebhk').val()
 
-                    });                 
+                    };                 
                 });
                 $("input:checkbox[id=roomType2bhk]:checked").each(function(){
-                twobhk1.push({
+                twobhk={
                     floor: $('#floortwobhk').val(), 
                     flat:  $('#flattwobhk').val(),
                     washroom:  $('#washroomtwobhk').val(),
                     balcony:  $('#balconytwobhk').val()
 
-                    });
+                    };
                 });
                 $("input:checkbox[id=roomType3bhk]:checked").each(function(){
-                threebhk1.push({
+                threebhk={
                     floor: $('#floorthreebhk').val(), 
                     flat:  $('#flatthreebhk').val(),
                     washroom:  $('#washroomthreebhk').val(),
                     balcony:  $('#balconythreebhk').val()
 
-                    });
+                    };
                 });
                 $("input:checkbox[id=roomType4bhk]:checked").each(function(){
-                fourbhk1.push({
+                fourbhk={
                     floor: $('#floorfourbhk').val(), 
-                    flat:  $('#flatonerk').val(),
+                    flat:  $('#flatfourbhk').val(),
                     washroom:  $('#washroomfourbhk').val(),
                     balcony:  $('#balconyfourbhk').val()
 
-                    });
+                    };
                 });
             
-                var onerk=JSON.stringify(onerk1);
-                var onebhk=JSON.stringify(onebhk1);
-                var twobhk=JSON.stringify(twobhk1);
-                var threebhk=JSON.stringify(threebhk1);
-                var fourbhk=JSON.stringify(fourbhk1);
+                onerk=JSON.stringify(onerk);
+                onebhk=JSON.stringify(onebhk);
+                twobhk=JSON.stringify(twobhk);
+                threebhk=JSON.stringify(threebhk);
+                fourbhk=JSON.stringify(fourbhk);
                 lease=JSON.stringify(lease);
                 selling=JSON.stringify(selling);
-                water_supply= water_supply.toString();
+                // water_supply= water_supply.toString();
 
 
             var serverData ={"build_type": $("input:radio[id=build_type]:checked").val(),
@@ -604,7 +772,7 @@
                              "care_room":$("input:radio[id=care_room]:checked").val(),
                              "store_room":$("input:radio[id=store_room]:checked").val(),
                              "power_bakup":$("input:radio[id=backup]:checked").val(),
-                             "water_supply":water_supply,
+                             "water_supply":$("input:radio[id=water]:checked").val(),
                              "onerk":onerk,
                              "onebhk":onebhk,
                              "twobhk":twobhk,

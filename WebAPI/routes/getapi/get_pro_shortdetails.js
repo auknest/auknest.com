@@ -19,7 +19,13 @@ router.get('/', (req,res) =>{
     }
     if(req.param('pro_type') =="flat") {
     table="flatdetails";
-  }
+    }
+    if(req.param('pro_type')=="pg_to_pg"){
+      table="pgtopgdetails";
+    }
+    if(req.param('pro_type')=="building"){
+        table="buildownerdetails";
+    }
 
     var sql ="SELECT * FROM "+table+" "+cond;
     console.log(sql);

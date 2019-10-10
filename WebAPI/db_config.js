@@ -36,12 +36,12 @@ con.connect(function(err) {
     console.log("On db error");
     console.log(err.code);
     console.log(err);
- if(err.code=='PROTOCOL_CONNECTION_LOST') {
-  console.log("inside recon");
-  con.destroy();
-  // con.end();
+    if(err.code=='PROTOCOL_CONNECTION_LOST') {
+      console.log("inside recon");
+      con.destroy();
+      // con.end();
 
- }
+    }
   });
  
 
