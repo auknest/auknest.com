@@ -244,11 +244,11 @@
           success:function(data){
             console.log("data.......", data);
  
-            $('input:radio[value="'+data[0].att_bath+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].att_bal+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].com_area+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].parking+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].pg_rules+'"]').attr('checked',true);   
+            $('input:radio[id=bathroom][value="'+data[0].att_bath+'"]').attr('checked',true);                
+            $('input:radio[id=bal][value="'+data[0].att_bal+'"]').attr('checked',true);                
+            $('input:radio[id=area][value="'+data[0].com_area+'"]').attr('checked',true);                
+            $('input:radio[id=park][value="'+data[0].parking+'"]').attr('checked',true);                
+            $('input:radio[id=rule][value="'+data[0].pg_rules+'"]').attr('checked',true);   
 
             //To check the multiple checkboxes into general aminities
             var pgAminiArr = data[0].pg_amenities.split(',');
@@ -296,7 +296,7 @@
                              "parking":$("input:radio[id=park]:checked").val(),
                              "pg_amenities":pg_ame,
                              "gen_amenities":gen_ame,
-                             "pg_rules":$('#rule').val(),
+                             "pg_rules":$("input:radio[id=rule]:checked").val(),
                                 };
                 console.log(serverData);
             

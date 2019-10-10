@@ -81,6 +81,34 @@
 </div>
 <script>
     $(document).ready(function(){
+        // Call For GET API
+        if(sessionStorage.getItem('status')==1)
+        {
+            console.log("Into the property get ajax");
+            var serverData1= {
+                            "status":1
+            };
+
+            $.ajax({
+                type:"GET",
+                url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+                data:serverData1,
+                success:function(data){
+                    console.log("data.......", data);
+                    $('#light').val(data[0].lights);
+                    $('#fans').val(data[0].fans); 
+                    $('#geysers').val(data[0].geysers); 
+                    $('#curtains').val(data[0].curtains); 
+                    $('#descr').val(data[0].descr); 
+                },
+                error:function(){
+                    console.log('Error In AJAX...');
+
+                }
+            });
+        }
+        //End of GET API
+
         console.log("Into ajax call ..........");
 
         $('#ajax-build-amn').click(function(e){

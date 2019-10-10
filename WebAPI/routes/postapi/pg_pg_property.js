@@ -43,26 +43,63 @@ console.log("One rk ",req.body);
         "lease":req.body.lease,
         "selling":req.body.selling 
     }
-    // values = req.body;
-    var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
+    
+
     var sql = "INSERT INTO pgtopgdetails SET ?";
+    var sql1 = "SELECT pro_id FROM pgtopgdetails WHERE pro_id='"+req.body.pro_id+"'";
+    var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
+    var sql2 = "UPDATE pgtopgdetails SET ? "+cond;
+    
     try {
-      con.query(sql, values, function(error, results, fields) {
-
-      if (error) {
-          console.log("Failed to insert the pg to pg property details", error)
-      }
-      else {
-          console.log("Data inserted into table pgTopgdetails table sucessfully...");
-            res.end();
-
-      }
+      con.query(sql1, function(error, results, fields){
+        // console.log("Result ...................", results.length);
+        if(results.length>0){
+          con.query(sql2, values, function(error, results, fields) {
+            if (error) {
+                console.log("Failed to Update the pgtopgdetails  property details", error)
+            }
+            else {
+                console.log("Data Updated into table pgtopgdetails table sucessfully...");
+                  res.end();
+            }
+          });
+        }
+        else{
+          con.query(sql, values, function(error, results, fields) {
+            if (error) {
+                console.log("Failed to insert the pgtopgdetails  property details", error)
+            }
+            else {
+                console.log("Data inserted into table pgtopgdetails table sucessfully...");
+                  res.end();
+            }
+          });
+        }
       });
     }
     catch(Excepetion) {
       console.log("within  catche");
       console.log(Exception);
     }
+    // var cond = " WHERE pro_id='"+req.body.pro_id+"' AND pro_type='"+req.body.pro_type+"'";
+    // var sql = "INSERT INTO pgtopgdetails SET ?";
+    // try {
+    //   con.query(sql, values, function(error, results, fields) {
+
+    //   if (error) {
+    //       console.log("Failed to insert the pg to pg property details", error)
+    //   }
+    //   else {
+    //       console.log("Data inserted into table pgTopgdetails table sucessfully...");
+    //         res.end();
+
+    //   }
+    //   });
+    // }
+    // catch(Excepetion) {
+    //   console.log("within  catche");
+    //   console.log(Exception);
+    // }
     res.end();
 });
 

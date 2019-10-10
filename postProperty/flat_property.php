@@ -269,7 +269,7 @@
             $('input:radio[value="'+data[0].flat_type+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].flat_room_type+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].flat_for+'"]').attr('checked',true);
-            $('input:radio[value="'+data[0].non_veg_allowed+'"]').attr('checked',true);                
+            $('input:radio[id=nonVeg][value="'+data[0].non_veg_allowed+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);
             $('#property_age').val(data[0].property_age); 
@@ -277,7 +277,7 @@
             $('#exp_rent').val(data[0].expected_rent);
             $('#sec_amt').val(data[0].security_amt);                   
             $('#avl_frm').val(data[0].avl_frm); 
-            $('input:radio[value="'+data[0].food_included+'"]').attr('checked',true);                
+            $('input:radio[id=amt_nogotiable][value="'+data[0].amt_nogotiable+'"]').attr('checked',true);                
             $('#maintainance').val(data[0].maintainance);
             $('#descr').val(data[0].descr); 
   

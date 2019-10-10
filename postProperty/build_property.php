@@ -329,16 +329,31 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">  
+            <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">  
                 <div class=""> <span class="blue-font bold-font">Water supply</span></div>
-                <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
+                    <div class="black-border row">
+                        <label class="radio-inline col-md-4 col-lg-4 font-16 bold black" style="padding-left:30px;">
+                            <input type="radio" name="water" id="water" value="Corporation">Corporation
+                        </label>
+                        <label class="radio-inline col-md-4 col-lg-4 font-16 bold black">
+                        <input type="radio" name="water" id="water" value="Borewell">Borewell
+                        </label>
+                        <label class="radio-inline col-md-3 col-lg-3 font-16 bold black">
+                            <input type="radio" name="water" id="water" value="Both">Both
+                        </label>     
+                    </div>
+                <!-- <div class=" col-xs-12 col-sm-5 col-md-6 col-lg-6 black-border">
+                        
                         <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                        <input type="checkbox" id="water" value="Corporation">Corporation
+                        <input type="radio" name="water" id="water" value="Corporation">Corporation
                         </label>
                         <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black">
-                        <input type="checkbox" id="water" value="Borewell">Borewell
+                        <input type="radio" name="water" id="water" value="Borewell">Borewell
                         </label> 
-                </div>
+                        <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
+                        <input type="radio" name="water" id="water" value="Both">Both
+                        </label> 
+                </div> -->
             </div>
         </div>        
         </form>
@@ -351,8 +366,131 @@
 </div>
 <script>
     $(document).ready(function(){
+        //For Calling Get API
+        if(sessionStorage.getItem('status')==1){
+            console.log("Into the property get ajax");
+            var serverData1= {
+                                "status":1
+            };
 
-        var onerk=[], onebhk=[], twobhk=[], threebhk=[], fourbhk=[], water_supply=[];
+            $.ajax({
+            type:"GET",
+            url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+            data:serverData1,
+            success:function(data){
+                console.log("data...", data);
+                $('input:radio[value="'+data[0].property_for+'"]').attr('checked',true);
+                $('#pdate').val(data[0].date); 
+                $('#page').val(data[0].property_age);                
+                $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
+                $('input:radio[id=park][value="'+data[0].park+'"]').attr('checked',true);                
+                $('input:radio[id=bath][value="'+data[0].com_bath+'"]').attr('checked',true);
+                $('input:radio[id=kitchen][value="'+data[0].com_kitchen+'"]').attr('checked',true);
+                $('input:radio[id=office][value="'+data[0].ofc_room+'"]').attr('checked',true);
+                $('input:radio[id=care][value="'+data[0].care_room+'"]').attr('checked',true);
+                $('input:radio[id=store][value="'+data[0].store_room+'"]').attr('checked',true);
+                $('input:radio[id=power][value="'+data[0].power_bakup+'"]').attr('checked',true);
+                $('input:radio[id=security][value="'+data[0].gate_security+'"]').attr('checked',true);
+                $('input:radio[id=lift][value="'+data[0].lift+'"]').attr('checked',true); 
+                $('input:radio[id=water][value="'+data[0].water_supply+'"]').attr('checked',true);
+                //ONERK
+                if(data[0].onerk!=null){
+                    $('input[id=roomType1rk]').attr('checked',true);
+                    $("input:checkbox[id=roomType1rk]:checked").each(function(){
+                        var one = JSON.parse(data[0].onerk);
+                        // console.log("ONE....",one);
+                        $('#1rk').show();
+                        $('#flooronerk').val(one.floor); 
+                        $('#flatonerk').val(one.flat);
+                        $('#washroomonerk').val(one.washroom);
+                        $('#balconyonerk').val(one.balcony);
+                    });
+                }else{
+                    $('input[id=roomType1rk]').attr('checked',false);
+                }
+                //ONEBHK
+                if(data[0].onebhk!=null){
+                    $('input[id=roomType1bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType1bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].onebhk);
+                        // console.log("ONE....",one);
+                        $('#1bhk').show();
+                        $('#flooronebhk').val(one.floor); 
+                        $('#flatonebhk').val(one.flat);
+                        $('#washroomonebhk').val(one.washroom);
+                        $('#balconyonebhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType1bhk]').attr('checked',false);
+                }
+                //TWOBHK
+                if(data[0].twobhk!=null){
+                    $('input[id=roomType2bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType2bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].twobhk);
+                        // console.log("ONE....",one);
+                        $('#2bhk').show();
+                        $('#floortwobhk').val(one.floor); 
+                        $('#flattwobhk').val(one.flat);
+                        $('#washroomtwobhk').val(one.washroom);
+                        $('#balconytwobhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType2bhk]').attr('checked',false);
+                }
+                //THREEBHK
+                if(data[0].threebhk!=null){
+                    $('input[id=roomType3bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType3bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].twobhk);
+                        // console.log("ONE....",one);
+                        $('#3bhk').show();
+                        $('#floorthreebhk').val(one.floor); 
+                        $('#flatthreebhk').val(one.flat);
+                        $('#washroomthreebhk').val(one.washroom);
+                        $('#balconythreebhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType3bhk]').attr('checked',false);
+                }
+                //FOURBHK
+                if(data[0].fourbhk!=null){
+                    $('input[id=roomType4bhk]').attr('checked',true);
+                    $("input:checkbox[id=roomType4bhk]:checked").each(function(){
+                        var one = JSON.parse(data[0].fourbhk);
+                        // console.log("ONE....",one);
+                        $('#4bhk').show();
+                        $('#floorfourbhk').val(one.floor); 
+                        $('#flatfourbhk').val(one.flat);
+                        $('#washroomfourbhk').val(one.washroom);
+                        $('#balconyfourbhk').val(one.balcony);
+                    });
+
+                }else{
+                    $('input[id=roomType4bhk]').attr('checked',false);
+                }
+
+            },
+            error:function(){
+                console.log('Error In AJAX...');
+
+            }
+            });
+        }
+
+        if(sessionStorage.getItem('status')==1){
+            var id=sessionStorage.getItem("pro_id");
+            status=1;
+        }else {
+            var id=sessionStorage.getItem("pro_id");
+            status=0;
+        } 
+        //End Of Get API
+
+        var onerk, onebhk, twobhk, threebhk, fourbhk;
         
         //Checkbox change event.
         $('#roomType1rk').on('change', function() {
@@ -420,48 +558,48 @@
         $('#ajax-build-pro').click(function(e) {
             console.log("Into ajax call ..........");
             e.preventDefault();
-            $("input:checkbox[id=water]:checked").each(function(){
-                    water_supply.push($(this).val());
-            });
+            // $("input:checkbox[id=water]:checked").each(function(){
+            //         water_supply.push($(this).val());
+            // });
             $("input:checkbox[id=roomType1rk]:checked").each(function(){
-                onerk.push({
+                onerk={
                     floor: $('#flooronerk').val(), 
                     flat:  $('#flatonerk').val(),
                     washroom:  $('#washroomonerk').val(),
                     balcony:  $('#balconyonerk').val()
-                });
+                };
             });
             $("input:checkbox[id=roomType1bhk]:checked").each(function(){
-                onebhk.push({
+                onebhk={
                     floor: $('#flooronebhk').val(), 
                     flat:  $('#flatonebhk').val(),
                     washroom:  $('#washroomonebhk').val(),
                     balcony:  $('#balconyonebhk').val()
-                });
+                }
             });
             $("input:checkbox[id=roomType2bhk]:checked").each(function(){
-                twobhk.push({
+                twobhk={
                     floor: $('#floortwobhk').val(), 
                     flat:  $('#flattwobhk').val(),
                     washroom:  $('#washroomtwobhk').val(),
                     balcony:  $('#balconytwobhk').val()
-                });
+                }
             });
             $("input:checkbox[id=roomType3bhk]:checked").each(function(){
-                threebhk.push({
+                threebhk={
                     floor: $('#floorthreebhk').val(), 
                     flat:  $('#flatthreebhk').val(),
                     washroom:  $('#washroomthreebhk').val(),
                     balcony:  $('#balconythreebhk').val()
-                });
+                }
             });
             $("input:checkbox[id=roomType4bhk]:checked").each(function(){
-                fourbhk.push({
+                fourbhk={
                     floor: $('#floorfourbhk').val(), 
                     flat:  $('#flatfourbhk').val(),
                     washroom:  $('#washroomfourbhk').val(),
                     balcony:  $('#balconyfourbhk').val()
-                });
+                }
             });
             //End of Checkbox change event
             onerk= JSON.stringify(onerk);
@@ -469,7 +607,7 @@
             twobhk= JSON.stringify(twobhk);
             threebhk= JSON.stringify(threebhk);
             fourbhk= JSON.stringify(fourbhk);
-            water_supply= JSON.stringify(water_supply);
+            // water_supply= JSON.stringify(water_supply);
             
             var serverData ={
                                 "property_for": "Rent",
@@ -490,7 +628,7 @@
                                 "care_room":$("input:radio[id=care]:checked").val(),
                                 "store_room":$("input:radio[id=store]:checked").val(),
                                 "power_bakup":$("input:radio[id=power]:checked").val(),
-                                "water_supply":water_supply,     
+                                "water_supply":$("input:radio[id=water]:checked").val(),     
                                 "gate_security":$("input:radio[id=security]:checked").val(),
                                 "lift":$("input:radio[id=lift]:checked").val()
                         };

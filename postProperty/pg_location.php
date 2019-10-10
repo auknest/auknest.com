@@ -27,10 +27,10 @@
             <div class="row">
                 <div class="col-sm-12 col-md-5 col-lg-5">
                     <div class="col-sm-12 col-md-6 col-lg-6 loc-city" >
-                        <select class ="Input-txt "> 
+                        <select id="dropDownId"  class ="Input-txt "> 
                             <option selected disabled hidden>City</option>
-                            <option value="Pune" id="dropDownId" name="Pune" value="pune"> Pune </option>
-                            <option value="Mumbai" id="dropDownId" name="Mumbai" value="mumbai"> Mumbai </option>
+                            <option name="Pune" value="Pune"> Pune </option>
+                            <option name="Mumbai" value="Mumbai" > Mumbai </option>
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 loc-city">
@@ -77,7 +77,8 @@
           data:serverData1,
           success:function(data){
             console.log("data...", data);
-            $('#dropDownId[value="'+data[0].pro_city+'"]').attr('selected', 'selected'); 
+            // $('#dropDownId[value="'+data[0].pro_city+'"]').attr('selected', 'selected'); 
+            $('#dropDownId').val(data[0].pro_city);
             $('#pro_loc').val(data[0].pro_locality);       
             $('#address').val(data[0].pro_address); 
             $('#pro_name').val(data[0].pro_name); 
