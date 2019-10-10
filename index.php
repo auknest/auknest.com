@@ -93,7 +93,7 @@
                     <label for="name">EMAIL</label>
                     <span class="star">*</span>
                 </div>
-                <input type="text" class="form-control back-color-black white-font" id="email" name="email" required>
+                <input type="text" class="form-control back-color-black white-font" id="mail" name="email" required>
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pd-5per">
@@ -122,7 +122,7 @@
 </div>
 <!-- Sign Up Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none" id="signup">
-
+    
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
         <div class="row">
@@ -131,42 +131,48 @@
             </button>   
         </div>   
     <form class="signupForm" id="signupForm" name="signupForm" action="javascript:otpsuccess()" class="pd-5per"> 
+     <div class="row"> 
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group name-group">
-                <div class="palceholder">
-                    <label for="name">NAME</label>
-                    <span class="star">*</span>
+                <div class="form-group name-group">
+                    <div class="palceholder">
+                        <label for="name">NAME</label>
+                        <span class="star">*</span>
+                    </div>
+                    <input type="text" class="form-control back-color-black white-font" id="uname" name="uname" required>
                 </div>
-                <input type="text" class="form-control back-color-black white-font" id="uname" name="uname" required>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group email-group">
+                    <div class="palceholder">
+                        <label for="phone">PHONE</label>
+                        <span class="star">*</span>
+                    </div>
+                    <input type="text" class="form-control back-color-black bold white-font" id="phone" name="phone" pattern="[7-9]{1}[0-9]{9}" required>
+                </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group email-group">
-                <div class="palceholder">
-                    <label for="phone">PHONE</label>
-                    <span class="star">*</span>
+    <!-- row close -->
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group name-group">
+                    <div class="palceholder">
+                        <label for="email">EMAIL</label>
+                        <span class="star">*</span>
+                    </div>
+                    <input type="email" class="form-control back-color-black white-font" id="email" name="email" required>
                 </div>
-                <input type="text" class="form-control back-color-black bold white-font" id="phone" name="phone" required>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="form-group email-group">
+                    <div class="palceholder">
+                        <label for="password">PASSWORD</label>
+                        <span class="star">*</span>
+                    </div>
+                    <input type="password" class="form-control back-color-black bold white-font" id="upassword" name="upassword" required>
+                </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group name-group">
-                <div class="palceholder">
-                    <label for="email">EMAIL</label>
-                    <span class="star">*</span>
-                </div>
-                <input type="email" class="form-control back-color-black white-font" id="email" name="email" required>
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <div class="form-group email-group">
-                <div class="palceholder">
-                    <label for="password">PASSWORD</label>
-                    <span class="star">*</span>
-                </div>
-                <input type="password" class="form-control back-color-black bold white-font" id="upassword" name="upassword" required>
-            </div>
-        </div>
+        <!-- Div 2nd row close -->
         <div class="row center">
             <span class="bold">By clicking below, you agree to <a class="pointer">Terms & Conditions</a></span>
         </div><br>
@@ -568,6 +574,18 @@
 $(document).ready(function(){
     //login Profile 
     
+    var parm=window.location.search.substring(1);
+    var url_parm = parm ? parm : '';
+    console.log("url parm.....", url_parm);
+    var status= url_parm?1:0;
+    console.log("status.....", status);
+    if(status==1){
+        $('#profileinfo').show();
+        $('#loginbtn').hide();
+
+    }
+    
+
     
     var passkey= "<?php echo $passkey ?>";
     // console.log(passkey);
@@ -605,7 +623,32 @@ $(document).ready(function(){
 // SEND OTP 
 var form3 = $( "#signupForm" );
 form3.validate();
+
+
 $( "#ajax-sendotp" ).click(function(e) {
+    if(form3.valid()==true){
+    //Data store into users table. then send the OTP & mail.
+    var serverData={
+        "u_id":111,
+        "name":$("#uname").val(),
+        "password":$("#upassword").val(),
+        "email":$("#email").val(),
+        "phone":$("#phone").val(),
+        // "user_status":"0"
+    };
+    $.ajax({
+        type:"POST",
+        url:"http://localhost:3000/post_login",
+        data:serverData,
+        success : function(response) {
+            console.log('Sucess In AJAX login api...');
+            },
+        error: function() {
+            console.log('Error In AJAX...');
+            },
+    });
+    }
+
   if(form3.valid()==true){
 
     $('#otp').show();

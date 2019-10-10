@@ -43,6 +43,7 @@ var pgtopgaminities = require('./routes/postapi/post_pg_pg_aminities'); //To ins
 var buildproperty = require('./routes/postapi/post_build_property'); //To insert building proprty details. 
 var buildaminities = require('./routes/postapi/post_build_aminities'); //To insert building aminities details. 
 var roomate = require('./routes/postapi/post_roomate_api'); //To insert building aminities details. 
+var login = require('./routes/postapi/post_login'); //To insert login details. 
 
 //Delete api
 var deleteimg = require('./routes/deleteapi/delete_gallery_img');
@@ -115,7 +116,10 @@ app.get("/abc",isValidate, function(req, res, next){
   console.log("Fetching user data");
   console.log(req.user);
   console.log("Is user authenticated ",req.isAuthenticated())
-  res.json({"hey":"welcome"});
+  if(req.isAuthenticated()==true){
+  res.redirect("http://localhost/auknest.com/auknest.com/index.php?uid=1");
+  }
+  // res.json({"hey":"welcome"});
 });
 
 
@@ -163,6 +167,7 @@ app.use('/post_pg_pg_aminities', pgtopgaminities); //To insert the pg to,pg amin
 app.use('/post_build_property', buildproperty); //To insert the build property
 app.use('/post_build_aminities', buildaminities); //To insert the building aminities
 app.use('/post_roomate_api', roomate); //To insert the roomate details
+app.use('/post_login', login); //To insert the login details
 
 
 //delete api
