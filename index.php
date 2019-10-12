@@ -3,9 +3,9 @@
 <div class="main_img">
     <img class="main_img" src="./img/photo.jpg" style="width: 100%">
 </div>
-<div class="row w-100per" style="position: absolute; top:400px">  
+<div class="row w-100per" style="position: absolute; top:60%">  
     <div class="row" > 
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
 
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 center" style="text-align:center">
@@ -13,7 +13,7 @@
             <button class="yellow-search-btn" style="display:inline-block"><b>FLAT</b></button>
             <button class="yellow-search-btn" style="display:inline-block"><b>PROPERTY</b></button>
         </div>
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
 
         </div>
     </div>
@@ -472,7 +472,7 @@
         <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
           <!-- <img src="img/83840a84-2f67-4924-ac58-22d736c86712.png"> -->
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 heading1">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 heading1">
               DOWNLOAD OUR APP
         </div>
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" >
@@ -628,8 +628,9 @@ form3.validate();
 $( "#ajax-sendotp" ).click(function(e) {
     if(form3.valid()==true){
     //Data store into users table. then send the OTP & mail.
+    var unique_id= "<?php echo uniqid()?>";
     var serverData={
-        "u_id":111,
+        "u_id":unique_id,
         "name":$("#uname").val(),
         "password":$("#upassword").val(),
         "email":$("#email").val(),
@@ -642,6 +643,7 @@ $( "#ajax-sendotp" ).click(function(e) {
         data:serverData,
         success : function(response) {
             console.log('Sucess In AJAX login api...');
+            sessionStorage.setItem("u_id", unique_id);
             },
         error: function() {
             console.log('Error In AJAX...');

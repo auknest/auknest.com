@@ -1,5 +1,8 @@
 /* Mobile mode css */
 @media screen and (max-width: 768px) {
+  .heading-yellow-img {
+    width: 90% !important;
+}
 .center-desktop {
 padding-left: 18%!important;
 }
