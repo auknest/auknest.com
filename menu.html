@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/mobileview.css">
@@ -12,6 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/auk.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
@@ -32,17 +34,20 @@
         <div id="loginbtn">
           <button class= "mb-7 " style=" width: 200px ;height: 50px;" onclick="showLogin()">SignIn</button>
         </div>
-        <div id="profileinfo" style="display:none">
-          <img class="mb-7 pd-l-1" style="border-radius:50%;height:40px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">
-          <p style="float:right" class ="mb-7 pd-l-1" id="profilename"> ABC </p>
-
-          <select name="cars" style="float:right">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-          </select>
-          
+        
+        <div class="col-xs-10" id="profileinfo" style="display:none">
+          <img class="hidden-xs mb-7 pd-l-1" style="border-radius:50%;height:40px; float:right" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">
+          <!-- <p  class ="mb-7 pd-l-1" id="profilename"> ABC </p> -->
+            <div class ="mb-7 pd-l-1" style="float: right; display:flex;">
+              <a class="dropdown-toggle" id="profilename" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ABCD
+              <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="profilename">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>  
         </div>
 
        <!-- <select class= "mb-7 "style=" width: 200px ;height: 50px;">
