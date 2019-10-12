@@ -82,7 +82,7 @@ div.content {
             <label for="name">NAME</label>
         </div>
         <div class="col-xs-8 col-md-6 col-lg-6">
-            <input class="form-control" type="text">
+            <input id="name" class="form-control" type="text">
         </div>
  </div>
  <br>
@@ -91,7 +91,7 @@ div.content {
             <label for="name">EMAIL</label>
         </div>
         <div class="col-xs-8 col-md-6 col-lg-6">
-            <input class="form-control" type="text">
+            <input  id="email" class="form-control" type="text" readonly>
         </div>
  </div>
  <br>
@@ -100,7 +100,7 @@ div.content {
             <label for="name">PHONE NUMBER</label>
         </div>
         <div class="col-xs-8 col-md-6 col-lg-6">
-            <input class="form-control" type="text">
+            <input id="phone" class="form-control" type="text">
         </div>
  </div>
  <br>
@@ -135,8 +135,29 @@ div.content {
 </body>
 </html>
 <script>
+$(document).ready(function(){
+  var parm=window.location.search.substring(1);
+  var url_parm = parm ? parm : '';
+  $.ajax({
+    type:"GET",
+    url:"http://localhost:3000/get_profile?"+url_parm,
+    data:"",
+    success : function(response) {
+            console.log('Sucess In AJAX profile api...');
+            console.log(response);
+            $('#name').val(response[0].name); 
+            $('#email').val(response[0].email); 
+            $('#phone').val(response[0].phone); 
+            },
+        error: function() {
+            console.log('Error In AJAX...');
+            },    
+
+
+  });
+
+});
 function openCity(evt, cityName) {
-    console.log("..............");
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {

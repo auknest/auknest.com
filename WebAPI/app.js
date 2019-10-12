@@ -27,6 +27,7 @@ var getwhoI = require('./routes/getapi/get_who_I');
 var getproshortdetails = require('./routes/getapi/get_pro_shortdetails');
 var getpropgFlatPgtopgdetails= require('./routes/getapi/get_pro_pgFlatPgtopg_details');
 var getroomate = require('./routes/getapi/get_roomfinder');
+var getprofile = require('./routes/getapi/get_profile');
 
 
 //Post api
@@ -81,7 +82,7 @@ passport.serializeUser(function(user, done) {
   //user ===> {"id":"1", "username":"Test","password":"sk34567","age":"23"}
   console.log("hello serial",user);
 //save id in session to be used in deserialized
-  done(null, user.id);
+  done(null, user.u_id);
 });
 
 passport.deserializeUser(function(id, done) {
@@ -102,14 +103,14 @@ passport.deserializeUser(function(id, done) {
     // });    
   console.log("hello deserial",id);
   //db query to fetch frm id 
-  done(null, {"get":"alldata"});
+  done(null, {"u_id":id});
 });
 
 app.use(express.json());
 
 
 //Login-> passport stratagies-> get login form data->
-app.post('/login', passport.authenticate('local', { successRedirect: '/abc', failureRedirect: 'http://localhost/auknest.com/auknest.com/', failureFlash: false }));
+app.post('/login', passport.authenticate('local', { successRedirect: '/abc', failureRedirect: 'http://localhost/auknest.com/auknest.com/index.php?uid=0', failureFlash: false }));
 
 app.get("/abc",isValidate, function(req, res, next){
   
@@ -117,7 +118,7 @@ app.get("/abc",isValidate, function(req, res, next){
   console.log(req.user);
   console.log("Is user authenticated ",req.isAuthenticated())
   if(req.isAuthenticated()==true){
-  res.redirect("http://localhost/auknest.com/auknest.com/index.php?uid=1");
+  res.redirect("http://localhost/auknest.com/auknest.com/index.php?uid="+req.user.u_id);
   }
   // res.json({"hey":"welcome"});
 });
@@ -151,6 +152,8 @@ app.use('/get_who_I', getwhoI);
 app.use('/get_pro_shortdetails', getproshortdetails); //get property short details
 app.use('/get_pro_pgFlatPgtopg_details', getpropgFlatPgtopgdetails); //get property short details
 app.use('/get_roomfinder', getroomate);
+app.use('/get_profile', getprofile);
+
 
 
 //Post API

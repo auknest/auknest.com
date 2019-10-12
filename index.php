@@ -115,10 +115,14 @@
         </div><br>
         <div class="row center " >
             <button type="submit" class="btn w-20per back-color-blue white-font bold">LOGIN</button>
+            <br>
+            <div id="incorrect-msg" style="display:none; color:red">Username or Password incorrect</div>
+
         </div>
       </form>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
+
 </div>
 <!-- Sign Up Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none" id="signup">
@@ -171,6 +175,7 @@
                     <input type="password" class="form-control back-color-black bold white-font" id="upassword" name="upassword" required>
                 </div>
             </div>
+           
         </div>
         <!-- Div 2nd row close -->
         <div class="row center">
@@ -577,16 +582,23 @@ $(document).ready(function(){
     var parm=window.location.search.substring(1);
     var url_parm = parm ? parm : '';
     console.log("url parm.....", url_parm);
-    var status= url_parm?1:0;
+    var status= url_parm?1:'';
     console.log("status.....", status);
-    if(status==1){
-        $('#profileinfo').show();
-        $('#loginbtn').hide();
+    // if(status==1){
+     var id=url_parm.split("=");
+     if(url_parm){  
+        if(url_parm=='uid=0') {
 
+        $('#login').show();
+        $('#incorrect-msg').show();
+        }
+        else {
+            $('#profileinfo').show();
+            $('#loginbtn').hide();
+            sessionStorage.setItem("u_id", id[1]);
+
+        }
     }
-    
-
-    
     var passkey= "<?php echo $passkey ?>";
     // console.log(passkey);
     if(passkey!='')

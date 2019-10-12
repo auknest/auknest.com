@@ -1,7 +1,9 @@
+var con = require('../db_config');
 var passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy;
   //,FacebookStrategy = require('passport-facebook').Strategy;
-
+  var session = require('express-session')
+ 
 exports.local = function(){ return passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'pass'
@@ -9,30 +11,37 @@ exports.local = function(){ return passport.use(new LocalStrategy({
   function(username, password, done) {
       console.log("User name and pass");
       console.log(username, password);
-      //fetch user from db 
-    //   con.query(sql, (error, result) =>{
+      // fetch user from db 
+      var sql="SELECT u_id,email,password FROM users WHERE email='"+username+"' AND password="+password;
+      console.log(sql);
+      con.query(sql, (error, result) =>{
+
+        if (!error){
+          // console.log("result.........", result);
+           done(null,result[0]);
+
         
-    //     if (!error){
+   
     //         if(result.length>0){
                 //result[0] ==> {"id":"1", "username":"Test","password":"sk34567","age":"23"}
     //             done(null,result[0]);
     //         }else{
     //             done(null,false,{"message":"user not found in db"});
     //         }            
-    //     }else{
-    //         done(null,false);
-    //     }
-    // });    
+        }else{
+             done(null,false);
+        }
+    });    
         //logic of pass encryption
-      if(password == "12345"){
+      // if(password == "12345"){
         //Succes to be passed as done(err, status, message)
         //status true/data is success/true
         //status false/0 undefined is failed/false
-        done(null,{ "id":"1","Successfull":"test"});
-      }else{
+        // done(null,{ "id":"1","Successfull":"test"});
+      // }else{
           //not authenticated
-        done(null, false);
-      }
+        // done(null, false);
+      // }
     // User.findOne({ username: username }, function(err, user) {
     //   if (err) { return done(err); }
     //   if (!user) {

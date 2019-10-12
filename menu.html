@@ -44,16 +44,25 @@
               <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="profilename">
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="#" onclick=profile()>Profile</a></li>
+                <li><a onclick=logout() href="#">Logout</a></li>
               </ul>
             </div>  
         </div>
+        <script>
+          function logout(){
+            sessionStorage.removeItem('u_id');
+            window.location="http://localhost/auknest.com/auknest.com/index.php"
+          }
+        function profile(){
+          console.log("Into profile..........");
+          var profile_uid=sessionStorage.getItem("u_id");
+          console.log("Profile uid..........***", profile_uid);
+          window.location="http://localhost/auknest.com/auknest.com/profile.php?u_id="+profile_uid;
 
-       <!-- <select class= "mb-7 "style=" width: 200px ;height: 50px;">
-        <option>Sign in</option>
-         <option>Sign out</option>
-        </select> -->
+        }
+        </script>
+      
         <!-- mobile img header -->
         <div class="shake mb-15">
                 <div><img class="element" src="img/40 by 40.png"></div>
