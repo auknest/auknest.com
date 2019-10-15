@@ -23,11 +23,12 @@ app.use(express.json());
 //Get API
 var getstud1 = require('./routes/getstud');
 var getprotype = require('./routes/getapi/get_pro_type');
-var getwhoI = require('./routes/getapi/get_who_I');
 var getproshortdetails = require('./routes/getapi/get_pro_shortdetails');
 var getpropgFlatPgtopgdetails= require('./routes/getapi/get_pro_pgFlatPgtopg_details');
 var getroomate = require('./routes/getapi/get_roomfinder');
 var getprofile = require('./routes/getapi/get_profile');
+var profiledetails = require('./routes/getapi/get_profileProdetails'); //To update the profile  details. 
+
 
 
 //Post api
@@ -45,6 +46,7 @@ var buildproperty = require('./routes/postapi/post_build_property'); //To insert
 var buildaminities = require('./routes/postapi/post_build_aminities'); //To insert building aminities details. 
 var roomate = require('./routes/postapi/post_roomate_api'); //To insert building aminities details. 
 var login = require('./routes/postapi/post_login'); //To insert login details. 
+
 
 //Delete api
 var deleteimg = require('./routes/deleteapi/delete_gallery_img');
@@ -148,11 +150,12 @@ app.use('/users', usersRouter);
 //Get API
 app.use('/getstud', getstud1);
 app.use('/get_pro_type', getprotype);//To get the basic property details
-app.use('/get_who_I', getwhoI);
 app.use('/get_pro_shortdetails', getproshortdetails); //get property short details
 app.use('/get_pro_pgFlatPgtopg_details', getpropgFlatPgtopgdetails); //get property short details
 app.use('/get_roomfinder', getroomate);
 app.use('/get_profile', getprofile);
+app.use('/get_profileProdetails', profiledetails); //To insert the profile details
+
 
 
 

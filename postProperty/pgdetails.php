@@ -73,7 +73,7 @@
                                     <p class="w-100per center red-font back-color-yellow pd-5per">Submit</p>
                                 </div>
                             </a>
-                            </div>
+                        </div>
                         </div>
                         </div>
             </div>
