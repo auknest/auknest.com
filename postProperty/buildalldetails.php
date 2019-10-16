@@ -21,22 +21,22 @@
             </div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <div class="col-sm-4 col-md-4 col-lg-4 ">
+            <!-- <div class="col-sm-4 col-md-4 col-lg-4 ">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span>Rent </span>
                     <p><span id="expected_rent"></span>/- M</p>
                 </div>
-            </div>  
-            <div class="col-sm-4 col-md-4 col-lg-4">
+            </div>   -->
+            <!-- <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span >Deposite </span>
                     <p><span id="security_amt"></span>/-</p>
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-4 col-md-4 col-lg-4 ">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span >Available From </span>
-                    <p><span id="avl_frm"></span></p>
+                    <p><span id="date"></span></p>
                 </div>
             </div>
         </div>
@@ -76,19 +76,19 @@
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Office Room</p>
-                        <p class="mb-0 bold font-12" id="Office Room">No</p>
+                        <p class="mb-0 bold font-12" id="ofc_room">No</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Caretaker Room</p>
-                        <p class="mb-0 bold font-12" id="Caretaker Room">No</p>
+                        <p class="mb-0 bold font-12" id="care_room">No</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Store Room</p>
-                        <p class="mb-0 bold font-12" id="Store Room">No</p>
+                        <p class="mb-0 bold font-12" id="store_room">No</p>
                     </div>
                 </div>
             </div>
@@ -118,19 +118,19 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Parking</p>
-            <p class="mb-0 bold" id="Common Parking">No</p>
+            <p class="mb-0 bold" id="park">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Bathroom</p>
-            <p class="mb-0 bold" id="Common Bathroom">No</p>
+            <p class="mb-0 bold" id="com_bath">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Kitchen</p>
-            <p class="mb-0 bold" id="Common Kitchen">No</p>
+            <p class="mb-0 bold" id="com_kitchen">No</p>
         </div>
     </div>
 </div>
@@ -150,25 +150,25 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Lights</p>
-            <p class="mb-0 bold" id="Lights">0</p>
+            <p class="mb-0 bold" id="lights">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Fans</p>
-            <p class="mb-0 bold" id="Fans">0</p>
+            <p class="mb-0 bold" id="fans">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Geysers</p>
-            <p class="mb-0 bold" id="Geysers">0</p>
+            <p class="mb-0 bold" id="geysers">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Curtains</p>
-            <p class="mb-0 bold" id="Curtains">0</p>
+            <p class="mb-0 bold" id="curtains">0</p>
         </div>
     </div>
 </div>
@@ -187,25 +187,25 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Lift</p>
-            <p class="mb-0 bold" id="Lift">No</p>
+            <p class="mb-0 bold" id="lift">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Power Backup</p>
-            <p class="mb-0 bold" id="Power Backup">No</p>
+            <p class="mb-0 bold" id="power_bakup">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Security Guard</p>
-            <p class="mb-0 bold" id="Security">No</p>
+            <p class="mb-0 bold" id="gate_security">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Water Supply</p>
-            <p class="mb-0 bold" id="Water Supply">Corporation</p>
+            <p class="mb-0 bold" id="water_supply">Corporation</p>
         </div>
     </div>
 </div>
@@ -225,7 +225,7 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Floor</p>
-            <p class="mb-0 bold" id="total_floor">1</p>
+            <p class="mb-0 bold" id="floor_no">0</p>
         </div>
     </div>
     <!-- <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
@@ -322,39 +322,26 @@
         success: function (data) {
                 console.log(data);
                     $('#att_bal').html(data[0].att_bal);
+                    $('#date').html(data[0].date);
                     $('#att_bath').html(data[0].att_bath);
-                    $('#avl_frm').html(data[0].avl_frm);
-                    $('#com_area').html(data[0].com_area);
-                    $('#descr').html(data[0].descr);
-                    $('#expected_rent').html(data[0].expected_rent);
-                    $('#floor_no').html(data[0].floor_no);
-                    $('#food_included').html(data[0].food_included);
-                    $('#gen_aminities').html(data[0].gen_aminities);
-                    $('#get_close_time').html(data[0].get_close_time);
-                    $('#parking').html(data[0].parking);
-                    $('#pg_amenities').html(data[0].pg_amenities);
-                    $('#pg_available').html(data[0].pg_available);
-                    $('#pg_for').html(data[0].pg_for);
-                    $('#pg_room_type').html(data[0].pg_room_type);
-                    $('#pro_address').html(data[0].pro_address);
+                    $('#ofc_room').html(data[0].ofc_room);
+                    $('#care_room').html(data[0].care_room);
+                    $('#store_room').html(data[0].store_room);
+                    $('#park').html(data[0].park);
+                    $('#com_bath').html(data[0].com_bath);
+                    $('#com_kitchen').html(data[0].com_kitchen);
+                    $('#lights').html(data[0].lights);
+                    $('#geysers').html(data[0].geysers);
+                    $('#fans').html(data[0].fans);
+                    $('#curtains').html(data[0].curtains);
+                    $('#lift').html(data[0].lift);
+                    $('#power_bakup').html(data[0].power_bakup);
+                    $('#gate_security').html(data[0].gate_security);
+                    $('#water_supply').html(data[0].water_supply);
                     $('#pro_city').html(data[0].pro_city);
                     $('#pro_locality').html(data[0].pro_locality);
                     $('#pro_name').html(data[0].pro_name);
-                    $('#pro_person').html(data[0].pro_person);
-                    $('#pro_type').html(data[0].pro_type);
-                    $('#security_amt').html(data[0].security_amt);
-                    $('#total_floor').html(data[0].total_floor);
-                    $('#total_room').html(data[0].total_room);
-                    var pg_amn=data[0].pg_amenities;
-                    var amn=pg_amn.split(",");
-                    for( var i=0; i<amn.length; i++){
-                        $('#' + amn[i]).html('Yes');
-                    }
-                    var gen_amn=data[0].gen_amenities;
-                    var gen=gen_amn.split(",");
-                    for( var j=0; j<gen.length; j++){
-                        $('#' + gen[j]).html('Yes');
-                    }
+
                     },
             error: function() {
                   console.log('Error In AJAX...');

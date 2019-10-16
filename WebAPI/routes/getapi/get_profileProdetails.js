@@ -20,6 +20,9 @@ router.get('/', (req,res) =>{
     if(req.query.pro_type=='flat'){
         table="flatdetails";
     }
+    if(req.query.pro_type=='building'){
+        table="buildownerdetails";
+    }
     //If body parameter getting.
     if(req.query.pro_id){
         var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.u_id='"+req.query.u_id+"' AND p1.pro_id='"+req.query.pro_id+"')";
