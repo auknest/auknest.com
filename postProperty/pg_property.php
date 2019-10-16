@@ -24,13 +24,13 @@
                         <br>
                         <div class="black-border row">
                             <div class="radio-inline font-16 bold pd-l-30px col-md-4 col-lg-4">
-                                <input type="radio" id="pgAvailable" name="pgAvailable" value="boys">Boys
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="Boys">Boys
                             </div>
                             <div class="radio-inline font-16 bold col-md-4 col-lg-4">
-                                <input type="radio" id="pgAvailable" name="pgAvailable" value="girls">Girls
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="Girls">Girls
                             </div>
                             <div class="radio-inline font-16 bold col-md-3 col-lg-3">
-                                <input type="radio" id="pgAvailable" name="pgAvailable" value="both">Both
+                                <input type="radio" id="pgAvailable" name="pgAvailable" value="Both">Both
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <input type="radio" id="roomType" name="roomType" value="4 BHK">4 BHK
                         </label>
                         <label class="radio-inline blue-font font-16 bold col-lg-1">
-                        <input type="radio" id="roomType" name="roomType" value="others">Others
+                        <input type="radio" id="roomType" name="roomType" value="Others">Others
                         </label>     
                     </div>
             </div>
@@ -111,7 +111,7 @@
                         <input type="radio" id="floorNo" name="floorNo" value="8">8
                         </label>
                         <label class="radio-inline blue-font col-lg-1 font-16 bold ">
-                        <input type="radio" id="floorNo" name="floorNo" value="others">Others
+                        <input type="radio" id="floorNo" name="floorNo" value="Others">Others
                         </label>     
                     </div>
             </div>
@@ -148,7 +148,7 @@
                         <input type="radio" id="totalFloor" name="totalFloor" value="8">8
                         </label>
                         <label class="radio-inline blue-font col-lg-1 font-16 bold ">
-                        <input type="radio" id="totalFloor" name="totalFloor" value="others">Others
+                        <input type="radio" id="totalFloor" name="totalFloor" value="Others">Others
                         </label>     
                     </div>
             </div>
@@ -164,10 +164,10 @@
             <div class=""> <span class="blue-font bold-font">Gate Closing Time</span></div>
                         <div class="black-border row">
                             <div class="radio-inline pd-l-30px  col-lg-5 font-16 bold black">
-                                <input type="radio" id="gate_time" name="closeTime" value="24hr" >Open 24 Hours
+                                <input type="radio" id="gate_time" name="closeTime" value="Open 24 Hours" >Open 24 Hours
                             </div>
                             <div class="radio-inline col-lg-4 font-16 bold black">
-                                <input type="radio" id="gate_time" name="closeTime" value="specificTime">Specific Time
+                                <input type="radio" id="gate_time" name="closeTime" value="Specific Time">Specific Time
                             </div>
                         </div>
             </div>

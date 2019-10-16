@@ -209,10 +209,10 @@
                 <div class=""> <span class="blue-font bold-font">Gated Security</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="gate" name="" value="Yes" >Yes
+                            <input type="radio" id="gate" name="gateSecurity" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="gate" name="" value="No">No
+                            <input type="radio" id="gate" name="gateSecurity" value="No">No
                         </label>
                 </div>
                 </div>
@@ -220,10 +220,10 @@
                 <div class=""> <span class="blue-font bold-font">Lift</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="lift" name="" value="yes" >Yes
+                            <input type="radio" id="lift" name="balcony" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="lift" name="balcny" value="No">No
+                            <input type="radio" id="lift" name="balcony" value="No">No
                         </label>
                 </div>
                 </div>
@@ -250,7 +250,7 @@
                                 </div>        
                         </label>
                         <label class="col-xs-12 col-sm-12 col-md-5 col-lg-5 radio-inline font-16 bold black ">
-                            <input type="radio" id="selling" name="lease" value="no">Selling
+                            <input type="radio" id="selling" name="lease" value="Selling">Selling
                             <div id="sellingdiv" style="border:1px solid black; display:none">
                                 <div class="pd-2">
                                                 <span class="">Total Amount</span>
@@ -381,10 +381,10 @@
                 <div class=""> <span class="blue-font bold-font">Power Backup</span>
                         <br>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                            <input type="radio" id="backup" name="backup" value="yes" >Yes
+                            <input type="radio" id="backup" name="backup" value="Yes" >Yes
                         </label>
                         <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                            <input type="radio" id="backup" name="backup" value="no">No
+                            <input type="radio" id="backup" name="backup" value="No">No
                         </label>
                 </div>
                 </div>
