@@ -297,6 +297,7 @@
                              "pg_amenities":pg_ame,
                              "gen_amenities":gen_ame,
                              "pg_rules":$("input:radio[id=rule]:checked").val(),
+                             "u_id":sessionStorage.getItem("u_id"),
                                 };
                 console.log(serverData);
             

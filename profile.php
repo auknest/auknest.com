@@ -67,7 +67,7 @@ div.content {
   <a>Details</a>
   <a id="defaultOpen" onclick="openCity(event, 'info')" class="tablinks" >Basic Profile</a>
   <a onclick="openCity(event, 'PG');loadProducts('pg')" class="tablinks" >Posted PG</a>
-  <a  onclick="openCity(event, 'flats')" class="tablinks" >Posted Flats</a>
+  <a  onclick="openCity(event, 'flats');loadProducts('flat')" class="tablinks" >Posted Flats</a>
   <a onclick="openCity(event, 'build')" class="tablinks" >Posted building</a>
   <a  onclick="openCity(event, 'pg-pg')" class="tablinks" >Posted PG-PG</a>
   <a onclick="openCity(event, 'properties')" class="tablinks">Intersted properties</a>
@@ -114,8 +114,7 @@ div.content {
 
 </div>
 <div id="flats" class="tabcontent">
-  <h3>L</h3>
-  <p>London the capital city of England.</p>
+ 
 </div>
 <div id="build" class="tabcontent">
   <h3>London</h3>
@@ -148,91 +147,163 @@ function loadProducts(type) {
   var protype=type;
 	//get data from server..
 	$.ajax({
-		url:"http://localhost:3000/get_profileProdetails?type="+protype+"&"+url_parm,
+		url:"http://localhost:3000/get_profileProdetails?pro_type="+protype+"&"+url_parm,
 		type: 'GET',
 		dataType: 'JSON',
 		success: function(res) {
 
 			console.log("success");
 			console.log(res);
-		// /	details = res.productInfo;
+    // /	details = res.productInfo;
 			for (var i = 0; i < res.length; i++) {
-        // loadProductDetails(res[i]);
-        var yyyy="<div class=\"mb-tb-5per\">"+
-        "<div class=\"row\">"+
-        "<div class=\"col-sm-3 col-md-3 col-lg-3\">"+
-        "</div>"+
-        "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
-            "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
-                "<div class=\"row\">"+
-                    "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                        res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
-                        "<span id=\"result\"></span>"+
 
-                        "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
-                    "</div>"+
-                "</div>"+
-                "<hr style=\"margin-top:0px !important\">"+
-                "<div class=\"row\">"+
-                    "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                        "<span>Room Type</span><br>"+
-                        "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
-                    "</div>"+
-                    "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                        "<span>Rent</span><br>"+
-                        "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
-                    "</div>"+
-                    "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                        "<span>Deposite</span><br>"+
-                        "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
-                    "</div>"+
-                "</div>"+
-                "<hr style=\"margin-top:0px !important\">"+
-                "<div class=\"row\">"+
-                        "<div class=\"col-xs-12 col-sm-5 col-md-5 col-lg-5 center\">"+
-                            "<img class=\"profile_img img-responsive\" src=\"\">"+
-                        "</div>"+
-                        "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
-                            "<div class=\"row\">"+
-                                "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                    "<span>Preffered</span><br>"+
-                                    "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
-                                "</div>"+
-                                "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                    "<span>Posted On</span><br>"+
-                                    "<span>"+res[i].avl_frm+"</span>"+
-                                "</div>"+
-                            "</div>"+
-                        "<hr style=\"margin-top:0px !important\">"+
-                          "<div class=\"row\">"+
-                                "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                    "<span>Food Facility<span><br>"+
-                                    "<span id=\"food_included\">"+res[i].food_included+"<span>"+
-                                "</div>"+
-                                "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                    "<span>Gate closing time</span><br>"+
-                                    "<span>"+res[i].get_close_time+"</span>"+
-                                "</div>"+
-                           "</div>"+
+        if(res[i].pro_type=='pg'){
+
+          var yyyy="<div class=\"mb-tb-5per\">"+
+          "<div class=\"row\">"+
+          "<div class=\"col-sm-3 col-md-3 col-lg-3\">"+
+          "</div>"+
+          "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
+              "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
+                  "<div class=\"row\">"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
+                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                          "<span id=\"result\"></span>"+
+
+                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
                       "</div>"+
-                          "<hr>"+
-                          "<br>"+
+                  "</div>"+
+                  "<hr style=\"margin-top:0px !important\">"+
+                  "<div class=\"row\">"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Room Type</span><br>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                      "</div>"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Rent</span><br>"+
+                          "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
+                      "</div>"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Deposite</span><br>"+
+                          "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
+                      "</div>"+
+                  "</div>"+
+                  "<hr style=\"margin-top:0px !important\">"+
+                  "<div class=\"row\">"+
+                          "<div class=\"col-xs-12 col-sm-5 col-md-5 col-lg-5 center\">"+
+                              "<img class=\"profile_img img-responsive\" src=\"\">"+
+                          "</div>"+
+                          "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
+                              "<div class=\"row\">"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Preffered</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                  "</div>"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Posted On</span><br>"+
+                                      "<span>"+res[i].avl_frm+"</span>"+
+                                  "</div>"+
+                              "</div>"+
+                          "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
-                                "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                    "<p class=\"red-font center\">Status</p>"+
-                                "</div>"+
-                                "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                    "<a href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
-                                "</div>"+
-                                "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                    "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
-                                "</div>"+
-                        "</div>"
-                        
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Food Facility<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                  "</div>"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Gate closing time</span><br>"+
+                                      "<span>"+res[i].get_close_time+"</span>"+
+                                  "</div>"+
+                            "</div>"+
+                        "</div>"+
+                            "<hr>"+
+                            "<br>"+
+                              "<div class=\"row\">"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<p class=\"red-font center\">Status</p>"+
+                                  "</div>"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<a href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                  "</div>"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                  "</div>"+
+                          "</div>";   
+                         $('#PG').append(yyyy);
+        }
+        if(res[i].pro_type=='flat'){
+          var yyyy="<div class=\"mb-tb-5per\">"+
+          "<div class=\"row\">"+
+          "<div class=\"col-sm-3 col-md-3 col-lg-3\">"+
+          "</div>"+
+          "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
+              "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
+                  "<div class=\"row\">"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
+                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                          "<span id=\"result\"></span>"+
 
-;   
-        // This is id"+res[i].pro_id+"</div>";
-         $('#PG').append(yyyy);
+                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                      "</div>"+
+                  "</div>"+
+                  "<hr style=\"margin-top:0px !important\">"+
+                  "<div class=\"row\">"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Room Type</span><br>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                      "</div>"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Rent</span><br>"+
+                          "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
+                      "</div>"+
+                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Deposite</span><br>"+
+                          "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
+                      "</div>"+
+                  "</div>"+
+                  "<hr style=\"margin-top:0px !important\">"+
+                  "<div class=\"row\">"+
+                          "<div class=\"col-xs-12 col-sm-5 col-md-5 col-lg-5 center\">"+
+                              "<img class=\"profile_img img-responsive\" src=\"\">"+
+                          "</div>"+
+                          "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
+                              "<div class=\"row\">"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Preffered</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                  "</div>"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Posted On</span><br>"+
+                                      "<span>"+res[i].avl_frm+"</span>"+
+                                  "</div>"+
+                              "</div>"+
+                          "<hr style=\"margin-top:0px !important\">"+
+                            "<div class=\"row\">"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Food Facility<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                  "</div>"+
+                                  "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
+                                      "<span>Gate closing time</span><br>"+
+                                      "<span>"+res[i].get_close_time+"</span>"+
+                                  "</div>"+
+                            "</div>"+
+                        "</div>"+
+                            "<hr>"+
+                            "<br>"+
+                              "<div class=\"row\">"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<p class=\"red-font center\">Status</p>"+
+                                  "</div>"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<a href=\"\./postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                  "</div>"+
+                                  "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
+                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                  "</div>"+
+                          "</div>";   
+                         $('#flats').append(yyyy);
+        }
 
 
 			}

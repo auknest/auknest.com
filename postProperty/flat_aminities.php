@@ -312,6 +312,7 @@
             var serverData ={"att_bath": $("input:radio[id=bathroom]:checked").val(),
                              "pro_id": sessionStorage.getItem("pro_id"),
                              "pro_type" : sessionStorage.getItem("pro_type"),
+                             "u_id": sessionStorage.getItem("u_id"),
                              "att_bal":$("input:radio[id=bal]:checked").val(),
                              "water_supply":$("input:radio[id=water_supply]:checked").val(),
                              "parking_type":$("input:radio[id=parktype]:checked").val(),

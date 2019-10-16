@@ -23,6 +23,7 @@ router.post('/', function(req, res) {
       "pg_amenities":req.body.pg_amenities,
       "gen_amenities":req.body.gen_amenities,
       "pg_rules":req.body.pg_rules,
+      "u_id":req.body.u_id,
    };
     }
     if (req.body.pro_type =="flat") {
@@ -35,7 +36,7 @@ router.post('/', function(req, res) {
         "furnish":req.body.furnish,
         "flat_amenities":req.body.flat_amenities,
         "gen_amenities":req.body.gen_amenities,
-
+        "u_id":req.body.u_id,
      };
     }
     var sql = "UPDATE "+table+" SET ? "+cond;
