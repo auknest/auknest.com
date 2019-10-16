@@ -90,7 +90,7 @@
 
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                             <label class="radio-inline font-16 bold black">
-                                <input type="radio" id="park" name="parking" value="Bike / Car">Bike / Car both
+                                <input type="radio" id="park" name="parking" value="Bike / Car both">Bike / Car both
                             </label>
                             </div>
 
@@ -225,7 +225,7 @@
                 <input type="checkbox" id="gen" value="Cctv">Cctv
                 </label>
                 <label class="col-md-5 col-lg-5 checkbox-inline font-16 bold black">
-                <input type="checkbox" id="gen" value="Power Backup">Power Backup (For Common Area)
+                <input type="checkbox" id="gen" value="Power Backup  (For Common Area)">Power Backup (For Common Area)
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" id="gen" value="Security guard">Security guard

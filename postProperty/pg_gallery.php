@@ -28,7 +28,12 @@
                     <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">ADD ANOTHER PROPERTY</p>
                 </div>
                </a>
-        </div>      
+        </div> 
+        <script>
+            function closegallery() {
+                window.location.href="../index.php";
+            }
+        </script>     
     </div>
     <script>
         function pgdetails() {
@@ -52,15 +57,14 @@
                     <form id="profile-attachment">
                         <div  class=" col-sm-2 col-md-2 col-lg-2 " >
                             <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile" type="file" style="display:none" name="avatar" ></label>
-                            <p style="font-size:12px" id ="profile1">Select one or more files.</p>
+                            <p style="font-size:12px" id ="profile1">Select only one file.</p>
                         <!-- </div> -->
                     </form>
                         <p id="profile_name" >
                         <div class="form-group has-error has-feedback pro" style="display:none">
                             <input type="text" class="form-control" id="exampleInput1" readonly>
                             <!-- <button class=glyphicon id="profile_remove" >X</button> -->
-                            <span class="glyphicon glyphicon-remove form-control-feedback" id="profile_remove" style="pointer-events: auto !important;
-"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback" id="profile_remove" style="pointer-events: auto !important;"></span>
                         </div>
                         <br>
                         </p>
@@ -83,7 +87,7 @@
                             // var serverData1= {
                             //     "profile_img": 
                             // };
-                            console.log("////////", serverData1);
+                            // console.log("////////", serverData1);
                             $.ajax({
                                 type:"DELETE",
                                 url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
@@ -342,9 +346,6 @@ function ajax_call_API(formData) {
             processData: false,
             cache: false
         });
- }
- function closegallery() {
-     location.href="../index.php";
  }
 });
  </script>

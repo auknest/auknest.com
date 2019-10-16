@@ -78,10 +78,10 @@
                                     <input id="flatFor" type="radio" name="pgFor" value="Family">Family
                                 </div>
                                 <div class="radio-inline col-xs-12 col-sm-3 col-md-3 col-lg-3 font-16 bold black">
-                                    <input id="flatFor" type="radio" name="pgFor" value="Bachelor boys">Bachelor boys
+                                    <input id="flatFor" type="radio" name="pgFor" value="Bachelor Boys">Bachelor Boys
                                 </div>
                                 <div class="radio-inline col-xs-12 col-sm-3 col-md-3 col-lg-3 font-16 bold black">
-                                    <input id="flatFor" type="radio" name="pgFor" value="Bachelor girls">Bachelor girls
+                                    <input id="flatFor" type="radio" name="pgFor" value="Bachelor Girls">Bachelor Girls
                                 </div>
                                 <div class="radio-inline col-xs-12 col-sm-3 col-md-3 col-lg-3 font-16 bold black">
                                     <input id="flatFor" type="radio" name="pgFor" value="Doesn't Matter">Doesn't Matter

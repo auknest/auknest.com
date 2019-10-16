@@ -23,10 +23,10 @@
                 <div class=""> <span class="blue-font bold-font">Attached Bathroom</span> 
                     <br>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bathroom" name="bathroom" value="yes" >Yes
+                        <input type="radio" id="bathroom" name="bathroom" value="Yes" >Yes
                     </div>
                     <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bathroom" name="bathroom" value="no">No
+                        <input type="radio" id="bathroom" name="bathroom" value="No">No
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
             <div class=""> <span class="blue-font bold-font">Attached Balcony</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="bal" name="balcony" value="yes" >Yes
+                        <input type="radio" id="bal" name="balcony" value="Yes" >Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" id="bal" name="balcony" value="no">No
+                        <input type="radio" id="bal" name="balcony" value="No">No
                     </label>
                 </div>
             </div>
@@ -47,10 +47,10 @@
             <div class=""> <span class="blue-font bold-font">Common Area</span>
                     <br>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black ">
-                        <input type="radio" id="area" name="area" value="yes" >Yes
+                        <input type="radio" id="area" name="area" value="Yes" >Yes
                     </label>
                     <label class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline black-border center font-16 bold black">
-                        <input type="radio" id="area" name="area" value="no">No
+                        <input type="radio" id="area" name="area" value="No">No
                     </label>
             </div>
             </div>
@@ -64,25 +64,25 @@
                     <div class="row black-border">
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <label class="radio-inline font-16 bold black ">
-                            <input id="park" type="radio" name="parking" value="bike" >Bike
+                            <input id="park" type="radio" name="parking" value="Bike" >Bike
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
                         <label class="radio-inline font-16 bold black">
-                            <input id="park" type="radio" name="parking" value="car">Car
+                            <input id="park" type="radio" name="parking" value="Car">Car
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
                         <label class="radio-inline font-16 bold black">
-                            <input id="park" type="radio" name="parking" value="bikecar">Bike / Car both
+                            <input id="park" type="radio" name="parking" value="Bike / Car both">Bike / Car both
                         </label>
                         </div>
 
                         <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 ">
                         <label class="radio-inline font-16 bold black">
-                            <input id="park" type="radio" name="parking" value="none">None
+                            <input id="park" type="radio" name="parking" value="None">None
                         </label>
                         </div>
                     </div>  
@@ -140,7 +140,7 @@
                 <input type="checkbox" id="amn" value="Drinking Water">Drinking Water
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
-                <input type="checkbox" id="amn" value="Room cleaning">Room Cleaning
+                <input type="checkbox" id="amn" value="Room Cleaning">Room Cleaning
                 </label>
                 <label class="col-md-3 col-lg-3 checkbox-inline font-16 bold black">
                 <input type="checkbox" id="amn" value="Washing Machine">Washing Machine
@@ -153,7 +153,7 @@
              <!-- Third row -->
              <div class="row black-border">
              <label class="col-md-4 col-lg-4 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                <input type="checkbox" id="amn" value="Gas(Cooking Allowed)">Gas(Cooking Allowed)
+                <input type="checkbox" id="amn" value="Gas (Cooking Allowed)">Gas (Cooking Allowed)
                 </label>
                 <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
                 <input type="checkbox" id="amn" value="Cooler">Cooler
@@ -205,10 +205,10 @@
                     <div class="row black-border font-16 bold black">
                         <span style="padding-left:15px;">Guardian Stay  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <label class="radio-inline font-16 bold black">
-                        <input type="radio" id="rule" name="guardian" value="yes" >Yes
+                        <input type="radio" id="rule" name="guardian" value="Yes" >Yes
                         </label>
                         <label class="radio-inline font-16 bold black">
-                        <input type="radio" id="rule" name="guardian" value="no">No
+                        <input type="radio" id="rule" name="guardian" value="No">No
                         </label>
                 
                      </div>

@@ -94,7 +94,7 @@
                         <!-- First row -->
                         <div class="row black-border">
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black" style="padding-left:30px;">
-                            <input type="checkbox" id="ownerAminities" value="Light">Lights
+                            <input type="checkbox" id="ownerAminities" value="Lights">Lights
                             </label>
                             <label class="col-md-2 col-lg-2 checkbox-inline font-16 bold black">
                             <input type="checkbox" id="ownerAminities" value="Fans">Fans
