@@ -17,13 +17,18 @@ router.get('/', (req,res) =>{
     if(req.query.type=='pg'){
         table="pgdetails";
     }
-    //If body parameter not getting.
-    var cond= "WHERE p1.pro_type='"+req.query.type+"' AND p1.u_id='"+req.query.u_id+"'";
-    //If body parameter getting then 
-    // var cond="WHERE p1.pro_type='"+req.query.type+"' AND (p1.u_id='"+req.query.u_id+"' AND pro_id='"+req.body.pro_id+"'";
+    //If body parameter getting.
+    if(req.query.pro_id){
+        var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.u_id='"+req.query.u_id+"' AND p1.pro_id='"+req.query.pro_id+"')";
+        var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN pgdetails AS p2 ON p1.pro_id=p2.pro_id "+cond;
+    }
+    else {
+    var cond= "WHERE p2.pro_type='"+req.query.type+"' AND p2.u_id='"+req.query.u_id+"'";
+    var sql="SELECT p1.*, p2.* FROM pgdetails AS p1 LEFT JOIN property AS p2 ON p2.pro_id=p1.pro_id "+cond;
+
+    }
     try {
        
-        var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN pgdetails AS p2 ON p1.u_id=p2.u_id "+cond;
         console.log(sql);
         con.query(sql, (error, result) =>{
             

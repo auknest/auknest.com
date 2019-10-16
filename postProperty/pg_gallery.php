@@ -18,7 +18,7 @@
         Your Post will be Live in 24 hours after Verification".</p>
         <br><br>
         <div class="row center">
-               <a href="./pgalldetails.php">
+               <a href="#" onclick=pgdetails()>
                 <div class="col-sm-12 col-md-6 col-lg-6 center">
                     <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">PREVIEW LISTING <br></p>
                 </div>
@@ -30,6 +30,12 @@
                </a>
         </div>      
     </div>
+    <script>
+        function pgdetails() {
+            console.log(".............Into pg detail function");
+            window.location.href="./pgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+        }
+    </script>
 <!-- <form  method="post" enctype="multipart/form-data" id="myform"> -->
     <div id="gallerywindow" class="row">
     <!-- Box outline -->

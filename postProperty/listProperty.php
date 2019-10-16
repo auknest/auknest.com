@@ -88,6 +88,7 @@ $_SESSION['pro_id']= uniqid();
     var serverData = {"pro_type" : $("input:radio[id=pro_type]:checked").val(),
                       "pro_id"   : id,
                       "status": status,
+                      "u_id":sessionStorage.getItem('u_id')
                     };
     $.ajax({
                 type: "POST",
