@@ -23,6 +23,9 @@ router.get('/', (req,res) =>{
     if(req.query.pro_type=='building'){
         table="buildownerdetails";
     }
+    if(req.query.pro_type=='pg_to_pg'){
+        table="pgtopgdetails";
+    }
     //If body parameter getting.
     if(req.query.pro_id){
         var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.u_id='"+req.query.u_id+"' AND p1.pro_id='"+req.query.pro_id+"')";

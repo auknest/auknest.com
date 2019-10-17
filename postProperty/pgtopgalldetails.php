@@ -24,13 +24,13 @@
             <div class="col-sm-4 col-md-4 col-lg-4 ">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span>Rent </span>
-                    <p><span id="expected_rent"></span>/- M</p>
+                    <p><span id="rent_per_person"></span>/- per person</p>
                 </div>
             </div>  
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span >Deposite </span>
-                    <p><span id="security_amt"></span>/-</p>
+                    <p><span id="deposite"></span>/per person</p>
                 </div>
             </div>
             <!-- <div class="col-sm-4 col-md-4 col-lg-4 ">
@@ -69,20 +69,26 @@
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
+                        <p class="mb-0 orange font-12">Building Type</p>
+                        <p class="mb-0 bold font-12" id="build_type">No</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                    <div class="outline">
                         <p class="mb-0 orange font-12">Office Room</p>
-                        <p class="mb-0 bold font-12" id="Office Room">No</p>
+                        <p class="mb-0 bold font-12" id="ofc_room">No</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Caretaker Room</p>
-                        <p class="mb-0 bold font-12" id="Caretaker Room">No</p>
+                        <p class="mb-0 bold font-12" id="care_room">No</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Store Room</p>
-                        <p class="mb-0 bold font-12" id="Store Room">No</p>
+                        <p class="mb-0 bold font-12" id="store_room">No</p>
                     </div>
                 </div>
             </div>
@@ -112,25 +118,25 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Area</p>
-            <p class="mb-0 bold" id="Common Area">0 <span>Sqft</span></p>
+            <p class="mb-0 bold" id="com_area">0 <span>Sqft</span></p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Parking</p>
-            <p class="mb-0 bold" id="Common Parking">No</p>
+            <p class="mb-0 bold" id="park">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Bathroom</p>
-            <p class="mb-0 bold" id="Common Bathroom">No</p>
+            <p class="mb-0 bold" id="com_bath">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Kitchen</p>
-            <p class="mb-0 bold" id="Common Kitchen">No</p>
+            <p class="mb-0 bold" id="com_kitchen">No</p>
         </div>
     </div>
 </div>
@@ -176,26 +182,26 @@
 <div class="row">
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">WiFI</p>
-            <p class="mb-0 bold" id="WiFI">0</p>
+            <p class="mb-0 orange ">WiFi</p>
+            <p class="mb-0 bold" id="WiFi">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Double Locker</p>
-            <p class="mb-0 bold" id="Double Locker">0</p>
+            <p class="mb-0 bold" id="Double_Locker">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Single Locker</p>
-            <p class="mb-0 bold" id="Single Locker">0</p>
+            <p class="mb-0 bold" id="Single_Locker">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Center Table</p>
-            <p class="mb-0 bold" id="Center Table">0</p>
+            <p class="mb-0 bold" id="CenterTable">0</p>
         </div>
     </div>
 </div>
@@ -237,13 +243,13 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Buckets and Mug</p>
-            <p class="mb-0 bold" id="Buckets and Mug">0</p>
+            <p class="mb-0 bold" id="Buckets_and_mug">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Bed, Mattress and Bed sheet</p>
-            <p class="mb-0 bold" id="bed">0</p>
+            <p class="mb-0 bold" id="Bed_mattress_and_bedsheet">0</p>
         </div>
     </div>
 </div>
@@ -262,25 +268,25 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Lift</p>
-            <p class="mb-0 bold" id="Lift">No</p>
+            <p class="mb-0 bold" id="lift">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Gated Security</p>
-            <p class="mb-0 bold" id="Gated Security">No</p>
+            <p class="mb-0 bold" id="gate_security">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Power Backup</p>
-            <p class="mb-0 bold" id="Power Backup">No</p>
+            <p class="mb-0 bold" id="power_bakup">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Water Supply</p>
-            <p class="mb-0 bold" id="Water Supply">Corporation</p>
+            <p class="mb-0 bold" id="water_supply">No</p>
         </div>
     </div>
 </div>
@@ -299,31 +305,19 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Floor</p>
-            <p class="mb-0 bold" id="total_floor">0</p>
+            <p class="mb-0 bold" id="floor_no">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Capacity</p>
-            <p class="mb-0 bold" id="Total Capacity">0</p>
+            <p class="mb-0 bold" id="pg_capacity">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Staying</p>
-            <p class="mb-0 bold" id="Total Staying">0</p>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Rent Per Person</p>
-            <p class="mb-0 bold" id="Rent/Person">0</p>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Deposite Per Person</p>
-            <p class="mb-0 bold" id="Deposite/Person">0</p>
+            <p class="mb-0 bold" id="stay_no">0</p>
         </div>
     </div>
 </div>
@@ -401,40 +395,55 @@
         data:{},
         success: function (data) {
                 console.log(data);
+                    $('#deposite').html(data[0].deposite);
                     $('#att_bal').html(data[0].att_bal);
-                    $('#att_bath').html(data[0].att_bath);
-                    $('#avl_frm').html(data[0].avl_frm);
+                    $('#rent_per_person').html(data[0].rent_per_person);
+                    $('#build_type').html(data[0].build_type);
+                    $('#ofc_room').html(data[0].ofc_room);
+                    $('#care_room').html(data[0].care_room);
+                    $('#store_room').html(data[0].store_room);
                     $('#com_area').html(data[0].com_area);
-                    $('#descr').html(data[0].descr);
-                    $('#expected_rent').html(data[0].expected_rent);
-                    $('#floor_no').html(data[0].floor_no);
-                    $('#food_included').html(data[0].food_included);
-                    $('#gen_aminities').html(data[0].gen_aminities);
-                    $('#get_close_time').html(data[0].get_close_time);
-                    $('#parking').html(data[0].parking);
-                    $('#pg_amenities').html(data[0].pg_amenities);
-                    $('#pg_available').html(data[0].pg_available);
-                    $('#pg_for').html(data[0].pg_for);
-                    $('#pg_room_type').html(data[0].pg_room_type);
+                    $('#park').html(data[0].park);
+                    $('#com_bath').html(data[0].com_bath);
+                    $('#com_kitchen').html(data[0].com_kitchen);
+                    $('#TV').html(data[0].TV);
+                    $('#DTH').html(data[0].DTH);
+                    $('#Sofa').html(data[0].Sofa);
+                    $('#Shoerack').html(data[0].Shoerack);
+                    $('#WiFi').html(data[0].WiFi);
                     $('#pro_address').html(data[0].pro_address);
                     $('#pro_city').html(data[0].pro_city);
                     $('#pro_locality').html(data[0].pro_locality);
                     $('#pro_name').html(data[0].pro_name);
-                    $('#pro_person').html(data[0].pro_person);
+                    $('#Double_Locker').html(data[0].Double_Locker);
                     $('#pro_type').html(data[0].pro_type);
-                    $('#security_amt').html(data[0].security_amt);
-                    $('#total_floor').html(data[0].total_floor);
-                    $('#total_room').html(data[0].total_room);
-                    var pg_amn=data[0].pg_amenities;
+                    $('#CenterTable').html(data[0].CenterTable);
+                    $('#Single_Locker').html(data[0].Single_Locker);
+                    $('#Curtains').html(data[0].Curtains);
+                    $('#CCTV').html(data[0].CCTV);
+                    $('#Curtains').html(data[0].Curtains);
+                    $('#Buckets_and_mug').html(data[0].Buckets_and_mug);
+                    $('#Bed_mattress_and_bedsheet').html(data[0].Bed_mattress_and_bedsheet);
+                    $('#lift').html(data[0].lift);
+                    $('#gate_security').html(data[0].gate_security);
+                    $('#power_bakup').html(data[0].power_bakup);
+                    $('#water_supply').html(data[0].water_supply);
+                    $('#floor_no').html(data[0].floor_no);
+                    $('#pg_capacity').html(data[0].pg_capacity);
+                    $('#stay_no').html(data[0].stay_no);
+                    $('#floor_no').html(data[0].floor_no);
+                    $('#descr').html(data[0].descr);
+
+                    var pg_amn=data[0].OwnerAminities;
                     var amn=pg_amn.split(",");
                     for( var i=0; i<amn.length; i++){
                         $('#' + amn[i]).html('Yes');
                     }
-                    var gen_amn=data[0].gen_amenities;
-                    var gen=gen_amn.split(",");
-                    for( var j=0; j<gen.length; j++){
-                        $('#' + gen[j]).html('Yes');
-                    }
+                    // var gen_amn=data[0].gen_amenities;
+                    // var gen=gen_amn.split(",");
+                    // for( var j=0; j<gen.length; j++){
+                    //     $('#' + gen[j]).html('Yes');
+                    // }
                     },
             error: function() {
                   console.log('Error In AJAX...');
