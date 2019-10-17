@@ -39,7 +39,6 @@ router.delete('/', (req,res) =>{
       var re=JSON.parse(result[0].profile_img.toString());
       re=JSON.stringify(re);
       console.log("profile image...........", re);
-      console.log("profile 1 image...........", req.body.profile_img);
 
       if(re==req.body.profile_img){
         console.log("compaire suceess");

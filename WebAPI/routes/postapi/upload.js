@@ -53,7 +53,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
                 }
                 else {
                      console.log("Data inserted into table property single upload api sucessfully...");
-                      res.end();
+                      // res.end('aaaaaa');
 
                 }
             });
@@ -63,10 +63,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             console.log("within  catche");
             console.log(Exception);
     }
-
-    // req.file is the `avatar` file
-    // req.body will hold the text fields, if there were any
-    res.end();
+    res.end(filekey);
   });
  
 // router.post('/', function(req, res) {

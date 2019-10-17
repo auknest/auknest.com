@@ -54,48 +54,40 @@
                     <div class=" col-sm-1 col-md-1 col-lg-1">
                         <label></label>
                     </div>
-                    <form id="profile-attachment">
+                    <!-- profile img -->
                         <div  class=" col-sm-2 col-md-2 col-lg-2 " >
-                            <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile" type="file" style="display:none" name="avatar" ></label>
-                            <p style="font-size:12px" id ="profile1">Select only one file.</p>
-                        <!-- </div> -->
-                    </form>
-                        <p id="profile_name" >
-                        <div class="form-group has-error has-feedback pro" style="display:none">
-                            <input type="text" class="form-control" id="exampleInput1" readonly>
-                            <!-- <button class=glyphicon id="profile_remove" >X</button> -->
-                            <span class="glyphicon glyphicon-remove form-control-feedback" id="profile_remove" style="pointer-events: auto !important;"></span>
-                        </div>
-                        <br>
-                        </p>
+                            <form id="profile-attachment">
+                                <label class="black-border center  upload-sec">Upload <br>Profile<input id ="profile" type="file" style="display:none" name="avatar" /></label>
+                                <p style="font-size:12px" id ="profile1">Select only one file.</p>
+                            </form>
+                            <div class="form-group has-error has-feedback pro">
+                                <div class="black-border " style="overflow: hidden">
+                                <div class="pd-2" >
+                                <span class="pd-2"  id="profile-name"></span>
+                                <button class="center"  style="right:0px;position: absolute;top:0px" id="profile_remove" >X</button>
+                                </div>
+                                </div>
+                            </div>
+                            <br>
                         </div>
                     <script>
-                    
-                        $("#profile").on("change", function() {
-                            $('.pro').show();
-                            var a=$('#profile').val();
-                            var profilename=  document.getElementById('profile');
-                            // btoa(profilename);	
-                          
-                            $('#exampleInput1').val(profilename.files[0].name);
-                            
-                        });
-                        
-                        $('.form-control-feedback').click(function(e) {
-                            var profilename=  document.getElementById('profile');
+                        $('#profile_remove').click(function(e) {
+                            console.log("////////");
 
-                            // var serverData1= {
-                            //     "profile_img": 
-                            // };
-                            // console.log("////////", serverData1);
+                            var profilename=  document.getElementById('profile-name');
+                            console.log("........profilename.", profilename);
+
+                            var serverData1= {
+                                "profile_img": $('#profile-name').text()
+                            };
+                            console.log("////////", serverData1);
                             $.ajax({
                                 type:"DELETE",
                                 url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
                                 data:"",
                                 success:function(data){
-                                console.log("success data...", data);
-                                $('#exampleInput1').val("");
-                                $('.pro').hide();
+                                console.log("delete profile image api");
+                                $('#profile-name').html('');     
                             },
                                 error:function(){
                                 console.log('Error In AJAX...');
@@ -106,12 +98,22 @@
                         });
 
                     </script>
-                    <form id="hall-attachment">
-                        <div class=" col-sm-2 col-md-2 col-lg-2 ">
-                            <label class="black-border center upload-sec">Upload <br>Hall<input id="hall" onchange="activeMenu(event)" name="imgs" type="file" multiple="true" style="display:none" ></label>
+                    <div class=" col-sm-2 col-md-2 col-lg-2 ">
+                        <form id="hall-attachment">
+                            <label class="black-border center upload-sec">Upload <br>Hall<input id="hall" name="imgs" type="file" multiple="true" style="display:none" ></label>
                             <p style="font-size:12px" id ="hall1">Select one or more files.</p>
+                        </form>
+                        <div class="form-group has-error has-feedback pro hall">
+                                <!-- <div class="black-border " style="overflow: hidden">
+                                <div class="pd-2" >
+                                <span class="pd-2"  id="hall-name"></span>
+                                <button class="center"  style="right:0px;position: absolute;top:0px" id="hall_remove" >X</button>
+                                </div>
+                                </div> -->
                         </div>
-                    </form>
+
+                    </div>
+
                     <form id="bedroom-attachment">
                         <div class=" col-sm-2 col-md-2 col-lg-2 ">
                             <label class="black-border center   upload-sec">Upload <br>Bedroom<input  onchange="activeMenu(event)"  id ="bedroom" type="file" multiple="true" style="display:none" name="imgs" ></label>
@@ -153,52 +155,52 @@
  
  <script>
 $(document).ready(function () {
-
-   if(sessionStorage.getItem('status')==1)
-      {
-        var serverData1= {
-            //   "pro_id": sessionStorage.getItem("pro_id"),
-              "status":1
-          };
-
-        $.ajax({
-          type:"GET",
-          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-          data:serverData1,
-          success:function(data){
-            console.log("success data...", data);
-            var key=Object.keys(data[0].profile_img);
-            console.log("profile image........." ,key);
-            var event= {target:{id:'profile'}, files:[{name:key[0]}]};
-            activeMenu(event);
-
-            // var file= {files:[{name:key[0]}]};
-
-
-
-
-            //   //  var target=[];
-            // var txt="";
-            // txt += "<br><strong>" + (1) + ". file</strong><br>";
-            // console.log("...............files", file);
-            // if ('name' in file) {
-            //     console.log("...............name");
-
-            // txt += "name: " + file.name + "<br>";
-            // }        
-          },
-          error:function(){
-            console.log('Error In AJAX...');
-
-          }
-        });
-      }
-
-
-       $('#ajax-gal').click(function(e) {
-    $("#popupwindow").show();
-    $("#gallerywindow").hide();
 });
+//    if(sessionStorage.getItem('status')==1)
+//       {
+//         var serverData1= {
+//             //   "pro_id": sessionStorage.getItem("pro_id"),
+//               "status":1
+//           };
+
+//         $.ajax({
+//           type:"GET",
+//           url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+//           data:serverData1,
+//           success:function(data){
+//             console.log("success data...", data);
+//             var key=Object.keys(data[0].profile_img);
+//             console.log("profile image........." ,key);
+//             var event= {target:{id:'profile'}, files:[{name:key[0]}]};
+//             activeMenu(event);
+
+//             // var file= {files:[{name:key[0]}]};
+
+
+
+
+//             //   //  var target=[];
+//             // var txt="";
+//             // txt += "<br><strong>" + (1) + ". file</strong><br>";
+//             // console.log("...............files", file);
+//             // if ('name' in file) {
+//             //     console.log("...............name");
+
+//             // txt += "name: " + file.name + "<br>";
+//             // }        
+//           },
+//           error:function(){
+//             console.log('Error In AJAX...');
+
+//           }
+//         });
+//       }
+
+
+//        $('#ajax-gal').click(function(e) {
+//     $("#popupwindow").show();
+//     $("#gallerywindow").hide();
+// });
 
 $("#profile").on("change", function() {
 
@@ -215,22 +217,21 @@ $("#profile").on("change", function() {
         var formData = new FormData(this);
         formData.append("pro_id", id);
         formData.append("pro_type", type);
-
-
         console.log("form data..........", formData);
-        
-   var val = "Hi";
-   $.ajax({
-       url: "http://localhost:3000/upload",
-       type: 'POST',
-       data: formData,
-       success: function(response) { console.log("sucess....................."); },
-       contentType: false,
-       processData: false,
-       cache: false
+        $.ajax({
+            url: "http://localhost:3000/upload",
+            type: 'POST',
+            data: formData,
+            success: function(data) {
+                    console.log("sucess into single upload api...", data);
+                    $('#profile-name').html(data);
+            },
+            contentType: false,
+            processData: false,
+            cache: false
 
-   });
-});
+        });
+    });
 
 //HAll images upload event.
 $("#hall").on("change", function() {   
@@ -238,29 +239,29 @@ $("#hall").on("change", function() {
     $("#hall-attachment").submit();
 });
 
-//Bedroom images upload event.
-$("#bedroom").on("change", function() {   
-    console.log("Bedroom change event.......");
-    $("#bedroom-attachment").submit();
-});
+// //Bedroom images upload event.
+// $("#bedroom").on("change", function() {   
+//     console.log("Bedroom change event.......");
+//     $("#bedroom-attachment").submit();
+// });
 
-//Washroom images upload event.
-$("#washroom").on("change", function() {   
-    console.log("WAshroom change event.......");
-    $("#washroom-attachment").submit();
-});
+// //Washroom images upload event.
+// $("#washroom").on("change", function() {   
+//     console.log("WAshroom change event.......");
+//     $("#washroom-attachment").submit();
+// });
 
-//Balcony images upload event.
-$("#balcony").on("change", function() {   
-    console.log("BAlcony change event.......");
-    $("#balcony-attachment").submit();
-});
+// //Balcony images upload event.
+// $("#balcony").on("change", function() {   
+//     console.log("BAlcony change event.......");
+//     $("#balcony-attachment").submit();
+// });
 
-// Other images upload event.
-$("#other").on("change", function() {   
-    console.log("Other change event.......");
-    $("#other-attachment").submit();
-});
+// // Other images upload event.
+// $("#other").on("change", function() {   
+//     console.log("Other change event.......");
+//     $("#other-attachment").submit();
+// });
 
 // Hall section
 $("#hall-attachment").submit(function(e) {
@@ -268,7 +269,7 @@ $("#hall-attachment").submit(function(e) {
     var id=sessionStorage.getItem("pro_id");
     var type=sessionStorage.getItem("pro_type");
 
-    console.log("hall attachment ............");
+    console.log("hall attachment ............",type);
     var formData = new FormData(this);
 
     formData.append("pro_id", id);
@@ -278,77 +279,103 @@ $("#hall-attachment").submit(function(e) {
     ajax_call_API(formData);
 });
 
-$("#bedroom-attachment").submit(function(e) {
-    e.preventDefault();
-    var id=sessionStorage.getItem("pro_id");
-    var type=sessionStorage.getItem("pro_type");
+// $("#bedroom-attachment").submit(function(e) {
+//     e.preventDefault();
+//     var id=sessionStorage.getItem("pro_id");
+//     var type=sessionStorage.getItem("pro_type");
 
-    console.log("hall attachment ............");
-    var formData = new FormData(this);
+//     console.log("hall attachment ............");
+//     var formData = new FormData(this);
 
-    formData.append("pro_id", id);
-    formData.append("pro_type", type);
-    formData.append("img_type", "bedroom_img");
+//     formData.append("pro_id", id);
+//     formData.append("pro_type", type);
+//     formData.append("img_type", "bedroom_img");
 
-    ajax_call_API(formData);
-});
-$("#washroom-attachment").submit(function(e) {
-    e.preventDefault();
-    var id=sessionStorage.getItem("pro_id");
-    var type=sessionStorage.getItem("pro_type");
+//     ajax_call_API(formData);
+// });
+// $("#washroom-attachment").submit(function(e) {
+//     e.preventDefault();
+//     var id=sessionStorage.getItem("pro_id");
+//     var type=sessionStorage.getItem("pro_type");
 
-    console.log("hall attachment ............");
-    var formData = new FormData(this);
+//     console.log("hall attachment ............");
+//     var formData = new FormData(this);
 
-    formData.append("pro_id", id);
-    formData.append("pro_type", type);
-    formData.append("img_type", "washroom_img");
+//     formData.append("pro_id", id);
+//     formData.append("pro_type", type);
+//     formData.append("img_type", "washroom_img");
 
 
-    ajax_call_API(formData);
-});
-$("#balcony-attachment").submit(function(e) {
-    e.preventDefault();
-    var id=sessionStorage.getItem("pro_id");
-    var type=sessionStorage.getItem("pro_type");
+//     ajax_call_API(formData);
+// });
+// $("#balcony-attachment").submit(function(e) {
+//     e.preventDefault();
+//     var id=sessionStorage.getItem("pro_id");
+//     var type=sessionStorage.getItem("pro_type");
 
-    console.log("hall attachment ............");
-    var formData = new FormData(this);
+//     console.log("hall attachment ............");
+//     var formData = new FormData(this);
 
-    formData.append("pro_id", id);
-    formData.append("pro_type", type);
-    formData.append("img_type", "balcony_img");
+//     formData.append("pro_id", id);
+//     formData.append("pro_type", type);
+//     formData.append("img_type", "balcony_img");
 
-    ajax_call_API(formData);
-});
-$("#other-attachment").submit(function(e) {
-    e.preventDefault();
-    var id=sessionStorage.getItem("pro_id");
-    var type=sessionStorage.getItem("pro_type");
+//     ajax_call_API(formData);
+// });
+// $("#other-attachment").submit(function(e) {
+//     e.preventDefault();
+//     var id=sessionStorage.getItem("pro_id");
+//     var type=sessionStorage.getItem("pro_type");
 
-    console.log("other attachment ............");
-    var formData = new FormData(this);
+//     console.log("other attachment ............");
+//     var formData = new FormData(this);
 
-    formData.append("pro_id", id);
-    formData.append("pro_type", type);
-    formData.append("img_type", "other_img");
+//     formData.append("pro_id", id);
+//     formData.append("pro_type", type);
+//     formData.append("img_type", "other_img");
 
-    ajax_call_API(formData);
-});
+//     ajax_call_API(formData);
+// });
 
 function ajax_call_API(formData) {
     $.ajax({
             url: "http://localhost:3000/mulupload",
             type: 'POST',
             data: formData,
-            success: function(response) { console.log("sucess....................."); },
+            success: function(response) { console.log("sucess.....................", response);
+            var splitresponse =(response.toString()).split(",");
+            console.log("split.....................", splitresponse.length);
+            for(var i=0;i<splitresponse.length;i++){
+                var splitres =(response.toString()).split(":");
+
+                // var a={
+                //     "<div class=\"black-border \" style=\"overflow: hidden\">"+
+                //                 "<div class=\"pd-2\" >"+
+                //                 "<span class=\"pd-2\"  id=\"profile-name\"></span>"+
+                //                 "<button class=\"center\"  style=\"right:0px;position: absolute;top:0px\" id=\"profile_remove\" >X</button>"+
+                //                 "<\/div>"+
+                //                 "<\/div>"
+                // };
+                $('.hall').append(
+                    '<div class="black-border " style="overflow: hidden">'+
+                                '<div class="pd-2" >'+
+                                '<span class="pd-2"  id="hall-name">'+splitres[i]+'</span>'+
+                                '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" >X</button>'+
+                               ' </div>'+
+                                '</div>'
+                );
+
+            }
+
+            
+            },
             contentType: false,
             processData: false,
             cache: false
         });
  }
-});
- </script>
+// });
+//  </script>
 <script>
    
             // success: function(response) {console.log(response);},

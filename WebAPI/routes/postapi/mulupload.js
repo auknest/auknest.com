@@ -13,24 +13,22 @@ router.use(function(req, res, next) {
   console.log(".....................start......");
 //Need variable to categories images like a.jpg, b.jpg ... are the hall images.
 router.post('/', upload.array('imgs', 50), function (req, res, next) {
-  console.log("files.............", req);
+  // console.log("files.............", req);
 
        try {
         console.log("files.............", req.files.length);
 
          var table;
-         var file=[];
-         console.log("file.............", req.files.length);
+        var multiplefiles=[];
 
-           for(var i=0; i<req.files.length;i++)
-           {
-            file.push(req.files[i].filename);
-           }
-           
-           console.log(file);
-           file= file.toString();
+        for(var j=0; j<req.files.length; j++){
 
+          multiplefiles.push([req.files[j].originalname]+' :'+ req.files[j].filename); 
+        
+        }
+        console.log("file name.............", multiplefiles);
            var img_type = req.body.img_type;
+          
            if(req.body.pro_type =="pg") {
              table="pgdetails";
            }
@@ -46,16 +44,17 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
           if(req.body.pro_type =="roomate") {
             table="roomate";
           }
-          
+          var val=JSON.stringify(multiplefiles);
            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
            console.log("SQL....",sql);
-            con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
+           console.log(val);
+            con.query(sql, [val, req.body.pro_id, req.body.pro_type], function (error, results, fields) {
                 if (error) {
                     console.log("Failed to insert the Person type", error)
                 }
                 else {
                      console.log("Data inserted into table property multiple images upload api sucessfully...");
-                      res.end();
+                      res.end(val);
 
                 }
             });
@@ -66,7 +65,7 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
             console.log("within  catche");
             console.log(Exception);
     }
-    res.end();
+    res.end(multiplefiles.toString());
   });
 
   module.exports=router;
