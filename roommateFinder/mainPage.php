@@ -155,125 +155,25 @@
 
 <!-- <div class="container"> -->
     <div class="row">
-        <div class="col-md-2 col-lg-2 mb-t-5per center">
-            <img class="img-responsive" src="../img/properties button.png">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 mb-t-5per center">
+            <img class="img-responsive m-auto" src="../img/properties button.png">
         </div>
-        <div class="col-md-8 col-lg-8 mb-t-5per ">
-            <a href="./postVacancy.php"><img style="margin:auto" class="img-responsive center" src="../img/post vacancy button.png"></a>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mb-t-5per center">
+            <a href="./postVacancy.php"><img class="img-responsive m-auto" src="../img/post vacancy button.png"></a>
         </div>
-        <div class="col-md-2 col-lg-2 mb-t-5per">
-            <img  class="img-responsive" src="../img/AUKNEST ORIGINAL button.png">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 mb-t-5per">
+            <img  class="img-responsive m-auto" src="../img/AUKNEST ORIGINAL button.png">
         </div>
     </div>
 <div class="row">
     <div class="col-md-2 col-lg-2 ">
     </div>
    
-    
-    <div class=" col-md-4 col-sm-4 col-xs-6 ">
+    <!-- Left Side Carousel -->
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <h3 class="heading1 center">FRESH ADS</h3>
         <div id="carousel-pager" class="carousel slide " data-ride="carousel" data-interval="5000">
-            <div class="carousel-inner vertical" >
-                <div class="active item">
-                    <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                            <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                            <input type="text" placeholder="Sahil">
-                        </div>
-                        <div >
-                        
-                        <div id="description" class="font-14 justify1">
-                        
-                        </div>
-                            <!-- <p id="description" class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
-                        </div>
-                        <div class="width-eighty m-auto">
-                            <center>
-                                <button id="ajax-comentdetails" class="btn-property back-color-yellow height-40">comment</button>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                            <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                            <input type="text" placeholder="Sahil">
-                        </div>
-                        <div >
-                            <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <div class="width-eighty m-auto">
-                            <center>
-                                <button class="btn-property back-color-yellow height-40">comment</button>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                                <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                                <input type="text" placeholder="Sahil">
-                        </div>
-                        <div >
-                            <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <div class="width-eighty m-auto">
-                            <center>
-                                <button class="btn-property back-color-yellow height-40">comment</button>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                                <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                                <input type="text" placeholder="Sahil">
-                        </div>
-                        <div>
-                                <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <div class="width-eighty m-auto">
-                                <center>
-                                    <button class="btn-property back-color-yellow height-40">comment</button>
-                                </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                                <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                                <input type="text" placeholder="Sahil">
-                            </div>
-                            <div >
-                                <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            </div>
-                            <div class="width-eighty m-auto">
-                                <center>
-                                    <button class="btn-property back-color-yellow height-40">comment</button>
-                                </center>
-                            </div>
-                    </div>
-                </div>
-                <div class="item">
-                <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
-                        <div class="profile-img">
-                                <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
-                                <input type="text" placeholder="Sahil">
-                            </div>
-                            <div >
-                                <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            </div>
-                            <div class="width-eighty m-auto">
-                                <center>
-                                    <button class="btn-property back-color-yellow height-40">comment</button>
-                                </center>
-                            </div>
-                    </div>
-                </div>
+            <div class="carousel-inner vertical" id="freshAds">
             </div>
             <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
@@ -285,21 +185,19 @@
             </a>
         </div>
     </div>
-
-    <!-- Right Side -->
-    <div class=" col-md-4 col-sm-4 col-xs-4 ">
-
+    <!-- Right Side Carousel-->
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mb-align">
         <h3 class="heading1 center">ACTIVE ADS</h3>
-        <div id="carousel-pager1" class="carousel slide " data-ride="carousel" data-interval="5000">
+        <div id="carousel-pager1" class="carousel slide " data-ride="carousel" data-interval="8000">
             <div class="carousel-inner vertical" >
-                <div class="active item">
+                <div class="active 1 item">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                         <div class="profile-img">
                             <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
                             <input type="text" placeholder="Sahil">
                         </div>
                         <div >
-                            <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
                         </div>
                         <div class="width-eighty m-auto">
                             <center>
@@ -308,14 +206,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item 2">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                             <div class="profile-img">
                                 <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
                                 <input type="text" placeholder="Sahil">
                             </div>
                             <div >
-                                <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="font-14 justify1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
                             </div>
                             <div class="width-eighty m-auto">
                                 <center>
@@ -324,7 +222,7 @@
                             </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item 3">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                             <div class="profile-img">
                                     <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
@@ -340,7 +238,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="item">
+                <div class="item 4">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                             <div class="profile-img">
                                     <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
@@ -356,7 +254,7 @@
                             </div>
                         </div>
                 </div>
-                <div class="item">
+                <div class="item 5">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                             <div class="profile-img">
                                     <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
@@ -372,7 +270,7 @@
                                 </div>
                         </div>
                 </div>
-                <div class="item">
+                <div class="item 5">
                     <div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">
                             <div class="profile-img">
                                     <img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">         
@@ -405,23 +303,7 @@
 </div>
 
 <script type="text/javascript">
-    $('.carousel .vertical .item').each(function(){
-        console.log("LEFT...........");
-        var next = $(this).next();
-        if (!next.length) {
-            next = $(this).siblings(':first');
-        }
-        next.children(':first-child').clone().appendTo($(this));
-        
-        for (var i=1;i<2;i++) {
-            next=next.next();
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            
-            next.children(':first-child').clone().appendTo($(this));
-        }
-    });
+    
    
 
     $(document).ready(function () {
@@ -431,17 +313,68 @@
             data:"",
             success:function(res) {
                 // window.location.href = "./mainPage.php";
-                console.log(res);
-                console.log(res.length);
+                // console.log(res);
+                // console.log(res.length);
+                
                 var i, j;
                 for(i=0; i<res.length; i++){
+                //     var roomBlock="<div class=\"a item\">"+
+                //     "<div class=\"mb-15 pd-2\" style=\"box-shadow:1px 1px 10px gray\">"+
+                //         "<div class=\"profile-img\">"+
+                //             "<img class=\"mb-20\" style=\"border-radius:50%;height:75px; width:75px\" src=\"http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg\" alt=\"Agnes A. Bell\">"+         
+                //             "<input type=\"text\" placeholder=\"Sahil\">"+
+                //         "</div>"+
+                //         "<div >"+
+                //             "<p class=\"font-14 justify1\">"+res[i].r_descr+"</p>"+
+                //         "</div>"+
+                //         "<div class=\"width-eighty m-auto\">"+
+                //             "<center>"+
+                //                 "<button class=\"btn-property back-color-yellow height-40\">comment</button>"+
+                //             "</center>"+
+                //         "</div>"+
+                //     "</div>"+
+                // "</div>";
+                 
                     console.log("Within for.........");
                     console.log("description.........", res[i].r_descr);
 
-                    $('#description').html(res[i].r_descr); 
-
+                    // $('#description').html(res[i].r_descr); 
+                    //  $('#freshAds').append(roomBlock);
+                     $('.item').first().addClass('active');
+                    $('#freshAds').append('<div class="item">'+
+                                                '<div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">'+
+                                                    '<div class="profile-img">'+
+                                                            '<img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell"> '+        
+                                                            '<input type="text" placeholder="Sahil">'+
+                                                    '</div>'+
+                                                    '<div >'+
+                                                        '<p class="font-14 justify1">'+res[i].r_descr+'</p>'+
+                                                    '</div>'+
+                                                    '<div class="width-eighty m-auto">'+
+                                                        '<center>'+
+                                                            '<button class="btn-property back-color-yellow height-40">comment</button>'+
+                                                        '</center>'+
+                                                    '</div>'+
+                                                '</div>'+
+                                            '</div>'); 
 
                 }
+                //Carousel sliding 
+                $('.carousel .vertical .item').each(function(){
+                    var next = $(this).next();
+                    if (!next.length) {
+                        next = $(this).siblings(':first');
+                    }
+                    next.children(':first-child').clone().appendTo($(this));
+                    // Loop for the No of Items to view 
+                    for (var i=1;i<2;i++) {
+                        next=next.next();
+                        if (!next.length) {
+                            next = $(this).siblings(':first');
+                        }
+                        next.children(':first-child').clone().appendTo($(this));
+                    }
+                });
 
                 console.log('Property type Sucessfully inserted ...');
             },
@@ -455,8 +388,6 @@
             // window.location.href = "./commentDetail.php?u_id="+u_id+"&id="+id;
             window.location.href = "./commentDetail.php?u_id=1&id=1";
            
-        })
-
-        
+        })  
     });
 </script>
