@@ -30,30 +30,79 @@ router.delete('/', (req,res) =>{
         table="buildownerdetails";
     }
 
-    var cond= "WHERE pro_id='"+req.param('pro_id')+"'";
-    var sql="SELECT * FROM "+table+" "+cond;
-    console.log(sql);
+    var sql ="SELECT "+req.body.img_type+" FROM "+table+" WHERE pro_id='"+req.param('pro_id')+"'";
+    console.log("sql...", sql);
     con.query(sql, (error, result) =>{
-        
-      if (error) throw error;
-      var re=JSON.parse(result[0].profile_img.toString());
-      re=JSON.stringify(re);
-      console.log("profile image...........", re);
+      var img_type2=req.body.img_type;
+          if(req.body.img_type=="profile_img"){
+            var img_type1=result[0].profile_img;
+          }
+          if(req.body.img_type=="hall_img"){
+            var img_type1=result[0].hall_img;
+          } 
+          if(req.body.img_type=="bedroom_img"){
+            var img_type1=result[0].bedroom_img;
+          }
+          if(req.body.img_type=="washroom_img"){
+            var img_type1=result[0].washroom_img;
+          }
+          if(req.body.img_type=="balcony_img"){
+            var img_type1=result[0].balcony_img;
+          }
+          if(req.body.img_type=="other_img"){
+            var img_type1=result[0].other_img;
+          }
+      var re=JSON.parse(img_type1);
+      console.log("SELECT query result image name...........", re);
+      if(re.includes(req.body.imgname+",")){
+        var ret = re.replace(req.body.imgname+",",'')
+        console.log("replaced string is last string...........", ret);
 
-      if(re==req.body.profile_img){
-        console.log("compaire suceess");
+
+      }else{
+        var ret = re.replace(req.body.imgname,'');
+        console.log("replaced string is last string...........", ret);
       }
-      var sql1= "UPDATE pgdetails SET profile_img=NULL";
-      console.log(sql1);
-      con.query(sql1, (error, result) =>{
-        if (error) throw error;
+      
+      var sql1 = 'UPDATE ' +table+' SET '+req.body.img_type+'=? WHERE pro_id="'+req.param('pro_id')+'" AND pro_type="'+req.param('pro_type')+'"';
+      console.log("sql1...", sql1);
+      var t=JSON.stringify(ret);
+      console.log("t...", t);
 
-          res.send(result);
+      con.query(sql1,t, function (error, results, fields) {
+        if (error) {
+            console.log("Failed to insert the Person type", error)
+        }
+        else {
+             console.log("Data inserted into table property multiple images upload api sucessfully...");
+              }
+     });
 
-      });
+     });
+          res.send(req.body.imgname);
+    // var cond= "WHERE pro_id='"+req.param('pro_id')+"'";
+    // var sql="SELECT * FROM "+table+" "+cond;
+    // console.log(sql);
+    // con.query(sql, (error, result) =>{
+        
+    //   if (error) throw error;
+    //   var re=JSON.parse(result[0].profile_img.toString());
+    //   re=JSON.stringify(re);
+    //   console.log("profile image...........", re);
 
-          // res.send(result);
-      });
+    //   if(re==req.body.profile_img){
+    //     console.log("compaire suceess");
+    //   }
+    //   var sql1= "UPDATE pgdetails SET profile_img=NULL";
+    //   console.log(sql1);
+    //   con.query(sql1, (error, result) =>{
+    //     if (error) throw error;
+
+    //       res.send(result);
+
+    //   });
+
+    //   });
       
 });
 module.exports = router; 
