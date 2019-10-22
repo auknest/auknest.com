@@ -88,15 +88,14 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
             });
             }
             else {
-                con.query(sql, [val, req.body.pro_id, req.body.pro_type], function (error, results, fields) {
-                
+                con.query(sql, [val, req.body.pro_id, req.body.pro_type], function (error, results, fields) {     
+                 console.log("val...............", val);
                   if (error) {
                     console.log("Failed to insert the Person type", error)
                 }
                 else {
                      console.log("Data inserted into table property multiple images upload api sucessfully...");
                       res.end(val);
-
                 }
              });
             }
