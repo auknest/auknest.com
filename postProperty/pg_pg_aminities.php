@@ -127,8 +127,44 @@
     </div>
 </div>
 <script>
-    $(document).ready(function(){
-   
+$(document).ready(function(){
+    //Get api 
+    if(sessionStorage.getItem('status')==1)
+    {
+        console.log("Into the property get ajax");
+        var serverData1= {
+            "status":1
+        };
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("data.......", data);
+            $('#tv').val(data[0].TV);
+            $('#dth').val(data[0].DTH);
+            $('#sofa').val(data[0].Sofa);
+            $('#shoerak').val(data[0].Shoe_rak);
+            $('#wifi').val(data[0].Wifi);               
+            $('#doublelocker').val(data[0].Double_Locker);
+            $('#singleLocker').val(data[0].Single_Locker);
+            $('#centerTable').val(data[0].CenterTable);
+            $('#curtains').val(data[0].Curtains);
+            $('#cctv').val(data[0].CCTV);
+            $('#bucket').val(data[0].Buckets_and_mug);
+            $('#bed').val(data[0].Bed_mattress_and_bedsheet);
+            $('#descr').val(data[0].descr);
+            //To check the multiple checkboxes into Owner aminities
+            var amn = data[0].OwnerAminities.split(',');
+            for(var i=0; i<amn.length;i++) {
+                $('input[type=checkbox][value="'+amn[i]+'"]').attr('checked',true);
+            }
+        },
+          error:function(){
+            console.log('Error In AJAX...');
+          }
+        });
+    }
 
         $('#ajax-pg-pg_pro').click(function(e) {
             e.preventDefault();

@@ -343,31 +343,51 @@ $(document).ready(function () {
     $("#gallerywindow").hide();
 });
 });
-function remove_img(id, type_img, img_name){
-    console.log("........id", id);
-    console.log("........image type.", type_img);
-    console.log("........imgname.", img_name);
- 
-    var serverData1= {
-        "imgname":img_name,
-        "img_type":type_img
-    };
-    console.log("////////", serverData1);
-    $.ajax({
-        type:"DELETE",
-        url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-        data:serverData1,
-        success:function(data){
-        console.log("delete profile image api");
-            $('#'+id+'').remove(); 
-    },
-        error:function(){
-        console.log('Error In AJAX...');
+   if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
 
-            }
-    });
-    
-}
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("success data...", data);
+            var key=Object.keys(data[0].profile_img);
+            console.log("profile image........." ,key);
+            var event= {target:{id:'profile'}, files:[{name:key[0]}]};
+            activeMenu(event);
+
+            // var file= {files:[{name:key[0]}]};
+
+
+
+
+            //   //  var target=[];
+            // var txt="";
+            // txt += "<br><strong>" + (1) + ". file</strong><br>";
+            // console.log("...............files", file);
+            // if ('name' in file) {
+            //     console.log("...............name");
+
+            // txt += "name: " + file.name + "<br>";
+            // }        
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
+
+       $('#ajax-gal').click(function(e) {
+    $("#popupwindow").show();
+    $("#gallerywindow").hide();
+});
 
 $("#profile").on("change", function() {
 
