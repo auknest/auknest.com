@@ -152,6 +152,102 @@
  
  <script>
 $(document).ready(function () {
+   if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
+        
+
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("success data...", data[0]);
+
+            //Getting the name of the profile image.
+            var p_name=data[0].profile_img.toString();
+            var profile_img_name= p_name.split(':');
+            console.log("profile image........." ,profile_img_name[0]);
+            $('.profile').empty().append( 
+                        '<div class="black-border " style="overflow: hidden" id="profile_img">'+
+                                '<div class="pd-2" >'+
+                                '<span class="pd-2"  id="hall-name">'+profile_img_name[0]+'</span>'+
+                                '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("profile_img",\"profile_img",\"'+p_name+'\")>X</button>'+
+                               ' </div>'+
+                                '</div>'
+                    );
+            
+                    var changeparm;
+                    var key=Object.keys(data[0]);
+                    console.log("key.............", key);
+                    for(i=0;i<key.length;i++){
+                        //append the hall image block 
+                        // if(key[i]=='hall_img'){
+                            switch(key){
+                            case 'hall_img':
+                            console.log("Into hall");
+                            changeparm='.hall';
+
+                            var h_name=data[0].hall_img.toString();
+                            if((h_name)!=null || (h_name)==[]) {
+                                var hall_img_name= h_name.split(',');
+                                console.log("hall image........." ,hall_img_name);
+                                for(var i=0;i<hall_img_name.length;i++){
+                                    var hall_subimg_name= hall_img_name[i].split(':');
+                                    console.log("hall sub image........." ,hall_subimg_name);
+
+                                    for(var j=0;j<;j++)
+                                    {
+                                        console.log("name.......",hall_subimg_name[j] );
+                                    }
+                                }
+                                // for(var i=0; i<hall_img_name.length;i++){
+                                // for(var j=0;j<i;j++){
+                                //         $(changeparm).append(
+                                //             '<div class="black-border " style="overflow: hidden" id="hall_img'+i+'">'+
+                                //                         '<div class="pd-2" >'+
+                                //                         '<span class="pd-2"  id="hall-name">'+hall_img_name[j]+'</span>'+
+                                //                         // '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("'+formData.get("img_type")+i+'",\"'+formData.get("img_type")+'",\"'+splitres[i]+'\")>X</button>'+
+                                //                     ' </div>'+
+                                //                         '</div>'
+                                //         );
+                                //     }
+                                    
+                                // }
+                            }
+                        }   
+                    }
+           
+            // if(formData.get("img_type")=='bedroom_img'){
+            //     changeparm='.bedroom';
+            // }
+            // if(formData.get("img_type")=='washroom_img'){
+            //      changeparm='.washroom';
+            // }
+            // if(formData.get("img_type")=='balcony_img'){
+            //      changeparm='.balcony';
+            // }
+            // if(formData.get("img_type")=='other_img'){
+            //      changeparm='.other';
+            // }
+           
+             
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
+
+       $('#ajax-gal').click(function(e) {
+    $("#popupwindow").show();
+    $("#gallerywindow").hide();
+});
 });
    if(sessionStorage.getItem('status')==1)
       {
@@ -222,10 +318,12 @@ $("#profile").on("change", function() {
             data: formData,
             success: function(data) {
                     console.log("sucess into single upload api...", data);
-
-                    $('.profile').empty().append( '<div class="black-border " style="overflow: hidden" id="profile">'+
+                     var name=data.split(':');
+                     console.log("split.........", name);
+                    $('.profile').empty().append( 
+                        '<div class="black-border " style="overflow: hidden" id="profile_img">'+
                                 '<div class="pd-2" >'+
-                                '<span class="pd-2"  id="hall-name">'+data+'</span>'+
+                                '<span class="pd-2"  id="hall-name">'+name[0]+'</span>'+
                                 '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("profile_img",\"profile_img",\"'+data+'\")>X</button>'+
                                ' </div>'+
                                 '</div>'
@@ -237,10 +335,7 @@ $("#profile").on("change", function() {
 
         });
     });
-// function remove_profileimg(){
-// console.log("..............remove profile image");    
-// $('.profile').remove();
-// }
+
 //HAll images upload event.
 $("#hall").on("change", function() {   
     console.log("hall change event.......");
@@ -399,10 +494,4 @@ function ajax_call_API(formData) {
             cache: false
         });
  }
-// });
-//  </script>
-<script>
-   
-            // success: function(response) {console.log(response);},
-
-</script>
+  </script>

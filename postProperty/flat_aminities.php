@@ -67,7 +67,7 @@
                 <div> <span class="blue-font bold-font">Parking</span>
                     <br>
                     <div class="row">
-                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 black-border" style="margin-right:10px">
+                        <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 black-border" style="margin-right:10px">
                             <label class="radio-inline font-16 bold black pd-l-30px">
                                 <input type="radio" id="parktype" name="parkingType" value="Covered" >Covered
                             </label>
@@ -75,7 +75,7 @@
                                 <input type="radio" id="parktype" name="parkingType" value="Open" >Open
                             </label>
                         </div>
-                        <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8 black-border">
+                        <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8 black-border">
                             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                             <label class="radio-inline font-16 bold black ">
                                 <input type="radio" id="park" name="parking" value="Bike" >Bike

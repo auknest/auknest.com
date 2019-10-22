@@ -64,6 +64,8 @@ $_SESSION['pro_id']= uniqid();
                 console.log("data...", data);
                 
                 $('input:radio[value="'+data[0].pro_type+'"]').attr('checked',true);
+                $('input:radio[name="pro_type"]').attr('disabled',true);
+                $('input:radio[name="pro_type"][value="'+data[0].pro_type+'"]').attr('disabled',false);        
         },
         error: function() {
                   console.log('Error In AJAX...');

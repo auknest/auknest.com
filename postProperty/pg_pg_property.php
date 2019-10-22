@@ -172,31 +172,31 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkbox-inline font-16 bold black">
+                            <div class="checkbox-inline font-16 bold black ">
                                 <input class="bold" id="roomType4bhk" type="checkbox" name="roomType" value="4 BHK">4 BHK
                                 
                                 <div id="4bhk" style="display:none; border:1px solid black;width:107%">
                                     <div> <span class="blue-font pd-2">Add quantity</span><br>
                                             <div class="pd-2">
                                             <span class="">Which floor</span>
-                                            <input style="float:right" id="floorfourbhk" type="number" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="floorfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of flat</span>
-                                            <input style="float:right" id="flatfourbhk" type="number" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="flatfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of washroom</span>
-                                            <input style="float:right" id="washroomfourbhk" type="number" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="washroomfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <div class="pd-2">
                                             <span class="">No of balcony</span>
-                                            <input style="float:right" id="balconyfourbhk" type="number" maxlength="3" size="3"><br>
+                                            <input style="float:right" id="balconyfourbhk" type="text" maxlength="3" size="3"><br>
                                             </div>
                                             <br>
                                     </div>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                 </div>
             </div>

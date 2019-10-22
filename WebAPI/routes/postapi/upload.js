@@ -40,6 +40,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             var file=[];
             var filebase= req.file.filename;
             var filekey=req.file.originalname;
+            filekey=filekey.replace(/\s/g,'');  
             file.push(filekey+':'+filebase); 
 
             // file=[
