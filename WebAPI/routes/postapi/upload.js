@@ -40,9 +40,11 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             var file=[];
             var filebase= req.file.filename;
             var filekey=req.file.originalname;
-            file={
-                  [filekey]:filebase
-                };
+            file.push(filekey+':'+filebase); 
+
+            // file=[
+            //       [filekey]:filebase
+            // ];
             file=JSON.stringify(file);
             console.log("single image file..........", file);
             con.query(sql, [[file], req.body.pro_id, req.body.pro_type], function (error, results, fields) {
@@ -54,6 +56,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
                 else {
                      console.log("Data inserted into table property single upload api sucessfully...");
                       // res.end('aaaaaa');
+                      res.end(filekey+':'+filebase);
 
                 }
             });
@@ -63,7 +66,7 @@ router.post('/', upload.single('avatar'), function (req, res, next) {
             console.log("within  catche");
             console.log(Exception);
     }
-    res.end(filekey);
+    res.end(filekey+':'+filebase);
   });
  
 // router.post('/', function(req, res) {
