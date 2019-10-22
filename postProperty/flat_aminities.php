@@ -152,7 +152,7 @@
                 <input type="checkbox" id="amn" value="Sofa">Sofa
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
-                <input type="checkbox" id="amn" value="Geizer">Geizer
+                <input type="checkbox" id="amn" value="Geizer">Geyser
                 </label>
                 <label class="col-md-1 col-lg-1 checkbox-inline font-16 bold black">
                 <input type="checkbox" id="amn" value="Bed">Bed

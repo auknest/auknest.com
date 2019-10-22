@@ -140,6 +140,7 @@
             var serverData= {
                 "pro_id": sessionStorage.getItem("pro_id"),
                 "pro_type" : sessionStorage.getItem("pro_type"),
+                "u_id":sessionStorage.getItem("u_id"),
                 "TV":$('#tv').val(),
                 "DTH":$('#dth').val(),
                 "Sofa":$('#sofa').val(),

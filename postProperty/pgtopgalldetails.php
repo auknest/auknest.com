@@ -10,13 +10,13 @@
         <div class="col-sm-6 col-md-6 col-lg-6 back-color-white boxSh" >
             <div class=" ma-0-5per ">
                 <div class="col-sm-3 col-md-3 col-lg-3 pd-3-5per">
-                    <span id="pg_room_type"> </span><span id="pro_type"></span>
+                    <span id="pg_room_type"> </span>&nbsp;<span id="pro_type" class="upper"></span>
                 </div>
                 <!-- <hr style="width: 1px; height: 50px; background: black; border: none;" /> -->
                 <div class="col-sm-9 col-md-9 col-lg-9 pd-1" style="font-size:12px">
-                    <p class="mb-0">City : <span id="pro_city"><span></p>
-                    <p id="pro_locality" class="mb-0"></p>
-                    <p class="mb-0">Porject Name : <span id="pro_name"><span></p>
+                    <p class="mb-0">City : <span id="pro_city" class="capital"><span></p>
+                    <p  class="mb-0 capital"><span id="pro_locality"></span> &nbsp;&#124;&nbsp;<span id="pro_address" ></span></p>
+                    <p class="mb-0">Porject Name : <span id="pro_name" class="capital"><span></p>
                 </div>
             </div>
         </div>
@@ -24,13 +24,13 @@
             <div class="col-sm-4 col-md-4 col-lg-4 ">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span>Rent </span>
-                    <p><span id="rent_per_person"></span>/- per person</p>
+                    <p><span id="rent_per_person"></span>/- Per person</p>
                 </div>
             </div>  
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="back-color-white pd-1 center ma-0-5per boxSh bold pd-5per" >
                     <span >Deposite </span>
-                    <p><span id="deposite"></span>/per person</p>
+                    <p><span id="deposite"></span>/- Per person</p>
                 </div>
             </div>
             <!-- <div class="col-sm-4 col-md-4 col-lg-4 ">
@@ -118,7 +118,7 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Area</p>
-            <p class="mb-0 bold" id="com_area">0 <span>Sqft</span></p>
+            <p class="mb-0 bold"><span id="com_area">0</span> <span>Sqft</span></p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
@@ -174,7 +174,7 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Shoerack</p>
-            <p class="mb-0 bold" id="Shoerack">0</p>
+            <p class="mb-0 bold" id="Shoe_rak">0</p>
         </div>
     </div>
 </div>
@@ -183,7 +183,7 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">WiFi</p>
-            <p class="mb-0 bold" id="WiFi">0</p>
+            <p class="mb-0 bold" id="Wifi">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
@@ -221,27 +221,6 @@
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Lights</p>
-            <p class="mb-0 bold" id="Lights">No</p>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Fans</p>
-            <p class="mb-0 bold" id="Fans">No</p>
-        </div>
-    </div>    
-</div>
-<!-- Fourth Row -->
-<div class="row">
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Geysers</p>
-            <p class="mb-0 bold" id="Geysers">No</p>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Buckets and Mug</p>
             <p class="mb-0 bold" id="Buckets_and_mug">0</p>
         </div>
@@ -267,10 +246,30 @@
 <div class="row">
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
+            <p class="mb-0 orange ">Lights</p>
+            <p class="mb-0 bold" id="Lights">No</p>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div class="back-color-white ma-1-5per pd-5per">
+            <p class="mb-0 orange ">Fans</p>
+            <p class="mb-0 bold" id="Fans">No</p>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div class="back-color-white ma-1-5per pd-5per">
+            <p class="mb-0 orange ">Geysers</p>
+            <p class="mb-0 bold" id="Geysers">No</p>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Lift</p>
             <p class="mb-0 bold" id="lift">No</p>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Gated Security</p>
@@ -329,7 +328,7 @@
                 <p class="orange">
                     <span>Describe Your Property</span>
                 </p>
-                <p id="descr">
+                <p id="descr" class="initial">
                 </p>
             </div>
         </div>
@@ -409,14 +408,15 @@
                     $('#TV').html(data[0].TV);
                     $('#DTH').html(data[0].DTH);
                     $('#Sofa').html(data[0].Sofa);
-                    $('#Shoerack').html(data[0].Shoerack);
-                    $('#WiFi').html(data[0].WiFi);
+                    $('#Shoe_rak').html(data[0].Shoe_rak);
+                    $('#Wifi').html(data[0].Wifi);
                     $('#pro_address').html(data[0].pro_address);
                     $('#pro_city').html(data[0].pro_city);
                     $('#pro_locality').html(data[0].pro_locality);
                     $('#pro_name').html(data[0].pro_name);
                     $('#Double_Locker').html(data[0].Double_Locker);
-                    $('#pro_type').html(data[0].pro_type);
+                    var pro_type= data[0].pro_type.replace(/_/g,' ');
+                    $('#pro_type').html(pro_type);
                     $('#CenterTable').html(data[0].CenterTable);
                     $('#Single_Locker').html(data[0].Single_Locker);
                     $('#Curtains').html(data[0].Curtains);
@@ -428,10 +428,9 @@
                     $('#gate_security').html(data[0].gate_security);
                     $('#power_bakup').html(data[0].power_bakup);
                     $('#water_supply').html(data[0].water_supply);
-                    $('#floor_no').html(data[0].floor_no);
-                    $('#pg_capacity').html(data[0].pg_capacity);
-                    $('#stay_no').html(data[0].stay_no);
-                    $('#floor_no').html(data[0].floor_no);
+                    $('#floor_no').html(data[0].floor_no ? data[0].floor_no : 0);
+                    $('#pg_capacity').html(data[0].pg_capacity ? data[0].pg_capacity : 0);
+                    $('#stay_no').html(data[0].stay_no ? data[0].stay_no : 0);
                     $('#descr').html(data[0].descr);
 
                     var pg_amn=data[0].OwnerAminities;

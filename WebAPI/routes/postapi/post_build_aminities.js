@@ -13,6 +13,7 @@ router.post('/', function(req, res) {
     console.log("post build amenities...........", req.body);
     var table, values;
     values={
+        "u_id":req.body.u_id,
         "lights":req.body.lights,
         "fans":req.body.fans,
         "geysers":req.body.geysers,

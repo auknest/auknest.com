@@ -38,7 +38,18 @@
     <script>
         function pgdetails() {
             console.log(".............Into pg detail function");
-            window.location.href="./pgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            if(sessionStorage.getItem("pro_type")=="pg"){
+                window.location.href="./pgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="flat"){
+                window.location.href="./flatalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="building"){
+                window.location.href="./buildalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="pg_to_pg"){
+                window.location.href="./pgtopgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
         }
     </script>
 <!-- <form  method="post" enctype="multipart/form-data" id="myform"> -->

@@ -13,6 +13,7 @@ router.post('/', function(req, res) {
     console.log("Within the pg to pg aminities api");
     var table, values;
     values = {
+        "u_id":req.body.u_id,
         "TV":req.body.TV,
         "DTH":req.body.DTH,
         "Sofa":req.body.Sofa,
