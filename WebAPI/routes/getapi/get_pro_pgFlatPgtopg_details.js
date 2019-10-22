@@ -40,8 +40,12 @@ router.get('/', (req,res) =>{
         console.log(result[0].profile_img.toString());
         result[0].profile_img=JSON.parse(result[0].profile_img.toString());
         result[0].hall_img=JSON.parse(result[0].hall_img.toString());
+        result[0].bedroom_img=JSON.parse(result[0].bedroom_img.toString());
+        result[0].washroom_img=JSON.parse(result[0].washroom_img.toString());
+        result[0].balcony_img=result[0].balcony_img?JSON.parse(result[0].balcony_img.toString()):null;
+        result[0].other_img=result[0].other_img?JSON.parse(result[0].other_img.toString()):null;
 
-        console.log("profile image...........", result[0].profile_img);
+        console.log("profile image...........", result[0].balcony_img);
 
         res.send(result);
     });

@@ -184,57 +184,151 @@ $(document).ready(function () {
                     var key=Object.keys(data[0]);
                     console.log("key.............", key);
                     for(i=0;i<key.length;i++){
+
                         //append the hall image block 
-                        // if(key[i]=='hall_img'){
-                            switch(key){
-                            case 'hall_img':
+                        if(key[i]=='hall_img' && data[0].hall_img!=null){
                             console.log("Into hall");
                             changeparm='.hall';
 
                             var h_name=data[0].hall_img.toString();
                             if((h_name)!=null || (h_name)==[]) {
                                 var hall_img_name= h_name.split(',');
-                                console.log("hall image........." ,hall_img_name);
-                                for(var i=0;i<hall_img_name.length;i++){
-                                    var hall_subimg_name= hall_img_name[i].split(':');
-                                    console.log("hall sub image........." ,hall_subimg_name);
+                                console.log("hall image........." ,hall_img_name.length);
+                                for(var k=0;k<hall_img_name.length;k++){
 
-                                    for(var j=0;j<;j++)
-                                    {
-                                        console.log("name.......",hall_subimg_name[j] );
+                                    console.log("k sub image........." ,hall_img_name[k]);
+                                    var hall_subimg_name= (hall_img_name[k].toString()).split(':');
+                                    for(var m=0;m<2;m++){
+                                        console.log("hall sub image........." ,hall_subimg_name[m]);
+                                        $('.hall').append(
+                                            '<div class="black-border " style="overflow: hidden" id="hall_img'+k+'">'+
+                                                        '<div class="pd-2" >'+
+                                                        '<span class="pd-2"  id="hall-name">'+hall_subimg_name[m]+'</span>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("hall_img'+k+'",\"hall_img",\"'+hall_img_name[k]+'\")>X</button>'+
+                                                    ' </div>'+
+                                                        '</div>'
+                                        );
+                                        m++;
                                     }
                                 }
-                                // for(var i=0; i<hall_img_name.length;i++){
-                                // for(var j=0;j<i;j++){
-                                //         $(changeparm).append(
-                                //             '<div class="black-border " style="overflow: hidden" id="hall_img'+i+'">'+
-                                //                         '<div class="pd-2" >'+
-                                //                         '<span class="pd-2"  id="hall-name">'+hall_img_name[j]+'</span>'+
-                                //                         // '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("'+formData.get("img_type")+i+'",\"'+formData.get("img_type")+'",\"'+splitres[i]+'\")>X</button>'+
-                                //                     ' </div>'+
-                                //                         '</div>'
-                                //         );
-                                //     }
-                                    
-                                // }
                             }
-                        }   
+                        }    //End of the hall img upload .
+
+                       //append the bedroom image block 
+                       if(key[i]=='bedroom_img' && data[0].bedroom_img!=null){
+                            console.log("Into bedroom");
+                            changeparm='.bedroom';
+
+                            var b_name=data[0].bedroom_img.toString();
+                            if((b_name)!=null || (b_name)==[]) {
+                                var bedroom_img_name= b_name.split(',');
+                                console.log("bedroom image........." ,bedroom_img_name.length);
+                                for(var k=0;k<bedroom_img_name.length;k++){
+
+                                    console.log("k sub image........." ,bedroom_img_name[k]);
+                                    var bedroom_subimg_name= (bedroom_img_name[k].toString()).split(':');
+                                    for(var m=0;m<2;m++){
+                                        console.log("bedroom sub image........." ,bedroom_subimg_name[m]);
+                                        $('.bedroom').append(
+                                            '<div class="black-border " style="overflow: hidden" id="bedroom_img'+k+'">'+
+                                                        '<div class="pd-2" >'+
+                                                        '<span class="pd-2"  id="hall-name">'+bedroom_subimg_name[m]+'</span>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("bedroom_img'+k+'",\"bedroom_img",\"'+bedroom_img_name[k]+'\")>X</button>'+
+                                                    ' </div>'+
+                                                        '</div>'
+                                        );
+                                        m++;
+                                    }
+                                }
+                            }
+                     }   
+                       
+                        //append the washroom image block 
+                        if(key[i]=='washroom_img' && data[0].washroom_img!=null){
+                            console.log("Into washroom");
+                            changeparm='.washroom';
+
+                            var w_name=data[0].washroom_img.toString();
+                            if((w_name)!=null || (w_name)==[]) {
+                                var washroom_img_name= w_name.split(',');
+                                console.log("washroom image........." ,washroom_img_name.length);
+                                for(var k=0;k<washroom_img_name.length;k++){
+
+                                    console.log("k sub washroom image........." ,washroom_img_name[k]);
+                                    var washroom_subimg_name= (washroom_img_name[k].toString()).split(':');
+                                    for(var m=0;m<2;m++){
+                                        console.log("washroom sub image........." ,washroom_subimg_name[m]);
+                                        $('.washroom').append(
+                                            '<div class="black-border " style="overflow: hidden" id="washroom_img'+k+'">'+
+                                                        '<div class="pd-2" >'+
+                                                        '<span class="pd-2"  id="hall-name">'+washroom_subimg_name[m]+'</span>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("washroom_img'+k+'",\"washroom_img",\"'+washroom_img_name[k]+'\")>X</button>'+
+                                                    ' </div>'+
+                                                        '</div>'
+                                        );
+                                        m++;
+                                    }
+                                }
+                            }
                     }
-           
-            // if(formData.get("img_type")=='bedroom_img'){
-            //     changeparm='.bedroom';
-            // }
-            // if(formData.get("img_type")=='washroom_img'){
-            //      changeparm='.washroom';
-            // }
-            // if(formData.get("img_type")=='balcony_img'){
-            //      changeparm='.balcony';
-            // }
-            // if(formData.get("img_type")=='other_img'){
-            //      changeparm='.other';
-            // }
-           
-             
+                        //append the balcony image block 
+                        if(key[i]=='balcony_img' && data[0].balcony_img!=null){
+                            console.log("Into balcony_img");
+                            changeparm='.balcony';
+
+                            var b_name=data[0].balcony_img.toString();
+                            if((b_name)!=null || (b_name)==[]) {
+                                var balcony_img_name= b_name.split(',');
+                                console.log("bedroom image........." ,balcony_img_name.length);
+                                for(var k=0;k<balcony_img_name.length;k++){
+
+                                    console.log("k sub image........." ,balcony_img_name[k]);
+                                    var balcony_subimg_name= (balcony_img_name[k].toString()).split(':');
+                                    for(var m=0;m<2;m++){
+                                        console.log("bedroom sub image........." ,balcony_subimg_name[m]);
+                                        $('.balcony').append(
+                                            '<div class="black-border " style="overflow: hidden" id="bedroom_img'+k+'">'+
+                                                        '<div class="pd-2" >'+
+                                                        '<span class="pd-2"  id="hall-name">'+balcony_subimg_name[m]+'</span>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("bedroom_img'+k+'",\"bedroom_img",\"'+balcony_img_name[k]+'\")>X</button>'+
+                                                    ' </div>'+
+                                                        '</div>'
+                                        );
+                                        m++;
+                                    }
+                                }
+                            }
+                     }   
+                        //append the other_img image block 
+                        if(key[i]=='other_img' && data[0].other_img!=null){
+                            console.log("Into other_img");
+                            changeparm='.other';
+
+                            var o_name=data[0].other_img.toString();
+                            if((o_name)!=null || (o_name)==[]) {
+                                var other_img_name= o_name.split(',');
+                                console.log("other image........." ,other_img_name.length);
+                                for(var k=0;k<other_img_name.length;k++){
+
+                                    console.log("k sub other image........." ,other_img_name[k]);
+                                    var other_subimg_name= (other_img_name[k].toString()).split(':');
+                                    for(var m=0;m<2;m++){
+                                        console.log("washroom sub image........." ,other_subimg_name[m]);
+                                        $('.other').append(
+                                            '<div class="black-border " style="overflow: hidden" id="washroom_img'+k+'">'+
+                                                        '<div class="pd-2" >'+
+                                                        '<span class="pd-2"  id="hall-name">'+other_subimg_name[m]+'</span>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("washroom_img'+k+'",\"washroom_img",\"'+washroom_img_name[k]+'\")>X</button>'+
+                                                    ' </div>'+
+                                                        '</div>'
+                                        );
+                                        m++;
+                                    }
+                                }
+                            }
+                    }
+                }
+                                         
           },
           error:function(){
             console.log('Error In AJAX...');
