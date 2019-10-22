@@ -37,10 +37,12 @@ router.get('/', (req,res) =>{
     con.query(sql, (error, result) =>{
         
         if (error) throw error;
-        console.log(result[0].profile_img.toString());
-        result[0].profile_img=JSON.parse(result[0].profile_img.toString());
-        console.log("profile image...........", result[0].profile_img);
-
+        if(result[0].profile_img!=null){
+            console.log(result[0].profile_img.toString());
+            result[0].profile_img=JSON.parse(result[0].profile_img.toString());
+            console.log("profile image...........", result[0].profile_img);
+            res.send(result);
+        }
         res.send(result);
     });
  });

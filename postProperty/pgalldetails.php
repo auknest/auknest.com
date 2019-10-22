@@ -10,13 +10,13 @@
         <div class="col-sm-6 col-md-6 col-lg-6 back-color-white boxSh" >
             <div class=" ma-0-5per ">
                 <div class="col-sm-3 col-md-3 col-lg-3 pd-3-5per">
-                    <span id="pg_room_type"> </span><span id="pro_type"></span>
+                    <span id="pg_room_type"> </span>&nbsp;<span id="pro_type" class="upper"></span>
                 </div>
                 <!-- <hr style="width: 1px; height: 50px; background: black; border: none;" /> -->
                 <div class="col-sm-9 col-md-9 col-lg-9 pd-1" style="font-size:12px">
-                    <p class="mb-0">City : <span id="pro_city"><span></p>
-                    <p id="pro_locality" class="mb-0"></p>
-                    <p class="mb-0">Porject Name : <span id="pro_name"><span></p>
+                    <p class="mb-0">City : <span id="pro_city" class="capital"><span></p>
+                    <p  class="mb-0 capital"><span id="pro_locality"></span> &nbsp;&#124;&nbsp;<span id="pro_address" ></span></p>
+                    <p class="mb-0">Porject Name : <span id="pro_name" class="capital"><span></p>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Parking</p>
-                        <p class="mb-0 bold font-12" id="parking">Bike or Car</p>
+                        <p class="mb-0 bold font-12" id="parking">None</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
@@ -88,13 +88,19 @@
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Food Included</p>
-                        <p class="mb-0 bold font-12" id="food_included"></p>
+                        <p class="mb-0 bold font-12" id="food_included">No</p>
                     </div>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <!-- <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Furniture</p>
                         <p class="mb-0 bold font-12" id="furnish">Semi Furnished</p>
+                    </div>
+                </div> -->
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                    <div class="outline">
+                        <p class="mb-0 orange font-12">Security Guard</p>
+                        <p class="mb-0 bold font-12" id="Securityguard">No</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
@@ -106,13 +112,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Guardian Stay</p>
-                        <p class="mb-0 bold font-12" id="pg_rules"></p>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                    <div class="outline">
-                        <p class="mb-0 orange font-12">Security Guard</p>
-                        <p class="mb-0 bold font-12" id="security">Yes</p>
+                        <p class="mb-0 bold font-12" id="pg_rules">No</p>
                     </div>
                 </div>
             </div>
@@ -142,27 +142,27 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Attached Bathroom</p>
-            <p class="mb-0 bold" id="att_bath"></p>
+            <p class="mb-0 bold" id="att_bath">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Attached Balcony</p>
-            <p class="mb-0 bold" id="att_bal"></p>
+            <p class="mb-0 bold" id="att_bal">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Common Area</p>
-            <p class="mb-0 bold" id="com_area"></p>
+            <p class="mb-0 bold" id="com_area">No</p>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+    <!-- <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Parking</p>
-            <p class="mb-0 bold" id="parking"></p>
+            <p class="mb-0 bold" id="eparking"></p>
         </div>
-    </div>
+    </div> -->
 </div>
 <br>
 <!-- PG Amenities Section -->
@@ -197,7 +197,7 @@
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
-            <p class="mb-0 orange ">Geizer</p>
+            <p class="mb-0 orange ">Geyser</p>
             <p class="mb-0 bold" id="Geizer">No</p>
         </div>
     </div>
@@ -219,13 +219,13 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">WiFi</p>
-            <p class="mb-0 bold" id="WiFi">No</p>
+            <p class="mb-0 bold" id="Wifi">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Center Table</p>
-            <p class="mb-0 bold" id="Center Table">No</p>
+            <p class="mb-0 bold" id="CenterTable">No</p>
         </div>
     </div>
 </div>
@@ -246,13 +246,13 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Drinking Water</p>
-            <p class="mb-0 bold" id="Drinking Water">No</p>
+            <p class="mb-0 bold" id="DrinkingWater">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Room Cleaning</p>
-            <p class="mb-0 bold" id="Room Cleaning">No</p>
+            <p class="mb-0 bold" id="RoomCleaning">No</p>
         </div>
     </div>
 </div>
@@ -261,13 +261,13 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Washing Machine</p>
-            <p class="mb-0 bold" id="Washing Machine">No</p>
+            <p class="mb-0 bold" id="WashingMachine">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Gas (Cooking Allow)</p>
-            <p class="mb-0 bold" id="Gas">No</p>
+            <p class="mb-0 bold" id="GasCookingAllowed">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
@@ -304,19 +304,19 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">CCTV</p>
-            <p class="mb-0 bold" id="CCTV">No</p>
+            <p class="mb-0 bold" id="Cctv">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Power Backup</p>
-            <p class="mb-0 bold" id="Power Backup">No</p>
+            <p class="mb-0 bold" id="PowerBackup">No</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Water Supply</p>
-            <p class="mb-0 bold" id="Water Supply">Corporation</p>
+            <p class="mb-0 bold" id="Watersupply">No</p>
         </div>
     </div>
 </div>
@@ -327,12 +327,12 @@
             <p class="mb-0 bold" id="Caretakes">No</p>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+    <!-- <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Security Guard</p>
-            <p class="mb-0 bold" id="Security">No</p>
+            <p class="mb-0 bold" id="Securityguard1">No</p>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- Property Discussion -->
@@ -350,19 +350,19 @@
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Floor</p>
-            <p class="mb-0 bold" id="total_floor"></p>
+            <p class="mb-0 bold" id="total_floor">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Floor Number</p>
-            <p class="mb-0 bold" id="floor_no"></p>
+            <p class="mb-0 bold" id="floor_no">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
         <div class="back-color-white ma-1-5per pd-5per">
             <p class="mb-0 orange ">Total Rooms</p>
-            <p class="mb-0 bold" id="total_room"></p>
+            <p class="mb-0 bold" id="total_room">0</p>
         </div>
     </div>
     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
@@ -380,7 +380,7 @@
                 <p class="orange">
                     <span>Describe Your Property</span>
                 </p>
-                <p id="descr">
+                <p id="descr" class="initial">
                 </p>
             </div>
         </div>
@@ -457,6 +457,7 @@
                     $('#gen_aminities').html(data[0].gen_aminities);
                     $('#get_close_time').html(data[0].get_close_time);
                     $('#parking').html(data[0].parking);
+                    $('#eparking').html(data[0].parking);
                     $('#pg_amenities').html(data[0].pg_amenities);
                     $('#pg_available').html(data[0].pg_available);
                     $('#pg_for').html(data[0].pg_for);
@@ -470,15 +471,20 @@
                     $('#security_amt').html(data[0].security_amt);
                     $('#total_floor').html(data[0].total_floor);
                     $('#total_room').html(data[0].total_room);
+                    $('#pg_rules').html(data[0].pg_rules);
                     var pg_amn=data[0].pg_amenities;
                     var amn=pg_amn.split(",");
                     for( var i=0; i<amn.length; i++){
-                        $('#' + amn[i]).html('Yes');
+                        var p_amn=amn[i].replace(/[ )(]/g,'');
+                        console.log("After replace....",p_amn);
+                        $('#' + p_amn).html('Yes');
                     }
                     var gen_amn=data[0].gen_amenities;
                     var gen=gen_amn.split(",");
                     for( var j=0; j<gen.length; j++){
-                        $('#' + gen[j]).html('Yes');
+                        var g_amn= gen[j].replace(/[ )(]/g,'');
+                        console.log("After replace....",g_amn);
+                        $('#' + g_amn).html('Yes');
                     }
                     },
             error: function() {

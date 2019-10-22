@@ -10,13 +10,13 @@
         <div class="col-sm-6 col-md-6 col-lg-6 back-color-white boxSh" >
             <div class=" ma-0-5per ">
                 <div class="col-sm-3 col-md-3 col-lg-3 pd-3-5per">
-                    <span id="pg_room_type"> </span><span id="pro_type"></span>
+                    <span id="pg_room_type"> </span>&nbsp;<span id="pro_type" class="upper"></span>
                 </div>
                 <!-- <hr style="width: 1px; height: 50px; background: black; border: none;" /> -->
                 <div class="col-sm-9 col-md-9 col-lg-9 pd-1" style="font-size:12px">
-                    <p class="mb-0">City : <span id="pro_city"><span></p>
-                    <p id="pro_locality" class="mb-0"></p>
-                    <p class="mb-0">Porject Name : <span id="pro_name"><span></p>
+                    <p class="mb-0">City : <span id="pro_city" class="capital"><span></p>
+                    <p  class="mb-0 capital"><span id="pro_locality"></span> &nbsp;&#124;&nbsp;<span id="pro_address" ></span></p>
+                    <p class="mb-0">Porject Name : <span id="pro_name" class="capital"><span></p>
                 </div>
             </div>
         </div>
@@ -64,13 +64,13 @@
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Property For</p>
-                        <p class="mb-0 bold font-12" id="pg_available">Rent</p>
+                        <p class="mb-0 bold font-12" id="property_for">Rent</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
                     <div class="outline">
                         <p class="mb-0 orange font-12">Property Age</p>
-                        <p class="mb-0 bold font-12" id="Property Age">1 Year</p>
+                        <p class="mb-0 bold font-12" id="property_age">1 Year</p>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
@@ -255,7 +255,7 @@
                 <p class="orange">
                     <span>Describe Your Property</span>
                 </p>
-                <p id="descr">
+                <p id="descr" class="initial">
                 </p>
             </div>
         </div>
@@ -321,27 +321,30 @@
         data:{},
         success: function (data) {
                 console.log(data);
-                    $('#att_bal').html(data[0].att_bal);
-                    $('#date').html(data[0].date);
-                    $('#att_bath').html(data[0].att_bath);
+                    $('#pro_type').html(data[0].pro_type);
+                    $('#pro_address').html(data[0].pro_address);
+                    $('#pro_city').html(data[0].pro_city);
+                    $('#pro_locality').html(data[0].pro_locality);
+                    $('#pro_name').html(data[0].pro_name);
+                    $('#date').html(data[0].date);                    
                     $('#ofc_room').html(data[0].ofc_room);
                     $('#care_room').html(data[0].care_room);
                     $('#store_room').html(data[0].store_room);
                     $('#park').html(data[0].park);
                     $('#com_bath').html(data[0].com_bath);
                     $('#com_kitchen').html(data[0].com_kitchen);
-                    $('#lights').html(data[0].lights);
-                    $('#geysers').html(data[0].geysers);
-                    $('#fans').html(data[0].fans);
-                    $('#curtains').html(data[0].curtains);
+                    $('#lights').html(data[0].lights ? data[0].lights : 0 );
+                    $('#geysers').html(data[0].geysers ? data[0].geysers 0);
+                    $('#fans').html(data[0].fans ? data[0].fans : 0);
+                    $('#curtains').html(data[0].curtains ? data[0].curtains 0);
                     $('#lift').html(data[0].lift);
                     $('#power_bakup').html(data[0].power_bakup);
                     $('#gate_security').html(data[0].gate_security);
                     $('#water_supply').html(data[0].water_supply);
-                    $('#pro_city').html(data[0].pro_city);
-                    $('#pro_locality').html(data[0].pro_locality);
-                    $('#pro_name').html(data[0].pro_name);
-
+                    $('#floor_no').html(data[0].floor_no);
+                    $('#descr').html(data[0].descr);
+                    $('#property_age').html(data[0].property_age);
+                    $('#property_for').html(data[0].property_for);          
                     },
             error: function() {
                   console.log('Error In AJAX...');

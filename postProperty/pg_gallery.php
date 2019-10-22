@@ -38,7 +38,18 @@
     <script>
         function pgdetails() {
             console.log(".............Into pg detail function");
-            window.location.href="./pgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            if(sessionStorage.getItem("pro_type")=="pg"){
+                window.location.href="./pgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="flat"){
+                window.location.href="./flatalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="building"){
+                window.location.href="./buildalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
+            if(sessionStorage.getItem("pro_type")=="pg_to_pg"){
+                window.location.href="./pgtopgalldetails.php?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type")+"&u_id="+sessionStorage.getItem("u_id");
+            }
         }
     </script>
 <!-- <form  method="post" enctype="multipart/form-data" id="myform"> -->
@@ -156,51 +167,51 @@
  <script>
 $(document).ready(function () {
 });
-//    if(sessionStorage.getItem('status')==1)
-//       {
-//         var serverData1= {
-//             //   "pro_id": sessionStorage.getItem("pro_id"),
-//               "status":1
-//           };
+   if(sessionStorage.getItem('status')==1)
+      {
+        var serverData1= {
+            //   "pro_id": sessionStorage.getItem("pro_id"),
+              "status":1
+          };
 
-//         $.ajax({
-//           type:"GET",
-//           url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
-//           data:serverData1,
-//           success:function(data){
-//             console.log("success data...", data);
-//             var key=Object.keys(data[0].profile_img);
-//             console.log("profile image........." ,key);
-//             var event= {target:{id:'profile'}, files:[{name:key[0]}]};
-//             activeMenu(event);
+        $.ajax({
+          type:"GET",
+          url:"http://localhost:3000/get_pro_pgFlatPgtopg_details?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+          data:serverData1,
+          success:function(data){
+            console.log("success data...", data);
+            var key=Object.keys(data[0].profile_img);
+            console.log("profile image........." ,key);
+            var event= {target:{id:'profile'}, files:[{name:key[0]}]};
+            activeMenu(event);
 
-//             // var file= {files:[{name:key[0]}]};
-
-
+            // var file= {files:[{name:key[0]}]};
 
 
-//             //   //  var target=[];
-//             // var txt="";
-//             // txt += "<br><strong>" + (1) + ". file</strong><br>";
-//             // console.log("...............files", file);
-//             // if ('name' in file) {
-//             //     console.log("...............name");
-
-//             // txt += "name: " + file.name + "<br>";
-//             // }        
-//           },
-//           error:function(){
-//             console.log('Error In AJAX...');
-
-//           }
-//         });
-//       }
 
 
-//        $('#ajax-gal').click(function(e) {
-//     $("#popupwindow").show();
-//     $("#gallerywindow").hide();
-// });
+            //   //  var target=[];
+            // var txt="";
+            // txt += "<br><strong>" + (1) + ". file</strong><br>";
+            // console.log("...............files", file);
+            // if ('name' in file) {
+            //     console.log("...............name");
+
+            // txt += "name: " + file.name + "<br>";
+            // }        
+          },
+          error:function(){
+            console.log('Error In AJAX...');
+
+          }
+        });
+      }
+
+
+       $('#ajax-gal').click(function(e) {
+    $("#popupwindow").show();
+    $("#gallerywindow").hide();
+});
 
 $("#profile").on("change", function() {
 
