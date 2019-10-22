@@ -270,8 +270,8 @@
             $('input:radio[value="'+data[0].flat_room_type+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].flat_for+'"]').attr('checked',true);
             $('input:radio[id=nonVeg][value="'+data[0].non_veg_allowed+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);
+            $('input:radio[id=floorNo][value="'+data[0].floor_no+'"]').attr('checked',true);                
+            $('input:radio[id=totalFloor][value="'+data[0].total_floor+'"]').attr('checked',true);
             $('#property_age').val(data[0].property_age); 
             $('#area').val(data[0].area);
             $('#exp_rent').val(data[0].expected_rent);

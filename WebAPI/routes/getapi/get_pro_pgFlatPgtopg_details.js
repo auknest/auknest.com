@@ -12,24 +12,24 @@ router.use(function(req, res, next) {
 router.get('/', (req,res) =>{
 
     console.log("Into  get pg/flat/building/pg to pg details api");
-    console.log(req.param('pro_id'));
+    console.log(req.query.pro_id);
 
     // console.log(req.params("pro_id"));
     var table;
-    if(req.param('pro_type')=="pg"){
+    if(req.query.pro_type=="pg"){
         table="pgdetails";
     }
-    if(req.param('pro_type')=="flat"){
+    if(req.query.pro_type=="flat"){
         table="flatdetails";
     }
-    if(req.param('pro_type')=="pg_to_pg"){
+    if(req.query.pro_type=="pg_to_pg"){
         table="pgtopgdetails";
     }
-    if(req.param('pro_type')=="building"){
+    if(req.query.pro_type=="building"){
         table="buildownerdetails";
     }
 
-    var cond= "WHERE pro_id='"+req.param('pro_id')+"'";
+    var cond= "WHERE pro_id='"+req.query.pro_id+"'";
     var sql="SELECT * FROM "+table+" "+cond;
     console.log(sql);
     
@@ -37,17 +37,31 @@ router.get('/', (req,res) =>{
     con.query(sql, (error, result) =>{
         
         if (error) throw error;
-        console.log(result[0].profile_img.toString());
-        result[0].profile_img=JSON.parse(result[0].profile_img.toString());
-        result[0].hall_img=JSON.parse(result[0].hall_img.toString());
-        result[0].bedroom_img=JSON.parse(result[0].bedroom_img.toString());
-        result[0].washroom_img=JSON.parse(result[0].washroom_img.toString());
-        result[0].balcony_img=result[0].balcony_img?JSON.parse(result[0].balcony_img.toString()):null;
-        result[0].other_img=result[0].other_img?JSON.parse(result[0].other_img.toString()):null;
+        if(result!=''){
+            if(result[0].profile_img!=null){
+                console.log(result[0].profile_img.toString());
+                result[0].profile_img=JSON.parse(result[0].profile_img.toString());
+            }
+            if(result[0].hall_img!=null){
+                result[0].hall_img=JSON.parse(result[0].hall_img.toString());
+            }
+            if(result[0].hall_img!=null){
+                result[0].bedroom_img=JSON.parse(result[0].bedroom_img.toString());
+            }
+            if(result[0].hall_img!=null){
+                result[0].washroom_img=JSON.parse(result[0].washroom_img.toString());
+            }
+            if(result[0].hall_img!=null){
+                result[0].balcony_img=result[0].balcony_img?JSON.parse(result[0].balcony_img.toString()):null;
+            }
+            if(result[0].hall_img!=null){
+                result[0].other_img=result[0].other_img?JSON.parse(result[0].other_img.toString()):null;
+            }
 
-        console.log("profile image...........", result[0].balcony_img);
+        // console.log("profile image...........", result[0].balcony_img);
 
         res.send(result);
+        }
     });
  });
 module.exports = router; 

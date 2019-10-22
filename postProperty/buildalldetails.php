@@ -334,9 +334,9 @@
                     $('#com_bath').html(data[0].com_bath);
                     $('#com_kitchen').html(data[0].com_kitchen);
                     $('#lights').html(data[0].lights ? data[0].lights : 0 );
-                    $('#geysers').html(data[0].geysers ? data[0].geysers 0);
+                    $('#geysers').html(data[0].geysers ? data[0].geysers : 0);
                     $('#fans').html(data[0].fans ? data[0].fans : 0);
-                    $('#curtains').html(data[0].curtains ? data[0].curtains 0);
+                    $('#curtains').html(data[0].curtains ? data[0].curtains : 0);
                     $('#lift').html(data[0].lift);
                     $('#power_bakup').html(data[0].power_bakup);
                     $('#gate_security').html(data[0].gate_security);

@@ -246,8 +246,8 @@
             $('input:radio[value="'+data[0].pg_for+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].pg_room_type+'"]').attr('checked',true);                
             $('input:radio[value="'+data[0].pg_available+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].floor_no+'"]').attr('checked',true);                
-            $('input:radio[value="'+data[0].total_floor+'"]').attr('checked',true);                
+            $('input:radio[id=floorNo][value="'+data[0].floor_no+'"]').attr('checked',true);                
+            $('input:radio[id=totalFloor][value="'+data[0].total_floor+'"]').attr('checked',true);                
             $('#total_rooms').val(data[0].total_room); 
             $('input:radio[value="'+data[0].get_close_time+'"]').attr('checked',true);        
             $('#avl_frm').val(data[0].avl_frm); 
