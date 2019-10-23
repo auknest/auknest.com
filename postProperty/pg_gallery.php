@@ -290,7 +290,7 @@ $(document).ready(function () {
                                             '<div class="black-border " style="overflow: hidden" id="balcony_img'+k+'">'+
                                                         '<div class="pd-2" >'+
                                                         '<span class="pd-2"  id="hall-name">'+balcony_subimg_name[m]+'</span>'+
-                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("bedroom_img'+k+'",\"bedroom_img",\"'+balcony_img_name[k]+'\")>X</button>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("balcony_img'+k+'",\"balcony_img",\"'+balcony_img_name[k]+'\")>X</button>'+
                                                     ' </div>'+
                                                         '</div>'
                                         );
@@ -318,7 +318,7 @@ $(document).ready(function () {
                                             '<div class="black-border " style="overflow: hidden" id="other_img'+k+'">'+
                                                         '<div class="pd-2" >'+
                                                         '<span class="pd-2"  id="hall-name">'+other_subimg_name[m]+'</span>'+
-                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("washroom_img'+k+'",\"washroom_img",\"'+washroom_img_name[k]+'\")>X</button>'+
+                                                        '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("other_img'+k+'",\"other_img",\"'+other_img_name[k]+'\")>X</button>'+
                                                     ' </div>'+
                                                         '</div>'
                                         );
