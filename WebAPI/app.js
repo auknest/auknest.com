@@ -28,6 +28,7 @@ var getpropgFlatPgtopgdetails= require('./routes/getapi/get_pro_pgFlatPgtopg_det
 var getroomate = require('./routes/getapi/get_roomfinder');
 var getprofile = require('./routes/getapi/get_profile');
 var profiledetails = require('./routes/getapi/get_profileProdetails'); //To update the profile  details. 
+var getadminpgdetail = require('./routes/getapi/get_alladmin_pgdetails');
 
 
 
@@ -155,8 +156,7 @@ app.use('/get_pro_pgFlatPgtopg_details', getpropgFlatPgtopgdetails); //get prope
 app.use('/get_roomfinder', getroomate);
 app.use('/get_profile', getprofile);
 app.use('/get_profileProdetails', profiledetails); //To insert the profile details
-
-
+app.use('/get_alladmin_pgdetails', getadminpgdetail); //To insert the profile details
 
 
 //Post API

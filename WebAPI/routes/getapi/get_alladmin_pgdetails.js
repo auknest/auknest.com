@@ -26,21 +26,23 @@ router.get('/', (req,res) =>{
     if(req.query.pro_type=='pg_to_pg'){
         table="pgtopgdetails";
     }
-
-     if(req.query.property_status=='1')//TO show the auknest verified property like PG / FLAT...
-    {
-        var cond="WHERE 1=1 AND p1.property_status=1";
-        var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
-    }
-    if(req.query.property_status=='2')//TO show the featchered verified property like PG / FLAT...
-    {
-        var cond="WHERE 1=1 AND p1.property_status=2";
-        var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
-    }
-    if(req.query.property_status=='0')//TO show the unverified property like PG / FLAT...
-    {
-        var cond="WHERE 1=1 AND p1.property_status=0";
-        var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
+    if(req.query.property_status!=''){
+        if(req.query.property_status=='1')//TO show the auknest verified property like PG / FLAT...
+        {
+            console.log("....Into property auknest verified");
+            var cond="WHERE 1=1 AND p1.property_status=1";
+            var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
+        }
+        if(req.query.property_status=='2')//TO show the featchered verified property like PG / FLAT...
+        {
+            var cond="WHERE 1=1 AND p1.property_status=2";
+            var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
+        }
+        if(req.query.property_status=='3')//TO show the unverified property like PG / FLAT...
+        {
+            var cond="WHERE 1=1 AND p1.property_status=3";
+            var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
+        }
     }
     else{
     var sql="SELECT p1.*, p2.* FROM "+table+" AS p1 LEFT JOIN property AS p2 ON p2.pro_id=p1.pro_id ";
@@ -52,7 +54,5 @@ router.get('/', (req,res) =>{
         console.log("result length to send the row count.......", result.length);
         res.send(result);
     });
-
-
 });
 module.exports = router;
