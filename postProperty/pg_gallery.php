@@ -1,4 +1,4 @@
-<?php include 'propertymenubar.html'?>
+<?php include 'propertymenubar.php'?>
 <div class="a">
 <?php include 'submenu.html'?>
 </div>
@@ -388,6 +388,45 @@ $(document).ready(function () {
     $("#popupwindow").show();
     $("#gallerywindow").hide();
 });
+
+function remove_img(id, type_img, img_name){
+    console.log("........id", id);
+    console.log("........image type.", type_img);
+    console.log("........imgname.", img_name);
+    // var imagename=type_img.split('_');
+
+    // var remove_img='#'+imagename[0]+'_name';
+    // console.log("........imgname.", remove_img);
+
+// $(remove_img).click(function(e) {
+//     console.log("OOOOOOOOO");
+
+//     var profilename=  document.getElementById('profile-name');
+//     console.log("........profilename.", profilename);
+
+    var serverData1= {
+        "imgname":img_name,
+        "img_type":type_img
+    };
+    console.log("////////", serverData1);
+    $.ajax({
+        type:"DELETE",
+        url:"http://localhost:3000/delete_gallery_img?pro_id="+sessionStorage.getItem("pro_id")+"&pro_type="+sessionStorage.getItem("pro_type"),
+        data:serverData1,
+        success:function(data){
+        console.log("delete profile image api");
+        // $('#profile-name').h('');    
+        // var selector="'"+"#"+id+"'"; 
+        $('#'+id+'').remove(); 
+    },
+        error:function(){
+        console.log('Error In AJAX...');
+
+            }
+    });
+    
+//  });
+}
 
 $("#profile").on("change", function() {
 
