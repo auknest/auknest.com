@@ -52,28 +52,42 @@ router.delete('/', (req,res) =>{
           if(req.body.img_type=="other_img"){
             var img_type1=result[0].other_img;
           }
+        console.log("image type 1..............", JSON.parse(img_type1));
+        
       var re=JSON.parse(img_type1);
-      // re.toString();
-      console.log("SELECT query result image name...........", re);
-      // var imagename1=JSON.stringify(req.body.imgname);
-      var imagename1=req.body.imgname.toString();
-
-      console.log("repace image name.........", imagename1);
-
-      if(re.includes("'"+imagename1+"'"+",")){
-        var ret = re.replace(imagename1+",",'')
-        console.log("replaced string is last string...........", ret);
+      var a=req.body.imgname+',';
+      console.log("repalec string....",a);
+      if(re.includes(a)){
+        var ret = re.replace(a,'');
 
 
-      }else{
-       
-        var idx = re.indexOf(imagename1);
-        if (idx != -1) re.splice(idx, 1);
-
-
-
-        console.log("replaced string is last string without comma...........", re);
+        console.log("return tru.........", ret);
       }
+      else {
+        var ret = re.replace(req.body.imgname,'');
+        console.log("return false.........", ret);
+      }
+      // // re.toString();
+      // console.log("SELECT query result image name...........", re);
+      // // var imagename1=JSON.stringify(req.body.imgname);
+      // var imagename1=req.body.imgname.toString();
+
+      // console.log("repace image name.........", imagename1);
+
+      // if(re.includes("'"+imagename1+"'"+",")){
+      //   var ret = re.replace(imagename1+",",'')
+      //   console.log("replaced string is last string...........", ret);
+
+
+      // }else{
+       
+      //   var idx = re.indexOf(imagename1);
+      //   if (idx != -1) re.splice(idx, 1);
+
+
+
+      //   console.log("replaced string is last string without comma...........", re);
+      // }
       
       var sql1 = 'UPDATE ' +table+' SET '+req.body.img_type+'=? WHERE pro_id="'+req.param('pro_id')+'" AND pro_type="'+req.param('pro_type')+'"';
       console.log("sql1...", sql1);
