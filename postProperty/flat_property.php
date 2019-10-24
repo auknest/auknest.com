@@ -181,18 +181,18 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-lg-4">
                     <div class=""> <span class="blue-font bold-font">Property Age</span></div>
-                        <input id="property_age" type="number">
+                        <input id="property_age" type="number" placeholder="In Years">
                 </div>
                 <!-- Expected rent -->
                 <div class=" col-xs-12 col-sm-4 col-md-3 col-lg-4">
                     <div class=""> <span class="blue-font bold-font">Apartment Size</span></div>
-                        <input id="area" type="number">
+                        <input id="area" type="number" placeholder="In Sqft">
                 </div>
 
                 <!-- Food include -->
                 <div class="col-xs-9 col-sm-4 col-md-3 col-lg-4">
                     <div class=""> <span class="blue-font bold-font">Expected Rent</span></div>
-                            <input id="exp_rent" type="number"> 
+                            <input id="exp_rent" type="number" placeholder="In Rupees"> 
                 </div>
     
                

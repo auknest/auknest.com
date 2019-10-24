@@ -35,6 +35,7 @@
             loadProducts('flat','','flat');
         });
     function loadProducts(type,property_status, maintype) {
+        $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
   var protype=type;
   console.log("protype........", maintype);
 	//get data from server..
@@ -53,14 +54,14 @@
 			console.log("..................");
 
           var yyyy="<div class=\"mb-tb-5per a\">"+
-          "<div class=\"col-sm-10 col-md-6 col-lg-6\">"+
+          "<div class=\"col-sm-10 col-md-6 col-lg-6\" style=\"margin-bottom:10px\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
                           res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].flat_for+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
-                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                          "<span>"+res[i].pro_locality+",&nbsp;"+res[i].pro_city+"</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
@@ -86,8 +87,8 @@
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].avl_frm+"</span>"+
+                                      "<span>Propert Type</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].flat_type+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
                                       "<span>Posted On</span><br>"+
@@ -97,8 +98,8 @@
                           "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Food Facility<span><br>"+
-                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                      "<span>Furnish<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].furnish+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
                                       "<span>Gate closing time</span><br>"+
@@ -113,27 +114,23 @@
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a href=\"\../postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
                                   "</div>"+
                           "</div>";  
                           if(protype=='flat'){ 
-                            $('.a').remove();
                             $('#flat').append(yyyy);
 
                           }
                           if(protype=='aukver'){ 
-                            $('.a').remove();
                             $('#aukver').append(yyyy);
                           }
-                          if(protype=='fetver'){ 
-                            $('.a').remove();
+                          if(protype=='fetver'){
                             $('#fetver').append(yyyy);
                           }
                           if(protype=='unver'){ 
-                            $('.a').remove();
                             $('#unver').append(yyyy);
                           }
         }

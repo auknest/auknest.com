@@ -17,20 +17,20 @@ router.delete('/', (req,res) =>{
     console.log(req.body);
 
     var table;
-    if(req.param('pro_type')=="pg"){
+    if(req.query.pro_type=="pg"){
         table="pgdetails";
     }
-    if(req.param('pro_type')=="flat"){
+    if(req.query.pro_type=="flat"){
         table="flatdetails";
     }
-    if(req.param('pro_type')=="pgTopg"){
+    if(req.query.pro_type=="pgTopg"){
         table="pgtopgdetails";
     }
-    if(req.param('pro_type')=="building"){
+    if(req.query.pro_type=="building"){
         table="buildownerdetails";
     }
 
-    var sql ="SELECT "+req.body.img_type+" FROM "+table+" WHERE pro_id='"+req.param('pro_id')+"'";
+    var sql ="SELECT "+req.body.img_type+" FROM "+table+" WHERE pro_id='"+req.query.pro_id+"'";
     console.log("sql...", sql);
     con.query(sql, (error, result) =>{
       var img_type2=req.body.img_type;
@@ -66,7 +66,8 @@ router.delete('/', (req,res) =>{
 
 
       }else{
-       
+        console.log("re....",re);
+        console.log("Re json...",JSON.stringify(re));
         var idx = re.indexOf(imagename1);
         if (idx != -1) re.splice(idx, 1);
 
@@ -75,7 +76,7 @@ router.delete('/', (req,res) =>{
         console.log("replaced string is last string without comma...........", re);
       }
       
-      var sql1 = 'UPDATE ' +table+' SET '+req.body.img_type+'=? WHERE pro_id="'+req.param('pro_id')+'" AND pro_type="'+req.param('pro_type')+'"';
+      var sql1 = 'UPDATE ' +table+' SET '+req.body.img_type+'=? WHERE pro_id="'+req.query.pro_id+'" AND pro_type="'+req.query.pro_type+'"';
       console.log("sql1...", sql1);
       var t=JSON.stringify(re);
       console.log("t...", t);
@@ -91,7 +92,7 @@ router.delete('/', (req,res) =>{
 
      });
           res.send(req.body.imgname);
-    // var cond= "WHERE pro_id='"+req.param('pro_id')+"'";
+    // var cond= "WHERE pro_id='"+req.query.pro_id+"'";
     // var sql="SELECT * FROM "+table+" "+cond;
     // console.log(sql);
     // con.query(sql, (error, result) =>{
