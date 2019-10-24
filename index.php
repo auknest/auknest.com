@@ -593,9 +593,32 @@ $(document).ready(function(){
         $('#incorrect-msg').show();
         }
         else {
+            //ajax call to getting the user status i.e; admin or normal user.
+            $.ajax({
+		url:"http://localhost:3000/get_user_info?uid="+id[1],
+		type: 'GET',
+		dataType: 'JSON',
+		success: function(res) {
+            console.log("success", res);
+            if(res[0].user_status==1){ //Show the admin panel dashbord page.
+                sessionStorage.setItem("u_id", id[1]);
+                sessionStorage.setItem("user_status",1 );
+                window.location.href="./AdminPanel/dashbord.php?"+res[0].name;
+
+            }
+            else {
             $('#profileinfo').show();
             $('#loginbtn').hide();
             sessionStorage.setItem("u_id", id[1]);
+
+            }
+           
+        },
+            error: function(err) {
+			console.log("Error");
+			
+		}
+    });
 
         }
     }

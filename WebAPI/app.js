@@ -30,7 +30,7 @@ var getprofile = require('./routes/getapi/get_profile');
 var profiledetails = require('./routes/getapi/get_profileProdetails'); //To update the profile  details. 
 var getadminpgdetail = require('./routes/getapi/get_alladmin_pgdetails');
 var getadminuserdetail = require('./routes/getapi/get_total_user');
-
+var getuserinfo =require('./routes/getapi/get_user_info');
 
 
 //Post api
@@ -159,6 +159,7 @@ app.use('/get_profile', getprofile);
 app.use('/get_profileProdetails', profiledetails); //To insert the profile details
 app.use('/get_alladmin_pgdetails', getadminpgdetail); //To insert the profile details
 app.use('/get_total_user', getadminuserdetail); //To insert the profile details
+app.use('/get_user_info', getuserinfo); //To insert the profile details
 
 
 

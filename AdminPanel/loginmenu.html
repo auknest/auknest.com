@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/auk.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <!--<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 center">
+        
+            <div class="col-xs-10" id="profileinfo" >
+                    <img class="hidden-xs mb-7 pd-l-1" style="border-radius:50%;height:40px; float:right" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">
+                    <!-- <p  class ="mb-7 pd-l-1" id="profilename"> ABC </p> -->
+                      <div class ="mb-7 pd-l-1" style="float: right; display:flex;">
+                        <a class="dropdown-toggle" id="profilename" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span id="user_name"></span>
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="profilename">
+                          <li><a onclick=logout() href="#">Logout</a></li>
+                        </ul>
+                      </div>  
+                  </div>
+    </div>
+</div>
+
+<script>
+ function logout(){
+            sessionStorage.removeItem('u_id');
+            sessionStorage.removeItem('user_status');
+
+            window.location="http://localhost/auknest.com/auknest.com/index.php"
+          }
+
+ var parm=window.location.search.substring(1);
+//  var name=parm.split("=");
+//  console.log("name user.......", name[0]);
+$('#user_name').html(parm);
+
+</script>
