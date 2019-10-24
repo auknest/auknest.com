@@ -5,6 +5,9 @@
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../css/bootstrap.js"></script>
+    <script type="text/javascript" src="../css/bootstrap.min.js"></script>
 </head>
 
 <body class='original'>
@@ -14,7 +17,7 @@
                 <div class='back-color-white  mb-7  pd-2'>
                     <!-- TOTAL USERS -->
                     <img src="../img/1 (1).png" class="img-responsive">
-                    <span class="bold font-16">30</span>
+                    <span id="usrcnt" class="bold font-16"></span>
                     <br>
                 </div>
             </div>
@@ -69,5 +72,22 @@
             </div>
         </div>
     </div>
-</body>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+		url:"http://localhost:3000/get_total_user",
+		type: 'GET',
+		dataType: 'JSON',
+		success: function(res) {
+            $("#usrcnt").html(res[0].count);
+			console.log("success");
+           
+        },
+            error: function(err) {
+			console.log("Error");
+			
+		}
+	});
+});
+</script>
 

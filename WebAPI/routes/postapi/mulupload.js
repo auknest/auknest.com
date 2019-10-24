@@ -13,7 +13,6 @@ router.use(function(req, res, next) {
   console.log(".....................start......");
 //Need variable to categories images like a.jpg, b.jpg ... are the hall images.
 router.post('/', upload.array('imgs', 50), function (req, res, next) {
-  // console.log("files.............", req);
 
        try {
         console.log("files.............", req.files.length);
@@ -68,7 +67,7 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
             }
             console.log("result of 1 select query", result);
             if(blobdata!=null){
-              console.log("blobdata ....", blobdata);
+              console.log("blobdata ....", blobdata.length);
               console.log("multiplefiles ....", multiplefiles);
 
               // var jsonArray1 = blobdata.concat(multiplefiles);

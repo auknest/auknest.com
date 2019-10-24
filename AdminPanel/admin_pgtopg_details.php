@@ -8,16 +8,16 @@
 
              <div class="col-sm-3 col-md-3 col-lg-3 center">
                 <div class="sidebar ">
-                    <a id="defaultOpen" onclick="openCity(event, 'pg');loadProducts('pg','','pg')" class="tablinks active" >Total PG</a>
-                    <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','pg')" class="tablinks" >Auknest verified</a>
-                    <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','pg')" class="tablinks" >Featured Verified</a>
-                    <a onclick="openCity(event, 'unver');loadProducts('unver','3','pg')" class="tablinks" >Unverified</a> 
+                    <a id="defaultOpen" onclick="openCity(event, 'pg_to_pg');loadProducts('pg_to_pg','','pg_to_pg')" class="tablinks active" >Total PG-PG</a>
+                    <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','pg_to_pg')" class="tablinks" >Auknest verified</a>
+                    <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','pg_to_pg')" class="tablinks" >Featured Verified</a>
+                    <a onclick="openCity(event, 'unver');loadProducts('unver','3','pg_to_pg')" class="tablinks" >Unverified</a> 
 
                 </div>
             </div> 
                     <!-- Pg all details -->
             <div class="col-sm-9 col-md-8 col-lg-8 center">
-            <div id="pg" class="tabcontent">
+            <div id="pg_to_pg" class="tabcontent">
             </div>
             <div id="aukver" class="tabcontent">
             </div>
@@ -32,11 +32,9 @@
 
 <script>
         $(document).ready(function () {
-            loadProducts('pg','','pg');
+            loadProducts('pg_to_pg','','pg_to_pg');
         });
     function loadProducts(type,property_status, maintype) {
-  var parm=window.location.search.substring(1);
-  var url_parm = parm ? parm : '';
   var protype=type;
   console.log("protype........", maintype);
 	//get data from server..
@@ -51,14 +49,15 @@
     // /	details = res.productInfo;
 			for (var i = 0; i < res.length; i++) {
 
-        if(res[i].pro_type=='pg'){
+        if(res[i].pro_type=='pg_to_pg'){
+			console.log("..................");
 
           var yyyy="<div class=\"mb-tb-5per a\">"+
           "<div class=\"col-sm-10 col-md-6 col-lg-6\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
                   "<div class=\"row\">"+
                       "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].flat_for+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
                           "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
@@ -68,7 +67,7 @@
                   "<div class=\"row\">"+
                       "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Room Type</span><br>"+
-                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].flat_room_type+"</span>"+
                       "</div>"+
                       "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
@@ -88,7 +87,7 @@
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
                                       "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                      "<span id=\"pg_available\">"+res[i].avl_frm+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
                                       "<span>Posted On</span><br>"+
@@ -120,12 +119,13 @@
                                       "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
                                   "</div>"+
                           "</div>";  
-                          if(protype=='pg'){ 
-                         $('.a').remove();
-                         $('#pg').append(yyyy);
+                          if(protype=='pg_to_pg'){ 
+                            $('.a').remove();
+                            $('#pg_to_pg').append(yyyy);
+
                           }
-                          if(protype=='aukver'){
-                            $('.a').remove(); 
+                          if(protype=='aukver'){ 
+                            $('.a').remove();
                             $('#aukver').append(yyyy);
                           }
                           if(protype=='fetver'){ 
@@ -146,7 +146,6 @@
 			$(".maskBlock").hide();
 		}
 	});
-
 	console.log("finished ajax call");
     }	
 

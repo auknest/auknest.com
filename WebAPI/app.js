@@ -29,6 +29,7 @@ var getroomate = require('./routes/getapi/get_roomfinder');
 var getprofile = require('./routes/getapi/get_profile');
 var profiledetails = require('./routes/getapi/get_profileProdetails'); //To update the profile  details. 
 var getadminpgdetail = require('./routes/getapi/get_alladmin_pgdetails');
+var getadminuserdetail = require('./routes/getapi/get_total_user');
 
 
 
@@ -157,6 +158,8 @@ app.use('/get_roomfinder', getroomate);
 app.use('/get_profile', getprofile);
 app.use('/get_profileProdetails', profiledetails); //To insert the profile details
 app.use('/get_alladmin_pgdetails', getadminpgdetail); //To insert the profile details
+app.use('/get_total_user', getadminuserdetail); //To insert the profile details
+
 
 
 //Post API
