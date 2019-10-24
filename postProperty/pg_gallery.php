@@ -393,17 +393,7 @@ function remove_img(id, type_img, img_name){
     console.log("........id", id);
     console.log("........image type.", type_img);
     console.log("........imgname.", img_name);
-    // var imagename=type_img.split('_');
-
-    // var remove_img='#'+imagename[0]+'_name';
-    // console.log("........imgname.", remove_img);
-
-// $(remove_img).click(function(e) {
-//     console.log("OOOOOOOOO");
-
-//     var profilename=  document.getElementById('profile-name');
-//     console.log("........profilename.", profilename);
-
+   
     var serverData1= {
         "imgname":img_name,
         "img_type":type_img
@@ -579,11 +569,11 @@ function ajax_call_API(formData) {
             type: 'POST',
             data: formData,
             success: function(response) { console.log("sucess.....................", response);
-              
+               
             splitresponse =((response.toString()).split(","));
             splitres =((splitresponse.toString()).split(","));
 
-            console.log("split.....................", splitresponse.length);
+            console.log("split count.....................", splitresponse.length);
             console.log("splitresponse.....................", splitresponse);
           
 
@@ -605,13 +595,24 @@ function ajax_call_API(formData) {
             if(formData.get("img_type")=='other_img'){
                  changeparm='.other';
             }
+            
+
             for(var i=0;i<splitresponse.length;i++){
+                var matched = $(".hall button");
+                // alert("Number of paragraphs in content div = " + matched.length);
                 var subsplitres =((splitres[i].toString()).split(":"));
-                console.log("changeparm........", splitres[i]);
+                console.log("changeparmaaaaaaaaaa........", splitres[i]);
+                if( matched.length!=0)
+                {
+                    var class_id= matched.length;
+                }
+                else {
+                    var class_id=i;
+                }
                 var val=splitres[i].toString();
                 for(var j=0;j<subsplitres.length;j++){
                 $(changeparm).append(
-                    '<div class="black-border " style="overflow: hidden" id="'+formData.get("img_type")+i+'">'+
+                    '<div class="black-border " style="overflow: hidden" class=\"class_a\" id="'+formData.get("img_type")+class_id+'">'+
                                 '<div class="pd-2" >'+
                                 '<span class="pd-2"  id="hall-name">'+subsplitres[j]+'</span>'+
                                 '<button class="center"  style="right:0px;position: absolute;" id="profile_remove" onclick=remove_img("'+formData.get("img_type")+i+'",\"'+formData.get("img_type")+'",\"'+splitres[i]+'\")>X</button>'+
@@ -627,4 +628,6 @@ function ajax_call_API(formData) {
             cache: false
         });
  }
+
+
   </script>
