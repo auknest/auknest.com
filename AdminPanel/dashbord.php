@@ -23,7 +23,7 @@
             </div>
             <div class="col-sm-4 col-md-3 col-lg-3 center">
                 <div class='back-color-white  mb-7  pd-2'>
-                <img src="../img/1 (2).png" class="img-responsive">
+                <a href="./admin_pg_details.php"><img src="../img/1 (2).png" class="img-responsive"></a>
                 <div class="bold font-16" style="visiblity:hidden"> &nbsp; </div>
 
                 </div>
@@ -31,20 +31,20 @@
             </div>
             <div class="col-sm-4 col-md-3 col-lg-3 ">
                 <div class='back-color-white pd-2  mb-7  center'>
-                <img src="../img/1 (3).png" class="img-responsive">
+                <a href="./admin_flat_details.php"><img src="../img/1 (3).png" class="img-responsive"></a>
                 <div class="bold font-16" style="visiblity:hidden"> &nbsp; </div>
                 </div> 
             </div>
             <div class="col-sm-4 col-md-3 col-lg-3 center">
                 <div class='back-color-white pd-2 mb-7  center'>
-                <img src="../img/1 (4).png" class="img-responsive">
+                <a href="./admin_pgtopg_details.php"><img src="../img/1 (4).png" class="img-responsive"></a>
                 <div class="bold font-16" style="visiblity:hidden"> &nbsp; </div>
 
                 </div> 
             </div>
             <div class="col-sm-4 col-md-3 col-lg-3">
                 <div class='back-color-white pd-2 mb-7 center'>
-                <img src="../img/1 (5).png" class="img-responsive">
+                <a href="./admin_buildingowner_details.php"><img src="../img/1 (5).png" class="img-responsive"></a>
                 <div class="bold font-16" style="visiblity:hidden"> &nbsp; </div>
 
                 </div> 
