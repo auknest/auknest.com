@@ -54,6 +54,9 @@ var login = require('./routes/postapi/post_login'); //To insert login details.
 var deleteimg = require('./routes/deleteapi/delete_gallery_img');
 var deletepro = require('./routes/deleteapi/deleteproperty');
 
+//Update api
+var updatepro=require('./routes/updateapi/update_property_status');
+
 var bodyParser = require('body-parser');
 var multer  = require('multer');
 var upload = multer({ dest: '/uploads/'});
@@ -184,6 +187,9 @@ app.use('/post_login', login); //To insert the login details
 //delete api
 app.use('/delete_gallery_img', deleteimg); //To insert the building aminities
 app.use('/deleteproperty', deletepro); //To delete the property
+
+//Update api
+app.use('/update_property_status', updatepro); //To update the property
 
 
 // catch 404 and forward to error handler
