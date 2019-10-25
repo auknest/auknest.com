@@ -362,11 +362,29 @@
                 </a>
             </div>
         </div>
+        <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9 center" id="adminVerify" style="display:none">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
+                <div class="w-100per center red-font back-color-yellow pd-2">
+                    <a href="#">
+                        <p onclick=verifyStatus1(1) class="red-font" >Auknest Verified<br></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
+                <div class="w-100per center red-font back-color-yellow pd-2">
+                    <a href="#">
+                        <p onclick=verifyStatus1(2) class="red-font" >Featured Verified<br></p>
+                    </a>
+                </div>
+            </div>
+        </div>
 </div>
 <br>
 <!-- Recomended Property Section -->
 <script>
-
+    if(sessionStorage.getItem('user_status')==1){
+        $('#adminVerify').show();
+    }//For View the verify button to Admin
     if(sessionStorage.getItem('pro_id')!=null)
     {
         $('#before-submit').show();
@@ -383,7 +401,16 @@
         function pgdetails() {
             window.location.href="../profile.php?"+par[0];
         }
-    
+    //code for verify the Property Status
+        function verifyStatus1(status){
+            var id=par[2];
+            id=id.split('=');
+            id=id[1];
+            var type=par[1];
+            type=type.split('=');
+            type=type[1];
+            verifyStatus(status,id,type);
+        }
         $(document).ready(function(){   
         var  Url = "http://localhost:3000/get_profileProdetails?"+url_parm;
         console.log("Url...", Url);

@@ -436,7 +436,7 @@
 <script>
     if(sessionStorage.getItem('user_status')==1){
         $('#adminVerify').show();
-    }
+    }//For View the verify button to Admin
     if(sessionStorage.getItem('pro_id')!=null)
     {
         $('#before-submit').show();
@@ -459,6 +459,7 @@
             }
             
         }
+        //code for verify the Property Status
     function verifyStatus1(status){
         var id=par[2];
         id=id.split('=');

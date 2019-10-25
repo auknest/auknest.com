@@ -102,8 +102,8 @@
                                       "<span id=\"food_included\">"+res[i].furnish+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
-                                      "<span>"+res[i].get_close_time+"</span>"+
+                                      "<span>Property System</span><br>"+
+                                      "<span>"+res[i].flat_type+"</span>"+
                                   "</div>"+
                             "</div>"+
                         "</div>"+

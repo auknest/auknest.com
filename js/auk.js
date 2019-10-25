@@ -103,6 +103,7 @@ function otpsuccess() {
   $('#signup').hide();
   $("#otp").show();
 }
+// API call for update Status of property
 function verifyStatus(sts,id,type){
   $.ajax({
     url:"http://localhost:3000/update_property_status?property_status="+sts+"&pro_id="+id,

@@ -1,4 +1,4 @@
-
+<?php include './loginmenu.html'?>
 <?php include './menu.html'?>
 
 
@@ -35,6 +35,7 @@
             loadProducts('pg_to_pg','','pg_to_pg');
         });
     function loadProducts(type,property_status, maintype) {
+        $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
   var protype=type;
   console.log("protype........", maintype);
 	//get data from server..
@@ -53,11 +54,11 @@
 			console.log("..................");
 
           var yyyy="<div class=\"mb-tb-5per a\">"+
-          "<div class=\"col-sm-10 col-md-6 col-lg-6\">"+
+          "<div class=\"col-sm-10 col-md-6 col-lg-6\" style=\"margin-bottom:10px\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].flat_for+"</span><br>"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
+                          res[i].pro_type.replace(/_/g,' ')+"&nbsp;<br>"+
                           "<span id=\"result\"></span>"+
 
                           "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
@@ -66,16 +67,16 @@
                   "<hr style=\"margin-top:0px !important\">"+
                   "<div class=\"row\">"+
                       "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                          "<span>Room Type</span><br>"+
-                          "<span id=\"room_type\" class=\"bold\">"+res[i].flat_room_type+"</span>"+
+                          "<span>Building Type</span><br>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].build_type+"</span>"+
                       "</div>"+
                       "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
-                          "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
+                          "<span id=\"rent\" class=\"bold\">"+res[i].rent_per_person+"/- </span>"+
                       "</div>"+
                       "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Deposite</span><br>"+
-                          "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
+                          "<span id=\"deposite\" class=\"bold\">"+res[i].deposite+"/-</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
@@ -86,23 +87,23 @@
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].avl_frm+"</span>"+
+                                      "<span>Total Capacity</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].pg_capacity+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Posted On</span><br>"+
-                                      "<span>"+res[i].avl_frm+"</span>"+
+                                      "<span>Total Staying</span><br>"+
+                                      "<span>"+res[i].stay_no+"</span>"+
                                   "</div>"+
                               "</div>"+
                           "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Food Facility<span><br>"+
-                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                      "<span>Gate Security<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].gate_security+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
-                                      "<span>"+res[i].get_close_time+"</span>"+
+                                      "<span>Water Supply</span><br>"+
+                                      "<span>"+res[i].water_supply+"</span>"+
                                   "</div>"+
                             "</div>"+
                         "</div>"+
@@ -113,27 +114,23 @@
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a href=\"\../postProperty\/pgtopgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                  '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\" id=\"proDelete\">Delete</button>'+
                                   "</div>"+
                           "</div>";  
-                          if(protype=='pg_to_pg'){ 
-                            $('.a').remove();
+                          if(protype=='pg_to_pg'){
                             $('#pg_to_pg').append(yyyy);
 
                           }
-                          if(protype=='aukver'){ 
-                            $('.a').remove();
+                          if(protype=='aukver'){
                             $('#aukver').append(yyyy);
                           }
                           if(protype=='fetver'){ 
-                            $('.a').remove();
                             $('#fetver').append(yyyy);
                           }
                           if(protype=='unver'){ 
-                            $('.a').remove();
                             $('#unver').append(yyyy);
                           }
         }
