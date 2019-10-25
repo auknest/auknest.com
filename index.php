@@ -611,6 +611,7 @@ $(document).ready(function(){
             $('#profileinfo').show();
             $('#loginbtn').hide();
             sessionStorage.setItem("u_id", id[1]);
+            sessionStorage.setItem("user_name",res[0].name );
 
             }
            

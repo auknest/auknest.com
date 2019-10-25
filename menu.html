@@ -40,7 +40,7 @@
           <!-- <p  class ="mb-7 pd-l-1" id="profilename"> ABC </p> -->
             <div class ="mb-7 pd-l-1" style="float: right; display:flex;">
               <a class="dropdown-toggle" id="profilename" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              ABCD
+              <span id ="user_name"></span>
               <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="profilename">
@@ -50,6 +50,7 @@
             </div>  
         </div>
         <script>
+          $('#user_name').html(sessionStorage.getItem('user_name'));
           function logout(){
             sessionStorage.removeItem('u_id');
             sessionStorage.removeItem('user_status');
