@@ -433,7 +433,13 @@
         var par=url_parm.split("&");
         console.log("id.............", par);
         function pgdetails() {
-            window.location.href="../profile.php?"+par[0];
+            console.log("status....",sessionStorage.getItem('user_status'));
+            if(sessionStorage.getItem('user_status')==1){
+                window.location.href="../AdminPanel/dashbord.php";
+            }else{
+                window.location.href="../profile.php?"+par[0];
+            }
+            
         }
     
         $(document).ready(function(){   

@@ -603,6 +603,7 @@ $(document).ready(function(){
             if(res[0].user_status==1){ //Show the admin panel dashbord page.
                 sessionStorage.setItem("u_id", id[1]);
                 sessionStorage.setItem("user_status",1 );
+                sessionStorage.setItem("user_name",res[0].name );
                 window.location.href="./AdminPanel/dashbord.php?"+res[0].name;
 
             }
