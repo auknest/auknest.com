@@ -146,20 +146,5 @@
 	});
 
 	console.log("finished ajax call");
-    }	
-function deletepro(type, id){               
-    $.ajax({
-        url:"http://localhost:3000/deleteproperty?pro_type="+type+"&pro_id="+id,
-        type:"DELETE",
-        data:{},
-        success: function (data) {
-            console.log("Sucess in delete property api...");
-            window.location.href="../AdminPanel/admin_pg_details.php";
-        },
-        error: function(err){
-            console.log("Error",error);
-        }
-    });
-}
-    
-    </script>
+    }
+</script>
