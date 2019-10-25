@@ -414,11 +414,29 @@
                 </a>
             </div>
         </div>
+        <div class="col-xs-6 col-sm-9 col-md-9 col-lg-9 center" id="adminVerify" style="display:none">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
+                <div class="w-100per center red-font back-color-yellow pd-2">
+                    <a href="#">
+                        <p class="red-font" >Auknest Verified<br></p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
+                <div class="w-100per center red-font back-color-yellow pd-2">
+                    <a href="#">
+                        <p class="red-font" >Featured Verified<br></p>
+                    </a>
+                </div>
+            </div>
+        </div>
 </div>
 <br>
 <!-- Recomended Property Section -->
 <script>
-
+    if(sessionStorage.getItem('user_status')==1){
+        $('#adminVerify').show();
+    }
     if(sessionStorage.getItem('pro_id')!=null)
     {
         $('#before-submit').show();

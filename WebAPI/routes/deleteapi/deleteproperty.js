@@ -24,14 +24,14 @@ router.delete('/', (req,res) =>{
     if(req.query.pro_type=="building"){
         table="buildownerdetails";
     }
-    var sql ="DELETE * FROM "+table+"WHERE pro_id="+req.query.pro_id;
+    var sql ="DELETE FROM "+table+" WHERE pro_id='"+req.query.pro_id+"'";
     con.query(sql, (error, result) =>{
         if (error) {
             console.log("Failed to delete the Property from the details table", error)
         }
         else {
-            var sql2="DELETE * FROM property WHERE pro_id="+req.query.pro_id;
-            con.query(sql, (error, result) =>{
+            var sql2="DELETE FROM property WHERE pro_id='"+req.query.pro_id+"'";
+            con.query(sql2, (error, result) =>{
 
                  if (error) {
                         console.log("Failed to delete the Property from the property table", error)
