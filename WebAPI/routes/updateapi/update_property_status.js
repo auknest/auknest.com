@@ -13,6 +13,7 @@ router.post('/', function(req, res) {
 
     var sql="UPDATE property SET property_status="+req.query.property_status+" WHERE pro_id='"+req.query.pro_id+"'";
     con.query(sql, (error, result) =>{
+        console.log("SQL...",sql);
 
         if (error) {
                console.log("Failed to updatethe Property from the property table", error)

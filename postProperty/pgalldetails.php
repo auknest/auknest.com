@@ -418,14 +418,14 @@
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
                 <div class="w-100per center red-font back-color-yellow pd-2">
                     <a href="#">
-                        <p class="red-font" >Auknest Verified<br></p>
+                        <p onclick=verifyStatus1(1) class="red-font" >Auknest Verified<br></p>
                     </a>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 center">
                 <div class="w-100per center red-font back-color-yellow pd-2">
                     <a href="#">
-                        <p class="red-font" >Featured Verified<br></p>
+                        <p onclick=verifyStatus1(2) class="red-font" >Featured Verified<br></p>
                     </a>
                 </div>
             </div>
@@ -459,7 +459,15 @@
             }
             
         }
-    
+    function verifyStatus1(status){
+        var id=par[2];
+        id=id.split('=');
+        id=id[1];
+        var type=par[1];
+        type=type.split('=');
+        type=type[1];
+        verifyStatus(status,id,type);
+    }
         $(document).ready(function(){   
         var  Url = "http://localhost:3000/get_profileProdetails?"+url_parm;
         console.log("Url...", Url);

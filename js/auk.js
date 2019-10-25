@@ -103,3 +103,28 @@ function otpsuccess() {
   $('#signup').hide();
   $("#otp").show();
 }
+function verifyStatus(sts,id,type){
+  $.ajax({
+    url:"http://localhost:3000/update_property_status?property_status="+sts+"&pro_id="+id,
+    type:"POST",
+    data:{},
+    success: function (data) {
+        console.log("Sucess in Update property api...");
+        if(type=='pg'){
+            window.location.href="../AdminPanel/admin_pg_details.php";
+        }
+        if(type=='flat'){
+            window.location.href="../AdminPanel/admin_flat_details.php";
+        }
+        if(type=='building'){
+            window.location.href="../AdminPanel/admin_buildingowner_details.php";
+        }
+        if(type=='pg_to_pg'){
+            window.location.href="../AdminPanel/admin_pgtopg_details.php";
+        }
+    },
+    error: function(err){
+        console.log("Error",err);
+    }
+  });
+}

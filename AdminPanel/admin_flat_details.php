@@ -117,7 +117,7 @@
                                       "<a href=\"\../postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                  '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\" id=\"proDelete\">Delete</button>'+
                                   "</div>"+
                           "</div>";  
                           if(protype=='flat'){ 
