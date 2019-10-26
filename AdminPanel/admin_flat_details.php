@@ -18,8 +18,12 @@
                     <!-- Pg all details -->
             <div class="col-sm-9 col-md-8 col-lg-8 center">
             <div id="flat" class="tabcontent">
+                <input id="searchloc" type="text" placeholder="Search.." name="search">
+                <button onclick="loadProducts('flat','','flat',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="aukver" class="tabcontent">
+                <input id="searchloc1" type="text" placeholder="Search.." name="search">
+                <button onclick="loadProducts('flat','1','flat',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="fetver" class="tabcontent">
             </div>  

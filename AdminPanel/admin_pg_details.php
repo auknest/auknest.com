@@ -21,16 +21,20 @@
            
             <div id="pg" class="tabcontent">
             <input id="searchloc" type="text" placeholder="Search.." name="search">
-            <button onclick="loadProducts('pg','','pg',)" type="submit"><i class="fa fa-search"></i></button>
+            <button id="btn" onclick="loadProducts('pg','','pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             </div>
             <div id="aukver" class="tabcontent">
             <input id="searchloc1" type="text" placeholder="Search.." name="search">
-            <button onclick="loadProducts('pg','1','pg',)" type="submit"><i class="fa fa-search"></i></button>
+            <button id="btn1" onclick="loadProducts('aukver',1,'pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="fetver" class="tabcontent">
+            <input id="searchloc2" type="text" placeholder="Search.." name="search">
+            <button id="btn2" onclick="loadProducts('fetver',2,'pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>  
             <div id="unver" class="tabcontent">
+            <input id="searchloc3" type="text" placeholder="Search.." name="search">
+            <button id="btn3" onclick="loadProducts('unver',3,'pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>                                       
             </div>
     </div>
@@ -42,34 +46,76 @@
         $(document).ready(function () {
             loadProducts('pg','','pg');
         });
-    function loadProducts(type,property_status, maintype) {
+    function loadProducts(type, property_status, maintype) {
         $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
   var parm=window.location.search.substring(1);
   var url_parm = parm ? parm : '';
   var protype=type;
-  console.log("protype........", maintype);
-  var loc;
-    if(property_type==1){
+  console.log("property_status........", property_status);
+  var loc=null;
+    if(property_status==1){
+        $('#searchloc').hide();
+        $('#searchloc1').show();
+        $('#searchloc2').hide();
+        $('#searchloc3').hide();
+        $('#btn').hide();
+        $('#btn1').show();
+        $('#btn2').hide();
+        $('#btn3').hide();
         var loc=$('#searchloc1').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
     }
-    if(property_type==2){
+    if(property_status==2){
+        $('#searchloc').hide();
+        $('#searchloc1').hide();
+        $('#searchloc2').show();
+        $('#searchloc3').hide();
+        $('#btn').hide();
+        $('#btn1').hide();
+        $('#btn2').show();
+        $('#btn3').hide();
         var loc=$('#searchloc2').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
     }
-    if(property_type==3){
+    if(property_status==3){
+        $('#searchloc').hide();
+        $('#searchloc1').hide();
+        $('#searchloc2').hide();
+        $('#searchloc3').show();
+        $('#btn').hide();
+        $('#btn1').hide();
+        $('#btn2').hide();
+        $('#btn3').show();
         var loc=$('#searchloc3').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
     }
-    if(property_type!=null){
+    if(property_status=''){
+        console.log();
+        $('#searchloc1').hide();
         var loc=$('#searchloc').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
     }
    console.log("loc.....", loc);
 
    //get data from server..
-   if(!(loc)) {
+   if(loc==null) {
+    $('#searchloc').show();
+    $('#searchloc1').hide();
+    $('#searchloc2').hide();
+    $('#searchloc3').hide();
+    $('#btn').show();
+    $('#btn1').hide();
+    $('#btn2').hide();
+    $('#btn3').hide();
+
    var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
    } 
-   else {
-    var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
-   }
+//    else {
+//    }
    console.log("URL..........", URL);
 	$.ajax({
 		url:URL,
