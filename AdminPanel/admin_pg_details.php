@@ -17,9 +17,16 @@
             </div> 
                     <!-- Pg all details -->
             <div class="col-sm-9 col-md-8 col-lg-8 center">
+            <div>
+           
             <div id="pg" class="tabcontent">
+            <input id="searchloc" type="text" placeholder="Search.." name="search">
+            <button onclick="loadProducts('pg','','pg',)" type="submit"><i class="fa fa-search"></i></button>
+            </div>
             </div>
             <div id="aukver" class="tabcontent">
+            <input id="searchloc1" type="text" placeholder="Search.." name="search">
+            <button onclick="loadProducts('pg','1','pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="fetver" class="tabcontent">
             </div>  
@@ -41,9 +48,31 @@
   var url_parm = parm ? parm : '';
   var protype=type;
   console.log("protype........", maintype);
-	//get data from server..
+  var loc;
+    if(property_type==1){
+        var loc=$('#searchloc1').val();
+    }
+    if(property_type==2){
+        var loc=$('#searchloc2').val();
+    }
+    if(property_type==3){
+        var loc=$('#searchloc3').val();
+    }
+    if(property_type!=null){
+        var loc=$('#searchloc').val();
+    }
+   console.log("loc.....", loc);
+
+   //get data from server..
+   if(!(loc)) {
+   var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
+   } 
+   else {
+    var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+   }
+   console.log("URL..........", URL);
 	$.ajax({
-		url:"http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status,
+		url:URL,
 		type: 'GET',
 		dataType: 'JSON',
 		success: function(res) {
