@@ -103,9 +103,9 @@
         console.log("Into staus null if.........");
         // $('#searchloc1').hide();
         var l=$('#searchloc').val();
-        var loc1=loc1?l:null;
+        // var loc1=loc1?l:null;
 
-        console.log("status null location value...", loc1);
+        // console.log("status null location value...", loc1);
         //get data from server..
         if(l) {
             var s='';
