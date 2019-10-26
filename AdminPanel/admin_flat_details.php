@@ -26,8 +26,12 @@
                 <button onclick="loadProducts('flat','1','flat',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="fetver" class="tabcontent">
+                <input id="searchloc2" type="text" placeholder="Search.." name="search">
+                <button onclick="loadProducts('flat','2','flat',)" type="submit"><i class="fa fa-search"></i></button>   
             </div>  
             <div id="unver" class="tabcontent">
+                <input id="searchloc3" type="text" placeholder="Search.." name="search">
+                <button onclick="loadProducts('flat','3','flat',)" type="submit"><i class="fa fa-search"></i></button>   
             </div>                                       
             </div>
     </div>
@@ -42,9 +46,71 @@
         $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
   var protype=type;
   console.log("protype........", maintype);
+  var loc=null;
+    if(property_status==1){
+        $('#searchloc').hide();
+        $('#searchloc1').show();
+        $('#searchloc2').hide();
+        $('#searchloc3').hide();
+        $('#btn').hide();
+        $('#btn1').show();
+        $('#btn2').hide();
+        $('#btn3').hide();
+        var loc=$('#searchloc1').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
+    }
+    if(property_status==2){
+        $('#searchloc').hide();
+        $('#searchloc1').hide();
+        $('#searchloc2').show();
+        $('#searchloc3').hide();
+        $('#btn').hide();
+        $('#btn1').hide();
+        $('#btn2').show();
+        $('#btn3').hide();
+        var loc=$('#searchloc2').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
+    }
+    if(property_status==3){
+        $('#searchloc').hide();
+        $('#searchloc1').hide();
+        $('#searchloc2').hide();
+        $('#searchloc3').show();
+        $('#btn').hide();
+        $('#btn1').hide();
+        $('#btn2').hide();
+        $('#btn3').show();
+        var loc=$('#searchloc3').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
+    }
+    if(property_status=''){
+        console.log();
+        $('#searchloc1').hide();
+        var loc=$('#searchloc').val();
+        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
+    }
+   console.log("loc.....", loc);
+
+   //get data from server..
+   if(loc==null) {
+    $('#searchloc').show();
+    $('#searchloc1').hide();
+    $('#searchloc2').hide();
+    $('#searchloc3').hide();
+    $('#btn').show();
+    $('#btn1').hide();
+    $('#btn2').hide();
+    $('#btn3').hide();
+
+   var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
+   } 
 	//get data from server..
 	$.ajax({
-		url:"http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status,
+        url:URL,
 		type: 'GET',
 		dataType: 'JSON',
 		success: function(res) {
