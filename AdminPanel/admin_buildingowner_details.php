@@ -8,7 +8,7 @@
 
              <div class="col-sm-3 col-md-3 col-lg-3 center">
                 <div class="sidebar ">
-                    <a id="defaultOpen" onclick="openCity(event, 'building');loadProducts('building','','building')" class="tablinks active" >Total building</a>
+                    <a id="defaultOpen" onclick="openCity(event, 'building');loadProducts('building','null','building')" class="tablinks active" >Total building</a>
                     <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','building')" class="tablinks" >Auknest verified</a>
                     <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','building')" class="tablinks" >Featured Verified</a>
                     <a onclick="openCity(event, 'unver');loadProducts('unver','3','building')" class="tablinks" >Unverified</a> 
@@ -19,7 +19,7 @@
             <div class="col-sm-9 col-md-8 col-lg-8 center">
             <div id="building" class="tabcontent">
                 <input id="searchloc" type="text" placeholder="Search.." name="search">
-                <button id="btn" onclick="loadProducts('building','','building',)" type="submit"><i class="fa fa-search"></i></button>
+                <button id="btn" onclick="loadProducts('building','null','building',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="aukver" class="tabcontent">
                 <input id="searchloc1" type="text" placeholder="Search.." name="search">
@@ -40,12 +40,12 @@
 
 <script>
         $(document).ready(function () {
-            loadProducts('building','','building');
+            loadProducts('building','null','building');
         });
-    function loadProducts(type,property_status, maintype) {
+    function loadProducts(type, property_status, maintype) {
         $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
   var protype=type;
-  console.log("protype........", maintype);
+  console.log("protype........",  property_status);
   var loc=null;
     if(property_status==1){
         $('#searchloc').hide();
@@ -86,28 +86,34 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status=''){
-        console.log();
+    if(property_status=='null'){
+        $('#searchloc').show();
         $('#searchloc1').hide();
-        var loc=$('#searchloc').val();
-        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+        $('#searchloc2').hide();
+        $('#searchloc3').hide();
+        $('#btn').show();
+        $('#btn1').hide();
+        $('#btn2').hide();
+        $('#btn3').hide();      
+        var l=$('#searchloc').val();
+        // var loc1=loc1?l:null;
+        if(l) {
+            var s='';
+            console.log("Into loc1 null...", l);
 
+            var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+s+"&loc="+l;  
+
+        }
+        else {
+            console.log("Into else...");
+            var s='';
+            var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+s;
+
+        }
     }
    console.log("loc.....", loc);
+   console.log("url.....", URL);
 
-   //get data from server..
-   if(loc==null) {
-    $('#searchloc').show();
-    $('#searchloc1').hide();
-    $('#searchloc2').hide();
-    $('#searchloc3').hide();
-    $('#btn').show();
-    $('#btn1').hide();
-    $('#btn2').hide();
-    $('#btn3').hide();
-
-   var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
-   } 
 	//get data from server..
 	$.ajax({
         url:URL,

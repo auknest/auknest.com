@@ -114,12 +114,6 @@
    console.log("loc.....", loc);
    console.log("url.....", URL);
 
-//    //get data from server..
-//    if(loc==null) {
-   
-
-//    var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
-//    } 
 	//get data from server..
 	$.ajax({
         url:URL,

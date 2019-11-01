@@ -8,7 +8,7 @@
 
              <div class="col-sm-3 col-md-3 col-lg-3 center">
                 <div class="sidebar ">
-                    <a id="defaultOpen" onclick="openCity(event, 'pg_to_pg');loadProducts('pg_to_pg','','pg_to_pg')" class="tablinks active" >Total PG-PG</a>
+                    <a id="defaultOpen" onclick="openCity(event, 'pg_to_pg');loadProducts('pg_to_pg','null','pg_to_pg')" class="tablinks active" >Total PG-PG</a>
                     <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','pg_to_pg')" class="tablinks" >Auknest verified</a>
                     <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','pg_to_pg')" class="tablinks" >Featured Verified</a>
                     <a onclick="openCity(event, 'unver');loadProducts('unver','3','pg_to_pg')" class="tablinks" >Unverified</a> 
@@ -19,7 +19,7 @@
             <div class="col-sm-9 col-md-8 col-lg-8 center">
             <div id="pg_to_pg" class="tabcontent">
                 <input id="searchloc" type="text" placeholder="Search.." name="search">
-                <button id="btn" onclick="loadProducts('pg_to_pg','','pg_to_pg',)" type="submit"><i class="fa fa-search"></i></button>
+                <button id="btn" onclick="loadProducts('pg_to_pg','null','pg_to_pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>
             <div id="aukver" class="tabcontent">
                 <input id="searchloc1" type="text" placeholder="Search.." name="search">
@@ -40,14 +40,14 @@
 
 <script>
         $(document).ready(function () {
-            loadProducts('pg_to_pg','','pg_to_pg');
+            loadProducts('pg_to_pg','null','pg_to_pg');
         });
-    function loadProducts(type,property_status, maintype) {
+    function loadProducts(type, property_status, maintype) {
         $('.a').remove();   //For avoiding multiple appending elements on click of perticular section
-  var protype=type;
-  console.log("protype........", maintype);
-  var loc=null;
-    if(property_status==1){
+        var protype=type;
+        console.log("protype........", property_status);
+        var loc=null;
+    if(property_status=='1'){
         $('#searchloc').hide();
         $('#searchloc1').show();
         $('#searchloc2').hide();
@@ -60,7 +60,7 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status==2){
+    if(property_status=='2'){
         $('#searchloc').hide();
         $('#searchloc1').hide();
         $('#searchloc2').show();
@@ -73,7 +73,7 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status==3){
+    if(property_status=='3'){
         $('#searchloc').hide();
         $('#searchloc1').hide();
         $('#searchloc2').hide();
@@ -86,28 +86,57 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status=''){
-        console.log();
-        $('#searchloc1').hide();
-        var loc=$('#searchloc').val();
-        var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+    if(property_status=='null'){
+        console.log("Into null...");
 
+        $('#searchloc').show();
+        $('#searchloc1').hide();
+        $('#searchloc2').hide();
+        $('#searchloc3').hide();
+        $('#btn').show();
+        $('#btn1').hide();
+        $('#btn2').hide();
+        $('#btn3').hide();      
+        var l=$('#searchloc').val();
+        // var loc1=loc1?l:null;
+        if(l) {
+            var s='';
+            console.log("Into loc1 null...", l);
+
+            var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+s+"&loc="+l;  
+
+        }
+        else {
+            console.log("Into else...");
+            var s='';
+            var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+s;
+
+        }
     }
+    // if(property_status=''){
+    //     console.log();
+    //     $('#searchloc1').hide();
+    //     var loc=$('#searchloc').val();
+    //     var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
+
+    // }
    console.log("loc.....", loc);
+   console.log("url.....", URL);
+
 
    //get data from server..
-   if(loc==null) {
-    $('#searchloc').show();
-    $('#searchloc1').hide();
-    $('#searchloc2').hide();
-    $('#searchloc3').hide();
-    $('#btn').show();
-    $('#btn1').hide();
-    $('#btn2').hide();
-    $('#btn3').hide();
+//    if(loc==null) {
+//     $('#searchloc').show();
+//     $('#searchloc1').hide();
+//     $('#searchloc2').hide();
+//     $('#searchloc3').hide();
+//     $('#btn').show();
+//     $('#btn1').hide();
+//     $('#btn2').hide();
+//     $('#btn3').hide();
 
-   var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
-   } 
+//    var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status;
+//    } 
 	//get data from server..
 	$.ajax({
         url:URL,
