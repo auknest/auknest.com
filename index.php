@@ -577,6 +577,8 @@
 
 <script>
 $(document).ready(function(){
+    $('#user_name').html(sessionStorage.getItem('user_name'));
+
     //login Profile 
     
     var parm=window.location.search.substring(1);
@@ -608,11 +610,11 @@ $(document).ready(function(){
 
             }
             else {
-            $('#profileinfo').show();
-            $('#loginbtn').hide();
             sessionStorage.setItem("u_id", id[1]);
             sessionStorage.setItem("user_name",res[0].name );
-
+            $('#user_name').html(sessionStorage.getItem('user_name'));
+            $('#profileinfo').show();
+            $('#loginbtn').hide();
             }
            
         },
@@ -666,12 +668,16 @@ $( "#ajax-sendotp" ).click(function(e) {
     if(form3.valid()==true){
     //Data store into users table. then send the OTP & mail.
     var unique_id= "<?php echo uniqid()?>";
+    var today = new Date();
+    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+
     var serverData={
         "u_id":unique_id,
         "name":$("#uname").val(),
         "password":$("#upassword").val(),
         "email":$("#email").val(),
         "phone":$("#phone").val(),
+        "login_date": date,
         // "user_status":"0"
     };
     $.ajax({

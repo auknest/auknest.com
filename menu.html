@@ -50,7 +50,10 @@
             </div>  
         </div>
         <script>
+        $(document).ready(function(){
+
           $('#user_name').html(sessionStorage.getItem('user_name'));
+        });
           function logout(){
             sessionStorage.removeItem('u_id');
             sessionStorage.removeItem('user_status');
@@ -59,6 +62,8 @@
         function profile(){
           console.log("Into profile..........");
           var profile_uid=sessionStorage.getItem("u_id");
+          // var user_name=sessionStorage.getItem("user_name");
+
           console.log("Profile uid..........***", profile_uid);
           window.location="http://localhost/auknest.com/auknest.com/profile.php?u_id="+profile_uid;
 
