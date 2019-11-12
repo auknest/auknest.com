@@ -11,7 +11,7 @@
                     <a id="defaultOpen" onclick="openCity(event, 'pg_to_pg');loadProducts('pg_to_pg','null','pg_to_pg')" class="tablinks active" >Total PG-PG</a>
                     <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','pg_to_pg')" class="tablinks" >Auknest verified</a>
                     <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','pg_to_pg')" class="tablinks" >Featured Verified</a>
-                    <a onclick="openCity(event, 'unver');loadProducts('unver','3','pg_to_pg')" class="tablinks" >Unverified</a> 
+                    <a onclick="openCity(event, 'unver');loadProducts('unver','0','pg_to_pg')" class="tablinks" >Unverified</a> 
 
                 </div>
             </div> 
@@ -31,7 +31,7 @@
             </div>  
             <div id="unver" class="tabcontent">
                 <input id="searchloc3" type="text" placeholder="Search.." name="search">
-                <button id="btn3" onclick="loadProducts('unver','3','pg_to_pg',)" type="submit"><i class="fa fa-search"></i></button>
+                <button id="btn3" onclick="loadProducts('unver','0','pg_to_pg',)" type="submit"><i class="fa fa-search"></i></button>
             </div>                                       
             </div>
     </div>
@@ -73,7 +73,7 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status=='3'){
+    if(property_status=='0'){
         $('#searchloc').hide();
         $('#searchloc1').hide();
         $('#searchloc2').hide();

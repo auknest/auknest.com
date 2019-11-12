@@ -11,7 +11,7 @@
                     <a id="defaultOpen" onclick="openCity(event, 'building');loadProducts('building','null','building')" class="tablinks active" >Total building</a>
                     <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','building')" class="tablinks" >Auknest verified</a>
                     <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','building')" class="tablinks" >Featured Verified</a>
-                    <a onclick="openCity(event, 'unver');loadProducts('unver','3','building')" class="tablinks" >Unverified</a> 
+                    <a onclick="openCity(event, 'unver');loadProducts('unver','0','building')" class="tablinks" >Unverified</a> 
 
                 </div>
             </div> 
@@ -31,7 +31,7 @@
             </div>  
             <div id="unver" class="tabcontent">
                 <input id="searchloc3" type="text" placeholder="Search.." name="search">
-                <button id="btn3" onclick="loadProducts('building','3','building',)" type="submit"><i class="fa fa-search"></i></button>
+                <button id="btn3" onclick="loadProducts('building','0','building',)" type="submit"><i class="fa fa-search"></i></button>
             </div>                                       
             </div>
     </div>
@@ -73,7 +73,7 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status==3){
+    if(property_status==0){
         $('#searchloc').hide();
         $('#searchloc1').hide();
         $('#searchloc2').hide();
@@ -201,15 +201,15 @@
 
                           }
                           if(protype=='aukver'){ 
-                            $('.a').remove();
+                            //$('.a').remove();
                             $('#aukver').append(yyyy);
                           }
                           if(protype=='fetver'){ 
-                            $('.a').remove();
+                            //$('.a').remove();
                             $('#fetver').append(yyyy);
                           }
                           if(protype=='unver'){ 
-                            $('.a').remove();
+                            //$('.a').remove();
                             $('#unver').append(yyyy);
                           }
         }

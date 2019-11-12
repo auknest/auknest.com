@@ -11,7 +11,7 @@
                     <a id="defaultOpen" onclick="openCity(event, 'flat');loadProducts('flat','null','flat')" class="tablinks active" >Total Flat</a>
                     <a onclick="openCity(event, 'aukver');loadProducts('aukver','1','flat')" class="tablinks" >Auknest verified</a>
                     <a onclick="openCity(event, 'fetver');loadProducts('fetver','2','flat')" class="tablinks" >Featured Verified</a>
-                    <a onclick="openCity(event, 'unver');loadProducts('unver','3','flat')" class="tablinks" >Unverified</a> 
+                    <a onclick="openCity(event, 'unver');loadProducts('unver','0','flat')" class="tablinks" >Unverified</a> 
 
                 </div>
             </div> 
@@ -31,7 +31,7 @@
             </div>  
             <div id="unver" class="tabcontent">
                 <input id="searchloc3" type="text" placeholder="Search.." name="search">
-                <button id="btn3" onclick="loadProducts('unver','3','flat',)" type="submit"><i class="fa fa-search"></i></button>   
+                <button id="btn3" onclick="loadProducts('unver','0','flat',)" type="submit"><i class="fa fa-search"></i></button>   
             </div>                                       
             </div>
     </div>
@@ -73,7 +73,7 @@
         var URL="http://localhost:3000/get_alladmin_pgdetails?pro_type="+maintype+"&property_status="+property_status+"&loc="+loc;  
 
     }
-    if(property_status=='3'){
+    if(property_status=='0'){
         $('#searchloc').hide();
         $('#searchloc1').hide();
         $('#searchloc2').hide();
@@ -163,7 +163,7 @@
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Propert Type</span><br>"+
+                                      "<span>Property Type</span><br>"+
                                       "<span id=\"pg_available\">"+res[i].flat_type+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+

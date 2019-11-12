@@ -26,7 +26,7 @@
 }
  
 .sidebar a.active {
-  background-color: #4CAF50;
+  background-color: #00517e;
   color: white;
 }
 
@@ -41,7 +41,7 @@ div.content {
   height: 1000px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .sidebar {
     width: 100%;
     height: auto;
@@ -49,13 +49,23 @@ div.content {
   }
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
+  .mb_a{
+		padding:0px;
+	}
+    
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .sidebar a {
     text-align: center;
     float: none;
   }
+  .box-outline {
+    	width:100%;
+	}
+    .sidebar a {
+		padding: 2px 16px;
+	}
 }
 </style>
 </head>
@@ -106,7 +116,7 @@ div.content {
  <br>
  <div class="width-eighty m-auto">
             <center>
-            <button id="ajax-save-profile" class="btn-property back-color-yellow red-font">Save &amp; Profile</button>
+            <button id="ajax-save-profile" class="btn-property back-color-yellow red-font">Save Profile</button>
             </center>
 </div>
 </div>
@@ -143,6 +153,12 @@ function loadProducts(type) {
   var parm=window.location.search.substring(1);
   var url_parm = parm ? parm : '';
   var protype=type;
+  //For appending firstly removes the content inside it
+    $('#PG').empty();
+    $('#flats').empty();
+    $('#building').empty();
+    $('#pg_to_pg').empty();
+			
 	//get data from server..
 	$.ajax({
 		url:"http://localhost:3000/get_profileProdetails?pro_type="+protype+"&"+url_parm,
@@ -164,24 +180,24 @@ function loadProducts(type) {
           "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
                           res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
-                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                          "<span>"+res[i].pro_locality+", "+res[i].pro_city+"</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Room Type</span><br>"+
                           "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
                           "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Deposite</span><br>"+
                           "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
                       "</div>"+
@@ -198,7 +214,7 @@ function loadProducts(type) {
                                       "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Posted On</span><br>"+
+                                      "<span>Available On</span><br>"+
                                       "<span>"+res[i].avl_frm+"</span>"+
                                   "</div>"+
                               "</div>"+
@@ -209,7 +225,7 @@ function loadProducts(type) {
                                       "<span id=\"food_included\">"+res[i].food_included+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
+                                      "<span>Gate Closing Time</span><br>"+
                                       "<span>"+res[i].get_close_time+"</span>"+
                                   "</div>"+
                             "</div>"+
@@ -221,10 +237,10 @@ function loadProducts(type) {
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a class=\"mb_a w-100per\" href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                      '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'","'+res[i].u_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>'+
                                   "</div>"+
                           "</div>";   
                          $('#PG').append(yyyy);
@@ -237,24 +253,24 @@ function loadProducts(type) {
           "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
+                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].flat_for+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
-                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                          "<span>"+res[i].pro_locality+", "+res[i].pro_city+"</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Room Type</span><br>"+
-                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].flat_room_type+"</span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
                           "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Deposite</span><br>"+
                           "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
                       "</div>"+
@@ -267,23 +283,24 @@ function loadProducts(type) {
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                      "<span>Property System</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].flat_type+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Posted On</span><br>"+
+                                      "<span>Available On</span><br>"+
                                       "<span>"+res[i].avl_frm+"</span>"+
                                   "</div>"+
                               "</div>"+
                           "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Food Facility<span><br>"+
-                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                      "<span>Furnish<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].furnish+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
-                                      "<span>"+res[i].get_close_time+"</span>"+
+                                      "<span>Property Age</span><br>"+
+                                      "<span>"+res[i].property_age+"</span>"+
+			  							"<span> Years</span>"+
                                   "</div>"+
                             "</div>"+
                         "</div>"+
@@ -294,10 +311,10 @@ function loadProducts(type) {
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a class=\"mb_a w-100per\" href=\"\./postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                      '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'","'+res[i].u_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>'+
                                   "</div>"+
                           "</div>";   
                          $('#flats').append(yyyy);
@@ -311,26 +328,26 @@ function loadProducts(type) {
           "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
+                          res[i].pro_type+"&nbsp; On &nbsp;<span id=\"pg_for\">"+res[i].property_for+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
-                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                          "<span>"+res[i].pro_locality+", "+res[i].pro_city+"</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                          "<span>Room Type</span><br>"+
-                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Building Type</span><br>"+
+                          "<span id=\"room_type\" class=\"bold\"></span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
-                          "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
+                          "<span id=\"rent\" class=\"bold\">/- </span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Deposite</span><br>"+
-                          "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
+                          "<span id=\"deposite\" class=\"bold\">/-</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
@@ -341,23 +358,23 @@ function loadProducts(type) {
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                      "<span>Property Age</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].property_age+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Posted On</span><br>"+
-                                      "<span>"+res[i].avl_frm+"</span>"+
+                                      "<span>Gate Security</span><br>"+
+                                      "<span>"+res[i].gate_security+"</span>"+
                                   "</div>"+
                               "</div>"+
                           "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Food Facility<span><br>"+
-                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                      "<span>Power Backup<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].power_bakup+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
-                                      "<span>"+res[i].get_close_time+"</span>"+
+                                      "<span>Water Supply</span><br>"+
+                                      "<span>"+res[i].water_supply+"</span>"+
                                   "</div>"+
                             "</div>"+
                         "</div>"+
@@ -368,10 +385,10 @@ function loadProducts(type) {
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/buildalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a class=\"mb_a w-100per\" href=\"\./postProperty\/buildalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                      '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'","'+res[i].u_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>'+
                                   "</div>"+
                           "</div>";   
                         $('#building').append(yyyy);
@@ -384,26 +401,26 @@ function loadProducts(type) {
           "<div class=\"col-sm-8 col-md-8 col-lg-8\">"+
               "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8\">"+
-                          res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
+                      "<div class=\"col-xs-12 col-sm-8 col-md-8 col-lg-8 capital bold\">"+
+                          res[i].pro_type.replace(/_/g,' ')+"</span><br>"+
                           "<span id=\"result\"></span>"+
 
-                          "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                          "<span>"+res[i].pro_locality+", "+res[i].pro_city+"</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
                   "<div class=\"row\">"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
-                          "<span>Room Type</span><br>"+
-                          "<span id=\"room_type\" class=\"bold\">"+res[i].pg_room_type+"</span>"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
+                          "<span>Building Type</span><br>"+
+                          "<span id=\"room_type\" class=\"bold\">"+res[i].build_type+"</span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Rent</span><br>"+
-                          "<span id=\"rent\" class=\"bold\">"+res[i].expected_rent+"/- </span>"+
+                          "<span id=\"rent\" class=\"bold\">"+res[i].rent_per_person+"/- </span>"+
                       "</div>"+
-                      "<div class=\"col-xs-12 col-sm-4 col-md-4 col-lg-4 center\">"+
+                      "<div class=\"col-xs-4 col-sm-4 col-md-4 col-lg-4 center\">"+
                           "<span>Deposite</span><br>"+
-                          "<span id=\"deposite\" class=\"bold\">"+res[i].security_amt+"/-</span>"+
+                          "<span id=\"deposite\" class=\"bold\">"+res[i].deposite+"/-</span>"+
                       "</div>"+
                   "</div>"+
                   "<hr style=\"margin-top:0px !important\">"+
@@ -414,23 +431,23 @@ function loadProducts(type) {
                           "<div class=\"col-xs-12 col-sm-7 col-md-7 col-lg-7\">"+
                               "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Preffered</span><br>"+
-                                      "<span id=\"pg_available\">"+res[i].pg_available+"</span>"+
+                                      "<span>Total Capacity</span><br>"+
+                                      "<span id=\"pg_available\">"+res[i].pg_capacity+"</span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Posted On</span><br>"+
-                                      "<span>"+res[i].avl_frm+"</span>"+
+                                      "<span>Total Staying</span><br>"+
+                                      "<span>"+res[i].stay_no+"</span>"+
                                   "</div>"+
                               "</div>"+
                           "<hr style=\"margin-top:0px !important\">"+
                             "<div class=\"row\">"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Food Facility<span><br>"+
-                                      "<span id=\"food_included\">"+res[i].food_included+"<span>"+
+                                      "<span>Gate Security<span><br>"+
+                                      "<span id=\"food_included\">"+res[i].gate_security+"<span>"+
                                   "</div>"+
                                   "<div class=\"col-xs-6 col-sm-6 col-md-6 col-lg-6\">"+
-                                      "<span>Gate closing time</span><br>"+
-                                      "<span>"+res[i].get_close_time+"</span>"+
+                                      "<span>Water Supply</span><br>"+
+                                      "<span>"+res[i].water_supply+"</span>"+
                                   "</div>"+
                             "</div>"+
                         "</div>"+
@@ -441,14 +458,15 @@ function loadProducts(type) {
                                       "<p class=\"red-font center\">Status</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<a href=\"\./postProperty\/pgtopgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
+                                      "<a class=\"mb_a w-100per\" href=\"\./postProperty\/pgtopgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
-                                      "<button class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>"+
+                                      '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'","'+res[i].u_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>'+
                                   "</div>"+
-                          "</div>";   
+                          "</div>";
                         $('#pg_to_pg').append(yyyy);
           }
+
 
 
 			}
@@ -467,6 +485,22 @@ function loadProducts(type) {
 
 // loadProducts();
 
+//Function For Delete the property 
+function deletepro(pro_type, id, uid){ 
+		$.ajax({
+			url:"https://api.auknest.com/deleteproperty?pro_type="+pro_type+"&pro_id="+id,
+			type: "DELETE",
+			data:{},
+			success: function (data) {
+				console.log("Sucess in delete property api...");
+				window.location.href="https://localhot:3000/profile.php?u_id="+uid;
+			},
+			error: function(err){
+				console.log("Error",err);
+			}
+		});
+	}
+//Delete Function ends 
 
 
 $(document).ready(function(){
