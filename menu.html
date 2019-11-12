@@ -51,12 +51,19 @@
         </div>
         <script>
         $(document).ready(function(){
+          var username=sessionStorage.getItem('user_name');
+			if(username) {
+           		$('#loginbtn').hide();
+				$('#profileinfo').show();
+			}
 
           $('#user_name').html(sessionStorage.getItem('user_name'));
         });
           function logout(){
             sessionStorage.removeItem('u_id');
             sessionStorage.removeItem('user_status');
+            sessionStorage.removeItem('user_name');
+
             window.location="http://localhost/auknest.com/auknest.com/index.php"
           }
         function profile(){
@@ -169,7 +176,7 @@
                                 <!-- <a class= "a-txt" href="#about">HELP</a> -->
                                 <a class= "a-txt" href="../auknest.com/roommateFinder/findOrPost.php">ROOMMATE FINDER</a>
                                 <a href="#about"><img class="img-over-img1" src ="img/button 170 by 70.png"/></a>
-                                <a href="#about"><img class="img-over-img2" src ="img/button yellow 170by 70.png"/></a>
+                                <a href="./postProperty/listProperty.php"><img class="img-over-img2" src ="img/button yellow 170by 70.png"/></a>
                                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                 <i class="fa fa-bars"></i>
                                 </a>

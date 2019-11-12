@@ -6,6 +6,11 @@ var con = mysql.createConnection({
     // user: "u344703846_root",
     // password: "root123",
     // database: "u344703846_volta",
+    // host: "103.117.212.33",
+    // user: "auknest",
+    // password: "root123",
+    // database: "a",
+    // port:8443,
 
   // Localhost Credentials
     host:'localhost',
@@ -14,10 +19,10 @@ var con = mysql.createConnection({
     database:"e",
     
   // Hostripples Server Credentials
-    // host:"india5.ownmyserver.com",// Host name
-    // user:"innoluti_root", // Mysql username
-    // password:"zlNQjeOR(3~v", // Mysql password
-    // database:"innoluti_testing", // Database name
+//     host:"india5.ownmyserver.com",// Host name
+//     user:"innoluti_root", // Mysql username
+//     password:"zlNQjeOR(3~v", // Mysql password
+//     database:"innoluti_testing", // Database name
 });
 con.connect(function(err) {
     if (err){
@@ -36,6 +41,10 @@ con.connect(function(err) {
     console.log("On db error");
     console.log(err.code);
     console.log(err);
+    if(err.code=='ER_ACCESS_DENIED_ERROR') {
+      console.log("INTO reconnect.........");
+      con.connect();
+    }
     if(err.code=='PROTOCOL_CONNECTION_LOST') {
       console.log("inside recon");
       con.destroy();

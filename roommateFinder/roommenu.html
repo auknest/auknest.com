@@ -22,19 +22,61 @@
 
 <body >
           
-    <!-- Yellow header -->
+         
+   <!-- Yellow header -->
 <div class="yellow_header" >
-    <div style="float: right; display:flex;" >
-       <p class="mb-15 pd-l-1 txt-white"> Find out <span style="color:blue"> What's new</span> </p>
-        <select class= "mb-7 "style=" width: 200px ;height: 50px;">
-        <option>Sign in</option>
-         <option>Sign out</option>
-        </select>
-        <!-- mobile img header -->
-        <div class="shake mb-15">
-                <div><img class="element" src="../img/40 by 40.png"></div>
-        </div>
-    </div>
+  <div style="float: right; display:flex;" >
+     <p class="mb-15 pd-l-1 txt-white"> Find out <span style="color:blue"> What's new</span> </p>
+      <div id="loginbtn">
+        <button class= "mb-7 " style=" width: 200px ;height: 50px;" onclick="showLogin()">SignIn</button>
+      </div>
+      
+      <div class="col-xs-10" id="profileinfo" style="display:none">
+        <img class="hidden-xs mb-7 pd-l-1" style="border-radius:50%;height:40px; float:right" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell">
+        <!-- <p  class ="mb-7 pd-l-1" id="profilename"> ABC </p> -->
+          <div class ="mb-7 pd-l-1" style="float: right; display:flex;">
+            <a class="dropdown-toggle" id="profilename" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id ="user_name"></span>
+            <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="profilename">
+              <li><a href="#" onclick=profile()>Profile</a></li>
+              <li><a onclick=logout() href="#">Logout</a></li>
+            </ul>
+          </div>  
+      </div>
+      <script>
+      $(document).ready(function(){
+    var username=sessionStorage.getItem('user_name');
+    if(username) {
+             $('#loginbtn').hide();
+      $('#profileinfo').show();
+    }
+
+        $('#user_name').html(sessionStorage.getItem('user_name'));
+      });
+        function logout(){
+          sessionStorage.removeItem('u_id');
+          sessionStorage.removeItem('user_status');
+          sessionStorage.removeItem('user_name');
+    window.location="https://auknest.com/index.php"
+        }
+      function profile(){
+        console.log("Into profile..........");
+        var profile_uid=sessionStorage.getItem("u_id");
+        // var user_name=sessionStorage.getItem("user_name");
+
+        console.log("Profile uid..........***", profile_uid);
+        window.location="https://auknest.com/profile.php?u_id="+profile_uid;
+
+      }
+      </script>
+    
+      <!-- mobile img header -->
+      <div class="shake mb-15">
+              <div><img class="element" src="../img/40 by 40.png"></div>
+      </div>
+  </div>
 </div>
 <!-- White menu -->
 

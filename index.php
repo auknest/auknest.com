@@ -9,62 +9,107 @@
 
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 center" style="text-align:center">
-            <button class="yellow-search-btn" style="display:inline-block"><b>PG</b></button>
-            <button class="yellow-search-btn" style="display:inline-block"><b>FLAT</b></button>
-            <button class="yellow-search-btn" style="display:inline-block"><b>PROPERTY</b></button>
+            <button class="yellow-search-btn"  onclick=pgsearchblock(); style="display:inline-block"><b>PG</b></button>
+            <button class="yellow-search-btn" onclick=flatsearchblock(); style="display:inline-block"><b>FLAT</b></button>
+            <button class="yellow-search-btn" onclick=buildsearchblock(); style="display:inline-block"><b>PROPERTY</b></button>
         </div>
         <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
 
         </div>
     </div>
+   
         <!-- Search setion -->
         <div class="row" >
             <div class="col-sm-1 col-md-2 col-lg-2">
 
             </div>
             <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
-                <div class="row">
+            <!-- Only pg search -->
+                <div id="pgsearch" class="row" style="display:none" >
                     <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                        <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <select id="pgfor" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of PG</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
+                        <option value="Girls">Girls</option>
+                        <option value="Boys">Boys</option>
+                        <option value="Both">Both</option>
                         </select>
                     </div>
                     <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue">
-                        <!-- <div id="custom-search-input">
+                        <div id="custom-search-input">
                             <div class="input-group">
-                            <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
-                            <input type="hidden" name="lat">
-                            <input type="hidden" name="long">
+                            <input id="autocomplete_searchpg" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
                             </div>
                         </div>
-                            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg96FAwQbNkb27GHxpGZUIljiOnf78hwc&libraries=places"></script>
-                            <script>
-                            google.maps.event.addDomListener(window, 'load', initialize);
-                            function initialize() {
-                            var input = document.getElementById('autocomplete_search');
-                            var autocomplete = new google.maps.places.Autocomplete(input);
-                            autocomplete.addListener('place_changed', function () {
-                            var place = autocomplete.getPlace();
-                            // place variable will have all the information you are looking for.
-                            $('#lat').val(place.geometry['location'].lat());
-                            $('#long').val(place.geometry['location'].lng());
-                            });
-                            }
-                            </script> -->
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                        <select class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <select id="elementIdpg" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Budget</option>
-                        <option value="1">< 5000</option>
-                        <option value="2">> 5000</option>
+                        <option value="min=0&max=5000">< 5000</option>
+                        <option value="min=5000&max=10000">> 5000</option>
                         </select>
                     </div>
                 
                     <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                        <button type="submit" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
-                    <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+                        <button type="submit" onclick="searchpgdetails('pg')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
+                    </div>
+                </div>
+                <!-- Only flat -->
+                <div id="flatsearch" class="row" style="display:none" >
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <select id="flattype" class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Type Of Flat</option>
+                        <option value="1 RK">1RK</option>
+                        <option value="1 BHK">1BHK</option>
+                        <option value="2 BHK">2BHK</option>
+                        <option value="3 BHK">3BHK</option>
+                        <option value="4 BHK">4BHK</option>
+                        <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue">
+                        <div id="custom-search-input">
+                            <div class="input-group">
+                            <input id="autocomplete_searchflat" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <select id="elementIdflat" class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Budget</option>
+                        <option value="min=0&max=5000">< 5000</option>
+                        <option value="min=5000&max=10000">> 5000</option>
+                        </select>
+                    </div>
+                
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <button type="submit" onclick="searchpgdetails('flat')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
+                    </div>
+                </div>
+                <!-- Only build -->
+                <div id="buildsearch" class="row" style="display:none" >
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <select id="elementIdbuild" class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Type Of property</option>
+                        <option value="building">building</option>
+                        <option value="pg-to-pg">Pg-Pg</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue" >
+                        <div id="custom-search-input">
+                            <div class="input-group">
+                            <input id="autocomplete_searchbuild" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10" style="display:none" >
+                        <select id="elementIdbuild" class="browser-default custom-select select-pg back-color-blue white-font" >
+                        <option selected>Budget</option>
+                        <option value="min=0&max=500000" selected>< 5000</option>
+                        </select>
+                    </div> -->
+                
+                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                        <button type="submit" onclick="searchpgdetails('build')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
                     </div>
                 </div>
             </div>
@@ -74,7 +119,30 @@
         </div>
     
 </div>
+<script>
+    function searchpgdetails(type){
+        if(type=='pg'){
+        var val=$("#elementIdpg :selected").val();
+        var pgfor=$("#pgfor :selected").val();
+        var loc=$('#autocomplete_searchpg').val();
+        window.location.href="./searchlist.php?pro_type="+type+"&loc="+loc+"&"+val+"&pg_for="+pgfor;
 
+        }
+        if(type=='flat'){
+        var val=$("#elementIdflat :selected").val();
+        var flattype=$("#flattype :selected").val();
+        var loc=$('#autocomplete_searchflat').val();
+        window.location.href="./searchlist.php?pro_type="+type+"&loc="+loc+"&"+val+"&flat_room_type="+flattype;
+
+        }
+        if(type=='build'){
+            // var val="min=0&max=5000000";
+            var subtype=$("#elementIdbuild :selected").val();
+            var loc=$('#autocomplete_searchbuild').val();
+            window.location.href="./searchlist.php?pro_type="+subtype+"&loc="+loc+"&min=0&max=5000000";
+        }
+    }
+</script>
 <!-- Login Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none;" id="login">
 
@@ -832,6 +900,22 @@ $( "#ajax-changePass" ).click(function(e) {
     }
 });
 
+function pgsearchblock(){
+        $('#pgsearch').show();
+        $('#flatsearch').hide();   
+        $('#buildsearch').hide();    
+}
+function flatsearchblock(){
+        $('#flatsearch').show();     
+        $('#pgsearch').hide();
+        $('#buildsearch').hide();     
+}
+function buildsearchblock(){
+        $('#flatsearch').hide();     
+        $('#pgsearch').hide();
+        $('#buildsearch').show();     
+}
+    
 
 </script>
 
@@ -842,4 +926,5 @@ $( "#ajax-changePass" ).click(function(e) {
 </div>
 </div>
 </div>
+<?php include 'footer.html';?>
 

@@ -31,6 +31,7 @@ var profiledetails = require('./routes/getapi/get_profileProdetails'); //To upda
 var getadminpgdetail = require('./routes/getapi/get_alladmin_pgdetails');
 var getadminuserdetail = require('./routes/getapi/get_total_user');
 var getuserinfo =require('./routes/getapi/get_user_info');
+var getsearchlist =require('./routes/getapi/get_search_pgdetails');
 
 
 //Post api
@@ -164,6 +165,7 @@ app.use('/get_profileProdetails', profiledetails); //To insert the profile detai
 app.use('/get_alladmin_pgdetails', getadminpgdetail); //To insert the profile details
 app.use('/get_total_user', getadminuserdetail); //To insert the profile details
 app.use('/get_user_info', getuserinfo); //To insert the profile details
+app.use('/get_search_pgdetails', getsearchlist); 
 
 
 

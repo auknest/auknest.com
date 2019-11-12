@@ -13,6 +13,7 @@ router.use(function(req, res, next) {
   console.log(".....................start......");
 //Need variable to categories images like a.jpg, b.jpg ... are the hall images.
 router.post('/', upload.array('imgs', 50), function (req, res, next) {
+  console.log("files.............", req.files);
 
        try {
         console.log("files.............", req.files.length);
@@ -28,25 +29,34 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
         }
         console.log("file name.............", multiplefiles);
            var img_type = req.body.img_type;
-          
+          console.log("image type..............", img_type);
            if(req.body.pro_type =="pg") {
              table="pgdetails";
+             var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
+
            }
            if(req.body.pro_type =="flat") {
             table="flatdetails";
+            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
+
           }
           if(req.body.pro_type =="building") {
             table="buildownerdetails";
+            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
+
           }
           if(req.body.pro_type =="pg_to_pg") {
             table="pgtopgdetails";
+            var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
+
           }
           if(req.body.pro_type =="roomate") {
             table="roomate";
+            var sql = 'INSERT INTO roomate SET '+img_type+'=?';
+
           }
           var val=JSON.stringify(multiplefiles);
           var sql1='SELECT '+img_type+' FROM '+table+' WHERE pro_id="'+req.body.pro_id+'" AND pro_type="'+req.body.pro_type+'"';
-          var sql = 'UPDATE ' +table+' SET ' +img_type+'=? WHERE pro_id=? AND pro_type=?';
           console.log("sql1......", sql1);
           console.log("sql......", sql);
 
@@ -60,6 +70,10 @@ router.post('/', upload.array('imgs', 50), function (req, res, next) {
               var blobdata=JSON.parse(result[0].washroom_img);
             } if(img_type=='balcony_img'){
               var blobdata=JSON.parse(result[0].balcony_img);
+            }
+            if(img_type=='room_img'){
+              console.log("!!!!!!!!!!!!!!!!!!!!!!",result[0]);
+              var blobdata=JSON.parse(result[0].room_img);
             }
             else {
               // var blobdata='';
