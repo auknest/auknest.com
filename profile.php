@@ -170,9 +170,18 @@ function loadProducts(type) {
 			console.log(res);
     // /	details = res.productInfo;
 			for (var i = 0; i < res.length; i++) {
+                if(res[i].status=='0'){
+                    res[i].status="Unverified";            
+                }
+                if(res[i].status=='1'){
+                    res[i].status="AUK Verified";            
+                }
+                if(res[i].status=='2'){
+                    res[i].status="Fet Verified";            
+                }
 
         if(res[i].pro_type=='pg'){
-
+          
           var yyyy="<div class=\"mb-tb-5per\">"+
           "<div class=\"row\">"+
           "<div class=\"col-sm-3 col-md-3 col-lg-3\">"+
@@ -235,6 +244,7 @@ function loadProducts(type) {
                               "<div class=\"row\">"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<p class=\"red-font center\">Status</p>"+
+                                      "<p id='status'>"+res[i].status+"</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<a class=\"mb_a w-100per\" href=\"\./postProperty\/pgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
@@ -243,7 +253,9 @@ function loadProducts(type) {
                                       '<button onclick=deletepro("'+res[i].pro_type+'","'+res[i].pro_id+'","'+res[i].u_id+'") class=\"w-100per center red-font back-color-yellow pd-5per\">Delete</button>'+
                                   "</div>"+
                           "</div>";   
+                         
                          $('#PG').append(yyyy);
+                        
         }
         if(res[i].pro_type=='flat'){
           var yyyy="<div class=\"mb-tb-5per\">"+
@@ -309,6 +321,7 @@ function loadProducts(type) {
                               "<div class=\"row\">"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<p class=\"red-font center\">Status</p>"+
+                                      "<p id='status'>"+res[i].status+"</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<a class=\"mb_a w-100per\" href=\"\./postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
@@ -383,6 +396,7 @@ function loadProducts(type) {
                               "<div class=\"row\">"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<p class=\"red-font center\">Status</p>"+
+                                      "<p id='status'>"+res[i].status+"</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<a class=\"mb_a w-100per\" href=\"\./postProperty\/buildalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
@@ -456,6 +470,7 @@ function loadProducts(type) {
                               "<div class=\"row\">"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<p class=\"red-font center\">Status</p>"+
+                                      "<p id='status'>"+res[i].status+"</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<a class=\"mb_a w-100per\" href=\"\./postProperty\/pgtopgalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+
@@ -466,9 +481,6 @@ function loadProducts(type) {
                           "</div>";
                         $('#pg_to_pg').append(yyyy);
           }
-
-
-
 			}
 		},
 		error: function(err) {
@@ -504,6 +516,8 @@ function deletepro(pro_type, id, uid){
 
 
 $(document).ready(function(){
+
+ 
   var parm=window.location.search.substring(1);
   var url_parm = parm ? parm : '';
   $.ajax({

@@ -1,4 +1,4 @@
-<?php include 'propertymenubar.html'?>
+<?php include 'propertymenubar.php'?>
 <style>
     body{
         background:#f3f4f9;

@@ -125,7 +125,15 @@
 			console.log(res);
     // /	details = res.productInfo;
 			for (var i = 0; i < res.length; i++) {
-
+                if(res[i].status=='0'){
+                    res[i].status="Unverified";            
+                }
+                if(res[i].status=='1'){
+                    res[i].status="AUK Verified";            
+                }
+                if(res[i].status=='2'){
+                    res[i].status="Fet Verified";            
+                }
         if(res[i].pro_type=='flat'){
 			console.log("..................");
 

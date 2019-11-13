@@ -78,7 +78,7 @@ session_start();
       
         <!-- mobile img header -->
         <div class="shake mb-15">
-                <div><img class="element" src="img/40 by 40.png"></div>
+        <div><img class="element" src="https://auknest.com/img/40 by 40.png"></div>
         </div>
     </div>
 </div>
