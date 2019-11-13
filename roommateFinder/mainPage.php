@@ -344,8 +344,8 @@
                     $('#freshAds').append('<div class="item">'+
                                                 '<div class="mb-15 pd-2" style="box-shadow:1px 1px 10px gray">'+
                                                     '<div class="profile-img">'+
-                                                            '<img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="http://tivatheme.com/wordpress/wp-content/plugins/tiva-testimonials-slider/images/agnes.jpg" alt="Agnes A. Bell"> '+        
-                                                            '<input type="text" placeholder="Sahil">'+
+                                                            '<img class="mb-20" style="border-radius:50%;height:75px; width:75px" src="https://www.voltadiagno.com/images/contact.png" alt="roomprofilename"> '+        
+                                                            '<input type="text" placeholder='+res[i].user_name+'>'+
                                                     '</div>'+
                                                     '<div >'+
                                                         '<p class="font-14 justify1">'+res[i].r_descr+'</p>'+

@@ -24,9 +24,13 @@ router.get('/', (req,res) =>{
     }
     if(req.query.pro_type=='building'){
         table="buildownerdetails";
+        var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.pro_address LIKE '%"+req.query.loc+"%' AND p2.expected_rent BETWEEN '"+req.query.min+"' AND '"+req.query.max+"')";
+
     }
     if(req.query.pro_type=='pg_to_pg'){
         table="pgtopgdetails";
+        var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.pro_address LIKE '%"+req.query.loc+"%' AND p2.expected_rent BETWEEN '"+req.query.min+"' AND '"+req.query.max+"')";
+
     }
     //If body parameter getting.
         // var cond="WHERE p1.pro_type='"+req.query.pro_type+"' AND (p1.pro_address LIKE '%"+req.query.loc+"%' AND p2.expected_rent BETWEEN '"+req.query.min+"' AND '"+req.query.max+"')";
