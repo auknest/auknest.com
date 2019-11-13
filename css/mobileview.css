@@ -69,6 +69,10 @@ margin: 0px 10px;
 .btn-property {
   width:170px !important;  
 }
+.signInbtn{
+  width: 100px;
+  height: 35px;
+}
 }
 @media screen and (max-width: 767px) {
   .mb-align{

@@ -17,16 +17,15 @@
 
         </div>
     </div>
-   
         <!-- Search setion -->
         <div class="row" >
             <div class="col-sm-1 col-md-2 col-lg-2">
 
             </div>
             <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
-            <!-- Only pg search -->
+				         <!-- Only pg search -->
                 <div id="pgsearch" class="row" style="display:none" >
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
                         <select id="pgfor" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of PG</option>
                         <option value="Girls">Girls</option>
@@ -34,28 +33,29 @@
                         <option value="Both">Both</option>
                         </select>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue">
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-6 mb-tb-10 back-color-blue">
                         <div id="custom-search-input">
                             <div class="input-group">
                             <input id="autocomplete_searchpg" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
-                            </div>
+							</div>	
                         </div>
-                    </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                        <select id="elementIdpg" class="browser-default custom-select select-pg back-color-blue white-font" >
+					</div>
+					
+					<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+						                       <select id="elementIdpg" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Budget</option>
                         <option value="min=0&max=5000">< 5000</option>
                         <option value="min=5000&max=10000">> 5000</option>
                         </select>
                     </div>
                 
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 mb-tb-10">
                         <button type="submit" onclick="searchpgdetails('pg')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
                     </div>
                 </div>
                 <!-- Only flat -->
                 <div id="flatsearch" class="row" style="display:none" >
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
                         <select id="flattype" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of Flat</option>
                         <option value="1 RK">1RK</option>
@@ -66,14 +66,14 @@
                         <option value="Others">Others</option>
                         </select>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue">
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-6 mb-tb-10 back-color-blue">
                         <div id="custom-search-input">
                             <div class="input-group">
                             <input id="autocomplete_searchflat" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 mb-tb-10">
                         <select id="elementIdflat" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Budget</option>
                         <option value="min=0&max=5000">< 5000</option>
@@ -81,34 +81,35 @@
                         </select>
                     </div>
                 
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
-                        <button type="submit" onclick="searchpgdetails('flat')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
+                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 mb-tb-10">
+                    	<button type="submit" onclick="searchpgdetails('flat')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
                     </div>
                 </div>
                 <!-- Only build -->
                 <div id="buildsearch" class="row" style="display:none" >
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
                         <select id="elementIdbuild" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of property</option>
                         <option value="building">building</option>
                         <option value="pg-to-pg">Pg-Pg</option>
                         </select>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 mb-tb-10 back-color-blue" >
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-6 mb-tb-10 back-color-blue" >
                         <div id="custom-search-input">
+							
                             <div class="input-group">
                             <input id="autocomplete_searchbuild" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
-                            </div>
-                        </div>
                     </div>
-                    <!-- <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10" style="display:none" >
+                </div>
+            </div>
+					                    <!-- <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 mb-tb-10" style="display:none" >
                         <select id="elementIdbuild" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Budget</option>
                         <option value="min=0&max=500000" selected>< 5000</option>
                         </select>
                     </div> -->
                 
-                    <div class="col-sm-2 col-md-2 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 mb-tb-10">
                         <button type="submit" onclick="searchpgdetails('build')" class="back-color-white select-pg w-100per" >SEARCH <i class="fa fa-search" style="color: #01527d"></i></button>
                     </div>
                 </div>
@@ -144,7 +145,7 @@
     }
 </script>
 <!-- Login Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none;" id="login">
+<div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="login">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
@@ -193,7 +194,7 @@
 
 </div>
 <!-- Sign Up Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none" id="signup">
+<div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="signup">
     
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
@@ -258,7 +259,7 @@
 </div>
 
 <!--Forgot Password Section-->
-<div class="row w-100per"style="position:absolute; display:none; top:300px;" id="forgot">
+<div class="row w-100per"style="position:absolute; display:none; top:300px; z-index: 100;" id="forgot">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
@@ -291,7 +292,7 @@
 
 <!--Change Password-->
 
-<div class="row w-100per"style="position:absolute; display:none; top:300px;" id="changePass">
+<div class="row w-100per"style="position:absolute; display:none; top:300px; z-index: 100;" id="changePass">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
@@ -332,7 +333,7 @@
 </div>
 
 <!-- OTP Section -->
-<div class="row w-100per"style="position:absolute; top:300px; display:none" id="otp">
+<div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="otp">
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
     <div class="col-sm-8 col-md-8 col-lg-8 " style="background: rgba(255,255,255,0.8);height:300px;">
         <div class="row">
