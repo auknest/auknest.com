@@ -55,7 +55,7 @@ router.get('/', (req,res) =>{
                 var cond="WHERE p1.pro_locality='"+req.query.loc+"' AND p1.property_status=0";
             }
             else{
-            var cond="WHERE 1=1 AND p1.property_status=3";
+            var cond="WHERE 1=1 AND p1.property_status=0";
             }
             var sql="SELECT p1.*, p2.* FROM property AS p1 LEFT JOIN "+table+" AS p2 ON p1.pro_id=p2.pro_id "+cond;
         }

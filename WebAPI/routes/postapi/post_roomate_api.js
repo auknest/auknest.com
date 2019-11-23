@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 router.post('/',(req, res) => {
  
   var timestamp=Math.floor(new Date().getTime()/1000.0);
-  console.log("timestamp...", req.body);
+  console.log("timestamp...", timestamp);
   // var dateUTC = new Date(timestamp * 1000);
   // var dateUTC = dateUTC.getTime() 
   // var dateIST = new Date(dateUTC);
@@ -22,24 +22,13 @@ router.post('/',(req, res) => {
   // dateIST.setMinutes(dateIST.getMinutes() + 30);
   // console.log("min..............", dateIST);
 
-// if(req.body.post_id){
-//   values={
-//   "post_id":req.body.post_id
-//   };
-//   var sql ='INSERT INTO roomate SET ?';
 
-// }
-// else{
   values = {
     "r_descr":req.body.r_descr,
     "time":timestamp,
-    "u_id":req.body.u_id,
-    "post_id":req.body.post_id
-
+    "u_id":"1",
   };
-  var sql ='UPDATE roomate SET ? WHERE post_id="'+req.body.post_id+'"';
-
-// }
+  var sql ='INSERT INTO roomate SET ?';
 console.log("sql......", sql);
   try {
         con.query(sql, values, function (error, results, fields) {
