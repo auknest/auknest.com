@@ -25,7 +25,7 @@
             <div class="col-sm-10 col-md-8 col-lg-8 back-color-blue" style="opacity:0.9">
 				         <!-- Only pg search -->
                 <div id="pgsearch" class="row" style="display:none" >
-                    <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 mb-tb-10">
                         <select id="pgfor" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of PG</option>
                         <option value="Girls">Girls</option>
@@ -87,10 +87,10 @@
                 </div>
                 <!-- Only build -->
                 <div id="buildsearch" class="row" style="display:none" >
-                    <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 mb-tb-10">
                         <select id="elementIdbuild" class="browser-default custom-select select-pg back-color-blue white-font" >
-                        <option selected>Type Of property</option>
-                        <option value="building">building</option>
+                        <option selected>Type Of Property</option>
+                        <option value="building">Building</option>
                         <option value="pg-to-pg">Pg-Pg</option>
                         </select>
                     </div>
@@ -148,7 +148,7 @@
 <div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="login">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.9);height:300px;">
     <div class="row">
         <button type="button" onclick="closeform()" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -197,7 +197,7 @@
 <div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="signup">
     
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.9);height:300px;">
         <div class="row">
             <button  onclick="closeform()" type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -262,7 +262,7 @@
 <div class="row w-100per"style="position:absolute; display:none; top:300px; z-index: 100;" id="forgot">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.9);height:300px;">
     <div class="row">
         <button type="button" onclick="closeform()" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -283,7 +283,7 @@
         </div>
       </form> <br>
       <div class="row center">
-            <label type="text" id="resetPass" class="form-control email-link" style="color:red; display:none;">"RESET PASSWORD LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO RESET YOUR PASSWORD" </label>
+            <label type="text" id="resetPass" class="email-link" style="color:red; display:none;">"RESET PASSWORD LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO RESET YOUR PASSWORD" </label>
         </div>   
     </div>
     
@@ -295,7 +295,7 @@
 <div class="row w-100per"style="position:absolute; display:none; top:300px; z-index: 100;" id="changePass">
 
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="col-sm-8 col-md-8 col-lg-8" style="background: rgba(255,255,255,0.9);height:300px;">
     <div class="row">
         <button type="button" onclick="closeform()" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -325,7 +325,7 @@
         </div>
       </form> <br>
       <div class="row center">
-            <label type="text" id="passChange" class="form-control email-link" style="color:red; display:none;">"YOUR PASSWORD HAS BEEN CHANGED, PLEASE LOGIN WITH NEW PASSWORD!" </label>
+            <label type="text" id="passChange" class="email-link" style="color:red; display:none;">"YOUR PASSWORD HAS BEEN CHANGED, PLEASE LOGIN WITH NEW PASSWORD!" </label>
         </div>   
     </div>
     
@@ -335,7 +335,7 @@
 <!-- OTP Section -->
 <div class="row w-100per"style="position:absolute; top:300px; display:none; z-index: 100;" id="otp">
     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="col-sm-8 col-md-8 col-lg-8 " style="background: rgba(255,255,255,0.8);height:300px;">
+    <div class="col-sm-8 col-md-8 col-lg-8 " style="background: rgba(255,255,255,0.9);height:300px;">
         <div class="row">
                         <button  onclick="closeform()" type="button" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -370,7 +370,7 @@
                 <span class="bold">OR</a></span>
             </div><br>
             <div class="row center " >
-                <label type="text" id="verifyMsg" class="form-control email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
+                <label type="text" id="verifyMsg" class="email-link" style="color:red;">"A VERIFICATION LINK HAS BEEN SEND TO YOUR EMAIL ID PLEASE CLICK ON THE LINK TO VERIFY YOUR EMAIL ID" </label>
             </div>
         </form>
     </div>
