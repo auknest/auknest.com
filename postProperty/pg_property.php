@@ -1,4 +1,4 @@
-<?php include 'propertymenubar.html'?>
+<?php include 'propertymenubar.php'?>
 <div class="a">
 <?php include 'submenu.html'?>
 </div>

@@ -1,4 +1,7 @@
-<?php include 'menu.html';?>
+
+<?php include '../menu.html';?>
+
+</div>
 </div>
 <div class="row pd-5per" >
     <!-- search menu -->
@@ -204,6 +207,8 @@
                             "<div class=\"row\">"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<p class=\"red-font center\">Status</p>"+
+                                    "<p id='status'>"+res[i].property_status+"</p>"+
+
                                 "</div>"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<button class=\"w-100per center red-font back-color-yellow pd-5per\" onclick=contactowner()>Contact Owner</button>"+
@@ -442,13 +447,13 @@ console.log("parm value.........",arr);
 
     console.log("Into pro details function...................");
     if(type=='pg'){
-    window.open("./searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
+    window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
     } 
     if(type=='flat'){
-    window.open("./searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+    window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
     } 
     if(type=='bulid'){
-    window.open("./searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+    window.open("../searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
     } 
 }
 </script>

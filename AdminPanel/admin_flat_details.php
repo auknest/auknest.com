@@ -125,14 +125,14 @@
 			console.log(res);
     // /	details = res.productInfo;
 			for (var i = 0; i < res.length; i++) {
-                if(res[i].status=='0'){
-                    res[i].status="Unverified";            
+                if(res[i].property_status=='0'){
+                    res[i].property_status="Unverified";            
                 }
-                if(res[i].status=='1'){
-                    res[i].status="AUK Verified";            
+                if(res[i].property_status=='1'){
+                    res[i].property_status="AUK Verified";            
                 }
-                if(res[i].status=='2'){
-                    res[i].status="Fet Verified";            
+                if(res[i].property_status=='2'){
+                    res[i].property_status="Fet Verified";            
                 }
         if(res[i].pro_type=='flat'){
 			console.log("..................");
@@ -196,6 +196,7 @@
                               "<div class=\"row\">"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<p class=\"red-font center\">Status</p>"+
+                                      "<p id='status'>"+res[i].property_status+"</p>"+
                                   "</div>"+
                                   "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                       "<a href=\"\../postProperty\/flatalldetails.php?u_id="+res[i].u_id+"&pro_type="+res[i].pro_type+"&pro_id="+res[i].pro_id+"\" ><button class=\"w-100per center red-font back-color-yellow pd-5per\">Details</button></a>"+

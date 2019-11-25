@@ -3,7 +3,7 @@
 <div class="row pd-5per" >
     <!-- search menu -->
     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <form action="" method="POST">
+        <form>
         <div>Locality<br>
         <input id="searchloc" type="text" placeholder="Search.." name="search"><i class="fa fa-search"></i>
         </div>
@@ -118,7 +118,7 @@
         </div>
 		<div id="building" class="tabcontent">
         </div>
-        
+		
 </div>
     <!-- Advertise -->
     <div class="col-xs-12 col-md-2 col-lg-2"></div>
@@ -132,7 +132,7 @@
         console.log("parm............", parm);
 
     $.ajax({
-		url:"http://localhost:3000/get_search_pgdetails"+parm+"",
+		url:"https://api.auknest.com/get_search_pgdetails"+parm+"",
 		type: 'GET',
 		dataType: 'JSON',
 		success: function(res) {
@@ -141,11 +141,11 @@
 			console.log(res);
     for (var i = 0; i < res.length; i++) 
     {
-        if(res[i].pro_type=='pg'){
+		if(res[i].pro_type=='pg'){
 			if(res[i].property_status=='1' || res[i].property_status=='2'){
-               res[i].property_status="AUK Verified";        
+               res[i].property_status="AUK Verified";            
         var yyyy="<div class=\"mb-tb-5per a\">"+
-        "<div class=\"row\" onclick=prodetails('"+res[i].u_id+"','"+res[i].pro_type+"','"+res[i].pro_id+"');>"+
+        "<div class=\"row \" onclick=prodetails('"+res[i].u_id+"','"+res[i].pro_type+"','"+res[i].pro_id+"');>"+
          "<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">"+
             "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
                 "<div class=\"row\">"+
@@ -153,7 +153,7 @@
                         res[i].pro_type+"&nbsp; for &nbsp;<span id=\"pg_for\">"+res[i].pg_for+"</span><br>"+
                         "<span id=\"result\"></span>"+
 
-                        "<span>"+res[i].pro_locality+","+res[i].pro_city+"</span>"+
+                        "<span>"+res[i].pro_locality+", "+res[i].pro_city+"</span>"+
                     "</div>"+
                 "</div>"+
                 "<hr style=\"margin-top:0px !important\">"+
@@ -211,7 +211,7 @@
                                
                         "</div>";   
                         $('#PG').append(yyyy);
-                        		}//end if
+			}//end if
    	 }//if of PG ends
 		//Flat
 		if(res[i].pro_type=='flat'){
@@ -276,7 +276,6 @@
                             "<div class=\"row\">"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<p class=\"red-font center\">Status</p>"+
-                                    "<p id='status'>"+res[i].property_status+"</p>"+
                                 "</div>"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<button class=\"w-100per center red-font back-color-yellow pd-5per\" onclick=contactowner()>Contact Owner</button>"+
@@ -347,7 +346,6 @@
                             "<div class=\"row\">"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<p class=\"red-font center\">Status</p>"+
-                                    "<p id='status'>"+res[i].property_status+"</p>"+
                                 "</div>"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<button class=\"w-100per center red-font back-color-yellow pd-5per\" onclick=contactowner()>Contact Owner</button>"+
@@ -417,7 +415,6 @@
                             "<div class=\"row\">"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<p class=\"red-font center\">Status</p>"+
-                                    "<p id='status'>"+res[i].property_status+"</p>"+
                                 "</div>"+
                                 "<div class=\"col-sm-12 col-md-4 col-lg-4 center\">"+
                                     "<button class=\"w-100per center red-font back-color-yellow pd-5per\" onclick=contactowner()>Contact Owner</button>"+
@@ -426,12 +423,12 @@
                         "</div>";   
                         $('#pg_to_pg').append(yyyy);
    	 }//if of pg_to_pg ends
-    }
+	}
         }
 
         });
     });
-    function contactowner(){
+function contactowner(){
 	event.stopPropagation();
 	console.log("Click from Contact Owner");
 }

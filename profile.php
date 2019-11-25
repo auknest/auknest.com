@@ -553,6 +553,8 @@ $(document).ready(function(){
         success : function(response) {
                 console.log('Sucess In AJAX profile post api...');
                 console.log(response);
+                sessionStorage.setItem("user_name", $('#name').val());
+                location.reload();
                 // $('#name').val(response[0].name); 
                 // $('#email').val(response[0].email); 
                 // $('#phone').val(response[0].phone); 

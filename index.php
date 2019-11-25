@@ -126,21 +126,21 @@
         var val=$("#elementIdpg :selected").val();
         var pgfor=$("#pgfor :selected").val();
         var loc=$('#autocomplete_searchpg').val();
-        window.location.href="./searchlist.php?pro_type="+type+"&loc="+loc+"&"+val+"&pg_for="+pgfor;
+        window.location.href="./searchpg/searchlistpg.php?pro_type="+type+"&loc="+loc+"&"+val+"&pg_for="+pgfor;
 
         }
         if(type=='flat'){
         var val=$("#elementIdflat :selected").val();
         var flattype=$("#flattype :selected").val();
         var loc=$('#autocomplete_searchflat').val();
-        window.location.href="./searchlist.php?pro_type="+type+"&loc="+loc+"&"+val+"&flat_room_type="+flattype;
+        window.location.href="./searchpg/searchlistflat.php?pro_type="+type+"&loc="+loc+"&"+val+"&flat_room_type="+flattype;
 
         }
         if(type=='build'){
             // var val="min=0&max=5000000";
             var subtype=$("#elementIdbuild :selected").val();
             var loc=$('#autocomplete_searchbuild').val();
-            window.location.href="./searchlist.php?pro_type="+subtype+"&loc="+loc+"&min=0&max=5000000";
+            window.location.href="./searchpg/searchlistbuild.php?pro_type="+subtype+"&loc="+loc+"&min=0&max=5000000";
         }
     }
 </script>
