@@ -1,3 +1,6 @@
+form .error {
+    color: #ff0000;
+  }
 /* Casing of the Text */
 .capital{
     text-transform: capitalize;

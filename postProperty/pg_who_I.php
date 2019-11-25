@@ -13,17 +13,19 @@
     <div class="box-outline mb-tb-5per">
    
         <!-- Text property heading -->
+        <form id="whoI" method="POST">
         <center><div class="mb-tb-5per">
                     <label class="txtbox-property-heading back-color-blue white-font ">I AM</label>
                 </div>
         </center>
+        <div id="pro_person_validate" class="center"></div>
         <!-- Types og property -->
         <div class="row center-desktop">
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="Owner"><span class="select-txt">Owner</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="Owner" required><span class="select-txt">Owner</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
-              <input type="radio" id ="pro_person" name="pro_person" value="Agent / Broker" disabled><span class="select-txt" >Agent / Broker</span>
+              <input type="radio" id ="pro_person" name="pro_person" value="Agent / Broker" disabled ><span class="select-txt" >Agent / Broker</span>
             </div>
             <div class="col-sm-12 col-md-4 mb-tb-3per">
               <input type="radio" id ="pro_person" name="pro_person" value="Builder" disabled><span class="select-txt"  >Builder</span>
@@ -39,14 +41,12 @@
           <button  id="ajax_who" class="btn-property back-color-yellow red-font">Save & Continue</button>
         </center>
     </div>
+  </form>
 </div>
 </div>
 
 <script>
-
     $(document).ready(function () {
-      
-
       if(sessionStorage.getItem('status')==1)
       {
         var serverData1= {
@@ -69,6 +69,9 @@
         });
       }
       $('#ajax_who').click( function(e){
+        var form = $("#whoI");
+        // form.validate();
+        if(form.valid()==true){
         e.preventDefault();
          var pro_person = $("input:radio[id=pro_person]:checked").val();
          var serverData = {"pro_person" : pro_person,
@@ -98,9 +101,25 @@
                   console.log('Error In AJAX...');
                 },
          });
-
+        }//if close
 
       });
 
+    });//Ready Function CLosed
+    //Form Validation Function
+    $(function validate(){
+      var rules = {
+            rules: {
+              pro_person: "required"
+            },
+            messages: {
+              pro_person: "Please Select One of these Options!",
+            },
+            errorPlacement: function (error, element) {
+                var name = $(element).attr("name");
+                error.appendTo($("#" + name + "_validate"));
+            }
+        };
+        $("#whoI").validate(rules);
     });
 </script>

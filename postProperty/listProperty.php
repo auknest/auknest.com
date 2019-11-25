@@ -14,22 +14,22 @@ $_SESSION['pro_id']= uniqid();
                 </div>
         </center>
         <!-- Types og property -->
-        <form name="myform" method="POST">
+        <form name="myform" id="listForm" method="POST">
+        <div id="pro_type_validate" class="center"></div>
         <div class="row">
             <div class="col-sm-6 col-md-2 cntr-desk-list">
-              <input type="radio" id="pro_type" name="pro_type" value="pg"><span class="select-txt">PG</span>
+              <input type="radio" id="pro_type" name="pro_type" value="pg" required><span class="select-txt">PG</span>
             </div>
             <div class="col-sm-6 col-md-3 cntr-desk-list">
-              <input type="radio" id="pro_type" name="pro_type" value="flat"><span class="select-txt">Flat</span>
+              <input type="radio" id="pro_type" name="pro_type" value="flat" required><span class="select-txt">Flat</span>
             </div>
             <div class=" col-sm-6 col-md-4 cntr-desk-list">
-              <input type="radio" id="pro_type" name="pro_type" value="building"><span class="select-txt">For Building Owner</span>
+              <input type="radio" id="pro_type" name="pro_type" value="building" required><span class="select-txt">For Building Owner</span>
             </div>
             <div class="col-sm-6 col-md-3 cntr-desk-list">
-              <input type="radio" id="pro_type" name="pro_type" value="pg_to_pg"><span class="select-txt">PG to PG</span>
+              <input type="radio" id="pro_type" name="pro_type" value="pg_to_pg" required><span class="select-txt">PG to PG</span>
             </div>
         </div>
-      
     </div> <!--box close-->
     <div class="width-eighty m-auto">
         <center>
@@ -40,9 +40,6 @@ $_SESSION['pro_id']= uniqid();
 
 </div>
 <script>
-  
-
-
   $(document).ready(function() {
     var id;
     var parm=window.location.search.substring(1);
@@ -85,37 +82,55 @@ $_SESSION['pro_id']= uniqid();
  }
 
    $('#ajax_pro_type').click(function(e){ 
+    var form = $( "#listForm" );
+    if(form.valid()==true){
+      e.preventDefault();
+      var serverData = {"pro_type" : $("input:radio[id=pro_type]:checked").val(),
+                        "pro_id"   : id,
+                        "status": status,
+                        "u_id":sessionStorage.getItem('u_id')
+                      };
+      $.ajax({
+                  type: "POST",
+                  url: 'http://localhost:3000/post_pro_type',						   
+                  data:serverData,
+                  cache: false,
+                  timeout: 5000,
+                  complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                  },
+                  success: function(res) {
+                    window.location.href = "pg_who_I.php";
+                    console.log('Property type Sucessfully inserted ...');
+                },
+                  error: function() {
+                    console.log('Error In AJAX...');
+                  },
+              });
+              
+              sessionStorage.setItem("pro_id", id);
+              sessionStorage.setItem("pro_type", $("input:radio[id=pro_type]:checked").val());
+              sessionStorage.setItem("status", status);
+      }//if close
+  });
+}); //Ready function close
 
-    e.preventDefault();
-    var serverData = {"pro_type" : $("input:radio[id=pro_type]:checked").val(),
-                      "pro_id"   : id,
-                      "status": status,
-                      "u_id":sessionStorage.getItem('u_id')
-                    };
-    $.ajax({
-                type: "POST",
-                url: 'http://localhost:3000/post_pro_type',						   
-                data:serverData,
-                cache: false,
-                timeout: 5000,
-                complete: function() {
-                  //called when complete
-                  console.log('process complete');
-                },
-                success: function(res) {
-                  window.location.href = "pg_who_I.php";
-                  console.log('Property type Sucessfully inserted ...');
-               },
-                error: function() {
-                  console.log('Error In AJAX...');
-                },
-            });
-            
-            sessionStorage.setItem("pro_id", id);
-            sessionStorage.setItem("pro_type", $("input:radio[id=pro_type]:checked").val());
-            sessionStorage.setItem("status", status);
-    });
-   
-  }); //Ready function close
-  
+//Form Validation Function
+$(function validate(){
+  var rules = {
+        rules: {
+          pro_type: "required"
+        },
+        messages: {
+          pro_type: "Please Select Property Type!",
+        },
+        errorPlacement: function (error, element) {
+            var name = $(element).attr("name");
+            error.appendTo($("#" + name + "_validate"));
+        }
+    };
+    $('#listForm').validate(rules);
+ });
+ 
 </script>
