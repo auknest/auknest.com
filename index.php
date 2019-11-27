@@ -58,11 +58,11 @@
                     <div class="col-xs-6 col-sm-2 col-md-3 col-lg-2 mb-tb-10">
                         <select id="flattype" class="browser-default custom-select select-pg back-color-blue white-font" >
                         <option selected>Type Of Flat</option>
-                        <option value="1 RK">1RK</option>
-                        <option value="1 BHK">1BHK</option>
-                        <option value="2 BHK">2BHK</option>
-                        <option value="3 BHK">3BHK</option>
-                        <option value="4 BHK">4BHK</option>
+                        <option value="1RK">1RK</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="4BHK">4BHK</option>
                         <option value="Others">Others</option>
                         </select>
                     </div>

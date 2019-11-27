@@ -129,3 +129,8 @@ function verifyStatus(sts,id,type){
     }
   });
 }
+
+function myFunction1(){
+  $(".filter").toggle();
+
+}

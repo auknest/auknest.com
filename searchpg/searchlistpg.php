@@ -2,110 +2,102 @@
 <?php include '../menu.html';?>
 
 </div>
+<script>
+    $( document ).ready(function() {
+
+    console.log("width..........", screen.width);
+    if(screen.width<450){
+        $('.filter').hide();
+    }
+    });
+</script>
+
 <div class="row pd-5per" >
     <!-- search menu -->
-    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
-        <form action="./searchpgfilter.php" method="POST">
-        <div>Locality<br>
-        <input id="searchloc" type="text" placeholder="Search.." name="search"><i class="fa fa-search"></i>
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction1()">Filter
+        <i class="fa fa-bars"></i>
+    </div>
+    <div class="col-sm-4 col-md-3 col-lg-3" style="background: #f1f1f1;">
+        <div class="filter">
+            <form action="./searchpgfilter.php" method="POST">
+                <div>Locality<br>
+                <input id="searchloc" type="text" placeholder="Search.." name="search"><i class="fa fa-search"></i>
+                </div>
+                <hr>
+                <div>Budget <br>
+                    <select name="select_budget" id="select_budget">
+                    <option value="null">MIN-MAX</option>
+                    <option min="0" max=5000>0-5000</option>
+                    <option min="5000" max="10000">5000-10000</option>
+                    <option min="10000" max="500000">10000-500000</option>
+                    </select>
+                </div>
+                <hr>
+                <div>BHK of Apartment</div>
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="Room System">Room System
+                        </div>
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="1BHK">1BHK
+                        </div>
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="2BHK">2BHK
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="3BHK">3BHK
+                        </div>
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="4BHK">4BHK
+                        </div>
+                        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="room_type" value="4+BHK">4+BHK
+                        </div>
+                    </div>
+                <hr>
+                <div>Looking for<br>
+                    <div class="row">
+                    <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="pg_for" value="Family">Both
+                        </div>
+                        <div class="col-xs-5 col-sm-3 col-md-6 col-lg-6 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="pg_for" value="Boys">Boys
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-3 col-md-4 col-lg-4 radio-inline font-16 black">
+                            <input type="radio" id="bathroom" name="pg_for" value="Girls">Girls
+                        </div>
+                    </div>     
+                </div>
+                <hr>
+                <div>Food include<br>
+                    <div class="row">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 bold black">
+                        <input type="radio" id="bathroom" name="food" value="Yes">Yes
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 bold black">
+                        <input type="radio" id="bathroom" name="food" value="No">No
+                    </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                        <button type="submit"> Reset </button>
+                    </div>
+                    <div class=" col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                        <button type="submit"> Submit </button>
+                    </div>
+                </div>
+                </form>
         </div>
-        <hr>
-        <div>Budget <br>
-            <select name="select_budget" id="select_budget">
-            <option value="">MIN-MAX</option>
-            <option value="0-5000">0-5000</option>
-            <option value="5000-10000">5000-10000</option>
-            <option value="10000-500000">10000-500000</option>
-            </select>
-            <!-- <select>
-            <option value="">Max</option>
-            <option value="volvo">5000</option>
-            <option value="volvo">10000</option>
-            <option value="volvo">20000</option>
-            </select> -->
-        </div>
-        <hr>
-        <div>BHK of Apartment</div>
-            <div class="row">
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="1RK">1RK
-                </div>
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="1BHK">1BHK
-                </div>
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="2BHK">2BHK
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="3BHK">3BHK
-                </div>
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="4BHK">4BHK
-                </div>
-                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="room_type" value="4+BHK">4+BHK
-                </div>
-            </div>
-        <hr>
-        <div>Looking for<br>
-            <div class="row">
-               <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="pg_for" value="Family">Both
-                </div>
-                <div class="col-xs-5 col-sm-3 col-md-6 col-lg-6 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="pg_for" value="Boys">Boys
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-xs-5 col-sm-3 col-md-4 col-lg-4 radio-inline font-16 black">
-                    <input type="radio" id="bathroom" name="pg_for" value="Girls">Girls
-                </div>
-            </div>     
-        </div>
-        <hr>
-        <div>Food include<br>
-            <div class="row">
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 bold black">
-                <input type="radio" id="bathroom" name="food" value="Yes">Yes
-            </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 bold black">
-                <input type="radio" id="bathroom" name="food" value="No">No
-            </div>
-            </div>
-        </div>
-
-        <hr>
-        <!-- <div>Furnishing<br>
-            <div class="row">
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 black">
-                <input type="radio" id="bathroom" name="bathroom" value="Yes">Furnished
-            </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 radio-inline font-16 black">
-                <input type="radio" id="bathroom" name="bathroom" value="No">Unfurnished
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-xs-8 col-sm-5 col-md-8 col-lg-8 radio-inline font-16 black">
-                <input type="radio" id="bathroom" name="bathroom" value="No">Semi-furnished
-            </div>
-            </div>
-        </div>
-        <hr> -->
-        <div class="row">
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                <button type="submit"> Reset </button>
-            </div>
-            <div class=" col-sm-3 col-md-3 col-lg-3">
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                <button type="submit"> Submit </button>
-            </div>
-        </div>
-        </form>
-    
     </div>
     <!-- search list -->
     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
@@ -140,12 +132,18 @@
                     console.log(res);
             for (var i = 0; i < res.length; i++) 
             {
-                if(res[i].pro_type=='pg')
+                if(res[i].pro_type=='pg' && res[i].property_status!='0')
                 {
-                    if(res[i].property_status=='1' || res[i].property_status=='2')
+                    if(res[i].property_status=='1')
                     {
-                    res[i].property_status="AUK Verified";        
-                        var yyyy="<div class=\"mb-tb-5per a\">"+
+                    res[i].property_status="AUK Verified";       
+                    }
+                    if(res[i].property_status=='2')
+                    {
+                    res[i].property_status="Fet Verified";       
+                    }
+                     
+                        var yyyy="<div class=\"mb-tb-5per \">"+
                         "<div class=\"row\" onclick=prodetails('"+res[i].u_id+"','"+res[i].pro_type+"','"+res[i].pro_id+"');>"+
                         "<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">"+
                             "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
@@ -213,10 +211,9 @@
                                             
                                         "</div>";   
                                         $('#PG').append(yyyy);
-                                                }//end if
-                    }//if of PG e verifiednds
-                }//if of PG end
-            }
+                                }//end if
+            }//end of for loop
+        },//end of success
         });
     });
     function contactowner()
