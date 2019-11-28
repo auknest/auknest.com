@@ -68,9 +68,8 @@
             <div class="col-sm-4 col-md-3 col-lg-3">
                 <div class='back-color-white pd-2 mb-7 center'>
                 <img src="../img/1 (8).png" class="img-responsive">
-                <div class="bold font-16" style="visiblity:hidden"> &nbsp; </div>
-
-                </div>   
+                <span id="usrcnt1" class="bold font-16"></span>
+            </div>   
             </div>
         </div>
     </div>
@@ -81,7 +80,10 @@
 		type: 'GET',
 		dataType: 'JSON',
 		success: function(res) {
+            console.log("res..........", res);
             $("#usrcnt").html(res[0].count);
+            $("#usrcnt1").html(res[0].n_count);
+
 			console.log("success");
            
         },

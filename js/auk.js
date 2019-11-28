@@ -134,3 +134,14 @@ function myFunction1(){
   $(".filter").toggle();
 
 }
+
+
+  // $( "#notification" ).load( "../AdminPanel/loginmenu.html", function() {
+  //   console.log( "Load was performed." );
+  // })
+//   // var not=document.getElementById("notification");
+
+//   // var x = document.createElement("LI");
+//   // var t = document.createTextNode("Coffee");
+//   // x.appendChild(t);
+//   // document.getElementById("notification").appendChild("abc");

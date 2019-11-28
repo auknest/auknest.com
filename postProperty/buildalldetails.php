@@ -274,8 +274,8 @@
         </div>
         <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 center">
             <div class="w-100per center red-font back-color-yellow pd-2">
-                <a href="listProperty.php">
-                    <p class="red-font">Submit</p>
+                <a href="#">
+                <p class="red-font" onclick=notification()>Submit</p>
                 </a>
             </div>  
         </div>

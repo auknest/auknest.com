@@ -11,13 +11,19 @@ router.use(function(req, res, next) {
 
 router.get('/', (req,res) =>{
 
- var sql ="SELECT count(id) as count, n_count FROM users";
-  console.log("query data.........",sql);
-  con.query(sql, (error, result) => {
-    if (error) throw error;
-    res.send(result);
+    console.log("Into  get notification api");
+    console.log(req.param);
 
-  });    
+    // var cond= "WHERE date";
+    var sql="SELECT * FROM notification ";
+    console.log(sql);
+    con.query(sql, (error, result) =>{
+        
+        if (error) throw error;
+
+        res.send(result);
+    });
+ 
+
 });
-
 module.exports = router; 

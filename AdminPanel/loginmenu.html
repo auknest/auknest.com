@@ -33,12 +33,39 @@
                         <ul class="dropdown-menu" aria-labelledby="profilename">
                           <li><a onclick=logout() href="#">Logout</a></li>
                         </ul>
-                      </div>  
+                      </div>                    
                   </div>
+                  <ul class="nav navbar-nav navbar-left ">
+                      <li class="dropdown ">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span  onclick=notificationmsg(); class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+                       <ul class="dropdown-menu" style="background-color: #00517e;" id="notification">                       
+                       </ul>
+                      </li>
+                  </ul>
     </div>
 </div>
 
 <script>
+     $(document).ready(function () {
+
+      // $('#notification').remove();
+        $.ajax({
+		url:"http://localhost:3000/get_total_user",
+		type: 'GET',
+		dataType: 'JSON',
+		success: function(res) {
+            console.log("res..........", res);
+            $(".count").html(res[0].n_count);
+
+			console.log("success into total user api");
+           
+        },
+            error: function(err) {
+			console.log("Error");
+			
+		}
+  });
+});
  function logout(){
             sessionStorage.removeItem('u_id');
             sessionStorage.removeItem('user_status');
@@ -51,5 +78,38 @@
 //  var name=parm.split("=");
 //  console.log("name user.......", name[0]);
 $('#user_name').html(sessionStorage.getItem('user_name'));
+
+function notificationmsg() {
+  $("#notification").html("");
+
+    var d = new Date();
+    var today=d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+    console.log("date............................", today);
+
+    var serverData={
+                "date":today,               
+            };
+            console.log(serverData);
+    $.ajax({
+                type:"GET",
+                url:"http://localhost:3000/get_notification",
+                data:serverData,
+                success: function(res){
+                    console.log("Successfully inserted data into notification", res);
+                    for(var i=0;i<res.length;i++){
+                      var no='<li onclick=showpro("'+res[i].pro_id+'","'+res[i].pro_type+'","'+res[i].u_id+'")><span class="white-font" style="margin-left:10%">'+res[i].n_msg+'</span></li>';
+                      $('#notification').append(no)
+                    }
+                },
+                error: function(e){
+                    console.log("Error into AJAX");
+                    console.log(e);
+                }
+            });
+ }
+
+function showpro(id,type,u){
+  window.location.href="../postProperty/pgalldetails.php?pro_id="+id+"&pro_type="+type+"&u_id="+u+"";
+}
 
 </script>
