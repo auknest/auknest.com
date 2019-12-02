@@ -41,21 +41,84 @@
                     <p><span id="avl_frm"></span></p>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 </div>
 <div class="pd-lr-1">
     <div class="row">
     <!-- Gallary Section -->
+    
     <div class="col-sm-6 col-md-6 col-lg-6 back-color-white">
         <div class=" ma-0-5per">
-            <img src="https://auknest.com/img/auknest.png" style="width:100%">
+        <div id="aimg">
+  <!-- <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img class="profile_img" src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="https://auknest.com/img/auknest.png" style="width:100%">
+  </div> -->
+    </div>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div id="thumbimg" class="row">
+    <!-- <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="https://auknest.com/img/auknest.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div> -->
+  </div>
+
+
+
+    
+            <!-- <img src="https://auknest.com/img/auknest.png" style="width:100%">
             <div>
                 <img src="https://auknest.com/img/auknest.png" style="width:24%">
                 <img src="https://auknest.com/img/auknest.png" style="width:24%">
                 <img src="https://auknest.com/img/auknest.png" style="width:24%">
                 <img src="https://auknest.com/img/auknest.png" style="width:24%">
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Features Section -->
@@ -459,17 +522,7 @@
             window.location.href="./searchlist.php"+par[2]+"&"+par[3]+"&"+par[3]+"";
             
         }
-        //code for verify the Property Status
-    // function verifyStatus1(status){
-    //     var id=par[2];
-    //     id=id.split('=');
-    //     id=id[1];
-    //     var type=par[1];
-    //     type=type.split('=');
-    //     type=type[1];
-    //     verifyStatus(status,id,type);
-    // }
-        $(document).ready(function(){   
+$(document).ready(function(){   
         var  Url = "http://localhost:3000/get_profileProdetails?"+url_parm;
         console.log("Url...", Url);
 
@@ -486,7 +539,7 @@
                     $('#descr').html(data[0].descr);
                     $('#expected_rent').html(data[0].expected_rent);
                     $('#floor_no').html(data[0].floor_no);
-                    $('#food_included').html(data[0].food_included);
+                    $('#food_included').html(data[0].food_incld);
                     $('#gen_aminities').html(data[0].gen_aminities);
                     $('#get_close_time').html(data[0].get_close_time);
                     $('#parking').html(data[0].parking);
@@ -519,15 +572,165 @@
                         console.log("After replace....",g_amn);
                         $('#' + g_amn).html('Yes');
                     }
+                    //Images display 
+                    var images, imgkey,keyvalue,images1=[];
+                    images=data[0].profile_img+','+data[0].hall_img+','+data[0].balcony_img
+                    images=images.split(',');
+                    console.log("images arraay.................", images);
+                    for (var j=0; j<images.length;j++){
+                        console.log("images arraay with key.................", images[j]);
+
+                        images1= images[j].split(':');
+                        var allimages='<div class="mySlides">'+
+                                      '<div class="numbertext">'+j+' / 6</div>'+
+                                      '<center><img class="profile_img img-responsive" src="./WebAPI/uploads/'+images1[1]+'" style=""></center>'+
+                                      '</div>' ;  
+                        $('#aimg').append(allimages);
+                        var no=j+1;
+                        var thumb='<div class="column">'+
+                                  '<img class="demo cursor" src="./WebAPI/uploads/'+images1[1]+'" style="width:100%" onclick="currentSlide('+no+')" alt="Images">'+
+                                  '</div>';
+                                  $('#thumbimg').append(thumb);
+
+                        console.log("images arraay with key imgkey.................", images1[1]);
+
+
+                    }
+                        var slideIndex = 1;
+                        showSlides(slideIndex);
+
+                        function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                        }
+
                     },
             error: function() {
                   console.log('Error In AJAX...');
                 },
 
+           });
     });
-    // $('#ajax-edit').click(function(e) {
-    //         e.preventDefault();
-    //                  window.location.href = "./listProperty.php?pro_id="+sessionStorage.getItem("pro_id");
-    //             });
-});
-    </script>
+
+        function currentSlide(n) {
+            console.log("currentslides.........", n);
+
+        showSlides(slideIndex = n);
+        }
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+
+</script>
+
+<style>
+
+
+    * {
+    box-sizing: border-box;
+    }
+
+    img {
+    vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+    position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+    display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+    cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+    text-align: center;
+    background-color: #f6b519;
+    padding: 2px 16px;
+    color: white;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+    border:1px solid #f6b519;
+    margin:1px;
+    float: left;
+    width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+    opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+    opacity: 1;
+    }
+</style>

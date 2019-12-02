@@ -27,6 +27,7 @@ router.post('/',(req, res) => {
     "r_descr":req.body.r_descr,
     "time":timestamp,
     "u_id":"1",
+    "user_name":req.body.user_name,
   };
   var sql ='INSERT INTO roomate SET ?';
 console.log("sql......", sql);

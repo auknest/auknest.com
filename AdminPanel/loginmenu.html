@@ -38,7 +38,7 @@
                   <ul class="nav navbar-nav navbar-left ">
                       <li class="dropdown ">
                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span  onclick=notificationmsg(); class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-                       <ul class="dropdown-menu" style="background-color: #00517e;" id="notification">                       
+                       <ul class="dropdown-menu" style="background-color: #00517e; overflow:auto" id="notification">                       
                        </ul>
                       </li>
                   </ul>
@@ -81,6 +81,8 @@ $('#user_name').html(sessionStorage.getItem('user_name'));
 
 function notificationmsg() {
   $("#notification").html("");
+  $(".count").html("0");
+
 
     var d = new Date();
     var today=d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
@@ -97,7 +99,14 @@ function notificationmsg() {
                 success: function(res){
                     console.log("Successfully inserted data into notification", res);
                     for(var i=0;i<res.length;i++){
-                      var no='<li onclick=showpro("'+res[i].pro_id+'","'+res[i].pro_type+'","'+res[i].u_id+'")><span class="white-font" style="margin-left:10%">'+res[i].n_msg+'</span></li>';
+                      if(res[i].not_status==0)
+                        {
+                          var no='<li style="background-color:gray" onclick=showpro("'+res[i].pro_id+'","'+res[i].pro_type+'","'+res[i].u_id+'")><span class="white-font" style="margin-left:10%">'+res[i].n_msg+'</span></li>';
+                        }
+                        if(res[i].not_status==1)
+                        {
+                          var no='<li onclick=showpro("'+res[i].pro_id+'","'+res[i].pro_type+'","'+res[i].u_id+'")><span class="white-font" style="margin-left:10%">'+res[i].n_msg+'</span></li>';
+                        }
                       $('#notification').append(no)
                     }
                 },
@@ -109,7 +118,24 @@ function notificationmsg() {
  }
 
 function showpro(id,type,u){
-  window.location.href="../postProperty/pgalldetails.php?pro_id="+id+"&pro_type="+type+"&u_id="+u+"";
+  var server={
+    'pro_id':id
+  };
+console.log("server.......", server);
+  $.ajax({
+		url:"http://localhost:3000/post_readnotification",
+    type: 'POST',
+    data:server,
+		// dataType: 'JSON',
+		success: function(res) {
+      window.location.href="../postProperty/pgalldetails.php?pro_id="+id+"&pro_type="+type+"&u_id="+u+"";
+           
+        },
+            error: function(err) {
+			console.log("Error");
+			
+		}
+  });
 }
 
 </script>

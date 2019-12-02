@@ -52,6 +52,7 @@ var buildaminities = require('./routes/postapi/post_build_aminities'); //To inse
 var roomate = require('./routes/postapi/post_roomate_api'); //To insert building aminities details. 
 var login = require('./routes/postapi/post_login'); //To insert login details. 
 var notification = require('./routes/postapi/post_notification'); //To insert notification details. 
+var readnotification = require('./routes/postapi/post_readnotification'); //To insert notification details. 
 
 
 //Delete api
@@ -190,6 +191,7 @@ app.use('/post_build_aminities', buildaminities); //To insert the building amini
 app.use('/post_roomate_api', roomate); //To insert the roomate details
 app.use('/post_login', login); //To insert the login details
 app.use('/post_notification', notification); //To insert the notification details
+app.use('/post_readnotification', readnotification); //To insert the notification details
 
 
 //delete api

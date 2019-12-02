@@ -135,13 +135,33 @@ function myFunction1(){
 
 }
 
+function notification() {
+  //  var d = new Date();
+  //  var today=d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
+	var today=new Date().valueOf()
+    console.log("date............................", today);
 
-  // $( "#notification" ).load( "../AdminPanel/loginmenu.html", function() {
-  //   console.log( "Load was performed." );
-  // })
-//   // var not=document.getElementById("notification");
-
-//   // var x = document.createElement("LI");
-//   // var t = document.createTextNode("Coffee");
-//   // x.appendChild(t);
-//   // document.getElementById("notification").appendChild("abc");
+    var serverData={
+                "pro_id": sessionStorage.getItem("pro_id"),
+                "pro_type" : sessionStorage.getItem("pro_type"),
+                "u_id":sessionStorage.getItem("u_id"),
+                "u_name": sessionStorage.getItem("user_name"),
+                "date":today,
+                "n_msg":"Added "+sessionStorage.getItem("pro_type")+" by "+sessionStorage.getItem("user_name")
+               
+            };
+            console.log(serverData);
+    $.ajax({
+                type:"POST",
+                url:"https://api.auknest.com/post_notification",
+                data:serverData,
+                success: function(res){
+                    console.log("Successfully inserted data into notification");
+                    window.location.href="./listProperty.php";
+                },
+                error: function(e){
+                    console.log("Error into AJAX");
+                    console.log(e);
+                }
+            });
+}

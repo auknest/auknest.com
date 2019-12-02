@@ -23,9 +23,9 @@
                     <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">PREVIEW LISTING <br></p>
                 </div>
                </a>
-               <a href="listProperty.php">
+               <a href="#">
                 <div class="col-sm-12 col-md-6 col-lg-6 center">
-                    <p class="w-100per popupbtn center red-font back-color-yellow pd-5per">ADD ANOTHER PROPERTY</p>
+                    <p class="w-100per popupbtn center red-font back-color-yellow pd-5per" onclick=notification()>ADD ANOTHER PROPERTY</p>
                 </div>
                </a>
         </div> 

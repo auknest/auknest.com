@@ -16,9 +16,17 @@ router.get('/', (req,res) =>{
 
     // var cond= "WHERE date";
     var sql="SELECT * FROM notification ";
+    var sql1="UPDATE users SET n_count=0";
     console.log(sql);
     con.query(sql, (error, result) =>{
-        
+        con.query(sql1,"", function(error, results, fields) {
+            if(error) {
+                console.log("Failed to update user notification count details", error)
+            }
+            else {
+                console.log("Data updated into table user notification count api sucessfully...");
+           }
+        });
         if (error) throw error;
 
         res.send(result);

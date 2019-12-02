@@ -42,7 +42,33 @@ router.get('/', (req,res) =>{
         con.query(sql, (error, result) =>{
             
             if (error) throw error;
+            if(result!=''){
+                if(result[0].profile_img!=null){
+                    console.log(result[0].profile_img.toString());
+                    result[0].profile_img=JSON.parse(result[0].profile_img.toString());
+                }
+                if(result[0].hall_img!=null){
+                    result[0].hall_img=JSON.parse(result[0].hall_img.toString());
+                }
+                if(result[0].hall_img!=null){
+                    result[0].bedroom_img=JSON.parse(result[0].bedroom_img.toString());
+                }
+                if(result[0].hall_img!=null){
+                    result[0].washroom_img=JSON.parse(result[0].washroom_img.toString());
+                }
+                if(result[0].hall_img!=null){
+                    result[0].balcony_img=result[0].balcony_img?JSON.parse(result[0].balcony_img.toString()):null;
+                }
+                if(result[0].hall_img!=null){
+                    result[0].other_img=result[0].other_img?JSON.parse(result[0].other_img.toString()):null;
+                }
+    
+            // console.log("profile image...........", result[0].balcony_img);
+    
             res.send(result);
+            }
+
+            //res.send(result);
           
         });
     }

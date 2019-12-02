@@ -124,7 +124,8 @@
             var serverData={
             "r_descr":    $('#test').val(),
             "u_id": sessionStorage.getItem("u_id"),
-            "post_id":post_id
+            "post_id":post_id,
+            "user_name": sessionStorage.getItem("user_name"),
             };
         console.log("serverdata...........", serverData);
 
