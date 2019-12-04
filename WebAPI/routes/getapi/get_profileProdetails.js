@@ -40,35 +40,36 @@ router.get('/', (req,res) =>{
        
         console.log(sql);
         con.query(sql, (error, result) =>{
-            
+            console.log("length of result.........", result.length);
             if (error) throw error;
-            if(result!=''){
-                if(result[0].profile_img!=null){
+            for(var i=0;i<result.length;i++){
+              if(result!=''){
+                if(result[i].profile_img!=null){
                     console.log(result[0].profile_img.toString());
-                    result[0].profile_img=JSON.parse(result[0].profile_img.toString());
+                    result[i].profile_img=JSON.parse(result[i].profile_img.toString());
                 }
-                if(result[0].hall_img!=null){
-                    result[0].hall_img=JSON.parse(result[0].hall_img.toString());
+                if(result[i].hall_img!=null){
+                    result[i].hall_img=JSON.parse(result[i].hall_img.toString());
                 }
-                if(result[0].hall_img!=null){
-                    result[0].bedroom_img=JSON.parse(result[0].bedroom_img.toString());
+                if(result[i].bedroom_img!=null){
+                    result[i].bedroom_img=JSON.parse(result[i].bedroom_img.toString());
                 }
-                if(result[0].hall_img!=null){
-                    result[0].washroom_img=JSON.parse(result[0].washroom_img.toString());
+                if(result[i].washroom_img!=null){
+                    result[i].washroom_img=JSON.parse(result[i].washroom_img.toString());
                 }
-                if(result[0].hall_img!=null){
-                    result[0].balcony_img=result[0].balcony_img?JSON.parse(result[0].balcony_img.toString()):null;
+                if(result[i].balcony_img!=null){
+                    result[i].balcony_img=result[i].balcony_img?JSON.parse(result[i].balcony_img.toString()):null;
                 }
-                if(result[0].hall_img!=null){
-                    result[0].other_img=result[0].other_img?JSON.parse(result[0].other_img.toString()):null;
+                if(result[i].other_img!=null){
+                    result[i].other_img=result[i].other_img?JSON.parse(result[i].other_img.toString()):null;
+                }    
+              
                 }
-    
-            // console.log("profile image...........", result[0].balcony_img);
-    
-            res.send(result);
             }
+            
+            // }
 
-            //res.send(result);
+            res.send(result);
           
         });
     }
