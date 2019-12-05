@@ -539,7 +539,7 @@ $(document).ready(function(){
                     $('#descr').html(data[0].descr);
                     $('#expected_rent').html(data[0].expected_rent);
                     $('#floor_no').html(data[0].floor_no);
-                    $('#food_included').html(data[0].food_incld);
+                    $('#food_included').html(data[0].food_included);
                     $('#gen_aminities').html(data[0].gen_aminities);
                     $('#get_close_time').html(data[0].get_close_time);
                     $('#parking').html(data[0].parking);

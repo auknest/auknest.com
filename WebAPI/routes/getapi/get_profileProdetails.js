@@ -40,7 +40,6 @@ router.get('/', (req,res) =>{
        
         console.log(sql);
         con.query(sql, (error, result) =>{
-            console.log("length of result.........", result.length);
             if (error) throw error;
             for(var i=0;i<result.length;i++){
               if(result!=''){

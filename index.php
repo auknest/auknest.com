@@ -681,6 +681,8 @@ $(document).ready(function(){
             else {
             sessionStorage.setItem("u_id", id[1]);
             sessionStorage.setItem("user_name",res[0].name );
+            sessionStorage.setItem("email",res[0].email );
+            sessionStorage.setItem("mobile",res[0].phone );
             $('#user_name').html(sessionStorage.getItem('user_name'));
             $('#profileinfo').show();
             $('#loginbtn').hide();

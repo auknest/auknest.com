@@ -144,7 +144,7 @@
                     }
                      
                         var yyyy="<div class=\"mb-tb-5per \">"+
-                        "<div class=\"row\" onclick=prodetails('"+res[i].u_id+"','"+res[i].pro_type+"','"+res[i].pro_id+"');>"+
+                        "<div class=\"row\" onclick=prodetails('"+res[i].u_id+"','"+res[i].pro_type+"','"+res[i].pro_id+"','"+res[i].pro_locality+"');>"+
                         "<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">"+
                             "<div class=\"box-outline mb-tb-5per\" style=\"margin:0px !important; width:100% !important\">"+
                                 "<div class=\"row\">"+
@@ -221,15 +221,45 @@
         event.stopPropagation();
         console.log("Click from Contact Owner");
     }
-function prodetails(uid, type, id)
+function prodetails(uid, type, id, loc)
 {
         var parm=window.location.search.substring();
         var arr=parm.split('&');
         console.log("parm value.........",arr);
 
             console.log("Into pro details function...................");
+            var Data={
+                "pro_type":type,
+                "loc":loc,
+                "name":sessionStorage.getItem("user_name"),
+                "mobile":sessionStorage.getItem("mobile"),
+                "mail":sessionStorage.getItem("email"),
+                "uid":uid,
+                "pro_id":id,
+                "date":new Date().valueOf(),
+            };
+            console.log("data......", Data);
             if(type=='pg'){
-            window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
+            //call the ajax to store the data intersted in this properties.
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");     
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
+          //  window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
             } 
             if(type=='flat'){
             window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");

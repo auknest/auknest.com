@@ -80,7 +80,7 @@ div.content {
   <a  onclick="openCity(event, 'flats');loadProducts('flat')" class="tablinks" >Posted Flats</a>
   <a onclick="openCity(event, 'building');loadProducts('building')" class="tablinks" >Posted building</a>
   <a  onclick="openCity(event, 'pg_to_pg');loadProducts('pg_to_pg')"class="tablinks" >Posted PG-PG</a>
-  <a onclick="openCity(event, 'properties')" class="tablinks">Intersted properties</a>
+  <a onclick="openCity(event, 'properties'); loadproperty()" class="tablinks">Intersted properties</a>
 
 </div>
 </div>
@@ -133,6 +133,41 @@ div.content {
   
 </div>
 <div id="properties" class="tabcontent">
+<div class="table-responsive" style="overflow-x:visible!important">
+<table class="table table-striped table-bordered table-condensed">
+<thead>
+<tr style="background-color:#428bca;color:white">
+<th>Your Property</th>
+<th>Name</th>
+<th>Mobile</th>
+<th>Email</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody id="i_properties">
+<!--<tr>
+<td><a href="/property/2-BHK-apartment-for-rent-in-Hinjewadi-pune-for-rs-21000/ff8081816a49a376016a49d7c00f1533/detail">2 BHK For Rent in AukNest , Hinjewadi</a></td>
+<td>vivek</td>
+<td>+918770291108</td>
+<td>abc123987@gmail.com</td>
+<td>Sep 5, 2019 4:00:54 PM</td>
+</tr>
+<tr>
+<td><a href="/property/2-BHK-apartment-for-rent-in-Hinjewadi-pune-for-rs-21000/ff8081816a49a376016a49d7c00f1533/detail">2 BHK For Rent in AukNest , Hinjewadi</a></td>
+<td>Jyotika Bishnoi</td>
+<td>+917073210760</td>
+<td>jyotikasb97@gmail.com</td>
+<td>Sep 5, 2019 2:37:53 PM</td>
+</tr>
+<tr>
+<td><a href="/property/2-BHK-apartment-for-rent-in-Hinjewadi-pune-for-rs-21000/ff8081816a49a376016a49d7c00f1533/detail">2 BHK For Rent in AukNest , Hinjewadi</a></td>
+<td>Abhi Shah</td>
+<td>+918200158273</td>
+<td>abhi6597@yahoo.com</td>
+<td>Sep 4, 2019 4:50:15 PM</td>
+</tr> -->
+</tbody></table>
+</div>
   <h3>London</h3>
   <p>Lond is the capital city of England.</p>
 </div>
@@ -143,6 +178,40 @@ div.content {
 <script>
 var details = [];
 
+function loadproperty(){
+    console.log("Into the intersted property block");
+    $.ajax({
+		url:"http://localhost:3000/get_interst_property?uid='"+sessionStorage.getItem("u_id")+"'",
+		type: 'GET',
+		dataType: 'JSON',
+		success: function(res) {
+
+			console.log("success");
+            console.log(res);
+            for (var i = 0; i < res.length; i++) {
+                // var d=new Date(res[i].date);
+                // var formattedDate = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
+                var time= res[i].date;
+                var r= JSON.parse(res[i].date);
+                var d=new Date(r);
+                console.log("............", d.toDateString());
+            
+                var interst='<tr>'+
+                            '<td><a href="/property/2-BHK-apartment-for-rent-in-Hinjewadi-pune-for-rs-21000/ff8081816a49a376016a49d7c00f1533/detail">2 BHK For Rent in AukNest , Hinjewadi</a></td>'+
+                            '<td>'+res[i].name+'</td>'+
+                            '<td>'+res[i].mobile+'</td>'+
+                            '<td>'+res[i].mail+'</td>'+
+                            '<td>'+d.toLocaleString()+'</td>'+
+                            '</tr>';
+                $('#i_properties').append(interst);
+            }
+
+        },
+        error: function(err) {
+            console.log("Error");
+        },
+    });
+}
 function loadProductDetails(product) {
 	$(".container").loadTemplate(
 		$("#prodTemplt"), product, {append:true}

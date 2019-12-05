@@ -34,6 +34,7 @@ var getuserinfo =require('./routes/getapi/get_user_info');
 var getsearchlist =require('./routes/getapi/get_search_pgdetails');
 var getsearchfilterlist =require('./routes/getapi/get_search_filter_data');
 var getnotification =require('./routes/getapi/get_notification');
+var interestedproperty =require('./routes/getapi/get_interst_property');
 
 
 //Post api
@@ -53,7 +54,7 @@ var roomate = require('./routes/postapi/post_roomate_api'); //To insert building
 var login = require('./routes/postapi/post_login'); //To insert login details. 
 var notification = require('./routes/postapi/post_notification'); //To insert notification details. 
 var readnotification = require('./routes/postapi/post_readnotification'); //To insert notification details. 
-
+var interestProperty=require('./routes/postapi/post_interst_property');//To insert the intrested properties.
 
 //Delete api
 var deleteimg = require('./routes/deleteapi/delete_gallery_img');
@@ -172,7 +173,7 @@ app.use('/get_user_info', getuserinfo); //To insert the profile details
 app.use('/get_search_pgdetails', getsearchlist); 
 app.use('/get_search_filter_data', getsearchfilterlist); 
 app.use('/get_notification', getnotification); 
-
+app.use('/get_interst_property', interestedproperty); 
 
 
 //Post API
@@ -192,6 +193,7 @@ app.use('/post_roomate_api', roomate); //To insert the roomate details
 app.use('/post_login', login); //To insert the login details
 app.use('/post_notification', notification); //To insert the notification details
 app.use('/post_readnotification', readnotification); //To insert the notification details
+app.use('/post_interst_property', interestProperty); //To insert the interested property details
 
 
 //delete api
