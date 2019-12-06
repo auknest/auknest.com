@@ -285,19 +285,84 @@
 	console.log("Click from Contact Owner");
 }
 function prodetails(uid, type, id){
-    var parm=window.location.search.substring();
-var arr=parm.split('&');
-console.log("parm value.........",arr);
+    {
+        var parm=window.location.search.substring();
+        var arr=parm.split('&');
+        console.log("parm value.........",arr);
 
-    console.log("Into pro details function...................");
-    if(type=='pg'){
-    window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
-    } 
-    if(type=='flat'){
-    window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
-    } 
-    if(type=='bulid'){
-    window.open("../searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
-    } 
+            console.log("Into pro details function...................");
+            var Data={
+                "pro_type":type,
+                "loc":loc,
+                "name":sessionStorage.getItem("user_name"),
+                "mobile":sessionStorage.getItem("mobile"),
+                "mail":sessionStorage.getItem("email"),
+                "uid":uid,
+                "pro_id":id,
+                "date":new Date().valueOf(),
+            };
+            console.log("data......", Data);
+            if(type=='pg'){
+            //call the ajax to store the data intersted in this properties.
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");     
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
+          //  window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
+            } 
+            if(type=='flat'){
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
+            } 
+            if(type=='bulid'){
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
+            } 
 }
 </script>

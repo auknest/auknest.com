@@ -262,10 +262,44 @@ function prodetails(uid, type, id, loc)
           //  window.open("../searchpgdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");  
             } 
             if(type=='flat'){
-            window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchflatdetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
             } 
             if(type=='bulid'){
-            window.open("../searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                $.ajax ({
+                    type:"POST",
+                    url:"http://localhost:3000/post_interst_property",
+                    data:Data,
+                    cache: false,
+                    timeout: 5000,
+                    complete: function() {
+                    //called when complete
+                    console.log('process complete');
+                    },
+                    success: function(res) {      
+                    console.log('Property pg details Sucessfully inserted ...' +sessionStorage.getItem("pro_type"));
+                    window.open("../searchbuilddetails.php"+parm+"&u_id="+uid+"&pro_id="+id+"");
+                    },
+                    error: function() {
+                    console.log('Error In AJAX...');
+                    },
+                    });
             } 
 }
 
